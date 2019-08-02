@@ -1,0 +1,5 @@
+ERROR:
+ORA-01045: user S_T6720353 lacks CREATE SESSION privilege; logon denied
+
+
+SP2-0751: Unable to connect to Oracle.  Exiting SQL*Plus

@@ -1,0 +1,16 @@
+[
+{
+"owner": "CORE",
+"name": "TR_LOGON",
+"valid": true,
+"enabled": false,
+"type": "logon"
+}
+,{
+"owner": "CORE",
+"name": "TR_MONITORA",
+"valid": true,
+"enabled": true,
+"type": "monitora"
+}
+]

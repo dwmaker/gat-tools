@@ -1,0 +1,10 @@
+[
+	{ "code": "BRA",  "applicationCode": "NETSMS" },
+	{ "code": "SUL",  "applicationCode": "NETSMS" },
+	{ "code": "ISP",  "applicationCode": "NETSMS" },
+	{ "code": "BH",   "applicationCode": "NETSMS" },
+	{ "code": "SOC",  "applicationCode": "NETSMS" },
+	{ "code": "SAO",  "applicationCode": "NETSMS" },
+	{ "code": "ABC",  "applicationCode": "NETSMS" },
+	{ "code": "CTV",  "applicationCode": "NETSMS" }
+]

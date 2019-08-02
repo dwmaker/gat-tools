@@ -1,0 +1,6 @@
+ERROR:
+ORA-12505: TNS:listener does not currently know of SID given in connect
+descriptor
+
+
+SP2-0751: Unable to connect to Oracle.  Exiting SQL*Plus

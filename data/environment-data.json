@@ -1,0 +1,16 @@
+[
+	{"code": "PROD", "description": "Produção"},
+	{"code": "CERT", "description": "Certificação"},
+	{"code": "DEV1", "description": "DEV1"},
+	{"code": "DEV3", "description": "DEV3"},
+	{"code": "DEV4", "description": "DEV4"},
+	{"code": "SIT1", "description": "SIT1"},
+	{"code": "SIT2", "description": "SIT2"},
+	{"code": "SIT3", "description": "SIT3"},
+	{"code": "SIT4", "description": "Teste Integrado - LE"},
+	{"code": "SIT5", "description": "Teste Integrado - LD"},
+	{"code": "SIT6", "description": "Stress Test"},
+	{"code": "SIT7", "description": "Novo Sap BR"},
+	{"code": "SIT8", "description": "SIT8"},
+	{"code": "UAT" , "description": "UAT" }
+]

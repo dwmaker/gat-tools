@@ -1,0 +1,295 @@
+openapi: 3.0.0
+info:
+  title: gat-tools
+  description: Ferramenta de automação para processos da Gestão de Ambientes de Testes.
+  version: 0.0.1
+servers:
+- url: /api/v1
+  description: Desenvolvimento local
+paths:
+  /datasources:
+    get:
+      tags:
+      - ASM
+      summary: Returns a list of datasources
+      operationId: getDatasources
+      parameters:
+      - name: type
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          enum:
+          - app
+          - asm
+      - name: applicationCode
+        in: query
+        required: false
+        style: form
+        schema:
+          type: string
+      responses:
+        200:
+          description: A JSON array of datasource
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/datasource'
+                x-content-type: application/json
+      x-swagger-router-controller: DatasourceController
+  /applications:
+    get:
+      tags:
+      - Application
+      summary: Returns a list of applications
+      operationId: getApplications
+      parameters: []
+      responses:
+        200:
+          description: A JSON array of application
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/application'
+                x-content-type: application/json
+      x-swagger-router-controller: ApplicationController
+  /netsms-version:
+    get:
+      tags:
+      - NETSMS
+      summary: Returns a version Object
+      operationId: getNetsmsVersion
+      parameters:
+      - name: datasourceCode
+        in: query
+        required: true
+        explode: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: A JSON array of application
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/netsms-version'
+                x-content-type: application/json
+      x-swagger-router-controller: NetsmsVersionController
+  /cenarios:
+    get:
+      tags:
+      - Application
+      summary: Returns a list of cenarios
+      operationId: getCenarios
+      parameters: []
+      responses:
+        200:
+          description: A JSON array of cenarios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/cenario'
+                x-content-type: application/json
+      x-swagger-router-controller: ApplicationController
+  /environments:
+    get:
+      tags:
+      - Application
+      summary: Returns a list of environments
+      operationId: getEnvironments
+      parameters: []
+      responses:
+        200:
+          description: A JSON array of environments
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/environment'
+                x-content-type: application/json
+      x-swagger-router-controller: ApplicationController
+  /accesscontrols:
+    get:
+      tags:
+      - AccessControl
+      summary: Return a list of Access Controls.
+      operationId: getAccesscontrols
+      parameters:
+      - name: datasourceCode
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: type
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          enum:
+          - logon
+          - monitora
+      responses:
+        200:
+          description: A JSON array of Access Control objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/accesscontrol'
+                x-content-type: application/json
+      x-swagger-router-controller: AccesscontrolController
+  /asmdisks:
+    get:
+      tags:
+      - ASM
+      summary: Returns a list of ASM disks.
+      operationId: getAsmdisks
+      parameters:
+      - name: datasourceCode
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: A JSON array of ASM Disk objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/asmdisk'
+                x-content-type: application/json
+      x-swagger-router-controller: AsmController
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    datasource:
+      type: object
+      properties:
+        code:
+          type: string
+        type:
+          type: string
+      example:
+        type: asm
+        code: net001ht4sun002b
+    application:
+      type: object
+      properties:
+        code:
+          type: string
+        description:
+          type: string
+      example:
+        description: NetSMS (legado)
+        code: NETSMS
+    cenario:
+      type: object
+      properties:
+        code:
+          type: string
+        applicationCode:
+          type: string
+        description:
+          type: string
+          nullable: true
+      example:
+        description: Teste Integrado - lado direito
+        applicationCode: NETSMS
+        code: SIT1
+    environment:
+      type: object
+      properties:
+        code:
+          type: string
+        applicationCode:
+          type: string
+        description:
+          type: string
+      example:
+        description: Teste Integrado - lado direito
+        applicationCode: NETSMS
+        code: SIT1
+    asmdisk:
+      type: object
+      properties:
+        name:
+          type: string
+        path:
+          type: string
+        diskgroupNumber:
+          type: integer
+        diskgroupName:
+          type: string
+        instanceName:
+          type: string
+        databaseName:
+          type: string
+        softwareVersion:
+          type: string
+        hostName:
+          type: string
+      example:
+        name: BRA_GOLDEN_102017_0000
+        path: /dev/rdsk/c0t60A9800041765A706D5D4673544F6257d0s6
+        databaseName: BRASAMX
+        diskgroupNumber: 11
+        instanceName: +ASM        
+        softwareVersion: 11.2.0.4.0
+        diskgroupName: BRA_BRASAMX_DATA102017
+    accesscontrol:
+      type: object
+      properties:
+        owner:
+          type: string
+        name:
+          type: string
+        valid:
+          type: boolean
+        enabled:
+          type: boolean
+        type:
+          type: string
+      example:
+        owner: CORE
+        name: TR_LOGON
+        valid: true
+        enabled: true
+        type: logon
+    netsms-version:
+      type: object
+      properties:
+        version:
+          type: string
+        applyDate:
+          type: string
+          format: date-time
+        executableId:
+          type: integer
+      example:
+        version: 9.4.1
+        applyDate: 2019-04-17T19:42:39.000Z
+        executableId: 400

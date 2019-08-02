@@ -1,0 +1,47 @@
+[
+{
+"version": "9.3.9",
+"applyDate": "2019-04-18T11:18:20.000Z",
+"executableId": 399
+}
+,{
+"version": "9.3.8",
+"applyDate": "2019-02-25T19:30:42.000Z",
+"executableId": 398
+}
+,{
+"version": "9.3.7",
+"applyDate": "2019-02-20T15:38:58.000Z",
+"executableId": 397
+}
+,{
+"version": "9.3.4",
+"applyDate": "2019-01-22T11:34:43.000Z",
+"executableId": 394
+}
+,{
+"version": "9.3.3",
+"applyDate": "2018-12-06T15:43:50.000Z",
+"executableId": 393
+}
+,{
+"version": "9.3.1",
+"applyDate": "2018-12-06T15:41:44.000Z",
+"executableId": 391
+}
+,{
+"version": "9.3.0",
+"applyDate": "2018-12-06T15:33:41.000Z",
+"executableId": 390
+}
+,{
+"version": "9.2.9",
+"applyDate": "2018-12-06T14:45:46.000Z",
+"executableId": 389
+}
+,{
+"version": "9.2.8",
+"applyDate": "2018-12-06T14:19:47.000Z",
+"executableId": 388
+}
+]

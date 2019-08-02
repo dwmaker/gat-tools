@@ -1,0 +1,7 @@
+ERROR:
+ORA-00604: error occurred at recursive SQL level 1
+ORA-01843: not a valid month
+ORA-06512: at line 51
+
+
+SP2-0751: Unable to connect to Oracle.  Exiting SQL*Plus

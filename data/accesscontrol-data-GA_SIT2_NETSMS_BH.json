@@ -1,0 +1,5 @@
+ERROR:
+ORA-12545: Connect failed because target host or object does not exist
+
+
+SP2-0751: Unable to connect to Oracle.  Exiting SQL*Plus

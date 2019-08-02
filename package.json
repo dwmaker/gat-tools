@@ -1,0 +1,33 @@
+{
+  "name": "gat-tools",
+  "version": "0.0.1",
+  "description": "Ferramenta de automa��o para processos da Gest�o de Ambientes de Testes.",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "swagger"
+  ],
+  "license": "Unlicense",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0",
+    "alasql": "^0.4.11",
+    "angular": "^1.7.8",
+    "angular-route": "^1.7.8",
+    "bootstrap": "^4.3.1",
+    "connect": "^3.2.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "jquery": "^3.4.1",
+    "js-yaml": "^3.3.0",
+    "oas-tools": "^2.1.6",
+    "oracledb": "^3.1.2",
+    "popper.js": "^1.15.0",
+    "swagger-ui-express": "^4.0.7",
+    "xlsx": "^0.14.4"
+  }
+}
