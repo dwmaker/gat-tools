@@ -1,0 +1,4 @@
+{
+  "ignore": ["data/*.json"],
+  "ext": "js,json,yaml"
+}

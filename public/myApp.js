@@ -22,6 +22,12 @@ angular.module('myApp', ['ngRoute'])
 		templateUrl: '/pages/versao-netsms.html',
 		controller: 'versao-netsms-controller'
 	})
+	.when('/parametro-netsms', 
+	{
+		templateUrl: '/pages/parametro-netsms.html',
+		controller: 'parametro-netsms-controller'
+	})
+	
 	
 	
 	.otherwise({redirectTo: '/home'});

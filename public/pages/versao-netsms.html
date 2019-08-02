@@ -26,7 +26,7 @@
 	
 	<div>
 		<button type="button" ng-click="exportData()" class="btn btn-light" title="Exportar para Planilha do Excel"> <i class="fas fa-file-excel text-primary"> </i> Exportar</button>
-		{{ data }}
+		
 		
 		<table class="table table-bordered table-sm">
 		<thead class="thead-dark">
@@ -41,20 +41,58 @@
 		<div style="width: 100%;height: 100%; margin: 0px; padding: 4px;" ng-bind="environment.code"></div>
 		</td>
 		<td style="padding: 0px" ng-repeat="cenario in cenarios" ng-init="datasource = getItem({cenarioCode: cenario.code, environmentCode: environment.code}, datasources)"  >
+			
+			<!-- c_st_lowerversion -->
+			<div 
+			ng-if="datasource.status=='W'" 
+			style="width: 100%;height: 100%; margin: 0px; padding: 4px;" 
+			class="bg-danger text-white text-center" 
+			ng-bind="datasource.listVersao[0].version"
+			title="Datasource: {{ datasource.code }}&#13;Data de aplicação: {{ datasource.listVersao[0].applyDate | date : 'yyyy-MM-dd' }}&#13;{{datasource.mensagem}}"  
+			></div>
+			
+			<div 
+			ng-if="datasource.status=='O'" 
+			style="width: 100%;height: 100%; margin: 0px; padding: 4px;" 
+			class="bg-warning text-dark text-center" 
+			ng-bind="datasource.listVersao[0].version"
+			title="Datasource: {{ datasource.code }}&#13;Data de aplicação: {{ datasource.listVersao[0].applyDate | date : 'yyyy-MM-dd' }}&#13;{{datasource.mensagem}}"  
+			></div>
+			
+			<!-- c_st_disabled -->
+			<div 
+			ng-if="datasource.status=='D'" 
+			style="width: 100%;height: 100%; margin: 0px; padding: 4px;" 
+			class="bg-light text-dark text-center" 
+			ng-bind="datasource.listVersao[0].version"
+			title="Datasource: {{ datasource.code }}&#13;Data de aplicação: {{ datasource.listVersao[0].applyDate | date : 'yyyy-MM-dd' }}&#13;{{datasource.mensagem}}"  
+			></div>
+			
 			<div 
 			ng-if="datasource.status=='E'" 
 			style="width: 100%;height: 100%; margin: 0px; padding: 4px;" 
 			class="bg-secondary text-warning text-center" 
-			ng-attr-title="{{datasource.mensagem}}"  
+			title="Datasource: {{ datasource.code }}&#13;{{datasource.mensagem}}"  
 			><b>!</b></div>
 			
+			<!-- c_st_upperversion -->
 			<div 
-			ng-if="datasource.status=='S'" 
+			ng-if="datasource.status=='F'" 
 			style="width: 100%;height: 100%; margin: 0px; padding: 4px;" 
-			class="bg-primary text-light text-center" 
+			class="bg-info text-white text-center" 
 			ng-bind="datasource.listVersao[0].version"
-			title="{{datasource.mensagem}}"  
+			title="Datasource: {{ datasource.code }}&#13;Data de aplicação: {{ datasource.listVersao[0].applyDate | date : 'yyyy-MM-dd' }}&#13;{{datasource.mensagem}}"  
 			></div>
+			
+			<div 
+			ng-if="datasource.status==='L'" 
+			style="width: 100%;height: 100%; margin: 0px; padding: 4px;" 
+			class="bg-white text-dark text-center" 
+			ng-bind="datasource.listVersao[0].version"
+			title="Datasource: {{ datasource.code }}&#13;Data de aplicação: {{ datasource.listVersao[0].applyDate | date : 'yyyy-MM-dd' }}&#13;{{datasource.mensagem}}"  
+			></div>
+			
+			
 			
 			<div 
 			ng-if="!datasource" 
@@ -62,16 +100,7 @@
 			class="bg-light text-secondary text-center" 
 			title="Datasource não definido"  
 			>-</div>
-			<!--
-			<div style="width: 100%;height: 100%; margin: 0px; padding: 4px;" ng-if="datasource.status=='200'" class="bg-primary text-center text-light"   >{{datasource.data[0].version}}</div>
-			<div style="width: 100%;height: 100%; margin: 0px; padding: 4px;" ng-if="datasource.status=='400'" class="bg-warning"   >400</div>
-			<div style="width: 100%;height: 100%; margin: 0px; padding: 4px;" ng-if="datasource.status=='400'" class="bg-secondary" >404</div>
 			
-			
-			ng-class="{'bg-secondary': (datasource.status=='404')}"
-			<span ng-show="datasource.status=='200'" ng-bind="datasource.data.version" ng-attr-title="{{datasource.data.date}}"></span>
-			<span ng-show="datasource.status=='200'" ng-bind=""></span>
-			-->
 		</td>
 		</tr>
 		</tbody>

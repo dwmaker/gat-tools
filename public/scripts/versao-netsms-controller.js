@@ -5,6 +5,8 @@ function($scope, $http)
 	$scope.progress = false;
 	$scope.messages=[];
 	
+	const nr_dias_sla = 10;
+	
 	async function listDatasources(params)
 	{
 		return await $http({"method":"GET", "url":"/api/v1/datasources", "params": params });
@@ -36,8 +38,6 @@ function($scope, $http)
 				let datasources = data[0].data;
 				let cenarios = data[1].data;
 				let environments = data[2].data;
-				
-				
 				let count = 0;
 				let total = datasources.length;
 				datasources.forEach((datasource)=>
@@ -48,8 +48,8 @@ function($scope, $http)
 						if(res.status=="200")
 						{
 							datasource.listVersao = res.data;
-							datasource.mensagem = "ok";
-							datasource.status = "S";
+							datasource.mensagem = undefined;
+							datasource.status = "L";
 						}
 						else
 						{
@@ -67,7 +67,6 @@ function($scope, $http)
 					}
 					listNetsmsVersions({"datasourceCode": datasource.code}).then(callback).catch(callback)
 				})
-				//alert(JSON.stringify(datasources))
 			})
 			.catch(reject)
 		});
@@ -76,14 +75,67 @@ function($scope, $http)
 	loadData()
 	.then((data)=>
 	{
-		$scope.environments.forEach((environment)=>
+		$scope.cenarios.forEach((cenario)=>
 		{
-			$scope.cenarios.forEach((cenario)=>
+			let dsprod = $scope.getItem({cenarioCode: cenario.code, environmentCode: "PROD"}, $scope.datasources);
+			$scope.environments
+			.filter((environment)=>
+			{
+				return environment.code != "PROD"
+			})
+			.forEach((environment)=>
 			{
 				let ds = $scope.getItem({cenarioCode: cenario.code, environmentCode: environment.code}, $scope.datasources)
-				let dsprod = $scope.getItem({cenarioCode: cenario.code, environmentCode: "PROD"}, $scope.datasources)
-				if(ds.status == "S" && dsprod.status == "S")
+				try
 				{
+					if(typeof ds === "object" && typeof dsprod === "object") 
+					{
+						if(ds.status == "L" && dsprod.status=="L")
+						{
+							if(ds.listVersao[0].version < dsprod.listVersao[0].version)
+							{
+								let listVersaoProd = dsprod.listVersao.filter((ver)=>{return (ver.version==ds.listVersao[0].version)})
+								if(listVersaoProd.length > 0)
+								{
+									let dtprod = new Date(listVersaoProd[0].applyDate)
+									let dt = new Date(Date.now())
+									let diffDays = Math.ceil(Math.abs(dt.getTime() - dtprod.getTime()) / (1000 * 60 * 60 * 24)); 
+									if(nr_dias_sla <= diffDays)
+									{
+										ds.status = "W";
+										ds.mensagem = "Obsoleto ha " + (diffDays - nr_dias_sla) + " dias";	
+									}
+									else
+									{
+										ds.status = "O";
+										ds.mensagem = "Atualizar em até " + (nr_dias_sla - diffDays) + " dias";
+									}
+								}
+								else
+								{
+									ds.status = "O";
+									ds.mensagem = "Versão não cadastrada em produção";
+								}
+							}
+							else if(ds.listVersao[0].version > dsprod.listVersao[0].version) 
+							{
+								ds.status = "F";
+								ds.mensagem = "versão superior a de produção";
+							}
+							else if(ds.listVersao[0].version == dsprod.listVersao[0].version) 
+							{
+								ds.status = "L"
+							}
+							else
+							{
+								alert('Isso não era pra ter acontecido')
+							}
+						}
+					}	
+				}
+				catch(e)
+				{
+					alert(e.toString())
 				}
 			});
 		});
@@ -91,10 +143,9 @@ function($scope, $http)
 	})
 	.catch((err)=>
 	{
-		
+		alert("pau!")
 		$scope.$apply();
 	})
-	
 	
 	$scope.getItem = function(filter, list)
 	{
@@ -110,62 +161,5 @@ function($scope, $http)
 		if(f1.length == 0) return undefined;
 		return f1[0];
 	}
-	/*
-	$scope.datasources={};
-	listCenarios({applicationCode: "NETSMS"})
-	.then(
-	(cenRes)=>
-	{
-		$scope.cenarios = cenRes.data;
-		listEnvironments()
-		.then(
-		(res1)=>
-		{
-			$scope.environments = res1.data;
-			let count=0
-			let total=$scope.environments.length * $scope.cenarios.length
-			$scope.cenarios.forEach((cenario)=>
-			{
-				$scope.environments.forEach((environment)=>
-				{
-					let datasource = {"environmentCode":environment.code,"cenarioCode":cenario.code};
-					listNetsmsVersions({"datasourceCode": 'GA_'+environment.code + '_' + cenario.applicationCode + '_' + cenario.code})
-					.then((res3)=>
-					{
-						if(typeof $scope.datasources[environment.code] === 'undefined') $scope.datasources[environment.code] = {}
-						$scope.datasources[environment.code][cenario.code] = res3;
-						console.log(res3)
-						if(++count == total) $scope.$apply();
-					})
-					.catch((res3)=>
-					{
-						if(typeof $scope.datasources[environment.code] === 'undefined') $scope.datasources[environment.code] = {}
-						$scope.datasources[environment.code][cenario.code] = res3;
-						if(++count == total) $scope.$apply();
-					});
-				})
-			})
-			
-		})
-		.catch(
-		(err)=>
-		{
-			$scope.data = err;
-			console.error(err);
-		});
-	})
-	.catch(
-	(err)=>
-	{
-		$scope.messages.push(err);
-		
-	});
-	*/
-	
-	
-	
-	
-	
-	
 }]);
 

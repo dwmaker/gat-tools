@@ -7,7 +7,7 @@ module.exports = {};
 module.exports.getNetsmsVersion =  (req, res, next) =>
 {
 	let param = {"datasourceCode": req.query.datasourceCode, "type": req.query.type};
-	fs.readFile(path.join("data", 'netsms_version-data-' + param.datasourceCode +'.json'), (err, data) => 
+	fs.readFile(path.join("data", 'netsms_version-data-' + param.datasourceCode +'.json'), {encoding: "latin1"}, (err, data) => 
 	{
 		if (err)
 		{
