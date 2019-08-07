@@ -1,0 +1,24 @@
+'use strict';
+// @CodeGeneratorOverwrite: enabled
+const <%=scope.controlCode%>Service = require("<%= path.posix.relative(path.posix.join(scope["api-server-controller"],".."), scope["api-server-service"])%>");
+
+let controller = {};
+<% swUtil.operations.filter(o=>o.controlCode == scope.controlCode).forEach((operation)=>
+{
+%>controller.<%= operation.operationCode %> = function(req, res, next)
+{
+	<% swUtil.parameters.filter((p)=> p.operationCode==operation.operationCode && p.controlCode == scope.controlCode).forEach((parameter)=> { 
+	%>let <%= parameter.name %> = req.<%= parameter.in=='path'?'params':parameter.in %>.<%= parameter.name %>;
+	<%}) %>
+	<%=scope.controlCode%>Service.<%= operation.operationCode %>(<%= swUtil.parameters.filter((p)=> p.operationCode==operation.operationCode && p.controlCode == scope.controlCode).map(p=> p.name).join(", ") %>)
+	.then((data) =>
+	{
+		return res.send(data);
+	})
+	.catch((err) =>
+	{
+		return next(err);
+	});
+}
+<%})%>
+module.exports = controller;

@@ -1,39 +1,22 @@
 'use strict';
-const fs = require('fs');
-const path = require('path');
+// @CodeGeneratorOverwrite: enabled
+const DatasourceControllerService = require("../services/DatasourceController.js");
 
-module.exports = {};
-
-module.exports.getDatasources =  (req, res, next) =>
+let controller = {};
+controller.listDatasources = function(req, res, next)
 {
-	let param = 
+	let type = req.query.type;
+	let applicationCode = req.query.applicationCode;
+	
+	DatasourceControllerService.listDatasources(type, applicationCode)
+	.then((data) =>
 	{
-		"type": req.query.type, 
-		"applicationCode": req.query.applicationCode
-	};
-	fs.readFile(path.join("data", 'datasource-data-'+param.type+'.json'), (err, data) => 
+		return res.send(data);
+	})
+	.catch((err) =>
 	{
-		if (err)
-		{
-			next(err);
-		}
-		else
-		{
-			try
-			{
-				let json = JSON.parse(data);
-				if(param.applicationCode) json=json.filter(
-				(val)=>
-				{
-					return param.applicationCode == val.applicationCode
-				})
-				res.send(json);
-			}
-			catch(err)
-			{
-				next(err);
-			}
-		}
+		return next(err);
 	});
-};
+}
 
+module.exports = controller;

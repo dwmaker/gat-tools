@@ -1,0 +1,6 @@
+ERROR:
+ORA-12505: TNS:listener não tem conhecimento sobre o SID informado atualmente
+no descritor de conexão
+
+
+SP2-0751: Não é possível estabelecer conexão com o Oracle. Saindo do SQL*Plus

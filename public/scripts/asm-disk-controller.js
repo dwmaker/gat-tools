@@ -1,5 +1,5 @@
-angular.module('myApp').controller('asm-disk-controller', ['$scope', '$http', 'asm-disk-service', 'Datatable',
-function($scope, $http, asmDiskService, Datatable)
+angular.module('myApp').controller('asm-disk-controller', ['$scope', 'asm-disk-service', 'Datatable', 'datasource-service', 'api-client-service',
+function($scope, asmDiskService, Datatable, datasourceService, apiClientService)
 {
 	$scope.datatable = new Datatable(
 	{
@@ -16,19 +16,16 @@ function($scope, $http, asmDiskService, Datatable)
 		]
 		//,database: asmDiskService.getDisks()
 	});
-	async function listDatasources(obj)
+	
+	$scope.$watch('progress', function() 
 	{
-		return await $http.get("/api/v1/datasources?type="+obj.type+"");
-	};
-	async function listAsmdisks(obj)
-	{
-		return await $http.get("/api/v1/asmdisks?datasourceCode="+ obj.datasourceCode);
-	};
+		
+	});
 	
 	
 	$scope.progress = 0.01;
 	$scope.messages=[];
-	listDatasources({type:"asm"})
+	datasourceService.list({type:"asm"})
 	.then(
 	(res)=>
 	{
@@ -37,7 +34,7 @@ function($scope, $http, asmDiskService, Datatable)
 		let db = [];
 		let promises = res.data.map((row)=>
 		{
-			let promise = listAsmdisks({datasourceCode: row.code});
+			let promise = apiClientService.AsmController.listAsmdisks(row.code);
 			promise
 			.then((res)=> 
 			{
@@ -50,7 +47,6 @@ function($scope, $http, asmDiskService, Datatable)
 					$scope.datatable.apply();
 					$scope.progress = false;
 				}
-				$scope.$apply();
 			})
 			.catch((res)=>
 			{
@@ -63,7 +59,6 @@ function($scope, $http, asmDiskService, Datatable)
 					$scope.datatable.apply();
 					$scope.progress = false;
 				}
-				$scope.$apply();
 			})
 			return promise; 
 		});

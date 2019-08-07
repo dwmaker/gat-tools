@@ -1,4 +1,7 @@
 {
-  "ignore": ["data/*.json"],
-  "ext": "js,json,yaml"
+    "ignore": [
+        "data/*.json",
+        "public/services/api-client-service.js"
+    ],
+    "ext": "js,json,yaml"
 }

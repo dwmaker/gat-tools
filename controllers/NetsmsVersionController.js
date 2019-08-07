@@ -1,32 +1,21 @@
 'use strict';
-const fs = require('fs');
-const path = require('path');
+// @CodeGeneratorOverwrite: enabled
+const NetsmsVersionControllerService = require("../services/NetsmsVersionController.js");
 
-module.exports = {};
-
-module.exports.getNetsmsVersion =  (req, res, next) =>
+let controller = {};
+controller.listNetsmsVersion = function(req, res, next)
 {
-	let param = {"datasourceCode": req.query.datasourceCode, "type": req.query.type};
-	fs.readFile(path.join("data", 'netsms_version-data-' + param.datasourceCode +'.json'), {encoding: "latin1"}, (err, data) => 
+	let datasourceCode = req.params.datasourceCode;
+	
+	NetsmsVersionControllerService.listNetsmsVersion(datasourceCode)
+	.then((data) =>
 	{
-		if (err)
-		{
-			console.error(err)
-			return res.status(404).send({"internal-error": err.toString()});
-		}
-		else
-		{
-			let json;
-			try
-			{
-				json = JSON.parse(data);
-				if (typeof param.type === 'string') json = json.filter((row)=>{ return (row.type == param.type)});
-				return res.status(200).send(json);
-			}
-			catch(err)
-			{
-				return res.status(500).send({"internal-error": data.toString()});
-			}
-		}
+		return res.send(data);
+	})
+	.catch((err) =>
+	{
+		return next(err);
 	});
-};
+}
+
+module.exports = controller;

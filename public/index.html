@@ -6,6 +6,7 @@
 		<title>GAT - Gestao de Ambiente</title>
 		<base href="/">
 		<link rel="stylesheet" href="lib/css/bootstrap.min.css" >
+		<link rel="stylesheet" href="uib/dist/ui-bootstrap-csp.css">
 		<link rel="stylesheet" href="lib/css/all.css">
 		<script src="lib/jquery.min.js"></script>
 		<script src="lib/js/bootstrap.min.js" ></script>
@@ -13,14 +14,27 @@
 		<script src="lib/angular-route.min.js"></script>
 		<script src="lib/alasql.min.js"></script>
 		<script src="lib/xlsx.full.min.js"></script>
+		<script src="uib/dist/ui-bootstrap-tpls.js"></script>
+		<script src="uib/dist/ui-bootstrap.js"></script>
 		<script src="myApp.js"></script>
 		<script src="scripts/datatable-factory.js"></script>
 		<script src="scripts/asm-disk-service.js"></script>
+		<script src="scripts/datasource-service.js"></script>
+		<script src="scripts/cenario-service.js"></script>
+		<script src="scripts/environment-service.js"></script>
+		
+		<script src="scripts/netsms-parameter-service.js"></script>
+		<script src="services/api-client-service.js"></script>
 		<script src="scripts/asm-disk-controller.js"></script>
 		<script src="scripts/home-controller.js"></script>
 		<script src="scripts/controle-acesso-controller.js"></script>
 		<script src="scripts/versao-netsms-controller.js"></script>
 		<script src="scripts/parametro-netsms-controller.js"></script>
+		
+
+
+		
+		
 	</head>
 	<body ng-app="myApp">
 	
@@ -87,6 +101,6 @@
 			<ng-view>teste</ng-view>
 			
 		</main>
-
+		
 	</body>
 </html>

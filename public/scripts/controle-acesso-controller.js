@@ -1,6 +1,6 @@
 
-angular.module('myApp').controller('controle-acesso-controller', ['$scope','$http',
-function($scope, $http)
+angular.module('myApp').controller('controle-acesso-controller', ['$scope','$http', 'api-client-service',
+function($scope, $http, apiClientService)
 {
 	$scope.progress = 0.01;
 	$scope.messages=[];

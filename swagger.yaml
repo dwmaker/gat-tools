@@ -12,7 +12,7 @@ paths:
       tags:
       - ASM
       summary: Returns a list of datasources
-      operationId: getDatasources
+      operationId: listDatasources
       parameters:
       - name: type
         in: query
@@ -46,7 +46,7 @@ paths:
       tags:
       - Application
       summary: Returns a list of applications
-      operationId: getApplications
+      operationId: listApplications
       parameters: []
       responses:
         200:
@@ -59,15 +59,15 @@ paths:
                   $ref: '#/components/schemas/application'
                 x-content-type: application/json
       x-swagger-router-controller: ApplicationController
-  /netsms-version:
+  /netsms-version/{datasourceCode}:
     get:
       tags:
       - NETSMS
       summary: Returns a version Object
-      operationId: getNetsmsVersion
+      operationId: listNetsmsVersion
       parameters:
       - name: datasourceCode
-        in: query
+        in: path
         required: true
         explode: true
         schema:
@@ -83,12 +83,36 @@ paths:
                   $ref: '#/components/schemas/netsms-version'
                 x-content-type: application/json
       x-swagger-router-controller: NetsmsVersionController
+  /netsms-parameter/{datasourceCode}:
+    get:
+      tags:
+      - NETSMS
+      summary: Returns a version Object
+      operationId: listNetsmsParameter
+      parameters:
+      - name: datasourceCode
+        in: path
+        required: true
+        explode: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: A JSON array of application
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/netsms-parameter'
+                x-content-type: application/json
+      x-swagger-router-controller: NetsmsParameterController
   /cenarios:
     get:
       tags:
       - Application
       summary: Returns a list of cenarios
-      operationId: getCenarios
+      operationId: listCenarios
       parameters: []
       responses:
         200:
@@ -106,7 +130,7 @@ paths:
       tags:
       - Application
       summary: Returns a list of environments
-      operationId: getEnvironments
+      operationId: listEnvironments
       parameters: []
       responses:
         200:
@@ -119,15 +143,15 @@ paths:
                   $ref: '#/components/schemas/environment'
                 x-content-type: application/json
       x-swagger-router-controller: ApplicationController
-  /accesscontrols:
+  /accesscontrols/{datasourceCode}:
     get:
       tags:
       - AccessControl
       summary: Return a list of Access Controls.
-      operationId: getAccesscontrols
+      operationId: listAccesscontrols
       parameters:
       - name: datasourceCode
-        in: query
+        in: path
         required: true
         style: form
         explode: true
@@ -154,15 +178,15 @@ paths:
                   $ref: '#/components/schemas/accesscontrol'
                 x-content-type: application/json
       x-swagger-router-controller: AccesscontrolController
-  /asmdisks:
+  /asm-disks/{datasourceCode}:
     get:
       tags:
       - ASM
       summary: Returns a list of ASM disks.
-      operationId: getAsmdisks
+      operationId: listAsmdisks
       parameters:
       - name: datasourceCode
-        in: query
+        in: path
         required: true
         style: form
         explode: true
@@ -225,14 +249,11 @@ components:
       properties:
         code:
           type: string
-        applicationCode:
-          type: string
         description:
           type: string
       example:
         description: Teste Integrado - lado direito
-        applicationCode: NETSMS
-        code: SIT1
+        code: SIT4
     asmdisk:
       type: object
       properties:
@@ -293,3 +314,16 @@ components:
         version: 9.4.1
         applyDate: 2019-04-17T19:42:39.000Z
         executableId: 400
+    netsms-parameter:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        numValue:
+          type: number
+      example:
+        name: 9.4.1
+        description: 2019-04-17T19:42:39.000Z
+        numValue: 400

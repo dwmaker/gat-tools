@@ -1,26 +1,11 @@
 
-angular.module('myApp').controller('versao-netsms-controller', ['$scope','$http',
-function($scope, $http)
+angular.module('myApp').controller('versao-netsms-controller', ['$scope','$http', 'datasource-service', 'cenario-service', 'environment-service', 'api-client-service',
+function($scope, $http, datasourceService, cenarioService, environmentService, apiClientService)
 {
 	$scope.progress = false;
 	$scope.messages=[];
 	
 	const nr_dias_sla = 10;
-	
-	async function listDatasources(params)
-	{
-		return await $http({"method":"GET", "url":"/api/v1/datasources", "params": params });
-	};
-	
-	async function listEnvironments(params)
-	{
-		return await $http({"method":"GET", "url":"/api/v1/environments", "params": params });
-	};
-	
-	async function listCenarios(params)
-	{
-		return await $http({"method":"GET", "url":"/api/v1/cenarios", "params": params });
-	};
 	
 	async function listNetsmsVersions(params)
 	{
@@ -32,7 +17,7 @@ function($scope, $http)
 		return new Promise(
 		function(resolve, reject) 
 		{
-			Promise.all([listDatasources({type: "app", applicationCode: "NETSMS"}), listCenarios({applicationCode: "NETSMS"}), listEnvironments()])
+			Promise.all([datasourceService.list({type: "app", applicationCode: "NETSMS"}), cenarioService.list({applicationCode: "NETSMS"}), environmentService.list()])
 			.then((data)=>
 			{
 				let datasources = data[0].data;
@@ -65,7 +50,7 @@ function($scope, $http)
 							resolve();
 						}
 					}
-					listNetsmsVersions({"datasourceCode": datasource.code}).then(callback).catch(callback)
+					apiClientService.NetsmsVersionController.listNetsmsVersion(datasource.code).then(callback).catch(callback)
 				})
 			})
 			.catch(reject)
@@ -143,7 +128,7 @@ function($scope, $http)
 	})
 	.catch((err)=>
 	{
-		alert("pau!")
+		throw err;
 		$scope.$apply();
 	})
 	

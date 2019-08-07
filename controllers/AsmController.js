@@ -1,56 +1,21 @@
 'use strict';
-const fs = require('fs');
-const path = require('path');
+// @CodeGeneratorOverwrite: enabled
+const AsmControllerService = require("../services/AsmController.js");
 
-module.exports = {};
-
-module.exports.getDatasources =  (req, res, next) =>
+let controller = {};
+controller.listAsmdisks = function(req, res, next)
 {
-	let param = {"type": req.query.type};
-	fs.readFile(path.join("data", 'datasource-data-'+param.type+'.json'), (err, data) => 
+	let datasourceCode = req.params.datasourceCode;
+	
+	AsmControllerService.listAsmdisks(datasourceCode)
+	.then((data) =>
 	{
-		if (err)
-		{
-			next(err);
-		}
-		else
-		{
-			try
-			{
-				let json = JSON.parse(data);
-				res.send(json);
-			}
-			catch(err)
-			{
-				next(err);
-			}
-		}
-	});
-};
-
-module.exports.getAsmdisks = (req, res, next) =>
-{
-	let param = {};
-	param.datasourceCode = req.query.datasourceCode;
-
-	fs.readFile(path.join("data", 'asmdisk-data-' + param.datasourceCode + '.json'), (err, data) => 
+		return res.send(data);
+	})
+	.catch((err) =>
 	{
-		if (err)
-		{
-			next(err);
-		}
-		else
-		{
-			try
-			{
-				let json = JSON.parse(data);
-				res.send(json);
-			}
-			catch(err)
-			{
-				next(err);
-			}
-		}
+		return next(err);
 	});
-};
+}
 
+module.exports = controller;
