@@ -6,10 +6,9 @@ let service = {};
 
 
 let logins = [{username:"paulo", password:"teste"}]
-let users  = [{username:"paulo", access:["read:datasource","write:datasource"]}]
+let users  = [{username:"paulo", access:[ "get:datasource", "write:datasource", "search:datasource", "delete:datasource" ]}]
 let LoginDAO = 
 {
-
 	get: (par) =>
 	{
 		return new Promise((resolve, reject)=>
@@ -22,7 +21,6 @@ let LoginDAO =
 }
 let UserDAO = 
 {
-
 	get: (par) =>
 	{
 		return new Promise((resolve, reject)=>

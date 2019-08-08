@@ -16,7 +16,7 @@ paths:
       parameters:
       - name: type
         in: query
-        required: false
+        required: true
         style: form
         explode: true
         schema:

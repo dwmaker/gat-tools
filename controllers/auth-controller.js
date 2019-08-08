@@ -12,12 +12,14 @@ function(authlist)
 		{
 			if(error) return next(error);
 			
-			authlist.forEach((authItem)=>
+			for(let iAuth=0; iAuth < authlist.length; iAuth++)
 			{
-				console.log({user, authItem})
-			})
-			
-			next();
+				if(!(user.access.includes(authlist[iAuth])))
+				{
+					return res.status("403").send({statusCode: "AcessoNegado", userMessage: `Usuario não tem a regra requirida "${authlist[iAuth]}"`, requiredRole: authlist[iAuth]})
+				}
+			}
+			return next();
 		})(req, res, next);
 		
 	}
