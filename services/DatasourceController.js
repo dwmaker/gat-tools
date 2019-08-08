@@ -9,7 +9,7 @@ function(type, applicationCode)
 {
 	return new Promise((resolve, reject) =>
 	{
-		fs.readFile(path.join("data", `datasource-data-${type}.json`), (err, data) => 
+		fs.readFile(path.join("data", `datasource-data-${type}.json`), {encoding: "latin1"}, (err, data) => 
 		{
 			if (err) return reject(err);
 			try

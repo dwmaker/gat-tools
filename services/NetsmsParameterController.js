@@ -9,18 +9,19 @@ function(datasourceCode)
 {
 	return new Promise((resolve, reject) =>
 	{
+		
 		fs.readFile(path.join("data", `netsms_parameter-data-${datasourceCode}.json`), {encoding: "latin1"}, (err, data) => 
 		{
-			if (err) reject(err);
+			if (err) return reject(err.toString());
 			try
 			{
-				let json = JSON.parse(data);
-				return resolve(json);
+				return resolve(JSON.parse(data));
 			}
 			catch(err)
 			{
 				return reject({"internal-error": data.toString()});
-			}			
+			};
+			
 		});
 	});
 };

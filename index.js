@@ -5,15 +5,19 @@ const swaggerUiExpress = require('swagger-ui-express');
 const jsyaml = require('js-yaml');
 const http = require('http');
 const bodyParser = require('body-parser');
+const authService = require("./services/auth-service.js");
 const apiRouter = require('./api-router.js');
-var app = express();
 
 // swaggerRouter configuration
 var spec = fs.readFileSync(`${__dirname}/swagger.yaml`, 'utf8');
 var swaggerDoc = jsyaml.safeLoad(spec);
+
+var app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json({strict: false}));
+app.use(authService.passport.initialize());
+
 app.use('/',    express.static(`${__dirname}/public`));
 app.use('/lib', express.static(`${__dirname}/node_modules/alasql/dist`));
 app.use('/lib', express.static(`${__dirname}/node_modules/xlsx/dist`));
@@ -25,69 +29,7 @@ app.use('/lib', express.static(`${__dirname}/node_modules/angular-route`));
 app.use('/uib', express.static(`${__dirname}/node_modules/ui-bootstrap4`));
 app.use('/api-docs', swaggerUiExpress.serve, swaggerUiExpress.setup(swaggerDoc));
 app.use('/api/v1', apiRouter);
-//////////////////////////////////////
 
-let logins = [{username:"paulo", password:"teste", verifyPassword: function verifyPassword(password){return password==this.password}}]
-let LoginDAO = 
-{
-
-	findOne: (par, callback) =>
-	{
-		return new Promise((resolve, reject)=>
-		{
-			let result = logins.filter(login=>login.username==par.username);
-			if(result.length==0) return reject("no data found")
-			return resolve(result[0]);
-		})
-		
-	}
-}
-const passport = require("passport");
-const LocalStrategy = require('passport-local').Strategy;
-app.use(passport.initialize())
-passport.use(new LocalStrategy(
-	function(username, password, callback) 
-	{
-		LoginDAO.findOne({ username: username })
-		.then((login)=>
-		{
-			if (!login) { return callback(null, false); }
-			if (!login.verifyPassword(password)) 
-			{
-				return callback('Invalid passow', false);
-			}
-			return callback(null, login);
-		})
-		.catch((err)=>
-		{
-			return callback(err);
-		})		
-	}
-));
-
-app.post('/login', function(req, res, next) 
-{
-	console.log(req.params);
-	passport.authenticate('local', 
-	function(err, login, info) 
-	{
-		if (err) 
-		{
-			return res.send({msg: err.toString()}); 
-		}
-		if (!login) 
-		{
-			return res.send({msg: "login is blank"}); 
-		}
-		req.logIn(login, function(err) 
-		{
-			if (err) { return next(err); }
-			return res.send({login: login}); 
-			
-		});
-	})(req, res, next);
-});
-/////////////////////////////////////////
 
 var server = http.createServer(app);
 var serverPort = 3000;

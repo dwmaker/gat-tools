@@ -30,6 +30,8 @@ paths:
         style: form
         schema:
           type: string
+      security:
+        - basicAuth: []
       responses:
         200:
           description: A JSON array of datasource
@@ -40,6 +42,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/datasource'
                 x-content-type: application/json
+        401:
+          $ref: '#/components/responses/UnauthorizedError'
       x-swagger-router-controller: DatasourceController
   /applications:
     get:
@@ -153,7 +157,6 @@ paths:
       - name: datasourceCode
         in: path
         required: true
-        style: form
         explode: true
         schema:
           type: string
@@ -188,7 +191,6 @@ paths:
       - name: datasourceCode
         in: path
         required: true
-        style: form
         explode: true
         schema:
           type: string
@@ -204,11 +206,17 @@ paths:
                 x-content-type: application/json
       x-swagger-router-controller: AsmController
 components:
+  responses:
+    UnauthorizedError:
+      description: Authentication information is missing or invalid
+      headers:
+        WWW_Authenticate:
+          schema:
+            type: string
   securitySchemes:
-    Bearer:
+    basicAuth:
       type: http
-      scheme: bearer
-      bearerFormat: JWT
+      scheme: basic
   schemas:
     datasource:
       type: object

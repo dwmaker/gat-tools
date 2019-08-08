@@ -10,11 +10,11 @@ controller.listNetsmsVersion = function(req, res, next)
 	NetsmsVersionControllerService.listNetsmsVersion(datasourceCode)
 	.then((data) =>
 	{
-		return res.send(data);
+		return res.status(200).send(data);
 	})
 	.catch((err) =>
 	{
-		return next(err);
+		return res.status(500).send(err);
 	});
 }
 

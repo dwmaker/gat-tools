@@ -9,7 +9,7 @@ function(datasourceCode)
 {
 	return new Promise((resolve, reject) =>
 	{
-		fs.readFile(path.join("data", 'asmdisk-data-' + datasourceCode + '.json'), (err, data) => 
+		fs.readFile(path.join("data", 'asmdisk-data-' + datasourceCode + '.json'), {encoding: "latin1"}, (err, data) => 
 		{
 			if (err) return reject(err);
 			try

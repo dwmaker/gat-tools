@@ -10,11 +10,11 @@ controller.listAsmdisks = function(req, res, next)
 	AsmControllerService.listAsmdisks(datasourceCode)
 	.then((data) =>
 	{
-		return res.send(data);
+		return res.status(200).send(data);
 	})
 	.catch((err) =>
 	{
-		return next(err);
+		return res.status(500).send(err);
 	});
 }
 

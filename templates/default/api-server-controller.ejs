@@ -13,11 +13,11 @@ let controller = {};
 	<%=scope.controlCode%>Service.<%= operation.operationCode %>(<%= swUtil.parameters.filter((p)=> p.operationCode==operation.operationCode && p.controlCode == scope.controlCode).map(p=> p.name).join(", ") %>)
 	.then((data) =>
 	{
-		return res.send(data);
+		return res.status(200).send(data);
 	})
 	.catch((err) =>
 	{
-		return next(err);
+		return res.status(500).send(err);
 	});
 }
 <%})%>
