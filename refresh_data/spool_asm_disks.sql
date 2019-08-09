@@ -1,3 +1,9 @@
+SET SERVEROUTPUT ON FORMAT TRUNCATED;
+set trimspool on;
+set linesize 10000;
+SET feedback off;
+WHENEVER SQLERROR EXIT FAILURE;
+WHENEVER OSERROR EXIT FAILURE;
 declare
 	rnum integer := 0;
 	
@@ -62,4 +68,4 @@ begin
 	dbms_output.put_line(']');
 end;
 /
-
+exit;
