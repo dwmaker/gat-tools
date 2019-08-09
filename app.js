@@ -5,6 +5,7 @@ const swaggerUiExpress = require('swagger-ui-express');
 const jsyaml = require('js-yaml');
 const http = require('http');
 const bodyParser = require('body-parser');
+var logger = require('morgan');
 const authService = require("./services/auth-service.js");
 const apiRouter = require('./api-router.js');
 
@@ -13,6 +14,7 @@ var spec = fs.readFileSync(`${__dirname}/swagger.yaml`, 'utf8');
 var swaggerDoc = jsyaml.safeLoad(spec);
 
 var app = express();
+app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json({strict: false}));
@@ -32,10 +34,5 @@ app.use('/api/v1', apiRouter);
 
 
 var server = http.createServer(app);
-var serverPort = 3000;
-server.listen(serverPort, 
-function() 
-{
-	console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
-	console.log('Swagger-ui is available on http://localhost:%d/api-docs', serverPort);
-});
+
+module.exports = app;
