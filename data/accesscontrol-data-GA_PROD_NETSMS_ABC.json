@@ -2,4 +2,4 @@ ERROR:
 ORA-01017: invalid username/password; logon denied
 
 
-SP2-0751: Unable to connect to Oracle.  Exiting SQL*Plus
+SP2-0751: Não é possível estabelecer conexão com o Oracle. Saindo do SQL*Plus

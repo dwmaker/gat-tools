@@ -1,5 +1,16 @@
-ERROR:
-ORA-01017: invalid username/password; logon denied
-
-
-SP2-0751: Unable to connect to Oracle.  Exiting SQL*Plus
+[
+{
+"owner": "CORE",
+"name": "TR_LOGON",
+"valid": false,
+"enabled": false,
+"type": "logon"
+}
+,{
+"owner": "CORE",
+"name": "TR_MONITORA",
+"valid": true,
+"enabled": true,
+"type": "monitora"
+}
+]
