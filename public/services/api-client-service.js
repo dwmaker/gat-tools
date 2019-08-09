@@ -15,9 +15,13 @@ function($http)
 		{
 			let opt = 
 			{
-				"method": "GET", 
-				"url":  "/api/v1/datasources",
-				"params": {type, applicationCode}, 
+				method: "GET", 
+				url: "/api/v1/datasources",
+				params: {type, applicationCode}, 
+				headers: 
+				{
+					Authorization: "Basic cGF1bG86dGVzdGU="
+				}
 			};
 			return $http(opt);
 		},
@@ -29,9 +33,13 @@ function($http)
 		{
 			let opt = 
 			{
-				"method": "GET", 
-				"url":  "/api/v1/applications",
-				"params": {}, 
+				method: "GET", 
+				url: "/api/v1/applications",
+				params: {}, 
+				headers: 
+				{
+					Authorization: "Basic cGF1bG86dGVzdGU="
+				}, 
 			};
 			return $http(opt);
 		},
@@ -39,9 +47,13 @@ function($http)
 		{
 			let opt = 
 			{
-				"method": "GET", 
-				"url":  "/api/v1/cenarios",
-				"params": {}, 
+				method: "GET", 
+				url: "/api/v1/cenarios",
+				params: {}, 
+				headers: 
+				{
+					Authorization: "Basic cGF1bG86dGVzdGU="
+				}, 
 			};
 			return $http(opt);
 		},
@@ -49,9 +61,13 @@ function($http)
 		{
 			let opt = 
 			{
-				"method": "GET", 
-				"url":  "/api/v1/environments",
-				"params": {}, 
+				method: "GET", 
+				url: "/api/v1/environments",
+				params: {}, 
+				headers: 
+				{
+					Authorization: "Basic cGF1bG86dGVzdGU="
+				}, 
 			};
 			return $http(opt);
 		},
@@ -63,9 +79,13 @@ function($http)
 		{
 			let opt = 
 			{
-				"method": "GET", 
-				"url":  "/api/v1/netsms-version/{datasourceCode}".replace("{datasourceCode}", datasourceCode),
-				"params": {}, 
+				method: "GET", 
+				url: "/api/v1/netsms-version/{datasourceCode}".replace("{datasourceCode}", datasourceCode),
+				params: {}, 
+				headers: 
+				{
+					Authorization: "Basic cGF1bG86dGVzdGU="
+				}, 
 			};
 			return $http(opt);
 		},
@@ -77,9 +97,13 @@ function($http)
 		{
 			let opt = 
 			{
-				"method": "GET", 
-				"url":  "/api/v1/netsms-parameter/{datasourceCode}".replace("{datasourceCode}", datasourceCode),
-				"params": {}, 
+				method: "GET", 
+				url: "/api/v1/netsms-parameter/{datasourceCode}".replace("{datasourceCode}", datasourceCode),
+				params: {}, 
+				headers: 
+				{
+					Authorization: "Basic cGF1bG86dGVzdGU="
+				}, 
 			};
 			return $http(opt);
 		},
@@ -91,9 +115,13 @@ function($http)
 		{
 			let opt = 
 			{
-				"method": "GET", 
-				"url":  "/api/v1/accesscontrols/{datasourceCode}".replace("{datasourceCode}", datasourceCode),
-				"params": {type}, 
+				method: "GET", 
+				url: "/api/v1/accesscontrols/{datasourceCode}".replace("{datasourceCode}", datasourceCode),
+				params: {type}, 
+				headers: 
+				{
+					Authorization: "Basic cGF1bG86dGVzdGU="
+				}, 
 			};
 			return $http(opt);
 		},
@@ -105,9 +133,13 @@ function($http)
 		{
 			let opt = 
 			{
-				"method": "GET", 
-				"url":  "/api/v1/asm-disks/{datasourceCode}".replace("{datasourceCode}", datasourceCode),
-				"params": {}, 
+				method: "GET", 
+				url: "/api/v1/asm-disks/{datasourceCode}".replace("{datasourceCode}", datasourceCode),
+				params: {}, 
+				headers: 
+				{
+					Authorization: "Basic cGF1bG86dGVzdGU="
+				}, 
 			};
 			return $http(opt);
 		},

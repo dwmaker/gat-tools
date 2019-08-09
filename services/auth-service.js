@@ -1,13 +1,12 @@
 'use strict';
 const passport = require("passport");
 const BasicStrategy = require('passport-http').BasicStrategy;
-
+const LoginDao = require("../dao/login-dao.js");
 let service = {};
 
-
-let logins = [{username:"paulo", password:"teste"}]
+let logins = [{username:"paulo", password: "teste"}]
 let users  = [{username:"paulo", access:[ "get:datasource", "write:datasource", "search:datasource", "delete:datasource" ]}]
-let LoginDAO = 
+let loginDAO = 
 {
 	get: (par) =>
 	{
@@ -32,27 +31,26 @@ let UserDAO =
 	}
 }
 
-
 passport.use(new BasicStrategy(
 	function(username, password, callback) 
 	{
-		LoginDAO.get({ username: username })
+		loginDAO.get({ username: username })
 		.then((login)=>
 		{
-			if (!login) { return callback(null, false); }
+			if (!login) { return callback('Invalid Credentials', undefined); }
 			if (login.password != password)
 			{
-				return callback('Invalid passow', false);
+				return callback('Invalid password', undefined);
 			}
 			
 			UserDAO.get({ username: login.username })
 			.then((user)=>
 			{
-				return callback(null, user);
+				return callback(undefined, user);
 			})
 			.catch((err)=>
 			{
-				return callback(err);
+				return callback(err, undefined);
 			})
 		})
 		.catch((err)=>

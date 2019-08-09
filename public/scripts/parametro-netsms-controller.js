@@ -1,41 +1,49 @@
 
-angular.module('myApp').controller('parametro-netsms-controller', ['$scope','$http', 'environment-service', 'cenario-service', 'datasource-service', 'netsms-parameter-service', 'api-client-service',
-function($scope, $http, environmentService, cenarioService, datasourceService, netsmsParameterService, apiClientService)
+angular.module('myApp').controller('parametro-netsms-controller', ['$scope', 'environment-service', 'cenario-service', 'netsms-parameter-service', 'api-client-service',
+function($scope,  environmentService, cenarioService, netsmsParameterService, apiClientService)
 {
+	$scope.$watch('progress', function(a)
+	{
+		if(typeof a === 'number')
+		{
+			$("#loadMe").modal({
+			  backdrop: "static",
+			  keyboard: false,
+			  show: true //Display loader!
+			});
+		}
+		else
+		{
+			$("#loadMe").modal("hide");
+		}
+	});
 	$scope.init = function()
 	{
-		
+
 		let environments;
 		let cenarios;
 		let datasources;
+
 		
-		$scope.$watch('progress', function() 
-		{
-			$scope.apply();
-		});
-		
-		
+
 		Promise.all([
 		environmentService.list({}), 
 		cenarioService.list({applicationCode:"NETSMS"}), 
-		datasourceService.list({type:"app", applicationCode:"NETSMS"})
+		apiClientService.DatasourceController.listDatasources("app", "NETSMS")
 		])
 		.then((res)=>
-		{	
+		{
 			let environments = res[0].data;
 			let cenarios = res[1].data;
 			let datasources = res[2].data;
-			
 			let total = datasources.length;
 			let count = 0;
-			
 			datasources.forEach((datasource)=>
 			{
 				netsmsParameterService.list(datasource.code)
 				.then((res)=>
 				{
 					onData(res, datasource); 
-					
 					if(++count == total) onComplete(environments, cenarios, datasources);
 				})
 				.catch((res)=>
@@ -46,27 +54,30 @@ function($scope, $http, environmentService, cenarioService, datasourceService, n
 			})
 			function onData(res, datasource)
 			{
-				$scope.progress = count / total
-				//if(datasource.code=="GA_CERT_NETSMS_BH")alert(datasource.code +" => "+ res.status)
+				$scope.progress = count / total;
 				if([200, 201, 202].includes(res.status))
 				{
-					datasource.status = "L"
-					datasource.data = res.data
+					datasource.status = "L";
+					datasource.data = res.data;
 				}
 				else
 				{
-					datasource.status = "E"
-				}				
+					datasource.status = "E";
+				}
 			}
-			
 			function onComplete(environments, cenarios, datasources)
 			{
 				cenarios.forEach(cen => cen.visivel = true)
 				environments.filter($scope.filtrar({"code":["PROD","CERT"]})).forEach(env => env.visivel = true)
-				
 				let list = [];
-				datasources.filter((ds)=>{return Array.isArray(ds.data)}).forEach((ds)=>
-				{ds.data.forEach((par)=>{if(!list.includes(par.code)) list.push(par.code)})
+				datasources.filter((ds)=>{return Array.isArray(ds.data)})
+				.forEach((ds)=>
+				{
+					ds.data
+					.forEach((par)=>
+					{
+						if(!list.includes(par.code)) list.push(par.code)
+					});
 				})
 				list.sort();
 				let parametros = list.map((item)=>{return {code:item, visivel:false}})
@@ -95,7 +106,7 @@ function($scope, $http, environmentService, cenarioService, datasourceService, n
 			throw res;
 		});
 	};
-	
+
 	$scope.filtrar = function(f)
 	{
 		function comp(p1, p2)
@@ -112,7 +123,7 @@ function($scope, $http, environmentService, cenarioService, datasourceService, n
 			});
 			return out;
 		}
-		
+
 		return function(a)
 		{
 			let val = true;
@@ -127,7 +138,6 @@ function($scope, $http, environmentService, cenarioService, datasourceService, n
 					let val2 = comp(a[key], f[p]);
 					if(equ=="" && !val2) val = false;
 					if(equ=="!" && val2) val = false;
-					//alert("p:"+p+"\r\na:"+JSON.stringify(a)+"\r\nf:"+JSON.stringify(f)+"\r\nval2:"+val2)
 				}
 			});
 			return val;

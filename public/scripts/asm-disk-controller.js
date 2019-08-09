@@ -1,5 +1,5 @@
-angular.module('myApp').controller('asm-disk-controller', ['$scope', 'asm-disk-service', 'Datatable', 'datasource-service', 'api-client-service',
-function($scope, asmDiskService, Datatable, datasourceService, apiClientService)
+angular.module('myApp').controller('asm-disk-controller', ['$scope', 'asm-disk-service', 'Datatable', 'api-client-service',
+function($scope, asmDiskService, Datatable, apiClientService)
 {
 	$scope.datatable = new Datatable(
 	{
@@ -14,7 +14,6 @@ function($scope, asmDiskService, Datatable, datasourceService, apiClientService)
 			{ name: 'name', width: 260 },
 			{ name: 'path', width: 399 },			
 		]
-		//,database: asmDiskService.getDisks()
 	});
 	
 	$scope.$watch('progress', function() 
@@ -22,10 +21,9 @@ function($scope, asmDiskService, Datatable, datasourceService, apiClientService)
 		
 	});
 	
-	
 	$scope.progress = 0.01;
 	$scope.messages=[];
-	datasourceService.list({type:"asm"})
+	apiClientService.DatasourceController.listDatasources("asm")
 	.then(
 	(res)=>
 	{
@@ -62,11 +60,6 @@ function($scope, asmDiskService, Datatable, datasourceService, apiClientService)
 			})
 			return promise; 
 		});
-		
-	
-		
-			
-		
 	})
 	.catch(
 	(err)=>
@@ -74,14 +67,14 @@ function($scope, asmDiskService, Datatable, datasourceService, apiClientService)
 		console.error(err);
 	})
 	
-	 $scope.exportData = function ()
-	 {
+	$scope.exportData = function ()
+	{
 		var options = 
 		{
 			headers: true
 		}; 
-       alasql('SELECT * INTO XLSX(?,?) FROM ?',["export.xlsx", options, $scope.datatable.displaydata]);
-    };
+		alasql('SELECT * INTO XLSX(?,?) FROM ?',["export.xlsx", options, $scope.datatable.displaydata]);
+	};
 	
 	
 }]);
