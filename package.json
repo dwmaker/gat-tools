@@ -1,11 +1,12 @@
 {
   "name": "gat-tools",
-  "version": "0.0.1",
-  "description": "Ferramenta de automa��o para processos da Gest�o de Ambientes de Testes.",
+  "version": "0.0.2",
+  "description": "Ferramenta para auxílio na Administração dos ambientes de Testes e Certificação.\r\nGAT Tools possui recursos de administração de banco de dados unido com as regras de negócio das aplicações: NETSM, Atlas, entre outras.",
   "main": "index.js",
   "scripts": {
     "prestart": "npm install",
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [
     "swagger"
