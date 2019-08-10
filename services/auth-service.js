@@ -1,31 +1,20 @@
 'use strict';
 const passport = require("passport");
 const BasicStrategy = require('passport-http').BasicStrategy;
-const LoginDao = require("../dao/login-dao.js");
+const loginDAO = require("../dao/login-dao.js");
 let service = {};
 
-let logins = [{username:"paulo", password: "teste"}]
-let users  = [{username:"paulo", access:[ "get:datasource", "write:datasource", "search:datasource", "delete:datasource" ]}]
-let loginDAO = 
-{
-	get: (par) =>
-	{
-		return new Promise((resolve, reject)=>
-		{
-			let result = logins.filter(login => login.username == par.username);
-			if(result.length==0) return reject("no data found")
-			return resolve(result[0]);
-		})
-	}
-}
+let users = [{displayName:"Paulo Ponciano", userId: 500, access:[ "get:datasource", "write:datasource", "search:datasource", "delete:datasource" ]}]
+
 let UserDAO = 
 {
 	get: (par) =>
 	{
 		return new Promise((resolve, reject)=>
 		{
-			let result = users.filter(users => users.username == par.username);
-			if(result.length==0) return reject("no data found")
+			let result = users.filter(users => users.userId == par.userId);
+			if(result.length==0) return reject("no data found");
+			if(result.length>1) return reject("too many rows")
 			return resolve(result[0]);
 		})
 	}
@@ -43,7 +32,7 @@ passport.use(new BasicStrategy(
 				return callback('Invalid password', undefined);
 			}
 			
-			UserDAO.get({ username: login.username })
+			UserDAO.get({ userId: login.userId })
 			.then((user)=>
 			{
 				return callback(undefined, user);
@@ -55,7 +44,7 @@ passport.use(new BasicStrategy(
 		})
 		.catch((err)=>
 		{
-			return callback(err);
+			return callback(err, undefined);
 		})
 	}
 ));

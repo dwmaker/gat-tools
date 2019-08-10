@@ -1,0 +1,1 @@
+angular.module('myApp', ['ngRoute', 'ui.bootstrap', 'base64']);

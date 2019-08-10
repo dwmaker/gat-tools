@@ -16,9 +16,13 @@ function($http)
 		{
 			let opt = 
 			{
-				"method": <%- JSON.stringify(ope.method.toUpperCase())%>, 
-				"url":  <%- JSON.stringify(path.posix.join("/api/v1" , ope.path))%><%swUtil.parameters.filter((par)=> par.operationCode==ope.operationCode && par.controlCode == ope.controlCode && par.in=="path").forEach((par)=>{%>.replace("{<%-par.name%>}", <%-par.name%>)<%}) %>,
-				"params": {<%= swUtil.parameters.filter((par)=> par.operationCode==ope.operationCode && par.controlCode == ope.controlCode && par.in=="query").map(par=> par.name).join(", ") %>}, 
+				method: <%- JSON.stringify(ope.method.toUpperCase())%>, 
+				url: <%- JSON.stringify(path.posix.join("/api/v1" , ope.path))%><%swUtil.parameters.filter((par)=> par.operationCode==ope.operationCode && par.controlCode == ope.controlCode && par.in=="path").forEach((par)=>{%>.replace("{<%-par.name%>}", <%-par.name%>)<%}) %>,
+				params: {<%= swUtil.parameters.filter((par)=> par.operationCode==ope.operationCode && par.controlCode == ope.controlCode && par.in=="query").map(par=> par.name).join(", ") %>},
+				headers: 
+				{
+					Authorization: "Basic cGF1bG86dGVzdGU="
+				}, 
 			};
 			return $http(opt);
 		},<% }) %>

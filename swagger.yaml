@@ -31,7 +31,8 @@ paths:
         schema:
           type: string
       security:
-        - basicAuth: []
+        - basicAuth:
+          - search:datasource
       responses:
         200:
           description: A JSON array of datasource
@@ -129,6 +130,24 @@ paths:
                   $ref: '#/components/schemas/cenario'
                 x-content-type: application/json
       x-swagger-router-controller: ApplicationController
+  /profile:
+    get:
+      tags:
+      - Authentication
+      summary: Returns current User
+      x-swagger-router-controller: Authentication
+      operationId: getProfile
+      parameters: []
+      security:
+        - basicAuth: []
+      responses:
+        200:
+          description: A JSON User object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+                x-content-type: application/json
   /environments:
     get:
       tags:
@@ -218,6 +237,15 @@ components:
       type: http
       scheme: basic
   schemas:
+    user:
+      type: object
+      properties:
+        username: 
+          type: string
+        firstName: 
+          type: string
+        lastName: 
+          type: string
     datasource:
       type: object
       properties:

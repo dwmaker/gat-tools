@@ -1,19 +1,21 @@
 'use strict';
-let logins = [{username:"paulo", password: "teste"}]
+let logins = 
+[
+	{username:"paulo", password: "teste", userId: 500},
+	{username:"paulo.ponciano@spread.com.br", password: "teste", userId: 500}
+];
 
-function DAO(connection)
+let loginDAO = {};
+
+loginDAO.get = function(par)
 {
-	this.connection = connection;
-	this.get = (par) =>
+	return new Promise((resolve, reject)=>
 	{
-		return new Promise((resolve, reject)=>
-		{
-			let result = logins.filter(login => login.username == par.username);
-			if(result.length==0) return reject("no data found")
-			return resolve(result[0]);
-		})
-	}
-};
+		let result = logins.filter(login => login.username == par.username);
+		if(result.length==0) return reject("no data found")
+		return resolve(result[0]);
+	})
+}
 
-module.exports = DAO;
+module.exports = loginDAO;
 

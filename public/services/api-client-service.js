@@ -17,11 +17,11 @@ function($http)
 			{
 				method: "GET", 
 				url: "/api/v1/datasources",
-				params: {type, applicationCode}, 
+				params: {type, applicationCode},
 				headers: 
 				{
 					Authorization: "Basic cGF1bG86dGVzdGU="
-				}
+				}, 
 			};
 			return $http(opt);
 		},
@@ -35,11 +35,7 @@ function($http)
 			{
 				method: "GET", 
 				url: "/api/v1/applications",
-				params: {}, 
-				headers: 
-				{
-					Authorization: "Basic cGF1bG86dGVzdGU="
-				}, 
+				params: {}
 			};
 			return $http(opt);
 		},
@@ -49,11 +45,7 @@ function($http)
 			{
 				method: "GET", 
 				url: "/api/v1/cenarios",
-				params: {}, 
-				headers: 
-				{
-					Authorization: "Basic cGF1bG86dGVzdGU="
-				}, 
+				params: {}
 			};
 			return $http(opt);
 		},
@@ -63,11 +55,7 @@ function($http)
 			{
 				method: "GET", 
 				url: "/api/v1/environments",
-				params: {}, 
-				headers: 
-				{
-					Authorization: "Basic cGF1bG86dGVzdGU="
-				}, 
+				params: {}
 			};
 			return $http(opt);
 		},
@@ -81,11 +69,7 @@ function($http)
 			{
 				method: "GET", 
 				url: "/api/v1/netsms-version/{datasourceCode}".replace("{datasourceCode}", datasourceCode),
-				params: {}, 
-				headers: 
-				{
-					Authorization: "Basic cGF1bG86dGVzdGU="
-				}, 
+				params: {}
 			};
 			return $http(opt);
 		},
@@ -99,11 +83,21 @@ function($http)
 			{
 				method: "GET", 
 				url: "/api/v1/netsms-parameter/{datasourceCode}".replace("{datasourceCode}", datasourceCode),
-				params: {}, 
-				headers: 
-				{
-					Authorization: "Basic cGF1bG86dGVzdGU="
-				}, 
+				params: {}
+			};
+			return $http(opt);
+		},
+	};
+
+	this.Authentication = 
+	{
+		getCurrentUser: function()
+		{
+			let opt = 
+			{
+				method: "GET", 
+				url: "/api/v1/profile",
+				params: {}
 			};
 			return $http(opt);
 		},
@@ -117,11 +111,7 @@ function($http)
 			{
 				method: "GET", 
 				url: "/api/v1/accesscontrols/{datasourceCode}".replace("{datasourceCode}", datasourceCode),
-				params: {type}, 
-				headers: 
-				{
-					Authorization: "Basic cGF1bG86dGVzdGU="
-				}, 
+				params: {type}
 			};
 			return $http(opt);
 		},
@@ -135,11 +125,7 @@ function($http)
 			{
 				method: "GET", 
 				url: "/api/v1/asm-disks/{datasourceCode}".replace("{datasourceCode}", datasourceCode),
-				params: {}, 
-				headers: 
-				{
-					Authorization: "Basic cGF1bG86dGVzdGU="
-				}, 
+				params: {}
 			};
 			return $http(opt);
 		},

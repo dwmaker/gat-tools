@@ -7,6 +7,7 @@ controller.listDatasources = function(req, res, next)
 {
 	let type = req.query.type;
 	let applicationCode = req.query.applicationCode;
+	
 	DatasourceControllerService.listDatasources(type, applicationCode)
 	.then((data) =>
 	{
