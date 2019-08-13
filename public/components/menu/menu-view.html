@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top justify-content-between" ng-controller="menu-controller">
+	<a class="font-italic font-weight-bold text-light navbar-brand" style="font-size: large;"><i class="fas fa-tools"></i> GAT Tools</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<!-- NAVBAR -->
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="/#!/home">Home <span class="sr-only">(current)</span></a>
+			</li>
+			<!--
+			<li class="nav-item">
+				<a class="nav-link" href="#">Link</a>
+			</li>
+			-->
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="javascript: void(0)" id="menuNetsms" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> NETSMS </a>
+				<div class="dropdown-menu" aria-labelledby="menuNetsms">
+					<a class="dropdown-item" href="report_sn_versao.html">Versão</a>
+					<a class="dropdown-item" href="report_sn_parametro.html">Parametros</a>
+					<!--
+					<a class="dropdown-item" href="#">Another action</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Something else here</a>
+					-->
+				</div>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="javascript: void(0)" id="menuDba" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> DBA </a>
+				<div class="dropdown-menu" aria-labelledby="menuDba">
+					<a class="dropdown-item" href="lst_database_disks.html">ASM Disks</a>
+					<a class="dropdown-item" href="#!/controle-acesso">Controle de Acesso</a>
+					<!--
+					<a class="dropdown-item" href="#">Another action</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Something else here</a>
+					-->
+				</div>
+			</li>
+			<!--
+			<li class="nav-item">
+			<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+			</li>
+			-->
+		</ul>
+	</div>
+	<div class="form-inline my-2 my-lg-0">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item dropdown">
+				<a ng-if="getProfile()" class="nav-link dropdown-toggle" href="javascript: void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-user-circle"></i> <span ng-bind="getProfile().displayName"></span>
+				</a>
+			
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="#!/profile">Perfil</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#!/logoff">Logoff</a>
+				</div>
+			</li>
+		</ul>
+		<a ng-if="!getProfile()" href="#!/login" role="button" >
+			<span>Log In</span>
+		</a>
+	</div>
+</nav>

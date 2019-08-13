@@ -9,12 +9,13 @@ function(type, applicationCode)
 {
 	return new Promise((resolve, reject) =>
 	{
-		fs.readFile(path.join("data", `datasource-data-${type}.json`), {encoding: "latin1"}, (err, data) => 
+		fs.readFile(path.join("data", `datasource-data.json`), {encoding: "utf8"}, (err, data) => 
 		{
 			if (err) return reject(err);
 			try
 			{
 				let json = JSON.parse(data);
+				if(typeof type            == "string") json = json.filter(val => type == val.type)
 				if(typeof applicationCode == "string") json = json.filter(val => applicationCode == val.applicationCode)
 				resolve(json);
 			}

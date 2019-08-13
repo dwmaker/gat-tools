@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>GAT - Gestao de Ambiente</title>
+		<base href="/">
+		<link rel="stylesheet" href="lib/css/bootstrap.min.css" >
+		<link rel="stylesheet" href="uib/dist/ui-bootstrap-csp.css">
+		<link rel="stylesheet" href="lib/css/all.css">
+		<script src="lib/jquery.min.js"></script>
+		<script src="lib/js/bootstrap.min.js" ></script>
+		<script src="lib/angular.min.js"></script>
+		<script src="lib/angular-route.min.js"></script>
+		<script src="lib/alasql.min.js"></script>
+		<script src="lib/xlsx.full.min.js"></script>
+		<script src="lib/angular-base64/angular-base64.min.js"></script>
+		<script src="uib/dist/ui-bootstrap-tpls.js"></script>
+		<script src="uib/dist/ui-bootstrap.js"></script>
+		<script src="app.module.js"></script>
+		<script src="scripts/menu-controller.js"></script>
+		<script src="components/authentication/authentication-service.js"></script>
+		<script src="components/menu/menu-directive.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<menu></menu>
+		<main role="main" style="margin-left: 30px;margin-right: 30px; margin-top: 60px; ">
+			<div class="">
+				<h2>Versionamento NETSMS (database)</h2>
+				<small><i>Atualizado em 2019-08-13 09:39</i></small>
+				</br>
+				<table class="table table-bordered table-sm">
+					<thead  class="thead-dark">
+						<tr>
+							<th style="width: 15%;">Ambiente \ Cenario</th>
+							<th style="width: 10.63%;">BRA <br></th>
+							<th style="width: 10.63%;">SUL <br></th>
+							<th style="width: 10.63%;">ISP <br></th>
+							<th style="width: 10.63%;">BH <br></th>
+							<th style="width: 10.63%;">SOC <br></th>
+							<th style="width: 10.63%;">SAO <br></th>
+							<th style="width: 10.63%;">ABC <br></th>
+							<th style="width: 10.63%;">CTV <br></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th title="Produção">PROD</th>
+							<td class=" text-center" title="DBLink: GA_PROD_NETSMS_BRA.NET&#13;Host: 5.16.8.187&#13;Port: 1521&#13;SID: DB09&#13;Versao: 9.4.3&#13;Implantacao: 2019-08-04&#13;">9.4.3</td>
+							<td class=" text-center" title="DBLink: GA_PROD_NETSMS_SUL.NET&#13;Host: 5.16.8.193&#13;Port: 1521&#13;SID: SUL&#13;Versao: 9.4.3&#13;Implantacao: 2019-08-04&#13;">9.4.3</td>
+							<td class=" text-center" title="DBLink: GA_PROD_NETSMS_ISP.NET&#13;Host: 5.16.8.189&#13;Port: 1521&#13;SID: ISP&#13;Versao: 9.4.3&#13;Implantacao: 2019-08-04&#13;">9.4.3</td>
+							<td class=" text-center" title="DBLink: GA_PROD_NETSMS_BH.NET&#13;Host: 5.16.8.190&#13;Port: 1521&#13;SID: BHPR&#13;Versao: 9.4.3&#13;Implantacao: 2019-08-04&#13;">9.4.3</td>
+							<td class=" text-center" title="DBLink: GA_PROD_NETSMS_SOC.NET&#13;Host: 5.16.8.191&#13;Port: 1521&#13;SID: DB09S&#13;Versao: 9.4.3&#13;Implantacao: 2019-08-04&#13;">9.4.3</td>
+							<td class=" text-center" title="DBLink: GA_PROD_NETSMS_SAO.NET&#13;Host: 5.16.8.84&#13;Port: 1521&#13;SID: SPO&#13;Versao: 9.4.3&#13;Implantacao: 2019-08-04&#13;">9.4.3</td>
+							<td class=" text-center" title="DBLink: GA_PROD_NETSMS_ABC.NET&#13;Host: 5.16.8.195&#13;Port: 1521&#13;SID: ABC&#13;Versao: 9.4.3&#13;Implantacao: 2019-08-04&#13;">9.4.3</td>
+							<td class=" text-center" title="DBLink: GA_PROD_NETSMS_CTV.NET&#13;Host: 5.16.8.133&#13;Port: 1528&#13;SID: CTV&#13;Versao: 9.4.3&#13;Implantacao: 2019-08-04&#13;">9.4.3</td>
+						</tr>
+						<tr>
+							<th title="Certificação">CERT</th>
+							<td class="bg-info text-white text-center" title="DBLink: GA_CERT_NETSMS_BRA.NET&#13;Host: 5.17.8.208&#13;Port: 1523&#13;SID: HHDB09N1&#13;Versao: 9.4.4&#13;Implantacao: 2019-07-24&#13;Message: &#13;Versao superior a de PROD&#13;">9.4.4</td>
+							<td class="bg-info text-white text-center" title="DBLink: GA_CERT_NETSMS_SUL.NET&#13;Host: 5.17.8.208&#13;Port: 1523&#13;SID: HHSULN1&#13;Versao: 9.4.4&#13;Implantacao: 2019-07-24&#13;Message: &#13;Versao superior a de PROD&#13;">9.4.4</td>
+							<td class="bg-info text-white text-center" title="DBLink: GA_CERT_NETSMS_ISP.NET&#13;Host: 10.28.20.25&#13;Port: 1521&#13;SID: HHISPN1&#13;Versao: 9.4.4&#13;Implantacao: 2019-07-24&#13;Message: &#13;Versao superior a de PROD&#13;">9.4.4</td>
+							<td class="bg-info text-white text-center" title="DBLink: GA_CERT_NETSMS_BH.NET&#13;Host: 10.28.64.165&#13;Port: 1521&#13;Service Name: HHBHN1&#13;Versao: 9.4.4&#13;Implantacao: 2019-07-24&#13;Message: &#13;Versao superior a de PROD&#13;">9.4.4</td>
+							<td class="bg-secondary text-warning text-center" title="DBLink: GA_CERT_NETSMS_SOC.NET&#13;Host: 5.17.8.208&#13;Port: 1523&#13;SID: HHSOCN1&#13;Message: &#13;ORA-01017: invalid username/password; logon denied
+ORA-02063: preceding line from GA_CERT_NETSMS_SOC&#13;">!</td>
+							<td class="bg-info text-white text-center" title="DBLink: GA_CERT_NETSMS_SAO.NET&#13;Host: 5.17.8.208&#13;Port: 1523&#13;SID: HHSPON1&#13;Versao: 9.4.4&#13;Implantacao: 2019-07-24&#13;Message: &#13;Versao superior a de PROD&#13;">9.4.4</td>
+							<td class="bg-info text-white text-center" title="DBLink: GA_CERT_NETSMS_ABC.NET&#13;Host: 5.17.8.208&#13;Port: 1523&#13;SID: HHBRIN1&#13;Versao: 9.4.4&#13;Implantacao: 2019-07-24&#13;Message: &#13;Versao superior a de PROD&#13;">9.4.4</td>
+							<td class="bg-info text-white text-center" title="DBLink: GA_CERT_NETSMS_CTV.NET&#13;Host: 5.16.8.162&#13;Port: 1525&#13;Service Name: HHCTV01&#13;Versao: 9.4.4&#13;Implantacao: 2019-07-24&#13;Message: &#13;Versao superior a de PROD&#13;">9.4.4</td>
+						</tr>
+						<tr>
+							<th title="">DEV1</th>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_DEV1_NETSMS_BRA.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_DEV1_NETSMS_SUL.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_DEV1_NETSMS_ISP.NET&#13;Host: 10.28.20.78&#13;Port: 1521&#13;Service Name: DISPHP&#13;Versao: 9.4.1&#13;Implantacao: 2019-07-04&#13;Proxima Versao: 9.4.2&#13;Proxima Implantacao: 2019-07-07&#13;Message: &#13;Obsoleto ha 27 dias&#13;">9.4.1</td>
+							<td class="bg-secondary text-warning text-center" title="DBLink: GA_DEV1_NETSMS_BH.NET&#13;Host: 10.28.20.78&#13;Port: 1521&#13;Service Name: DBHHP&#13;Message: &#13;ORA-12545: Connect failed because target host or object does not exist&#13;">!</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_DEV1_NETSMS_SOC.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_DEV1_NETSMS_SAO.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_DEV1_NETSMS_ABC.NET&#13;Host: 10.28.20.78&#13;Port: 1521&#13;Service Name: DBRIHP&#13;Versao: 9.4.1&#13;Implantacao: 2019-07-04&#13;Proxima Versao: 9.4.2&#13;Proxima Implantacao: 2019-07-07&#13;Message: &#13;Obsoleto ha 27 dias&#13;">9.4.1</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_DEV1_NETSMS_CTV.NET&#13;Host: 10.28.20.78&#13;Port: 1521&#13;Service Name: DCTV1HP&#13;Versao: 9.4.1&#13;Implantacao: 2019-07-04&#13;Proxima Versao: 9.4.2&#13;Proxima Implantacao: 2019-07-07&#13;Message: &#13;Obsoleto ha 27 dias&#13;">9.4.1</td>
+						</tr>
+						<tr>
+							<th title="">DEV3</th>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_DEV3_NETSMS_BRA.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_DEV3_NETSMS_SUL.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_DEV3_NETSMS_ISP.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_DEV3_NETSMS_BH.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_DEV3_NETSMS_SOC.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_DEV3_NETSMS_SAO.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_DEV3_NETSMS_ABC.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_DEV3_NETSMS_CTV.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+						</tr>
+						<tr>
+							<th title="">DEV4</th>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_DEV4_NETSMS_BRA.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-warning text-dark text-center" title="DBLink: GA_DEV4_NETSMS_SUL.NET&#13;Host: 5.17.8.14&#13;Port: 1523&#13;Service Name: DDSUL11F&#13;Versao: 9.4.2&#13;Implantacao: 2019-07-07&#13;Proxima Versao: 9.4.3&#13;Proxima Implantacao: 2019-08-04&#13;Message: &#13;Faltam 1 dias para Obsoleto&#13;">9.4.2</td>
+							<td class="bg-warning text-dark text-center" title="DBLink: GA_DEV4_NETSMS_ISP.NET&#13;Host: 5.17.8.208&#13;Port: 1523&#13;SID: MUCISP01&#13;Versao: 9.4.2&#13;Implantacao: 2019-07-07&#13;Proxima Versao: 9.4.3&#13;Proxima Implantacao: 2019-08-04&#13;Message: &#13;Faltam 1 dias para Obsoleto&#13;">9.4.2</td>
+							<td class="bg-warning text-dark text-center" title="DBLink: GA_DEV4_NETSMS_BH.NET&#13;Host: 5.17.8.14&#13;Port: 1523&#13;SID: DDBH13F&#13;Versao: 9.4.2&#13;Implantacao: 2019-07-07&#13;Proxima Versao: 9.4.3&#13;Proxima Implantacao: 2019-08-04&#13;Message: &#13;Faltam 1 dias para Obsoleto&#13;">9.4.2</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_DEV4_NETSMS_SOC.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_DEV4_NETSMS_SAO.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-warning text-dark text-center" title="DBLink: GA_DEV4_NETSMS_ABC.NET&#13;Host: 5.17.8.14&#13;Port: 1523&#13;SID: DDABC13F&#13;Versao: 9.4.2&#13;Implantacao: 2019-07-07&#13;Proxima Versao: 9.4.3&#13;Proxima Implantacao: 2019-08-04&#13;Message: &#13;Faltam 1 dias para Obsoleto&#13;">9.4.2</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_DEV4_NETSMS_CTV.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+						</tr>
+						<tr>
+							<th title="">SIT1</th>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT1_NETSMS_BRA.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT1_NETSMS_SUL.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT1_NETSMS_ISP.NET&#13;Host: 10.28.20.28&#13;Port: 1521&#13;Service Name: SISPHP&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-18&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+							<td class="bg-secondary text-warning text-center" title="DBLink: GA_SIT1_NETSMS_BH.NET&#13;Host: 10.28.20.78&#13;Port: 1521&#13;SID: SBHHP&#13;Message: &#13;ORA-12545: Connect failed because target host or object does not exist&#13;">!</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT1_NETSMS_SOC.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT1_NETSMS_SAO.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT1_NETSMS_ABC.NET&#13;Host: 10.28.20.28&#13;Port: 1521&#13;Service Name: SBRIHP&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-18&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT1_NETSMS_CTV.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+						</tr>
+						<tr>
+							<th title="">SIT2</th>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT2_NETSMS_BRA.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT2_NETSMS_SUL.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT2_NETSMS_ISP.NET&#13;Host: 10.28.20.78&#13;Port: 1521&#13;Service Name: SISPSP&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-18&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+							<td class="bg-secondary text-warning text-center" title="DBLink: GA_SIT2_NETSMS_BH.NET&#13;Host: 10.28.20.78&#13;Port: 1521&#13;Service Name: SBHSP&#13;Message: &#13;ORA-12545: Connect failed because target host or object does not exist&#13;">!</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT2_NETSMS_SOC.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT2_NETSMS_SAO.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT2_NETSMS_ABC.NET&#13;Host: 10.28.20.78&#13;Port: 1521&#13;Service Name: SBRISP&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-18&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT2_NETSMS_CTV.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+						</tr>
+						<tr>
+							<th title="">SIT3</th>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT3_NETSMS_BRA.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT3_NETSMS_SUL.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-warning text-dark text-center" title="DBLink: GA_SIT3_NETSMS_ISP.NET&#13;Host: 10.28.20.78&#13;Port: 1521&#13;Service Name: SISP3SP&#13;Versao: 9.4.2&#13;Implantacao: 2019-07-21&#13;Proxima Versao: 9.4.3&#13;Proxima Implantacao: 2019-08-04&#13;Message: &#13;Faltam 1 dias para Obsoleto&#13;">9.4.2</td>
+							<td class="bg-secondary text-warning text-center" title="DBLink: GA_SIT3_NETSMS_BH.NET&#13;Host: 10.28.20.78&#13;Port: 1521&#13;Service Name: SBH3SP&#13;Message: &#13;ORA-12545: Connect failed because target host or object does not exist&#13;">!</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT3_NETSMS_SOC.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT3_NETSMS_SAO.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-warning text-dark text-center" title="DBLink: GA_SIT3_NETSMS_ABC.NET&#13;Host: 10.28.20.78&#13;Port: 1521&#13;Service Name: SBRI3SP&#13;Versao: 9.4.2&#13;Implantacao: 2019-07-21&#13;Proxima Versao: 9.4.3&#13;Proxima Implantacao: 2019-08-04&#13;Message: &#13;Faltam 1 dias para Obsoleto&#13;">9.4.2</td>
+							<td class="bg-warning text-dark text-center" title="DBLink: GA_SIT3_NETSMS_CTV.NET&#13;Host: 10.28.20.78&#13;Port: 1521&#13;SID: SCTV1MG&#13;Versao: 9.4.2&#13;Implantacao: 2019-07-21&#13;Proxima Versao: 9.4.3&#13;Proxima Implantacao: 2019-08-04&#13;Message: &#13;Faltam 1 dias para Obsoleto&#13;">9.4.2</td>
+						</tr>
+						<tr>
+							<th title="Teste Integrado - LE">SIT4</th>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT4_NETSMS_BRA.NET&#13;Host: 5.17.8.208&#13;Port: 1523&#13;SID: TIBRA03F&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-18&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT4_NETSMS_SUL.NET&#13;Host: 5.17.8.208&#13;Port: 1523&#13;SID: TISUL66F&#13;Versao: 9.4.0&#13;Implantacao: 2019-05-28&#13;Proxima Versao: 9.4.1&#13;Proxima Implantacao: 2019-06-22&#13;Message: &#13;Obsoleto ha 42 dias&#13;">9.4.0</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT4_NETSMS_ISP.NET&#13;Host: 5.17.8.208&#13;Port: 1523&#13;SID: TIISP02F&#13;Versao: 9.3.9&#13;Implantacao: 2019-03-17&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT4_NETSMS_BH.NET&#13;Host: 5.17.8.208&#13;Port: 1523&#13;SID: TIBHPV1&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-17&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT4_NETSMS_SOC.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT4_NETSMS_SAO.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT4_NETSMS_ABC.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT4_NETSMS_CTV.NET&#13;Host: 5.17.8.208&#13;Port: 1523&#13;Service Name: TICTVLE2&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-17&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+						</tr>
+						<tr>
+							<th title="Teste Integrado - LD">SIT5</th>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT5_NETSMS_BRA.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT5_NETSMS_SUL.NET&#13;Host: 5.17.8.208&#13;Port: 1523&#13;SID: TISULPV1&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-17&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT5_NETSMS_ISP.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT5_NETSMS_BH.NET&#13;Host: 5.17.8.208&#13;Port: 1523&#13;SID: TIBH03F&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-17&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT5_NETSMS_SOC.NET&#13;Host: 5.17.8.208&#13;Port: 1523&#13;SID: BIGT&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-17&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT5_NETSMS_SAO.NET&#13;Host: 5.17.8.208&#13;Port: 1523&#13;SID: TISP03F&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-17&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT5_NETSMS_ABC.NET&#13;Host: 5.17.8.208&#13;Port: 1523&#13;SID: TIABC02F&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-17&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT5_NETSMS_CTV.NET&#13;Host: 5.17.8.208&#13;Port: 1523&#13;Service Name: TICTVLD1&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-17&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+						</tr>
+						<tr>
+							<th title="Stress Test">SIT6</th>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT6_NETSMS_BRA.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT6_NETSMS_SUL.NET&#13;Host: 5.17.8.31&#13;Port: 1521&#13;SID: SULST&#13;Versao: 9.4.0&#13;Implantacao: 2019-04-15&#13;Proxima Versao: 9.4.1&#13;Proxima Implantacao: 2019-06-22&#13;Message: &#13;Obsoleto ha 42 dias&#13;">9.4.0</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT6_NETSMS_ISP.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT6_NETSMS_BH.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT6_NETSMS_SOC.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT6_NETSMS_SAO.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT6_NETSMS_ABC.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT6_NETSMS_CTV.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+						</tr>
+						<tr>
+							<th title="Novo Sap BR">SIT7</th>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT7_NETSMS_BRA.NET&#13;Host: 5.17.8.25&#13;Port: 1523&#13;SID: BRASAMX&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-22&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT7_NETSMS_SUL.NET&#13;Host: 5.17.8.25&#13;Port: 1523&#13;SID: SULTOA&#13;Versao: 9.4.0&#13;Implantacao: 2019-04-30&#13;Proxima Versao: 9.4.1&#13;Proxima Implantacao: 2019-06-22&#13;Message: &#13;Obsoleto ha 42 dias&#13;">9.4.0</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT7_NETSMS_ISP.NET&#13;Host: 5.17.8.25&#13;Port: 1523&#13;SID: ISPSAMX&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-22&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+							<td class="bg-secondary text-warning text-center" title="DBLink: GA_SIT7_NETSMS_BH.NET&#13;Host: 5.17.8.25&#13;Port: 1523&#13;SID: BHSAMX&#13;Message: &#13;ORA-12505: TNS:listener does not currently know of SID given in connect descriptor&#13;">!</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT7_NETSMS_SOC.NET&#13;Host: RACNET-CLTFT01.DCING.CORP&#13;Port: 1521&#13;Service Name: SOCSAMX1&#13;Versao: 9.3.9&#13;Implantacao: 2018-06-15&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT7_NETSMS_SAO.NET&#13;Host: 5.17.8.25&#13;Port: 1523&#13;SID: SPOSAMX&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-22&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT7_NETSMS_ABC.NET&#13;Host: 5.17.8.25&#13;Port: 1523&#13;SID: BRISAMX&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-22&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT7_NETSMS_CTV.NET&#13;Host: RACNET-CLTFT01.DCING.CORP&#13;Port: 1521&#13;Service Name: DBRI1CTV&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-22&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+						</tr>
+						<tr>
+							<th title="">SIT8</th>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT8_NETSMS_BRA.NET&#13;Host: 10.28.64.166&#13;Port: 1521&#13;Service Name: DBRASP1&#13;Versao: 9.3.4&#13;Implantacao: 2019-01-15&#13;Proxima Versao: 9.3.7&#13;Proxima Implantacao: 2019-02-17&#13;Message: &#13;Obsoleto ha 167 dias&#13;">9.3.4</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT8_NETSMS_SUL.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT8_NETSMS_ISP.NET&#13;Host: 10.28.20.78&#13;Port: 1521&#13;Service Name: DISPSP&#13;Versao: 8.9.5&#13;Implantacao: 2017-03-19&#13;Proxima Versao: 8.9.6&#13;Proxima Implantacao: 2017-03-23&#13;Message: &#13;Obsoleto ha 863 dias&#13;">8.9.5</td>
+							<td class="bg-secondary text-warning text-center" title="DBLink: GA_SIT8_NETSMS_BH.NET&#13;Host: 10.28.20.78&#13;Port: 1521&#13;Service Name: DBHSP&#13;Message: &#13;ORA-12545: Connect failed because target host or object does not exist&#13;">!</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT8_NETSMS_SOC.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT8_NETSMS_SAO.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_SIT8_NETSMS_ABC.NET&#13;Host: 10.28.20.78&#13;Port: 1521&#13;Service Name: DBRISP&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-18&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_SIT8_NETSMS_CTV.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+						</tr>
+						<tr>
+							<th title="">UAT</th>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_UAT_NETSMS_BRA.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_UAT_NETSMS_SUL.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_UAT_NETSMS_ISP.NET&#13;Host: 10.28.20.78&#13;Port: 1521&#13;Service Name: UATVISP&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-18&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+							<td class="bg-secondary text-warning text-center" title="DBLink: GA_UAT_NETSMS_BH.NET&#13;Host: 10.28.20.78&#13;Port: 1521&#13;Service Name: UATVBH&#13;Message: &#13;ORA-12545: Connect failed because target host or object does not exist&#13;">!</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_UAT_NETSMS_SOC.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-light text-dark text-center" title="DBLink: GA_UAT_NETSMS_SAO.NET&#13;Message: &#13;DBLink nao configurado.&#13;">-</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_UAT_NETSMS_ABC.NET&#13;Host: 10.28.20.78&#13;Port: 1521&#13;Service Name: UATVBRI&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-18&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+							<td class="bg-danger text-white text-center" title="DBLink: GA_UAT_NETSMS_CTV.NET&#13;Host: 10.28.20.78&#13;Port: 1521&#13;Service Name: UATCTV&#13;Versao: 9.3.9&#13;Implantacao: 2019-04-18&#13;Proxima Versao: 9.4.0&#13;Proxima Implantacao: 2019-06-08&#13;Message: &#13;Obsoleto ha 56 dias&#13;">9.3.9</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</main>
+	</body>
+</html>

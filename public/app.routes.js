@@ -24,8 +24,8 @@ angular.module('myApp')
 	})
 	.when('/parametro-netsms', 
 	{
-		templateUrl: '/components/parametro-netsms/parametro-netsms-view.html',
-		controller: 'parametro-netsms-controller'
+		templateUrl: '/components/report-parametro-netsms/report-parametro-netsms-view.html',
+		controller: 'report-parametro-netsms-controller'
 	})
 	.when('/profile', 
 	{

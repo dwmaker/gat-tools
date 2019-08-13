@@ -9,6 +9,7 @@ const NetsmsParameterController = require("./controllers/NetsmsParameterControll
 const Authentication = require("./controllers/Authentication.js");
 const AccesscontrolController = require("./controllers/AccesscontrolController.js");
 const AsmController = require("./controllers/AsmController.js");
+const ReportNetsmsParameterController = require("./controllers/report-netsms-parameters-controller.js");
 let router = express.Router();
 router.use(morgan('dev'));
  
@@ -21,5 +22,6 @@ router.get("/profile", Authentication.basicAuth([]), Authentication.getProfile )
 router.get("/environments", ApplicationController.listEnvironments ); 
 router.get("/accesscontrols/:datasourceCode", AccesscontrolController.listAccesscontrols ); 
 router.get("/asm-disks/:datasourceCode", AsmController.listAsmdisks );
+router.get("/report-netsms-parameters", ReportNetsmsParameterController.reportNetsmsParameters);
 
 module.exports = router;

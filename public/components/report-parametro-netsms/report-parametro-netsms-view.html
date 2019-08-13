@@ -1,0 +1,140 @@
+<div class="" ng-init="init()">
+	<h2>Parametro NETSMS</h2>
+	<div class="alert alert-{{message.status}}" ng-repeat="message in messages">
+		<strong ng-bind="message.title"></strong> {{message.text}}
+	</div>
+	
+	
+
+	<!-- Modal -->
+	<div  class="modal fade" id="loadMe" tabindex="-1" role="dialog" aria-labelledby="loadMeLabel">
+		<div class="modal-dialog " role="document">
+			<div class="modal-content">
+				<div class="modal-body text-center">
+					<br>
+					<div class="loader"></div>
+					<div class="loader-txt">
+						<center>
+						<div class="text-primary">Carregando {{progress*100| number :0}} %
+						</div>
+						</center>
+					</div>
+					<br>
+						<div class="progress" >
+							<div class="progress-bar progress-bar-striped bg-info text-dark" style="width:{{ progress*100| number :0 }}%"></div>
+						</div>
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	<div class="container" style="display: none">
+		<div class="row">
+			
+	
+	
+			<div class="col-sm">
+				Cenários
+				<div class="overflow-auto" style="border: #000 1px solid; height: 20em; ">
+				<div class="checkbox" ng-repeat="cenario in cenarios">
+				<label class="bg-info" style="width: 100%; padding: 4px;">
+				<input type="checkbox" ng-model="cenario.visivel">
+				<span ng-bind="cenario.code"  ></span>
+				</label>
+				</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			<div class="col-sm">
+				Tipo de dados
+				<div class="overflow-auto" style="border: #000 1px solid;  height: 20em; ">
+					<div class="checkbox">
+						<label class="bg-info" style="width: 100%; padding: 4px;">
+						<input type="checkbox" ng-model="txt.visivel">
+						<span>Texto</span>
+						</label>
+					</div>
+					<div class="checkbox">
+						<label class="bg-info" style="width: 100%; padding: 4px;">
+						<input type="checkbox" ng-model="num.visivel">
+						<span>Numérico</span>
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="btn-group">
+		<button type="button" ng-click="exportData()" class="btn btn-light" title="Exportar para Planilha do Excel"> <i class="fas fa-file-excel text-primary"> </i> Exportar</button>
+		<button type="button" ng-click="exportData()" class="btn btn-light" title="Cenários"> <i class="fas fa-tasks text-warning"> </i> Cenários</button>
+	</div>
+
+	
+	<table class="table table-bordered table-sm table-striped"  id="example">
+		<thead class="thead-dark">
+			<tr>
+				<th rowspan=1 >Ambiente</th>
+				<th rowspan=1 >Parametro</th>
+				<th class="text-center" ng-repeat="cenario in data.cenarios" colspan="2"><span ng-bind="cenario.code"></span></th>
+
+				</tr>
+			<tr>
+				<th rowspan=1 >
+					<select>
+					<option>Todos</option>
+					<option ng-repeat="environment in data.environments" ng-bind="environment.code" ng-value="environment.code"/>
+					</select>
+				</th>
+				<th rowspan=1 >
+					<select>
+					<option>Todos</option>
+					<option ng-repeat="param in data.parameterCodes" ng-bind="param" ng-value="param"/>
+					</select>
+				</th>
+				<th  style="width: 25em;" ng-repeat-start="cenario in data.cenarios" ><span>Num</span></th>
+				<th  style="width: 25em;" ng-repeat-end ><span  >Text</span></th>
+
+			</tr>
+		</thead>
+		<tbody id="myTable">
+			<tr ng-repeat="row in data.pivot">
+				<td ng-bind="row.environmentCode"></td>
+				<td ng-bind="row.parameterCode"></td>
+				
+				<td 
+				ng-repeat-start="cenario in data.cenarios"
+				ng-init="param = row[cenario.code]"
+				class="ellipsis"
+				title="Datasource: {{ param.datasourceCode }}"
+				>
+					<i class="fas fa-car-crash           text-warning"   title="{{param.message}}" ng-if="(param.status=='E')"/>
+					<i class="fas fa-minus               text-secondary" title="Datasource não definido" ng-if="(param.status=='U')"/>
+					<i class="fas fa-align-justify       text-warning"   title="Valores distintos entre empresas" ng-if="(param.status=='L' &&  param.numericDuplicate)" />
+					<i class="fas fa-arrows-alt-h        text-info"      title="" ng-if="(param.status=='L' && !param.numericDuplicate &&  param.numericEnvDuplicate && !param.numeriCenDuplicate)" />
+					<i class="fas fa-arrows-alt-v        text-info"      title="" ng-if="(param.status=='L' && !param.numericDuplicate && !param.numericEnvDuplicate &&  param.numeriCenDuplicate)" />
+					<i class="fas fa-compress-arrows-alt text-warning"   title="" ng-if="(param.status=='L' && !param.numericDuplicate && !param.numericEnvDuplicate && !param.numeriCenDuplicate)" />
+					<i class="fas fa-arrows-alt          text-info"      title="" ng-if="(param.status=='L' && !param.numericDuplicate &&  param.numericEnvDuplicate &&  param.numeriCenDuplicate)" />
+					<span  ng-bind="param.numericValue || (null)"></span>
+				</td>
+				
+				<td  
+				ng-repeat-end
+				
+				title="Datasource: {{ param.datasourceCode }}"
+				>
+					
+					
+					<span  ng-bind="param.textValue || (null)"></span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+</div>

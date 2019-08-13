@@ -10,7 +10,6 @@ function(authlist)
 	{
 		passport.authenticate('basic', { session: false }, function(error, user, info)
 		{
-			console.log({error, user, info})
 			if(error) return res.status("403").send(error);
 			if(typeof user != 'object')
 			{

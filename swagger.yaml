@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: gat-tools
+  title: gat-tools-api
   description: Ferramenta de automação para processos da Gestão de Ambientes de Testes.
   version: 0.0.1
 servers:
@@ -130,6 +130,24 @@ paths:
                   $ref: '#/components/schemas/cenario'
                 x-content-type: application/json
       x-swagger-router-controller: ApplicationController
+  /report-netsms-parameters:
+    get:
+      tags:
+      - Reports
+      - NETSMS
+      summary: oi
+      x-swagger-router-controller: ReportNetsmsParametersController
+      operationId: ReportNetsmsParametersController
+      parameters: []
+      security: []
+      responses:
+        200:
+          description: A JSON User object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+                x-content-type: application/json
   /profile:
     get:
       tags:

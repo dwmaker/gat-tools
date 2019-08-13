@@ -1,0 +1,1796 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+		<style>
+.first_cenario{border-top-color: #000; border-top-width: 2px; border-top-style: solid;}
+.last_cenario{border-bottom-color: #000; border-bottom-width: 2px; border-bottom-style: solid;}
+		</style>
+		<title>GAT - Gestao de Ambiente</title>
+	</head>
+	<body>
+		<main role="main" class="container">
+			<div class="">
+				<h2>Controle de Acessos</h2>
+				<small><i>Atualizado em 2019-08-13 07:41</i></small>
+				</br>
+				<table class="table table-bordered table-sm">
+					<thead class="thead-dark">
+						<tr>
+							<th>Ambiente</th>
+							<th>Aplicação</th>
+							<th>Cenário</th>
+							<th>Logon</th>
+							<th>Monitora</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="first_cenario " >
+							<td title="Certificação">CERT</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BRA">BRA</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_NETSMS_BRA.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = hhdb09n1)))&#13;Mensagem: Trigger desabilitada&#13;">								<li class="fas fa-exclamation-circle text-warning"></li> CORE.TR_LOGON
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_NETSMS_BRA.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = hhdb09n1)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Certificação">CERT</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SUL">SUL</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_NETSMS_SUL.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = hhsuln1)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_NETSMS_SUL.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = hhsuln1)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Certificação">CERT</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ISP">ISP</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_NETSMS_ISP.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.25)(PORT = 1521))(CONNECT_DATA = (SID = hhispn1)))&#13;Mensagem: Trigger desabilitada&#13;">								<li class="fas fa-exclamation-circle text-warning"></li> CORE.TR_LOGON
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_NETSMS_ISP.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.25)(PORT = 1521))(CONNECT_DATA = (SID = hhispn1)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Certificação">CERT</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BH">BH</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.64.165)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = hhbhn1)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.64.165)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = hhbhn1)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Certificação">CERT</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SOC">SOC</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_NETSMS_SOC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = hhsocn1)))&#13;Mensagem: ORA-01017: invalid username/password; logon denied
+ORA-02063: preceding line from GA_CERT_NETSMS_SOC&#13;">								<li class="fas fa-times-circle       text-danger"></li> (outros)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_NETSMS_SOC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = hhsocn1)))&#13;Mensagem: ORA-01017: invalid username/password; logon denied
+ORA-02063: preceding line from GA_CERT_NETSMS_SOC&#13;">								<li class="fas fa-times-circle       text-danger"></li> (outros)
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Certificação">CERT</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SAO">SAO</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_NETSMS_SAO.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = hhspon1)))&#13;Mensagem: Trigger desabilitada&#13;">								<li class="fas fa-exclamation-circle text-warning"></li> CORE.TR_LOGON
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_NETSMS_SAO.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = hhspon1)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Certificação">CERT</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ABC">ABC</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_NETSMS_ABC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = hhbrin1)))&#13;Mensagem: Trigger desabilitada&#13;">								<li class="fas fa-exclamation-circle text-warning"></li> CORE.TR_LOGON
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_NETSMS_ABC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = hhbrin1)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Certificação">CERT</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="CTV">CTV</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_NETSMS_CTV.NET&#13;Host: (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.16.8.162)(PORT = 1525)))(CONNECT_DATA = (SERVICE_NAME = HHCTV01)))&#13;Mensagem: Trigger desabilitada&#13;">								<li class="fas fa-exclamation-circle text-warning"></li> CORE.TR_LOGON
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_NETSMS_CTV.NET&#13;Host: (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.16.8.162)(PORT = 1525)))(CONNECT_DATA = (SERVICE_NAME = HHCTV01)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Certificação">CERT</td>
+							<td title="ATLAS">ATLAS</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_ATLAS.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = HHATL01)))&#13;Mensagem: Trigger inválida&#13;">								<li class="fas fa-times-circle       text-danger"></li> CORE.TR_LOGON
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_ATLAS.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = HHATL01)))&#13;Mensagem: Trigger inválida&#13;">								<li class="fas fa-times-circle       text-danger"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Certificação">CERT</td>
+							<td title="SIGMA">SIGMA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Certificação">CERT</td>
+							<td title="FEPP">FEPP</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Certificação">CERT</td>
+							<td title="COMBOMULTI">COMBOMULTI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Certificação">CERT</td>
+							<td title="FIQUELIGADO">FIQUELIGADO</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Certificação">CERT</td>
+							<td title="WLI">WLI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white last_cenario " >
+							<td title="Certificação">CERT</td>
+							<td title="WA">WA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_CERT_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white first_cenario " >
+							<td title="DEV1">DEV1</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BRA">BRA</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_NETSMS_BRA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_NETSMS_BRA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV1">DEV1</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SUL">SUL</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_NETSMS_SUL.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_NETSMS_SUL.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="DEV1">DEV1</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ISP">ISP</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_NETSMS_ISP.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = DISPHP)))&#13;Mensagem: Nome em conflito&#13;">								<li class="fas fa-times-circle       text-danger"></li> (em conflito)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_NETSMS_ISP.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = DISPHP)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="DEV1">DEV1</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BH">BH</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = DBHHP)))&#13;Mensagem: ORA-12545: Connect failed because target host or object does not exist&#13;">								<li class="fas fa-times-circle       text-danger"></li> (outros)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = DBHHP)))&#13;Mensagem: ORA-12545: Connect failed because target host or object does not exist&#13;">								<li class="fas fa-times-circle       text-danger"></li> (outros)
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV1">DEV1</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SOC">SOC</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_NETSMS_SOC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_NETSMS_SOC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV1">DEV1</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SAO">SAO</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_NETSMS_SAO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_NETSMS_SAO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="DEV1">DEV1</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ABC">ABC</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_NETSMS_ABC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = DBRIHP)))&#13;Mensagem: Nome em conflito&#13;">								<li class="fas fa-times-circle       text-danger"></li> (em conflito)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_NETSMS_ABC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = DBRIHP)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="DEV1">DEV1</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="CTV">CTV</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_NETSMS_CTV.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = DCTV1HP)))&#13;Mensagem: Trigger desabilitada&#13;">								<li class="fas fa-exclamation-circle text-warning"></li> CORE.TR_LOGON
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_NETSMS_CTV.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = DCTV1HP)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV1">DEV1</td>
+							<td title="ATLAS">ATLAS</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV1">DEV1</td>
+							<td title="SIGMA">SIGMA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV1">DEV1</td>
+							<td title="FEPP">FEPP</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV1">DEV1</td>
+							<td title="COMBOMULTI">COMBOMULTI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV1">DEV1</td>
+							<td title="FIQUELIGADO">FIQUELIGADO</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV1">DEV1</td>
+							<td title="WLI">WLI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white last_cenario " >
+							<td title="DEV1">DEV1</td>
+							<td title="WA">WA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV1_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white first_cenario " >
+							<td title="DEV3">DEV3</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BRA">BRA</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_NETSMS_BRA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_NETSMS_BRA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV3">DEV3</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SUL">SUL</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_NETSMS_SUL.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_NETSMS_SUL.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV3">DEV3</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ISP">ISP</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_NETSMS_ISP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_NETSMS_ISP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV3">DEV3</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BH">BH</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_NETSMS_BH.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_NETSMS_BH.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV3">DEV3</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SOC">SOC</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_NETSMS_SOC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_NETSMS_SOC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV3">DEV3</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SAO">SAO</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_NETSMS_SAO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_NETSMS_SAO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV3">DEV3</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ABC">ABC</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_NETSMS_ABC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_NETSMS_ABC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV3">DEV3</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="CTV">CTV</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_NETSMS_CTV.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_NETSMS_CTV.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV3">DEV3</td>
+							<td title="ATLAS">ATLAS</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV3">DEV3</td>
+							<td title="SIGMA">SIGMA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV3">DEV3</td>
+							<td title="FEPP">FEPP</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV3">DEV3</td>
+							<td title="COMBOMULTI">COMBOMULTI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV3">DEV3</td>
+							<td title="FIQUELIGADO">FIQUELIGADO</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV3">DEV3</td>
+							<td title="WLI">WLI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white last_cenario " >
+							<td title="DEV3">DEV3</td>
+							<td title="WA">WA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV3_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white first_cenario " >
+							<td title="DEV4">DEV4</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BRA">BRA</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_NETSMS_BRA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_NETSMS_BRA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="DEV4">DEV4</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SUL">SUL</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_NETSMS_SUL.NET&#13;Host: (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.14)(PORT = 1523)))(CONNECT_DATA = (SERVICE_NAME = DDSUL11F)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_NETSMS_SUL.NET&#13;Host: (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.14)(PORT = 1523)))(CONNECT_DATA = (SERVICE_NAME = DDSUL11F)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="DEV4">DEV4</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ISP">ISP</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_NETSMS_ISP.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = MUCISP01)))&#13;Mensagem: Trigger desabilitada&#13;">								<li class="fas fa-exclamation-circle text-warning"></li> CORE.TR_LOGON
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_NETSMS_ISP.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = MUCISP01)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="DEV4">DEV4</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BH">BH</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.14)(PORT = 1523)))(CONNECT_DATA = (SID = DDBH13F)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.14)(PORT = 1523)))(CONNECT_DATA = (SID = DDBH13F)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV4">DEV4</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SOC">SOC</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_NETSMS_SOC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_NETSMS_SOC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV4">DEV4</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SAO">SAO</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_NETSMS_SAO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_NETSMS_SAO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="DEV4">DEV4</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ABC">ABC</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_NETSMS_ABC.NET&#13;Host: (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.14)(PORT = 1523)))(CONNECT_DATA = (SID = DDABC13F)(SERVER = DEDICATED)))&#13;Mensagem: Trigger desabilitada&#13;">								<li class="fas fa-exclamation-circle text-warning"></li> CORE.TR_LOGON
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_NETSMS_ABC.NET&#13;Host: (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.14)(PORT = 1523)))(CONNECT_DATA = (SID = DDABC13F)(SERVER = DEDICATED)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV4">DEV4</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="CTV">CTV</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_NETSMS_CTV.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_NETSMS_CTV.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV4">DEV4</td>
+							<td title="ATLAS">ATLAS</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV4">DEV4</td>
+							<td title="SIGMA">SIGMA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV4">DEV4</td>
+							<td title="FEPP">FEPP</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV4">DEV4</td>
+							<td title="COMBOMULTI">COMBOMULTI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV4">DEV4</td>
+							<td title="FIQUELIGADO">FIQUELIGADO</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="DEV4">DEV4</td>
+							<td title="WLI">WLI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white last_cenario " >
+							<td title="DEV4">DEV4</td>
+							<td title="WA">WA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_DEV4_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white first_cenario " >
+							<td title="SIT1">SIT1</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BRA">BRA</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_NETSMS_BRA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_NETSMS_BRA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT1">SIT1</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SUL">SUL</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_NETSMS_SUL.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_NETSMS_SUL.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="SIT1">SIT1</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ISP">ISP</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_NETSMS_ISP.NET&#13;Host: (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.28)(PORT = 1521)))(CONNECT_DATA = (SERVICE_NAME = SISPHP)))&#13;Mensagem: Nome em conflito&#13;">								<li class="fas fa-times-circle       text-danger"></li> (em conflito)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_NETSMS_ISP.NET&#13;Host: (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.28)(PORT = 1521)))(CONNECT_DATA = (SERVICE_NAME = SISPHP)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="SIT1">SIT1</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BH">BH</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SID = SBHHP)))&#13;Mensagem: ORA-12545: Connect failed because target host or object does not exist&#13;">								<li class="fas fa-times-circle       text-danger"></li> (outros)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SID = SBHHP)))&#13;Mensagem: ORA-12545: Connect failed because target host or object does not exist&#13;">								<li class="fas fa-times-circle       text-danger"></li> (outros)
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT1">SIT1</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SOC">SOC</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_NETSMS_SOC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_NETSMS_SOC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT1">SIT1</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SAO">SAO</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_NETSMS_SAO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_NETSMS_SAO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="SIT1">SIT1</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ABC">ABC</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_NETSMS_ABC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.28)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = SBRIHP)))&#13;Mensagem: Nome em conflito&#13;">								<li class="fas fa-times-circle       text-danger"></li> (em conflito)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_NETSMS_ABC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.28)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = SBRIHP)))&#13;Mensagem: Trigger desabilitada&#13;">								<li class="fas fa-exclamation-circle text-warning"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT1">SIT1</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="CTV">CTV</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_NETSMS_CTV.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_NETSMS_CTV.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT1">SIT1</td>
+							<td title="ATLAS">ATLAS</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT1">SIT1</td>
+							<td title="SIGMA">SIGMA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT1">SIT1</td>
+							<td title="FEPP">FEPP</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT1">SIT1</td>
+							<td title="COMBOMULTI">COMBOMULTI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT1">SIT1</td>
+							<td title="FIQUELIGADO">FIQUELIGADO</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT1">SIT1</td>
+							<td title="WLI">WLI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white last_cenario " >
+							<td title="SIT1">SIT1</td>
+							<td title="WA">WA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT1_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white first_cenario " >
+							<td title="SIT2">SIT2</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BRA">BRA</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_NETSMS_BRA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_NETSMS_BRA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT2">SIT2</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SUL">SUL</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_NETSMS_SUL.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_NETSMS_SUL.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="SIT2">SIT2</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ISP">ISP</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_NETSMS_ISP.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = SISPSP)))&#13;Mensagem: Nome em conflito&#13;">								<li class="fas fa-times-circle       text-danger"></li> (em conflito)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_NETSMS_ISP.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = SISPSP)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="SIT2">SIT2</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BH">BH</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = SBHSP)))&#13;Mensagem: ORA-12545: Connect failed because target host or object does not exist&#13;">								<li class="fas fa-times-circle       text-danger"></li> (outros)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = SBHSP)))&#13;Mensagem: ORA-12545: Connect failed because target host or object does not exist&#13;">								<li class="fas fa-times-circle       text-danger"></li> (outros)
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT2">SIT2</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SOC">SOC</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_NETSMS_SOC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_NETSMS_SOC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT2">SIT2</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SAO">SAO</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_NETSMS_SAO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_NETSMS_SAO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="SIT2">SIT2</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ABC">ABC</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_NETSMS_ABC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = SBRISP)))&#13;Mensagem: Trigger desabilitada&#13;">								<li class="fas fa-exclamation-circle text-warning"></li> NETDBA.TR_LOGON
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_NETSMS_ABC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = SBRISP)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT2">SIT2</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="CTV">CTV</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_NETSMS_CTV.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_NETSMS_CTV.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT2">SIT2</td>
+							<td title="ATLAS">ATLAS</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT2">SIT2</td>
+							<td title="SIGMA">SIGMA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT2">SIT2</td>
+							<td title="FEPP">FEPP</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT2">SIT2</td>
+							<td title="COMBOMULTI">COMBOMULTI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT2">SIT2</td>
+							<td title="FIQUELIGADO">FIQUELIGADO</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT2">SIT2</td>
+							<td title="WLI">WLI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white last_cenario " >
+							<td title="SIT2">SIT2</td>
+							<td title="WA">WA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT2_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white first_cenario " >
+							<td title="SIT3">SIT3</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BRA">BRA</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_NETSMS_BRA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_NETSMS_BRA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT3">SIT3</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SUL">SUL</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_NETSMS_SUL.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_NETSMS_SUL.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="SIT3">SIT3</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ISP">ISP</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_NETSMS_ISP.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = SISP3SP)))&#13;Mensagem: Nome em conflito&#13;">								<li class="fas fa-times-circle       text-danger"></li> (em conflito)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_NETSMS_ISP.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = SISP3SP)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="SIT3">SIT3</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BH">BH</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = SBH3SP)))&#13;Mensagem: ORA-12545: Connect failed because target host or object does not exist&#13;">								<li class="fas fa-times-circle       text-danger"></li> (outros)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = SBH3SP)))&#13;Mensagem: ORA-12545: Connect failed because target host or object does not exist&#13;">								<li class="fas fa-times-circle       text-danger"></li> (outros)
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT3">SIT3</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SOC">SOC</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_NETSMS_SOC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_NETSMS_SOC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT3">SIT3</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SAO">SAO</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_NETSMS_SAO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_NETSMS_SAO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="SIT3">SIT3</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ABC">ABC</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_NETSMS_ABC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = SBRI3SP)))&#13;Mensagem: Nome em conflito&#13;">								<li class="fas fa-times-circle       text-danger"></li> (em conflito)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_NETSMS_ABC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = SBRI3SP)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="SIT3">SIT3</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="CTV">CTV</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_NETSMS_CTV.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SID = SCTV1MG)))&#13;Mensagem: Nome em conflito&#13;">								<li class="fas fa-times-circle       text-danger"></li> (em conflito)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_NETSMS_CTV.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SID = SCTV1MG)))&#13;Mensagem: Trigger desabilitada&#13;">								<li class="fas fa-exclamation-circle text-warning"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT3">SIT3</td>
+							<td title="ATLAS">ATLAS</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT3">SIT3</td>
+							<td title="SIGMA">SIGMA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT3">SIT3</td>
+							<td title="FEPP">FEPP</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT3">SIT3</td>
+							<td title="COMBOMULTI">COMBOMULTI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT3">SIT3</td>
+							<td title="FIQUELIGADO">FIQUELIGADO</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT3">SIT3</td>
+							<td title="WLI">WLI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white last_cenario " >
+							<td title="SIT3">SIT3</td>
+							<td title="WA">WA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT3_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="first_cenario " >
+							<td title="Teste Integrado - LE">SIT4</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BRA">BRA</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_NETSMS_BRA.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = TIBRA03F)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_NETSMS_BRA.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = TIBRA03F)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Teste Integrado - LE">SIT4</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SUL">SUL</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_NETSMS_SUL.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = TISUL66F)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_NETSMS_SUL.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = TISUL66F)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Teste Integrado - LE">SIT4</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ISP">ISP</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_NETSMS_ISP.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = TIISP02F)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_LOGON
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_NETSMS_ISP.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = TIISP02F)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Teste Integrado - LE">SIT4</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BH">BH</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = TIBHPV1)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_LOGON
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = TIBHPV1)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Teste Integrado - LE">SIT4</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SOC">SOC</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_NETSMS_SOC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_NETSMS_SOC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Teste Integrado - LE">SIT4</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SAO">SAO</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_NETSMS_SAO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_NETSMS_SAO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Teste Integrado - LE">SIT4</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ABC">ABC</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_NETSMS_ABC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_NETSMS_ABC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Teste Integrado - LE">SIT4</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="CTV">CTV</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_NETSMS_CTV.NET&#13;Host: (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523)))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = TICTVLE2)))&#13;Mensagem: Trigger inválida&#13;">								<li class="fas fa-times-circle       text-danger"></li> CORE.TR_LOGON
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_NETSMS_CTV.NET&#13;Host: (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523)))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = TICTVLE2)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Teste Integrado - LE">SIT4</td>
+							<td title="ATLAS">ATLAS</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Teste Integrado - LE">SIT4</td>
+							<td title="SIGMA">SIGMA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Teste Integrado - LE">SIT4</td>
+							<td title="FEPP">FEPP</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Teste Integrado - LE">SIT4</td>
+							<td title="COMBOMULTI">COMBOMULTI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Teste Integrado - LE">SIT4</td>
+							<td title="FIQUELIGADO">FIQUELIGADO</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Teste Integrado - LE">SIT4</td>
+							<td title="WLI">WLI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white last_cenario " >
+							<td title="Teste Integrado - LE">SIT4</td>
+							<td title="WA">WA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT4_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white first_cenario " >
+							<td title="Teste Integrado - LD">SIT5</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BRA">BRA</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_NETSMS_BRA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_NETSMS_BRA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Teste Integrado - LD">SIT5</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SUL">SUL</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_NETSMS_SUL.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = TISULPV1)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_LOGON
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_NETSMS_SUL.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = TISULPV1)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Teste Integrado - LD">SIT5</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ISP">ISP</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_NETSMS_ISP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_NETSMS_ISP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Teste Integrado - LD">SIT5</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BH">BH</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = TIBH03F)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = TIBH03F)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Teste Integrado - LD">SIT5</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SOC">SOC</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_NETSMS_SOC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = BIGT)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_NETSMS_SOC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = BIGT)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Teste Integrado - LD">SIT5</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SAO">SAO</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_NETSMS_SAO.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = TISP03F)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_LOGON
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_NETSMS_SAO.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = TISP03F)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Teste Integrado - LD">SIT5</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ABC">ABC</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_NETSMS_ABC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = TIABC02F)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_LOGON
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_NETSMS_ABC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523))(CONNECT_DATA = (SID = TIABC02F)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Teste Integrado - LD">SIT5</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="CTV">CTV</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_NETSMS_CTV.NET&#13;Host: (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523)))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = TICTVLD1)))&#13;Mensagem: Trigger desabilitada&#13;">								<li class="fas fa-exclamation-circle text-warning"></li> CORE.TR_LOGON
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_NETSMS_CTV.NET&#13;Host: (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.208)(PORT = 1523)))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = TICTVLD1)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Teste Integrado - LD">SIT5</td>
+							<td title="ATLAS">ATLAS</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Teste Integrado - LD">SIT5</td>
+							<td title="SIGMA">SIGMA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Teste Integrado - LD">SIT5</td>
+							<td title="FEPP">FEPP</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Teste Integrado - LD">SIT5</td>
+							<td title="COMBOMULTI">COMBOMULTI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Teste Integrado - LD">SIT5</td>
+							<td title="FIQUELIGADO">FIQUELIGADO</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Teste Integrado - LD">SIT5</td>
+							<td title="WLI">WLI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white last_cenario " >
+							<td title="Teste Integrado - LD">SIT5</td>
+							<td title="WA">WA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT5_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white first_cenario " >
+							<td title="Stress Test">SIT6</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BRA">BRA</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_NETSMS_BRA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_NETSMS_BRA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Stress Test">SIT6</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SUL">SUL</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_NETSMS_SUL.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.31)(PORT = 1521))(CONNECT_DATA = (SID = SULST)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_NETSMS_SUL.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.31)(PORT = 1521))(CONNECT_DATA = (SID = SULST)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Stress Test">SIT6</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ISP">ISP</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_NETSMS_ISP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_NETSMS_ISP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Stress Test">SIT6</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BH">BH</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_NETSMS_BH.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_NETSMS_BH.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Stress Test">SIT6</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SOC">SOC</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_NETSMS_SOC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_NETSMS_SOC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Stress Test">SIT6</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SAO">SAO</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_NETSMS_SAO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_NETSMS_SAO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Stress Test">SIT6</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ABC">ABC</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_NETSMS_ABC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_NETSMS_ABC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Stress Test">SIT6</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="CTV">CTV</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_NETSMS_CTV.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_NETSMS_CTV.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Stress Test">SIT6</td>
+							<td title="ATLAS">ATLAS</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Stress Test">SIT6</td>
+							<td title="SIGMA">SIGMA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Stress Test">SIT6</td>
+							<td title="FEPP">FEPP</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Stress Test">SIT6</td>
+							<td title="COMBOMULTI">COMBOMULTI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Stress Test">SIT6</td>
+							<td title="FIQUELIGADO">FIQUELIGADO</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Stress Test">SIT6</td>
+							<td title="WLI">WLI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white last_cenario " >
+							<td title="Stress Test">SIT6</td>
+							<td title="WA">WA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT6_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="first_cenario " >
+							<td title="Novo Sap BR">SIT7</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BRA">BRA</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_NETSMS_BRA.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.25)(PORT = 1523))(CONNECT_DATA = (SID = BRASAMX)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_NETSMS_BRA.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.25)(PORT = 1523))(CONNECT_DATA = (SID = BRASAMX)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Novo Sap BR">SIT7</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SUL">SUL</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_NETSMS_SUL.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.25)(PORT = 1523))(CONNECT_DATA = (SID = SULTOA)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_NETSMS_SUL.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.25)(PORT = 1523))(CONNECT_DATA = (SID = SULTOA)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Novo Sap BR">SIT7</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ISP">ISP</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_NETSMS_ISP.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.25)(PORT = 1523))(CONNECT_DATA = (SID = ISPSAMX)))&#13;Mensagem: Nome em conflito&#13;">								<li class="fas fa-times-circle       text-danger"></li> (em conflito)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_NETSMS_ISP.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.25)(PORT = 1523))(CONNECT_DATA = (SID = ISPSAMX)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Novo Sap BR">SIT7</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BH">BH</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.25)(PORT = 1523))(CONNECT_DATA = (SID = BHSAMX)))&#13;Mensagem: ORA-12505: TNS:listener does not currently know of SID given in connect descriptor&#13;">								<li class="fas fa-times-circle       text-danger"></li> (outros)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.25)(PORT = 1523))(CONNECT_DATA = (SID = BHSAMX)))&#13;Mensagem: ORA-12505: TNS:listener does not currently know of SID given in connect descriptor&#13;">								<li class="fas fa-times-circle       text-danger"></li> (outros)
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Novo Sap BR">SIT7</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SOC">SOC</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_NETSMS_SOC.NET&#13;Host: (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = RACNET-CLTFT01.dcing.corp)(PORT = 1521)))(CONNECT_DATA = (SERVICE_NAME = SOCSAMX1)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_NETSMS_SOC.NET&#13;Host: (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = RACNET-CLTFT01.dcing.corp)(PORT = 1521)))(CONNECT_DATA = (SERVICE_NAME = SOCSAMX1)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Novo Sap BR">SIT7</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SAO">SAO</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_NETSMS_SAO.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.25)(PORT = 1523))(CONNECT_DATA = (SID = SPOSAMX)))&#13;Mensagem: Nome em conflito&#13;">								<li class="fas fa-times-circle       text-danger"></li> (em conflito)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_NETSMS_SAO.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.25)(PORT = 1523))(CONNECT_DATA = (SID = SPOSAMX)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Novo Sap BR">SIT7</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ABC">ABC</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_NETSMS_ABC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.25)(PORT = 1523))(CONNECT_DATA = (SID = BRISAMX)))&#13;Mensagem: Nome em conflito&#13;">								<li class="fas fa-times-circle       text-danger"></li> (em conflito)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_NETSMS_ABC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 5.17.8.25)(PORT = 1523))(CONNECT_DATA = (SID = BRISAMX)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="Novo Sap BR">SIT7</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="CTV">CTV</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_NETSMS_CTV.NET&#13;Host: (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = RACNET-CLTFT01.dcing.corp)(PORT = 1521)))(CONNECT_DATA = (SERVICE_NAME = dbri1ctv)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_NETSMS_CTV.NET&#13;Host: (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = RACNET-CLTFT01.dcing.corp)(PORT = 1521)))(CONNECT_DATA = (SERVICE_NAME = dbri1ctv)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Novo Sap BR">SIT7</td>
+							<td title="ATLAS">ATLAS</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Novo Sap BR">SIT7</td>
+							<td title="SIGMA">SIGMA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Novo Sap BR">SIT7</td>
+							<td title="FEPP">FEPP</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Novo Sap BR">SIT7</td>
+							<td title="COMBOMULTI">COMBOMULTI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Novo Sap BR">SIT7</td>
+							<td title="FIQUELIGADO">FIQUELIGADO</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="Novo Sap BR">SIT7</td>
+							<td title="WLI">WLI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white last_cenario " >
+							<td title="Novo Sap BR">SIT7</td>
+							<td title="WA">WA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT7_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="first_cenario " >
+							<td title="SIT8">SIT8</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BRA">BRA</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_NETSMS_BRA.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.64.166)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = DBRASP1)))&#13;Mensagem: Trigger desabilitada&#13;">								<li class="fas fa-exclamation-circle text-warning"></li> CORE.TR_LOGON
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_NETSMS_BRA.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.64.166)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = DBRASP1)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT8">SIT8</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SUL">SUL</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_NETSMS_SUL.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_NETSMS_SUL.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="SIT8">SIT8</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ISP">ISP</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_NETSMS_ISP.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = DISPSP)))&#13;Mensagem: Nome em conflito&#13;">								<li class="fas fa-times-circle       text-danger"></li> (em conflito)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_NETSMS_ISP.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = DISPSP)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="SIT8">SIT8</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BH">BH</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = DBHSP)))&#13;Mensagem: ORA-12545: Connect failed because target host or object does not exist&#13;">								<li class="fas fa-times-circle       text-danger"></li> (outros)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = DBHSP)))&#13;Mensagem: ORA-12545: Connect failed because target host or object does not exist&#13;">								<li class="fas fa-times-circle       text-danger"></li> (outros)
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT8">SIT8</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SOC">SOC</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_NETSMS_SOC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_NETSMS_SOC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT8">SIT8</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SAO">SAO</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_NETSMS_SAO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_NETSMS_SAO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="SIT8">SIT8</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ABC">ABC</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_NETSMS_ABC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = DBRISP)))&#13;Mensagem: Nome em conflito&#13;">								<li class="fas fa-times-circle       text-danger"></li> (em conflito)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_NETSMS_ABC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = DBRISP)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT8">SIT8</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="CTV">CTV</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_NETSMS_CTV.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_NETSMS_CTV.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT8">SIT8</td>
+							<td title="ATLAS">ATLAS</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT8">SIT8</td>
+							<td title="SIGMA">SIGMA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT8">SIT8</td>
+							<td title="FEPP">FEPP</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT8">SIT8</td>
+							<td title="COMBOMULTI">COMBOMULTI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT8">SIT8</td>
+							<td title="FIQUELIGADO">FIQUELIGADO</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="SIT8">SIT8</td>
+							<td title="WLI">WLI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white last_cenario " >
+							<td title="SIT8">SIT8</td>
+							<td title="WA">WA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_SIT8_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white first_cenario " >
+							<td title="UAT">UAT</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BRA">BRA</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_NETSMS_BRA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_NETSMS_BRA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="UAT">UAT</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SUL">SUL</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_NETSMS_SUL.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_NETSMS_SUL.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="UAT">UAT</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ISP">ISP</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_NETSMS_ISP.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = UATVISP)))&#13;Mensagem: Nome em conflito&#13;">								<li class="fas fa-times-circle       text-danger"></li> (em conflito)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_NETSMS_ISP.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = UATVISP)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="UAT">UAT</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="BH">BH</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = UATVBH)))&#13;Mensagem: ORA-12545: Connect failed because target host or object does not exist&#13;">								<li class="fas fa-times-circle       text-danger"></li> (outros)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_NETSMS_BH.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = UATVBH)))&#13;Mensagem: ORA-12545: Connect failed because target host or object does not exist&#13;">								<li class="fas fa-times-circle       text-danger"></li> (outros)
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="UAT">UAT</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SOC">SOC</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_NETSMS_SOC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_NETSMS_SOC.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="UAT">UAT</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="SAO">SAO</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_NETSMS_SAO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_NETSMS_SAO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="UAT">UAT</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="ABC">ABC</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_NETSMS_ABC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = UATVBRI)))&#13;Mensagem: Nome em conflito&#13;">								<li class="fas fa-times-circle       text-danger"></li> (em conflito)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_NETSMS_ABC.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = UATVBRI)))&#13;Mensagem: Trigger operante&#13;">								<li class="fas fa-check-circle       text-success"></li> CORE.TR_MONITORA
+							</td>
+						</tr>
+						<tr class="" >
+							<td title="UAT">UAT</td>
+							<td title="NETSMS">NETSMS</td>
+							<td title="CTV">CTV</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_NETSMS_CTV.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = UATCTV)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_NETSMS_CTV.NET&#13;Host: (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.28.20.78)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = UATCTV)))&#13;Mensagem: Trigger não encontrada&#13;">								<li class="fas fa-times-circle       text-danger"></li> (não encontrada)
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="UAT">UAT</td>
+							<td title="ATLAS">ATLAS</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_ATLAS.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="UAT">UAT</td>
+							<td title="SIGMA">SIGMA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_SIGMA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="UAT">UAT</td>
+							<td title="FEPP">FEPP</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_FEPP.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="UAT">UAT</td>
+							<td title="COMBOMULTI">COMBOMULTI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_COMBOMULTI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="UAT">UAT</td>
+							<td title="FIQUELIGADO">FIQUELIGADO</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_FIQUELIGADO.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white " >
+							<td title="UAT">UAT</td>
+							<td title="WLI">WLI</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_WLI.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+						<tr class="bg-secondary text-white last_cenario " >
+							<td title="UAT">UAT</td>
+							<td title="WA">WA</td>
+							<td title="">-</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+							<td class="text-nowrap" title="DBLink: GA_UAT_WA.NET&#13;Mensagem: DBLink não configurado&#13;">								<li class="fas "></li>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</main>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</body>
+</html>
