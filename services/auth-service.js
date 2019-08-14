@@ -1,23 +1,27 @@
 'use strict';
 const passport = require("passport");
 const BasicStrategy = require('passport-http').BasicStrategy;
-const loginDAO = require("../dao/login-dao.js");
-const userDAO = require("../dao/user-dao.js");
+const LoginDAO = require("../dao/login-dao.js");
+const UserDAO = require("../dao/user-dao.js");
 let service = {};
+let loginDAO = new LoginDAO();
+let userDAO = new UserDAO();
 
-passport.use(new BasicStrategy(
+passport.use('basicAuth', new BasicStrategy(
 	function(username, password, callback) 
 	{
-		loginDAO.get({ username: username })
+		loginDAO.find({ username: username })
 		.then((login)=>
 		{
-			if (!login) { return callback('Invalid Credentials', undefined); }
+			if (!login) 
+			{
+				return callback('INVALID_USER_ENTRY', undefined); 
+			}	
 			if (login.password != password)
 			{
-				return callback('Invalid password', undefined);
+				return callback('INVALID_CREDENTIALS', undefined);
 			}
-			
-			userDAO.get({ userId: login.userId })
+			userDAO.find({ id: login.userId })
 			.then((user)=>
 			{
 				return callback(undefined, user);
@@ -29,9 +33,29 @@ passport.use(new BasicStrategy(
 		})
 		.catch((err)=>
 		{
-			return callback(err, undefined);
+			if(err == "NO_DATA_FOUND")
+			{
+				return callback("INVALID_CREDENTIALS", undefined);
+			}
+			else
+			{
+				return callback(err, undefined);
+			}
 		})
 	}
 ));
-service.passport = passport
+
+service.basicAuth = function (req)
+{
+	return new Promise((resolve, reject) =>
+	{
+		passport.authenticate('basicAuth', { session: false }, function(error, user, info)
+		{
+			if(error) return reject(error);
+			if(typeof user != 'object') return reject("UNAUTHORIZED");
+			return resolve(user);
+		})(req)
+	})
+};
+
 module.exports = service;

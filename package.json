@@ -1,6 +1,6 @@
 {
   "name": "gat-tools",
-  "version": "0.0.2",
+  "version": "0.0.0",
   "description": "Ferramenta para auxílio na Administração dos ambientes de Testes e Certificação.\r\nGAT Tools possui recursos de administração de banco de dados unido com as regras de negócio das aplicações: NETSM, Atlas, entre outras.",
   "main": "index.js",
   "scripts": {

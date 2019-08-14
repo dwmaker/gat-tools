@@ -1,22 +1,37 @@
 'use strict';
+const fs = require("fs");
+const path = require("path");
 
-let users = 
-[
-	{displayName:"Paulo Ponciano", userId: 500, access:[ "get:datasource", "write:datasource", "search:datasource", "delete:datasource" ]}
-]
-
-let UserDAO = {};
-
-UserDAO.get = (par) =>
+function UserDAO()
 {
-	return new Promise((resolve, reject)=>
+	let filename = path.join(__dirname, `../data/users-data.json`);
+	this.find = (par) =>
 	{
-		let result = users.filter(users => users.userId == par.userId);
-		if(result.length==0) return reject("no data found");
-		if(result.length>1) return reject("too many rows")
-		return resolve(result[0]);
-	})
-}
-
+		return new Promise((resolve, reject)=>
+		{
+			fs.readFile(filename, {encoding: "utf8"}, (err, data) => 
+			{
+				if (err)
+				{
+					console.log(err)
+					return reject({mensagem: "Dados não encontrados", conteudo: null});
+				}
+				try
+				{
+					let users = JSON.parse(data);
+					if(typeof par.id != 'undefined') users = users.filter(item => item.id == par.id);
+					if(users.length==0) return reject("no data found");
+					if(users.length>1) return reject("too many rows")
+					return resolve(users[0]);
+				}
+				catch(err)
+				{
+					console.log(err)
+					reject({mensagem: "Dados Corrompidos", conteudo: data});
+				}
+			});
+		});
+	};
+};
 
 module.exports = UserDAO;

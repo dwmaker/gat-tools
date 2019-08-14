@@ -1,0 +1,7 @@
+[
+	{
+		"id": 500,
+		"displayName": "Paulo Ponciano", 
+		"permissions": ["browse:datasource", "read:datasource", "edit:datasource", "add:datasource", "delete:datasource"]
+	}
+]

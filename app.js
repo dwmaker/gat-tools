@@ -5,8 +5,9 @@ const swaggerUiExpress = require('swagger-ui-express');
 const jsyaml = require('js-yaml');
 const http = require('http');
 const bodyParser = require('body-parser');
-const authService = require("./services/auth-service.js");
+//const authService = require("./services/auth-service.js");
 const apiRouter = require('./api-router.js');
+const passport = require('passport');
 
 // swaggerRouter configuration
 var spec = fs.readFileSync(`${__dirname}/swagger.yaml`, 'utf8');
@@ -16,7 +17,7 @@ var app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json({strict: false}));
-app.use(authService.passport.initialize());
+app.use(passport.initialize());
 
 app.use('/',    express.static(`${__dirname}/public`));
 app.use('/lib', express.static(`${__dirname}/node_modules/alasql/dist`));

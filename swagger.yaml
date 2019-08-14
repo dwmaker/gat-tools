@@ -1,40 +1,41 @@
 openapi: 3.0.0
 info:
   title: gat-tools-api
+  version: 0.0.0
   description: Ferramenta de automação para processos da Gestão de Ambientes de Testes.
-  version: 0.0.1
+  contact:
+    email: dwmaker@hotmail.com
+    name: Paulo Ponciano
 servers:
-- url: /api/v1
-  description: Desenvolvimento local
+  - url: /api/v1
+    description: Desenvolvimento local
 paths:
   /datasources:
     get:
       tags:
-      - ASM
-      summary: Returns a list of datasources
+        - Datasource
+      summary: Browse Datasources
+      x-swagger-router-controller: DatasourceController
       operationId: listDatasources
       parameters:
-      - name: type
-        in: query
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: string
-          enum:
-          - app
-          - asm
-      - name: applicationCode
-        in: query
-        required: false
-        style: form
-        schema:
-          type: string
+        - name: type
+          in: query
+          required: true
+          schema:
+            type: string
+            enum:
+              - app
+              - asm
+        - name: applicationCode
+          in: query
+          required: false
+          schema:
+            type: string
       security:
         - basicAuth:
-          - search:datasource
+            - searchdatasource
       responses:
-        200:
+        '200':
           description: A JSON array of datasource
           content:
             application/json:
@@ -42,19 +43,111 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/datasource'
-                x-content-type: application/json
-        401:
+        '401':
           $ref: '#/components/responses/UnauthorizedError'
+    post:
+      tags:
+        - Datasource
+      summary: Create a datasource
       x-swagger-router-controller: DatasourceController
+      operationId: createDatasource
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/datasource'
+      security:
+        - basicAuth:
+            - create.datasource
+      responses:
+        '200':
+          description: A JSON Datasource Object
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/datasource'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  '/datasources/{datasourceCode}':
+    parameters:
+      - name: datasourceCode
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags:
+        - Datasource
+      summary: Read a Datasource object
+      x-swagger-router-controller: DatasourceController
+      operationId: getDatasource
+      security:
+        - basicAuth:
+            - read.datasource
+      responses:
+        '200':
+          description: A JSON datasource Object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/datasource'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+    put:
+      tags:
+        - Datasource
+      summary: Edit a Datasource object
+      x-swagger-router-controller: DatasourceController
+      operationId: updateDatasource
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/datasource'
+      security:
+        - basicAuth:
+            - edit.datasource
+      responses:
+        '200':
+          description: A JSON datasource Object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/datasource'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+    delete:
+      tags:
+        - Datasource
+      summary: Delete a Datasource
+      x-swagger-router-controller: DatasourceController
+      operationId: deleteDatasource
+      security:
+        - basicAuth:
+            - read.datasource
+      responses:
+        '200':
+          description: A JSON datasource Object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/datasource'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
   /applications:
     get:
       tags:
-      - Application
+        - Application
       summary: Returns a list of applications
+      x-swagger-router-controller: ApplicationController
       operationId: listApplications
       parameters: []
       responses:
-        200:
+        '200':
           description: A JSON array of application
           content:
             application/json:
@@ -62,23 +155,21 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/application'
-                x-content-type: application/json
-      x-swagger-router-controller: ApplicationController
-  /netsms-version/{datasourceCode}:
+  '/netsms-version/{datasourceCode}':
     get:
       tags:
-      - NETSMS
+        - NETSMS
       summary: Returns a version Object
+      x-swagger-router-controller: NetsmsVersionController
       operationId: listNetsmsVersion
       parameters:
-      - name: datasourceCode
-        in: path
-        required: true
-        explode: true
-        schema:
-          type: string
+        - name: datasourceCode
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
-        200:
+        '200':
           description: A JSON array of application
           content:
             application/json:
@@ -86,23 +177,21 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/netsms-version'
-                x-content-type: application/json
-      x-swagger-router-controller: NetsmsVersionController
-  /netsms-parameter/{datasourceCode}:
+  '/netsms-parameter/{datasourceCode}':
     get:
       tags:
-      - NETSMS
-      summary: Returns a version Object
+        - NETSMS
+      summary: Returns a list of Netsms Parameter
+      x-swagger-router-controller: NetsmsParameterController
       operationId: listNetsmsParameter
       parameters:
-      - name: datasourceCode
-        in: path
-        required: true
-        explode: true
-        schema:
-          type: string
+        - name: datasourceCode
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
-        200:
+        '200':
           description: A JSON array of application
           content:
             application/json:
@@ -110,17 +199,16 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/netsms-parameter'
-                x-content-type: application/json
-      x-swagger-router-controller: NetsmsParameterController
   /cenarios:
     get:
       tags:
-      - Application
+        - Application
       summary: Returns a list of cenarios
+      x-swagger-router-controller: ApplicationController
       operationId: listCenarios
       parameters: []
       responses:
-        200:
+        '200':
           description: A JSON array of cenarios
           content:
             application/json:
@@ -128,30 +216,26 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/cenario'
-                x-content-type: application/json
-      x-swagger-router-controller: ApplicationController
   /report-netsms-parameters:
     get:
       tags:
-      - Reports
-      - NETSMS
-      summary: oi
+        - NETSMS
+      summary: Returns a report model for Netsms Parameters
       x-swagger-router-controller: ReportNetsmsParametersController
       operationId: ReportNetsmsParametersController
       parameters: []
       security: []
       responses:
-        200:
+        '200':
           description: A JSON User object
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/user'
-                x-content-type: application/json
   /profile:
     get:
       tags:
-      - Authentication
+        - Authentication
       summary: Returns current User
       x-swagger-router-controller: Authentication
       operationId: getProfile
@@ -159,22 +243,22 @@ paths:
       security:
         - basicAuth: []
       responses:
-        200:
+        '200':
           description: A JSON User object
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/user'
-                x-content-type: application/json
   /environments:
     get:
       tags:
-      - Application
+        - Application
       summary: Returns a list of environments
+      x-swagger-router-controller: ApplicationController
       operationId: listEnvironments
       parameters: []
       responses:
-        200:
+        '200':
           description: A JSON array of environments
           content:
             application/json:
@@ -182,33 +266,29 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/environment'
-                x-content-type: application/json
-      x-swagger-router-controller: ApplicationController
-  /accesscontrols/{datasourceCode}:
+  '/accesscontrols/{datasourceCode}':
     get:
       tags:
-      - AccessControl
+        - DBA
       summary: Return a list of Access Controls.
+      x-swagger-router-controller: AccesscontrolController
       operationId: listAccesscontrols
       parameters:
-      - name: datasourceCode
-        in: path
-        required: true
-        explode: true
-        schema:
-          type: string
-      - name: type
-        in: query
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-          enum:
-          - logon
-          - monitora
+        - name: datasourceCode
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: type
+          in: query
+          required: false
+          schema:
+            type: string
+            enum:
+              - logon
+              - monitora
       responses:
-        200:
+        '200':
           description: A JSON array of Access Control objects
           content:
             application/json:
@@ -216,23 +296,21 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/accesscontrol'
-                x-content-type: application/json
-      x-swagger-router-controller: AccesscontrolController
-  /asm-disks/{datasourceCode}:
+  '/asm-disks/{datasourceCode}':
     get:
       tags:
-      - ASM
+        - DBA
       summary: Returns a list of ASM disks.
+      x-swagger-router-controller: AsmController
       operationId: listAsmdisks
       parameters:
-      - name: datasourceCode
-        in: path
-        required: true
-        explode: true
-        schema:
-          type: string
+        - name: datasourceCode
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
-        200:
+        '200':
           description: A JSON array of ASM Disk objects
           content:
             application/json:
@@ -240,8 +318,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/asmdisk'
-                x-content-type: application/json
-      x-swagger-router-controller: AsmController
 components:
   responses:
     UnauthorizedError:
@@ -258,11 +334,11 @@ components:
     user:
       type: object
       properties:
-        username: 
+        username:
           type: string
-        firstName: 
+        firstName:
           type: string
-        lastName: 
+        lastName:
           type: string
     datasource:
       type: object
@@ -271,9 +347,22 @@ components:
           type: string
         type:
           type: string
+          enum:
+          - app
+          - asm
+        connectionstring:
+          type: string
+        username:
+          type: string
+        password:
+          type: string
+          writeOnly: true
       example:
-        type: asm
         code: net001ht4sun002b
+        type: asm
+        connectionstring: (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.25)(PORT=1523))(CONNECT_DATA=(SID=BRASAMX)))
+        username: consulta_dicionario
+        password: mypass
     application:
       type: object
       properties:
@@ -332,7 +421,7 @@ components:
         path: /dev/rdsk/c0t60A9800041765A706D5D4673544F6257d0s6
         databaseName: BRASAMX
         diskgroupNumber: 11
-        instanceName: +ASM        
+        instanceName: +ASM
         softwareVersion: 11.2.0.4.0
         diskgroupName: BRA_BRASAMX_DATA102017
     accesscontrol:
@@ -366,7 +455,7 @@ components:
           type: integer
       example:
         version: 9.4.1
-        applyDate: 2019-04-17T19:42:39.000Z
+        applyDate: {}
         executableId: 400
     netsms-parameter:
       type: object
@@ -379,5 +468,5 @@ components:
           type: number
       example:
         name: 9.4.1
-        description: 2019-04-17T19:42:39.000Z
+        description: {}
         numValue: 400

@@ -1,21 +1,41 @@
 'use strict';
-let logins = 
-[
-	{username:"paulo", password: "teste", userId: 500},
-	{username:"paulo.ponciano@spread.com.br", password: "teste", userId: 500}
-];
+const fs = require("fs");
+const path = require("path");
 
-let loginDAO = {};
-
-loginDAO.get = function(par)
+function LoginDAO()
 {
-	return new Promise((resolve, reject)=>
+	let filename = path.join(__dirname, `../data/logins-data.json`);
+	this.find = (param) =>
 	{
-		let result = logins.filter(login => login.username == par.username);
-		if(result.length==0) return reject("no data found")
-		return resolve(result[0]);
-	})
-}
+		return new Promise((resolve, reject)=>
+		{
+			fs.readFile(filename, {encoding: "utf8"}, (err, data) => 
+			{
+				if (err)
+				{
+					//console.log(err)
+					throw err;
+					return reject("INTERNAL_ERROR");
+				}
+				try
+				{
+					let logins = JSON.parse(data);
+					if(typeof param.username !== 'undefined') logins = logins.filter(login => login.username == param.username);
+					if(logins.length==0) return reject("NO_DATA_FOUND");
+					if(logins.length>1) return reject("TOO_MANY_ROWS")
+					return resolve(logins[0]);
+				}
+				catch(err)
+				{
+					console.log(err)
+					reject({mensagem: "Dados Corrompidos", conteudo: data});
+				}
+			});
+		});
+	};
+};
 
-module.exports = loginDAO;
 
+
+
+module.exports = LoginDAO;

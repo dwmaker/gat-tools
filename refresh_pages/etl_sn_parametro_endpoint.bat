@@ -1,2 +1,1 @@
-exit|sqlplus  dbanovosms/themask@ddad10g.world "@C:\Users\paulo.ponciano\Desktop\sn_parametro\etl_sn_parametro_endpoint.sql"
-pause
+sqlplus -s -l dbanovosms/themask@ddad10g.world "@%~dp0.\etl_sn_parametro_endpoint.sql"
