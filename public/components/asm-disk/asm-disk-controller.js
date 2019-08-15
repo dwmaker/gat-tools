@@ -1,81 +1,66 @@
-angular.module('myApp').controller('asm-disk-controller', ['$scope', 'asm-disk-service', 'Datatable', 'api-client-service',
-function($scope, asmDiskService, Datatable, apiClientService)
+angular.module('myApp').controller('asm-disk-controller', ['$scope', '$http', 'disk_service', 'Datatable',
+function($scope, $http, disk_service, Datatable)
 {
 	$scope.datatable = new Datatable(
 	{
 		columns:
 		[
-			{ name: 'hostName'    , width: 139 },
-			{ name: 'diskgroupNumber'    , width: 80 },
-			{ name: 'diskgroupName'      , width: 218 },
-			{ name: 'instanceName', width: 107 },
-			{ name: 'databaseName'      , width: 79 },
-			{ name: 'softwareVersion', width: 120 },
-			{ name: 'name', width: 260 },
-			{ name: 'path', width: 399 },			
-		]
+			{name: "host_name" },
+			{name: "dg_number" },
+			{name: "dg_name" },
+			{name: "instance_name" },
+			{name: "db_name" },
+			{name: "software_version"},
+			{name: "disk_name" },
+			{name: "disk_path" },
+		],
+		database: disk_service.getDisks()
 	});
 	
-	$scope.$watch('progress', function() 
-	{
-		
-	});
-	
-	$scope.progress = 0.01;
-	$scope.messages=[];
-	apiClientService.DatasourceController.listDatasources("asm")
-	.then(
-	(res)=>
-	{
-		
-		let count = 0;
-		let db = [];
-		let promises = res.data.map((row)=>
-		{
-			let promise = apiClientService.AsmController.listAsmdisks(row.code);
-			promise
-			.then((res)=> 
-			{
-				count = count+1;
-				$scope.progress = (count / promises.length);
-				db = db.concat(res.data);
-				if(count == promises.length) 
-				{
-					$scope.datatable.database = db;
-					$scope.datatable.apply();
-					$scope.progress = false;
-				}
-			})
-			.catch((res)=>
-			{
-				count = count+1;
-				$scope.progress = (count / promises.length);
-				$scope.messages[$scope.messages.length] = {"status":"danger", "title": row.code, "text": res.statusText};
-				if(count == promises.length) 
-				{
-					$scope.datatable.database = db;
-					$scope.datatable.apply();
-					$scope.progress = false;
-				}
-			})
-			return promise; 
-		});
-	})
-	.catch(
-	(err)=>
-	{
-		console.error(err);
-	})
-	
-	$scope.exportData = function ()
-	{
+	 $scope.exportData = function () 
+	 {
 		var options = 
 		{
-			headers: true
+			headers: true,
+			rows: 
+			{
+				1: 
+				{ 
+					style: 
+					{ 
+						Font: 
+						{
+							Color: "#FF0077"
+						}
+					}
+				} 
+			},
+			columns: 
+			[
+				{ columnid: 'host_name', width: 139 },
+				{ columnid: 'dg_number', width: 80 },
+				{ columnid: 'dg_name', width: 218 },
+				{ columnid: 'instance_name', width: 107 },
+				{ columnid: 'db_name', width: 79 },
+				{ columnid: 'software_version', width: 120 },
+				{ columnid: 'disk_name', width: 260 },
+				{ columnid: 'disk_path', width: 399 },
+
+			],
+			cells: 
+			{
+				1: 
+				{
+					1: 
+					{
+						style: { Font: { Color: "#00FFFF" } }
+					}
+				}
+			}
 		}; 
-		alasql('SELECT * INTO XLSX(?,?) FROM ?',["export.xlsx", options, $scope.datatable.displaydata]);
-	};
+       alasql('SELECT * INTO XLSX("export.xlsx",?) FROM ?',[options, $scope.datatable.displaydata]);
+    };
 	
-	
+	$scope.datatable.apply();
 }]);
 

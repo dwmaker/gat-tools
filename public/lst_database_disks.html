@@ -21,15 +21,15 @@
 		<script src="scripts/menu-controller.js"></script>
 		<script src="components/authentication/authentication-service.js"></script>
 		<script src="components/menu/menu-directive.js"></script>
-		<script src="lst_database_disks.js"></script>
+		<script src="components/asm-disk/asm-disk-controller.js"></script>
 		<script src="scripts/datatable-factory.js"></script>
 		<script src="disk_service.js"></script>
 	</head>
 	<body ng-app="myApp">
 		<menu></menu>
 		<main role="main" style="margin-left: 30px;margin-right: 30px; margin-top: 60px; ">
-			<div ng-controller="lst_database_disks_controller">
-				<h2>Database Disks</h2>
+			<div ng-controller="asm-disk-controller">
+				<h2>ASM Disks</h2>
 				
 				</br>
 				
@@ -37,7 +37,7 @@
 				
 				<table class="table table-bordered table-sm table-striped">
 					<caption>Exibindo {{ datatable.displaydata.length }} de {{ datatable.database.length }} registros.</caption>
-					<thead>
+					<thead class="thead-dark">
 						<tr>
 							<th ng-repeat="column in datatable.columns" >{{ column.name}} </th>
 						</tr>

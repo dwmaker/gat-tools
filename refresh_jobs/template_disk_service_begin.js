@@ -1,4 +1,4 @@
-angular.module('myApp').service('disk_service', 
+angular.module('myApp').service('asm-disk-service', 
 ['$http', 
 function($http)
 {

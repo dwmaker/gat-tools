@@ -11,18 +11,18 @@
 @call :getdata "consulta_dicionario/consulta@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.64.166)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DBRASP1)))"
 @call :getdata "consulta_dicionario/consulta@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=RACNET-CLTFT01.dcing.corp)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=SOCSAMX1)))"
 @goto :endfile
-
+C:\git\gat-tools\public\components\asm-disk\asm-disk-service.js
 :initfile
-@if exist "%~dp0.\~disk_service.js" @del "%~dp0..\public\~disk_service.js"
-@type "%~dp0.\template_disk_service_begin.js" >> "%~dp0..\public\~disk_service.js"
+@if exist "%~dp0..\public\components\asm-disk\~asm-disk-service.js" @del "%~dp0..\public\components\asm-disk\~asm-disk-service.js"
+@type "%~dp0.\template_disk_service_begin.js" >> "%~dp0..\public\components\asm-disk\~asm-disk-service.js"
 @goto :eof
 
 :getdata
-sqlplus -s -l %1 "@%~dp0.\spool_disk_service.sql" "%~dp0..\public\~disk_service.js"
+sqlplus -s -l %1 "@%~dp0.\spool_disk_service.sql" "%~dp0..\public\components\asm-disk\~asm-disk-service.js"
 @goto :eof
 
 :endfile
-@type "%~dp0.\template_disk_service_end.js" >> "%~dp0..\public\~disk_service.js"
-@if exist "%~dp0..\public\disk_service.js" @del "%~dp0..\public\disk_service.js"
-@copy "%~dp0..\public\~disk_service.js" "%~dp0..\public\disk_service.js"
-@if exist "%~dp0..\public\~disk_service.js" @del "%~dp0..\public\~disk_service.js"
+@type "%~dp0.\template_disk_service_end.js" >> "%~dp0..\public\components\asm-disk\~asm-disk-service.js"
+@if exist "%~dp0..\public\components\asm-disk\asm-disk-service.js" @del "%~dp0..\public\components\asm-disk\asm-disk-service.js"
+@copy "%~dp0..\public\components\asm-disk\~asm-disk-service.js" "%~dp0..\public\components\asm-disk\asm-disk-service.js"
+@if exist "%~dp0..\public\components\asm-disk\~asm-disk-service.js" @del "%~dp0..\public\components\asm-disk\~asm-disk-service.js"
