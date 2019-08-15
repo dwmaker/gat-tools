@@ -56,7 +56,7 @@ dg_number,
 db_name,
 disk_name
 ) loop
-dbms_output.put('		arr[arr.length] = {');
+dbms_output.put('		disks.push({');
 dbms_output.put('"host_name": '|| to_json(x.host_name)||',');
 dbms_output.put('"dg_number": '|| to_json(x.dg_number)||',');
 dbms_output.put('"dg_name": '|| to_json(x.dg_name)||',');
@@ -65,7 +65,7 @@ dbms_output.put('"db_name": ' || to_json(x.db_name)||',');
 dbms_output.put('"software_version": ' || to_json(x.software_version)||',');
 dbms_output.put('"disk_name": ' || to_json(x.disk_name)||',');
 dbms_output.put('"disk_path": ' || to_json(x.disk_path)||'');
-dbms_output.put('}');
+dbms_output.put('})');
 dbms_output.put_line(';');
 end loop;
 exception

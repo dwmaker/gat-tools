@@ -1,3 +1,3 @@
-		return arr; 
+		return disks; 
 	}
 }]);

@@ -1,5 +1,5 @@
-angular.module('myApp').controller('asm-disk-controller', ['$scope', '$http', 'disk_service', 'Datatable',
-function($scope, $http, disk_service, Datatable)
+angular.module('myApp').controller('asm-disk-controller', ['$scope', '$http', 'asm-disk-service', 'Datatable',
+function($scope, $http, asmdiskservice, Datatable)
 {
 	$scope.datatable = new Datatable(
 	{
@@ -14,11 +14,11 @@ function($scope, $http, disk_service, Datatable)
 			{name: "disk_name" },
 			{name: "disk_path" },
 		],
-		database: disk_service.getDisks()
+		database: asmdiskservice.getDisks()
 	});
 	
-	 $scope.exportData = function () 
-	 {
+	$scope.exportData = function () 
+	{
 		var options = 
 		{
 			headers: true,
