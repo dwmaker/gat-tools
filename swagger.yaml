@@ -216,22 +216,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/cenario'
-  /report-netsms-parameters:
-    get:
-      tags:
-        - NETSMS
-      summary: Returns a report model for Netsms Parameters
-      x-swagger-router-controller: ReportNetsmsParametersController
-      operationId: ReportNetsmsParametersController
-      parameters: []
-      security: []
-      responses:
-        '200':
-          description: A JSON User object
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/user'
   /profile:
     get:
       tags:
@@ -267,6 +251,12 @@ paths:
                 items:
                   $ref: '#/components/schemas/environment'
   '/accesscontrols/{datasourceCode}':
+    parameters:
+    - name: datasourceCode
+      in: path
+      required: true
+      schema:
+        type: string
     get:
       tags:
         - DBA
@@ -274,11 +264,6 @@ paths:
       x-swagger-router-controller: AccesscontrolController
       operationId: listAccesscontrols
       parameters:
-        - name: datasourceCode
-          in: path
-          required: true
-          schema:
-            type: string
         - name: type
           in: query
           required: false
@@ -296,6 +281,20 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/accesscontrol'
+  '/accesscontrols':
+    get:
+      tags:
+        - DBA
+      summary: Return a Access Control Metadata.
+      x-swagger-router-controller: AccesscontrolController
+      operationId: getMetadata
+      responses:
+        '200':
+          description: A JSON array of Access Control objects
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/accesscontrol-metadata'
   '/asm-disks/{datasourceCode}':
     get:
       tags:
@@ -331,6 +330,12 @@ components:
       type: http
       scheme: basic
   schemas:
+    accesscontrol-metadata:
+      type: object
+      properties:
+        refreshDate:
+          type: string
+          format: date-time
     user:
       type: object
       properties:

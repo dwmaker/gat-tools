@@ -1,5 +1,6 @@
 <div class="">
 	<h2>Controle de Acessos</h2>
+	<small ng-show:"metadata">Atualizado em {{ metadata.refreshDate | date:'yyyy-MM-dd HH:mm:ss': '+0000' }} </small>
 	<div class="alert alert-{{message.status}}" ng-repeat="message in messages">
 		<strong ng-bind="message.title"></strong> {{message.text}}
 	</div>

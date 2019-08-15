@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 const fs = require('fs');
 const path = require('path');
 
@@ -17,11 +17,11 @@ function(type, applicationCode)
 				let json = JSON.parse(data);
 				if(typeof type            == "string") json = json.filter(val => type == val.type)
 				if(typeof applicationCode == "string") json = json.filter(val => applicationCode == val.applicationCode)
-				resolve(json);
+				return resolve(json);
 			}
 			catch(err)
 			{
-				reject(err);
+				return reject(err);
 			}
 		});
 	});

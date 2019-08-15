@@ -1,13 +1,12 @@
-'use strict';
-// @CodeGeneratorOverwrite: enabled
-const AsmControllerService = require("../services/AsmController.js");
+"use strict";
+const service = require("../services/netsms-version-service.js");
 
 let controller = {};
-controller.listAsmdisks = function(req, res, next)
+controller.listNetsmsVersion = function(req, res, next)
 {
 	let datasourceCode = req.params.datasourceCode;
 	
-	AsmControllerService.listAsmdisks(datasourceCode)
+	service.listNetsmsVersion(datasourceCode)
 	.then((data) =>
 	{
 		return res.status(200).send(data);

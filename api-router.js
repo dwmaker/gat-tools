@@ -1,32 +1,30 @@
-'use strict';
-// @CodeGeneratorOverwrite: enabled
+"use strict";
 const express = require('express');
 const morgan = require('morgan');
-const DatasourceController = require("./controllers/DatasourceController.js");
-const ApplicationController = require("./controllers/ApplicationController.js");
-const NetsmsVersionController = require("./controllers/NetsmsVersionController.js");
-const NetsmsParameterController = require("./controllers/NetsmsParameterController.js");
-const Profile = require("./controllers/Profile.js");
-const AccesscontrolController = require("./controllers/AccesscontrolController.js");
-const AsmController = require("./controllers/AsmController.js");
-const ReportNetsmsParameterController = require("./controllers/report-netsms-parameters-controller.js");
+const Datasource = require("./controllers/datasource-controller.js");
+const Application = require("./controllers/application-controller.js");
+const NetsmsVersion = require("./controllers/netsms-version-controller.js");
+const NetsmsParameter = require("./controllers/netsms-parameter-controller.js");
+const Profile = require("./controllers/profile-controller.js");
+const Accesscontrol = require("./controllers/accesscontrol-controller.js");
+const Asm = require("./controllers/asm-controller.js");
 let router = express.Router();
 router.use(morgan('dev'));
  
-router.get("/datasources", DatasourceController.listDatasources );
-router.get("/datasources/:datasourceCode", DatasourceController.getDatasource ); 
-router.put("/datasources/:datasourceCode", DatasourceController.updateDatasource ); 
-router.post("/datasources", DatasourceController.createDatasource );
-router.delete("/datasources/:datasourceCode", DatasourceController.deleteDatasource ); 
+router.get("/datasources", Datasource.listDatasources );
+router.get("/datasources/:datasourceCode", Datasource.getDatasource ); 
+router.put("/datasources/:datasourceCode", Datasource.updateDatasource ); 
+router.post("/datasources", Datasource.createDatasource );
+router.delete("/datasources/:datasourceCode", Datasource.deleteDatasource ); 
 
-router.get("/applications", ApplicationController.listApplications ); 
-router.get("/cenarios", ApplicationController.listCenarios ); 
-router.get("/environments", ApplicationController.listEnvironments ); 
-router.get("/netsms-version/:datasourceCode", NetsmsVersionController.listNetsmsVersion ); 
-router.get("/netsms-parameter/:datasourceCode", NetsmsParameterController.listNetsmsParameter ); 
+router.get("/applications", Application.listApplications ); 
+router.get("/cenarios", Application.listCenarios ); 
+router.get("/environments", Application.listEnvironments ); 
+router.get("/netsms-version/:datasourceCode", NetsmsVersion.listNetsmsVersion ); 
+router.get("/netsms-parameter/:datasourceCode", NetsmsParameter.listNetsmsParameter ); 
 router.get("/profile",  Profile.getProfile ); 
-router.get("/accesscontrols/:datasourceCode", AccesscontrolController.listAccesscontrols ); 
-router.get("/asm-disks/:datasourceCode", AsmController.listAsmdisks );
-router.get("/report-netsms-parameters", ReportNetsmsParameterController.reportNetsmsParameters);
+router.get("/accesscontrols", Accesscontrol.getMetadata);
+router.get("/accesscontrols/:datasourceCode", Accesscontrol.listAccesscontrols ); 
+router.get("/asm-disks/:datasourceCode", Asm.listAsmdisks );
 
 module.exports = router;

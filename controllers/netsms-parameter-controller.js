@@ -1,13 +1,12 @@
-'use strict';
-// @CodeGeneratorOverwrite: enabled
-const NetsmsParameterControllerService = require("../services/NetsmsParameterController.js");
+"use strict";
+const NetsmsParameterService = require("../services/netsms-parameter-service.js");
 
 let controller = {};
 controller.listNetsmsParameter = function(req, res, next)
 {
 	let datasourceCode = req.params.datasourceCode;
 	
-	NetsmsParameterControllerService.listNetsmsParameter(datasourceCode)
+	NetsmsParameterService.listNetsmsParameter(datasourceCode)
 	.then((data) =>
 	{
 		return res.status(200).send(data);

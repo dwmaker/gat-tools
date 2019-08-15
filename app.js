@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 const express = require('express');
 const fs = require('fs');
 const swaggerUiExpress = require('swagger-ui-express');
 const jsyaml = require('js-yaml');
 const http = require('http');
 const bodyParser = require('body-parser');
-//const authService = require("./services/auth-service.js");
 const apiRouter = require('./api-router.js');
 const passport = require('passport');
+const securityschemas = require("./security-schemas")
 
 // swaggerRouter configuration
 var spec = fs.readFileSync(`${__dirname}/swagger.yaml`, 'utf8');
@@ -17,6 +17,8 @@ var app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json({strict: false}));
+
+passport.use('basicAuth', securityschemas.basicAuth.strategy);
 app.use(passport.initialize());
 
 app.use('/',    express.static(`${__dirname}/public`));

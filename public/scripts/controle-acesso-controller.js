@@ -19,6 +19,9 @@ function($scope, $http, apiClientService)
 	}
 	
 	$scope.progress = 0.01;
+	apiClientService.AccesscontrolController.getMetadata()
+	.then((res)=>{$scope.metadata = res.data})
+	.catch((err)=>{console.error(err)})
 	
 	apiClientService.DatasourceController.listDatasources("app", undefined)
 	.then(

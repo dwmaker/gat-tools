@@ -14,14 +14,14 @@ function UserDAO()
 				if (err)
 				{
 					console.log(err)
-					return reject({mensagem: "Dados não encontrados", conteudo: null});
+					return reject(new NO_DATA_FOUND({err}));
 				}
 				try
 				{
 					let users = JSON.parse(data);
 					if(typeof par.id != 'undefined') users = users.filter(item => item.id == par.id);
-					if(users.length==0) return reject("no data found");
-					if(users.length>1) return reject("too many rows")
+					if(users.length==0) return reject(new NO_DATA_FOUND({err}));
+					if(users.length>1) return reject(new TOO_MANY_ROWS())
 					return resolve(users[0]);
 				}
 				catch(err)

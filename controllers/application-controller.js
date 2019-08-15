@@ -1,12 +1,10 @@
-'use strict';
-// @CodeGeneratorOverwrite: enabled
-const ApplicationControllerService = require("../services/ApplicationController.js");
+"use strict";
+const service = require("../services/application-service.js");
 
 let controller = {};
 controller.listApplications = function(req, res, next)
 {
-	
-	ApplicationControllerService.listApplications()
+	service.listApplications()
 	.then((data) =>
 	{
 		return res.status(200).send(data);
@@ -19,7 +17,7 @@ controller.listApplications = function(req, res, next)
 controller.listCenarios = function(req, res, next)
 {
 	
-	ApplicationControllerService.listCenarios()
+	service.listCenarios()
 	.then((data) =>
 	{
 		return res.status(200).send(data);
@@ -31,8 +29,7 @@ controller.listCenarios = function(req, res, next)
 }
 controller.listEnvironments = function(req, res, next)
 {
-	
-	ApplicationControllerService.listEnvironments()
+	service.listEnvironments()
 	.then((data) =>
 	{
 		return res.status(200).send(data);

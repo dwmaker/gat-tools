@@ -3,7 +3,7 @@
 "owner": "CORE",
 "name": "TR_LOGON",
 "valid": true,
-"enabled": true,
+"enabled": false,
 "type": "logon"
 }
 ,{

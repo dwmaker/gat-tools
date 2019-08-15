@@ -115,6 +115,16 @@ function($http)
 			};
 			return $http(opt);
 		},
+		getMetadata: function()
+		{
+			let opt = 
+			{
+				method: "GET", 
+				url: "/api/v1/accesscontrols",
+				params: {}
+			};
+			return $http(opt);
+		},
 	};
 
 	this.AsmController = 
