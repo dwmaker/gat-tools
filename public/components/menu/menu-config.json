@@ -1,0 +1,54 @@
+{
+	"options":
+	[
+		{
+			"name": "Home",
+			"url": "/#!/home"
+		},
+		{
+			"name": "NETSMS",
+			"options":
+			[
+				{
+					"name": "Versão",
+					"url": "/report_sn_versao.html"
+				},
+				{
+					"name": "Parâmetros",
+					"url": "/report_sn_parametro.html"
+				}
+			]
+		},
+		{
+			"name": "DBA",
+			"options":
+			[
+				{
+					"name": "ASM Disks",
+					"url": "/lst_database_disks.html"
+				},
+				{
+					"name": "Controle de Acesso",
+					"url": "/#!/controle-acesso"
+				}
+			]
+		},
+		{
+			"name": "Cadastros",
+			"security": [{"basicAuth": []}],
+			"options":
+			[
+				{
+					"name": "Datasources",
+					"url": "/#!/datasources",
+					"security": [{"basicAuth": ["browse:datasource"]}]
+				},
+				{
+					"name": "Usuários",
+					"url": "/#!/users",
+					"security": [{ "basicAuth": ["browse:user"]}]
+				}
+			]
+		}
+	]
+}

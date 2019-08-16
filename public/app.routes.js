@@ -4,7 +4,7 @@ angular.module('myApp')
 	$routeProvider
 	.when('/home', 
 	{
-		templateUrl: '/views/home.html',
+		templateUrl: '/components/home/home-view.html',
 		controller: 'home-controller'
 	})
 	.when('/asm-disks', 
@@ -14,7 +14,7 @@ angular.module('myApp')
 	})
 	.when('/controle-acesso', 
 	{
-		templateUrl: '/views/controle-acesso.html',
+		templateUrl: '/components/controle-acesso/controle-acesso-list.html',
 		controller: 'controle-acesso-controller'
 	})
 	.when('/versao-netsms', 
