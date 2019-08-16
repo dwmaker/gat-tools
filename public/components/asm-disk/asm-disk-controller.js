@@ -14,8 +14,10 @@ function($scope, $http, asmdiskservice, Datatable)
 			{name: "disk_name" },
 			{name: "disk_path" },
 		],
-		database: asmdiskservice.getDisks()
+		database: asmdiskservice.getAsmDisks()
 	});
+	
+	$scope.metadata = asmdiskservice.getMetadata();
 	
 	$scope.exportData = function () 
 	{
