@@ -1,0 +1,28 @@
+<div>
+	<h2>ASM Disks</h2>
+	<small ng-show:"metadata">Atualizado em {{ metadata.refreshDate | date:'yyyy-MM-dd HH:mm:ss': '+0000' }} </small>
+	<div></div>
+	<button type="button" ng-click="exportData()" class="btn btn-light" title="Exportar para Planilha do Excel"> <i class="fas fa-file-excel text-primary"> </i> Exportar</button>
+	
+	<table class="table table-bordered table-sm table-striped">
+		<caption>Exibindo {{ datatable.displaydata.length }} de {{ datatable.database.length }} registros.</caption>
+		<thead class="thead-dark">
+			<tr>
+				<th ng-repeat="column in datatable.columns" >{{ column.name}} </th>
+			</tr>
+			<tr>
+				<th ng-repeat="column in datatable.columns">
+					<select ng-model="datatable.filters[column.name]" ng-change="datatable.apply()" >
+						<option value=""></option>
+						<option ng-repeat="x in column.list" ng-value="x">{{ x }}</option>
+					</select>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="x in datatable.displaydata">
+				<td ng-repeat="column in datatable.columns" title="{{ x.username }}@{{ x.ds_conexao }}&#10;&#13;{{ x.sqlerrm }}" ng-class="{'bg-warning': x.sqlerrm}">{{ x[column.name] }}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

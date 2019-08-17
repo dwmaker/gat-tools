@@ -9,7 +9,7 @@ angular.module('myApp')
 	})
 	.when('/asm-disks', 
 	{
-		templateUrl: '/views/asm-disk.html',
+		templateUrl: '/components/asm-disk/asm-disk-view.html',
 		controller: 'asm-disk-controller'
 	})
 	.when('/controle-acesso', 
