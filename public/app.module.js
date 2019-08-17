@@ -1,1 +1,1 @@
-angular.module('myApp', ['ngRoute', 'ui.bootstrap', 'base64']);
+angular.module("myApp", ["ngRoute", "ui.bootstrap", "base64", "ngCookies"]);

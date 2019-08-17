@@ -234,13 +234,15 @@ begin
 	dbms_output.put_line('		<script src="lib/js/bootstrap.min.js" ></script>');
 	dbms_output.put_line('		<script src="lib/angular.min.js"></script>');
 	dbms_output.put_line('		<script src="lib/angular-route.min.js"></script>');
+	dbms_output.put_line('		<script src="lib/angular-base64/angular-base64.min.js"></script>');
+	dbms_output.put_line('		<script src="lib/angular-cookies/angular-cookies.min.js"></script>');
 	dbms_output.put_line('		<script src="lib/alasql.min.js"></script>');
 	dbms_output.put_line('		<script src="lib/xlsx.full.min.js"></script>');
-	dbms_output.put_line('		<script src="lib/angular-base64/angular-base64.min.js"></script>');
+	
 	dbms_output.put_line('		<script src="uib/dist/ui-bootstrap-tpls.js"></script>');
 	dbms_output.put_line('		<script src="uib/dist/ui-bootstrap.js"></script>');
 	dbms_output.put_line('		<script src="app.module.js"></script>');
-	dbms_output.put_line('		<script src="scripts/menu-controller.js"></script>');
+	dbms_output.put_line('		<script src="components/menu/menu-controller.js"></script>');
 	dbms_output.put_line('		<script src="components/authentication/authentication-service.js"></script>');
 	dbms_output.put_line('		<script src="components/menu/menu-directive.js"></script>');
 	dbms_output.put_line('	</head>');

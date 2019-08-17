@@ -1,5 +1,5 @@
 angular.module('myApp')
-.service("authentication-service", ["$http", "$base64", function($http, $base64)
+.service("authentication-service", ["$http", "$base64", "$cookies", function($http, $base64, $cookies)
 {
 	let profile;
 	
