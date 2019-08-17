@@ -241,17 +241,12 @@ begin
 				dbms_output.put_line('		disks.push(' || to_json(lst_asm_disk(i_asm_disk)) ||');');
 			END LOOP;
 		end if;
-		dbms_output.put_line('		return disks; ');
-		dbms_output.put_line('	}');
-		dbms_output.put_line('	this.getErrors = function()');
-		dbms_output.put_line('	{');
-		dbms_output.put_line('		var errors = [];');
 		if lst_error.count>0 then
 			FOR i_error IN lst_error.FIRST .. lst_error.LAST LOOP
-				dbms_output.put_line('		errors.push(' || to_json(lst_error(i_error)) ||');');
+				dbms_output.put_line('		disks.push(' || to_json(lst_error(i_error)) ||');');
 			END LOOP;
 		end if;
-		dbms_output.put_line('		return errors; ');
+		dbms_output.put_line('		return disks; ');
 		dbms_output.put_line('	}');
 		dbms_output.put_line('}]);');
 	end;

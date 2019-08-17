@@ -5,6 +5,7 @@ function($scope, asmDiskService, Datatable, asmDiskService)
 	{
 		columns:
 		[
+			{ name: 'cd_conexao'    , width: 139 },	
 			{ name: 'host_name'    , width: 139 },
 			{ name: 'dg_number'    , width: 80 },
 			{ name: 'dg_name'      , width: 218 },
@@ -12,7 +13,8 @@ function($scope, asmDiskService, Datatable, asmDiskService)
 			{ name: 'db_name'      , width: 79 },
 			{ name: 'software_version', width: 120 },
 			{ name: 'disk_name', width: 260 },
-			{ name: 'disk_path', width: 399 },			
+			{ name: 'disk_path', width: 399 },	
+			
 		]
 	});
 	
@@ -25,7 +27,6 @@ function($scope, asmDiskService, Datatable, asmDiskService)
 	$scope.messages=[];
 	$scope.datatable.database = asmDiskService.getAsmDisks();
 	$scope.metadata = asmDiskService.getMetadata();
-	$scope.messages = asmDiskService.getErrors();
 	$scope.datatable.apply()
 	$scope.progress = 1.00;
 	

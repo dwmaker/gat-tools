@@ -4,7 +4,7 @@ let controller = {};
 
 controller.getProfile = 
 [
-	securityController([{"basicAuth": ["read:profile"]}]),
+	securityController([{"basicAuth": []}]),
 	function(req, res, next)
 	{
 		res.status("200").send(req.user);

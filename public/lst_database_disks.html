@@ -52,7 +52,7 @@
 					</thead>
 					<tbody>
 						<tr ng-repeat="x in datatable.displaydata">
-							<td ng-repeat="column in datatable.columns">{{ x[column.name] }}</td>
+							<td ng-repeat="column in datatable.columns" title="{{ x.username }}@{{ x.ds_conexao }}&#10;&#13;{{ x.sqlerrm }}" ng-class="{'bg-warning': x.sqlerrm}">{{ x[column.name] }}</td>
 						</tr>
 					</tbody>
 				</table>

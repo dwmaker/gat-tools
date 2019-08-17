@@ -1,4 +1,4 @@
-﻿
+
 /*****************************************************
 ***   spool_report_sn_versao.sql
 ***   Autor: Paulo Ponciano - Spread

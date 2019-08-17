@@ -31,28 +31,47 @@
 			<caption>Exibindo {{ datatable.displaydata.length }} de {{ datatable.database.length }} registros.</caption>
 			<thead class="thead-dark">
 				<tr>
-					<th>Ambiente</th>
-					<th>Sistema</th>
-					<th>Cenário</th>
-					<th>Logon</th>
-					<th>Monitora</th>
+					<th >Ambiente</th>
+					<th >Sistema</th>
+					<th >Cenário</th>
+					<th >Logon</th>
+					<th >Monitora</th>
+				</tr>
+				<tr>
+					<th><select style="width: 100%"><option>-</option></select></th>
+					<th><select style="width: 100%"><option>-</option></select></th>
+					<th><select style="width: 100%"><option>-</option></select></th>
+					<th></th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr ng-repeat="row in datatable.displaydata">
-					<td  ng-bind="row.environmentCode">CERT</td>
-					<td  ng-bind="row.applicationCode">NETSMS</td>
-					<td  ng-bind="row.cenarioCode">BRA</td>
-					<td ng-class="{'text-nowrap':true, 'bg-warning': (row.accesscontrols.filter(filtrar({type:type})).length > 1)}" ng-repeat="type in ['logon','monitora']">
-						<span ng-if="row.message" class="badge badge-danger" ng-attr-title="{{ row.message }}">Erro Interno</span>
-						<span ng-if="(row.accesscontrols.filter(filtrar({type:type})).length == 0)" class="badge badge-warning" title="trigger não encontrada">Inexistente</span>
-						<span ng-repeat="accesscontrol in row.accesscontrols | filter: filtrar({type:type}) " >
+					<td title="{{ row.username }}@{{ row.ds_conexao }}" ng-bind="row.cd_ambiente">CERT</td>
+					<td title="{{ row.username }}@{{ row.ds_conexao }}" ng-bind="row.cd_sistema">NETSMS</td>
+					<td title="{{ row.username }}@{{ row.ds_conexao }}" ng-bind="row.cd_cenario">BRA</td>
+					<td ng-class="{'text-nowrap':true, 'bg-warning': (row.login_triggers.length > 1)}">
+						<span ng-if="row.sqlerrm" class="badge badge-danger" ng-attr-title="{{ row.sqlerrm }}">Erro Interno</span>
+						<span ng-if="(row.login_triggers.length == 0 && !row.sqlerrm)" class="badge badge-warning" title="trigger não encontrada">Inexistente</span>
+						<span ng-repeat="accesscontrol in row.login_triggers | filter: filtrar({type:type}) " >
 							
 							<span  ng-if="$index>0">, </span>
 							<li class="fas fa-arrow-alt-circle-down text-secondary" ng-show="!accesscontrol.enabled" title="Desativado"></li> 
 							<li class="fas fa-times-circle text-danger" ng-show="!accesscontrol.valid" title="Objeto Inválido"></li> 
 							<li class="fas fa-check-circle text-success" ng-show="accesscontrol.valid && accesscontrol.enabled" title="Ativa"></li> 
-							<span  ng-bind="accesscontrol.owner + '.' + accesscontrol.name"></span>
+							<span  ng-bind="accesscontrol.owner + '.' + accesscontrol.trigger_name"></span>
+						</span>
+					</td>
+					<td ng-class="{'text-nowrap':true, 'bg-warning': (row.monitora_triggers.length > 1)}">
+						<span ng-if="row.sqlerrm" class="badge badge-danger" ng-attr-title="{{ row.sqlerrm }}">Erro Interno</span>
+						<span ng-if="(row.monitora_triggers.length == 0 && !row.sqlerrm)" class="badge badge-warning" title="trigger não encontrada">Inexistente</span>
+						<span ng-repeat="accesscontrol in row.monitora_triggers | filter: filtrar({type:type}) " >
+							
+							<span  ng-if="$index>0">, </span>
+							<li class="fas fa-arrow-alt-circle-down text-secondary" ng-show="!accesscontrol.enabled" title="Desativado"></li> 
+							<li class="fas fa-times-circle text-danger" ng-show="!accesscontrol.valid" title="Objeto Inválido"></li> 
+							<li class="fas fa-check-circle text-success" ng-show="accesscontrol.valid && accesscontrol.enabled" title="Ativa"></li> 
+							<span  ng-bind="accesscontrol.owner + '.' + accesscontrol.trigger_name"></span>
 						</span>
 					</td>
 					

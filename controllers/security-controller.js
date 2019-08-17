@@ -66,6 +66,7 @@ function securityController(security)
 		authSecurity(security)
 		.then((obj)=>
 		{
+			req.user = obj;
 			next();
 		})
 		.catch((err)=>

@@ -32,7 +32,7 @@ declare
 			'from prod_jd.sn_parametro@' || p_dblink_name || '';
 		end;
 		
-		-- Registros n„o encontrados na origem, ser„o atualizados para "Deleted"
+		-- Registros n√£o encontrados na origem, ser√£o atualizados para "Deleted"
 		execute immediate 
 		'UPDATE core.sn_parametro T SET ' || chr(13) || 
 		'T.st_parametro = ''D'', ' || chr(13) || 
@@ -51,7 +51,7 @@ declare
 		')';
 		p_nr_del := SQL%ROWCOUNT;
 		
-		-- Registro encontrados com valores diferentes na origem, ser„o atualizados para "History"
+		-- Registro encontrados com valores diferentes na origem, ser√£o atualizados para "History"
 		execute immediate 
 		'update core.sn_parametro s set ' || chr(13) || 
 		's.st_parametro = ''H'', ' || chr(13) || 
@@ -73,7 +73,7 @@ declare
 		')';
 		p_nr_hst := SQL%ROWCOUNT;
 		
-		-- Registros n„o encontrados no destino, ser„o inseridos como "Active"
+		-- Registros n√£o encontrados no destino, ser√£o inseridos como "Active"
 		execute immediate 
 		'INSERT INTO core.sn_parametro ' || chr(13) || 
 		'( ' || chr(13) || 
