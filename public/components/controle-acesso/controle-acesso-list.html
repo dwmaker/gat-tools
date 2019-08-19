@@ -28,7 +28,7 @@
 	<div>
 		<button type="button" ng-click="exportData()" class="btn btn-light" title="Exportar para Planilha do Excel"> <i class="fas fa-file-excel text-primary"> </i> Exportar</button>
 		<table class="table table-bordered table-sm">
-			<caption>Exibindo {{ datatable.displaydata.length }} de {{ datatable.database.length }} registros.</caption>
+			<caption>Exibindo {{ datatable.displaydata.filter(filtrar(filtro)).length }} de {{ datatable.displaydata.length }} registros.</caption>
 			<thead class="thead-dark">
 				<tr>
 					<th >Ambiente</th>
@@ -38,22 +38,37 @@
 					<th >Monitora</th>
 				</tr>
 				<tr>
-					<th><select style="width: 100%"><option>-</option></select></th>
-					<th><select style="width: 100%"><option>-</option></select></th>
-					<th><select style="width: 100%"><option>-</option></select></th>
+					<th>
+						<select style="width: 100%" ng-model="filtro.cd_ambiente">
+							<option ng-value="undefined">-</option>
+							<option ng-repeat="cd_ambiente in list.cd_ambiente" ng-value="cd_ambiente">{{ cd_ambiente }}</option>
+						</select>
+					</th>
+					<th>
+						<select style="width: 100%" ng-model="filtro.cd_sistema">
+							<option ng-value="undefined">-</option>
+							<option ng-repeat="cd_sistema in list.cd_sistema" ng-value="cd_sistema">{{ cd_sistema }}</option>
+						</select>
+					</th>
+					<th>
+						<select style="width: 100%" ng-model="filtro.cd_cenario">
+							<option ng-value="undefined">-</option>
+							<option ng-repeat="cd_cenario in list.cd_cenario" ng-value="cd_cenario">{{ cd_cenario || '(null)'}}</option>
+						</select>
+					</th>
 					<th></th>
 					<th></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="row in datatable.displaydata">
+				<tr ng-repeat="row in datatable.displaydata | filter: filtrar(filtro)">
 					<td title="{{ row.username }}@{{ row.ds_conexao }}" ng-bind="row.cd_ambiente">CERT</td>
 					<td title="{{ row.username }}@{{ row.ds_conexao }}" ng-bind="row.cd_sistema">NETSMS</td>
 					<td title="{{ row.username }}@{{ row.ds_conexao }}" ng-bind="row.cd_cenario">BRA</td>
 					<td ng-class="{'text-nowrap':true, 'bg-warning': (row.login_triggers.length > 1)}">
 						<span ng-if="row.sqlerrm" class="badge badge-danger" ng-attr-title="{{ row.sqlerrm }}">Erro Interno</span>
 						<span ng-if="(row.login_triggers.length == 0 && !row.sqlerrm)" class="badge badge-warning" title="trigger não encontrada">Inexistente</span>
-						<span ng-repeat="accesscontrol in row.login_triggers | filter: filtrar({type:type}) " >
+						<span ng-repeat="accesscontrol in row.login_triggers" >
 							
 							<span  ng-if="$index>0">, </span>
 							<li class="fas fa-arrow-alt-circle-down text-secondary" ng-show="!accesscontrol.enabled" title="Desativado"></li> 
@@ -65,7 +80,7 @@
 					<td ng-class="{'text-nowrap':true, 'bg-warning': (row.monitora_triggers.length > 1)}">
 						<span ng-if="row.sqlerrm" class="badge badge-danger" ng-attr-title="{{ row.sqlerrm }}">Erro Interno</span>
 						<span ng-if="(row.monitora_triggers.length == 0 && !row.sqlerrm)" class="badge badge-warning" title="trigger não encontrada">Inexistente</span>
-						<span ng-repeat="accesscontrol in row.monitora_triggers | filter: filtrar({type:type}) " >
+						<span ng-repeat="accesscontrol in row.monitora_triggers " >
 							
 							<span  ng-if="$index>0">, </span>
 							<li class="fas fa-arrow-alt-circle-down text-secondary" ng-show="!accesscontrol.enabled" title="Desativado"></li> 
