@@ -1,0 +1,84 @@
+<div class="">
+	<h2>Mapa de Planta</h2>
+	<div class="alert alert-{{message.status}}" ng-repeat="message in messages">
+		<strong ng-bind="message.title"></strong> {{message.text}}
+	</div>
+	<div ng-show="progress" class="animate-show-hide">
+		<div style="opacity:0.7; background-color: #000; width: 100%; height: 100%; position: absolute; display: inline-block;  top: 0px; left: 0px;"></div>
+		<div style="width: 100%; height: 100%; position: absolute; display: inline-block;  top: 0px; left: 0px; padding-top: 200px;">
+		
+			<div style="width: 340px; height: 120px;  background-color: #fff; padding: 20px; border: 3px #ccc solid; margin: auto; 
+			-webkit-border-radius: 8px;
+			-moz-border-radius: 8px;
+			border-radius: 8px;">
+				<center>
+					<div class="text-primary">Carregando {{progress*100| number :0}}%
+					</div>
+				</center>
+				<br>
+				<div class="progress" >
+					<div class="progress-bar progress-bar-striped bg-info text-dark" style="width:{{progress*100| number :0}}%"></div>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+	
+	<div>
+		<button type="button" ng-click="exportData()" class="btn btn-light" title="Exportar para Planilha do Excel"> <i class="fas fa-file-excel text-primary"> </i> Exportar</button>
+		<table class="table table-bordered table-sm">
+			<caption>Exibindo {{ datatable.displaydata.length }} de {{ datatable.database.length }} registros.</caption>
+			<thead class="thead-dark">
+				<tr>
+					<th >Ambiente</th>
+					<th >Sistema</th>
+					<th >Cenário</th>
+					<th >Logon</th>
+					<th >Monitora</th>
+				</tr>
+				<tr>
+					<th><select style="width: 100%"><option>-</option></select></th>
+					<th><select style="width: 100%"><option>-</option></select></th>
+					<th><select style="width: 100%"><option>-</option></select></th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="row in datatable.displaydata">
+					<td title="{{ row.username }}@{{ row.ds_conexao }}" ng-bind="row.cd_ambiente">CERT</td>
+					<td title="{{ row.username }}@{{ row.ds_conexao }}" ng-bind="row.cd_sistema">NETSMS</td>
+					<td title="{{ row.username }}@{{ row.ds_conexao }}" ng-bind="row.cd_cenario">BRA</td>
+					<td ng-class="{'text-nowrap':true, 'bg-warning': (row.login_triggers.length > 1)}">
+						<span ng-if="row.sqlerrm" class="badge badge-danger" ng-attr-title="{{ row.sqlerrm }}">Erro Interno</span>
+						<span ng-if="(row.login_triggers.length == 0 && !row.sqlerrm)" class="badge badge-warning" title="trigger não encontrada">Inexistente</span>
+						<span ng-repeat="accesscontrol in row.login_triggers | filter: filtrar({type:type}) " >
+							
+							<span  ng-if="$index>0">, </span>
+							<li class="fas fa-arrow-alt-circle-down text-secondary" ng-show="!accesscontrol.enabled" title="Desativado"></li> 
+							<li class="fas fa-times-circle text-danger" ng-show="!accesscontrol.valid" title="Objeto Inválido"></li> 
+							<li class="fas fa-check-circle text-success" ng-show="accesscontrol.valid && accesscontrol.enabled" title="Ativa"></li> 
+							<span  ng-bind="accesscontrol.owner + '.' + accesscontrol.trigger_name"></span>
+						</span>
+					</td>
+					<td ng-class="{'text-nowrap':true, 'bg-warning': (row.monitora_triggers.length > 1)}">
+						<span ng-if="row.sqlerrm" class="badge badge-danger" ng-attr-title="{{ row.sqlerrm }}">Erro Interno</span>
+						<span ng-if="(row.monitora_triggers.length == 0 && !row.sqlerrm)" class="badge badge-warning" title="trigger não encontrada">Inexistente</span>
+						<span ng-repeat="accesscontrol in row.monitora_triggers | filter: filtrar({type:type}) " >
+							
+							<span  ng-if="$index>0">, </span>
+							<li class="fas fa-arrow-alt-circle-down text-secondary" ng-show="!accesscontrol.enabled" title="Desativado"></li> 
+							<li class="fas fa-times-circle text-danger" ng-show="!accesscontrol.valid" title="Objeto Inválido"></li> 
+							<li class="fas fa-check-circle text-success" ng-show="accesscontrol.valid && accesscontrol.enabled" title="Ativa"></li> 
+							<span  ng-bind="accesscontrol.owner + '.' + accesscontrol.trigger_name"></span>
+						</span>
+					</td>
+					
+					
+						
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

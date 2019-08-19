@@ -220,54 +220,25 @@ begin
 	declare
 	v_width varchar2(30) := (to_char((100-15)/(v_cod_cenarios.COUNT),'FM990D00', 'NLS_NUMERIC_CHARACTERS = ''.,''')||'%');
 	begin
-	dbms_output.put_line('<!doctype html>');
-	dbms_output.put_line('<html lang="pt-br">');
-	dbms_output.put_line('	<head>');
-	dbms_output.put_line('		<meta charset="utf-8">');
-	dbms_output.put_line('		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">');
-	dbms_output.put_line('		<title>GAT - Gestao de Ambiente</title>');
-	dbms_output.put_line('		<base href="/">');
-	dbms_output.put_line('		<link rel="stylesheet" href="lib/css/bootstrap.min.css" >');
-	dbms_output.put_line('		<link rel="stylesheet" href="uib/dist/ui-bootstrap-csp.css">');
-	dbms_output.put_line('		<link rel="stylesheet" href="lib/css/all.css">');
-	dbms_output.put_line('		<script src="lib/jquery.min.js"></script>');
-	dbms_output.put_line('		<script src="lib/js/bootstrap.min.js" ></script>');
-	dbms_output.put_line('		<script src="lib/angular.min.js"></script>');
-	dbms_output.put_line('		<script src="lib/angular-route.min.js"></script>');
-	dbms_output.put_line('		<script src="lib/angular-base64/angular-base64.min.js"></script>');
-	dbms_output.put_line('		<script src="lib/angular-cookies/angular-cookies.min.js"></script>');
-	dbms_output.put_line('		<script src="lib/alasql.min.js"></script>');
-	dbms_output.put_line('		<script src="lib/xlsx.full.min.js"></script>');
-	
-	dbms_output.put_line('		<script src="uib/dist/ui-bootstrap-tpls.js"></script>');
-	dbms_output.put_line('		<script src="uib/dist/ui-bootstrap.js"></script>');
-	dbms_output.put_line('		<script src="app.module.js"></script>');
-	dbms_output.put_line('		<script src="components/menu/menu-controller.js"></script>');
-	dbms_output.put_line('		<script src="components/authentication/authentication-service.js"></script>');
-	dbms_output.put_line('		<script src="components/menu/menu-directive.js"></script>');
-	dbms_output.put_line('	</head>');
-	dbms_output.put_line('	<body ng-app="myApp">');
-	dbms_output.put_line('		<menu></menu>');
-	dbms_output.put_line('		<main role="main" style="margin-left: 30px;margin-right: 30px; margin-top: 60px; ">');
-	dbms_output.put_line('			<div class="">');
-	dbms_output.put_line('				<h2>Versionamento NETSMS (database)</h2>');
-	dbms_output.put_line('				<small><i>Atualizado em '|| htf.escape_sc(to_char(sysdate,'yyyy-mm-dd hh24:mi')) ||'</i></small>');
-	dbms_output.put_line('				</br>');
-	dbms_output.put_line('				<table class="table table-bordered table-sm">');
-	dbms_output.put_line('					<thead  class="thead-dark">');
-	dbms_output.put_line('						<tr>');
-	dbms_output.put_line('							<th style="width: 15%;">Ambiente \ Cenario</th>');
+	dbms_output.put_line('<div class="">');
+	dbms_output.put_line('	<h2>Versionamento NETSMS (database)</h2>');
+	dbms_output.put_line('	<small><i>Atualizado em '|| htf.escape_sc(to_char(sysdate,'yyyy-mm-dd hh24:mi')) ||'</i></small>');
+	dbms_output.put_line('	</br>');
+	dbms_output.put_line('	<table class="table table-bordered table-sm">');
+	dbms_output.put_line('		<thead  class="thead-dark">');
+	dbms_output.put_line('			<tr>');
+	dbms_output.put_line('				<th style="width: 15%;">Ambiente \ Cenario</th>');
 	FOR i IN v_cod_cenarios.FIRST .. v_cod_cenarios.LAST LOOP
-		dbms_output.put_line('							<th style="width: '||v_width||';">'||v_cod_cenarios(i)||' <br></th>');
+		dbms_output.put_line('				<th style="width: '||v_width||';">'||v_cod_cenarios(i)||' <br></th>');
 	END LOOP;
-	dbms_output.put_line('						</tr>');
-	dbms_output.put_line('					</thead>');
-	dbms_output.put_line('					<tbody>');
+	dbms_output.put_line('			</tr>');
+	dbms_output.put_line('		</thead>');
+	dbms_output.put_line('		<tbody>');
 	FOR iamb IN v_cod_ambientes.FIRST .. v_cod_ambientes.LAST LOOP
 		declare  v_ambiente rec_ambiente := v_ambientes(v_cod_ambientes(iamb));
 		begin
-			dbms_output.put_line('						<tr>');
-			dbms_output.put_line('							<th title="'||htf.escape_sc(v_ambiente.ds_ambiente)||'">'|| htf.escape_sc(v_cod_ambientes(iamb))||'</th>');
+			dbms_output.put_line('			<tr>');
+			dbms_output.put_line('				<th title="'||htf.escape_sc(v_ambiente.ds_ambiente)||'">'|| htf.escape_sc(v_cod_ambientes(iamb))||'</th>');
 			FOR i IN v_cod_cenarios.FIRST .. v_cod_cenarios.LAST LOOP
 				declare v_cenario rec_cenario := v_ambiente.cenarios(v_cod_cenarios(i));
 				begin
@@ -304,16 +275,14 @@ begin
 				dbms_output.put_line('</td>');
 				end;
 			END LOOP;
-			dbms_output.put_line('						</tr>');
+			dbms_output.put_line('			</tr>');
 		end;
 	END LOOP;
 
-	dbms_output.put_line('					</tbody>');
-	dbms_output.put_line('				</table>');
-	dbms_output.put_line('			</div>');
-	dbms_output.put_line('		</main>');
-	dbms_output.put_line('	</body>');
-	dbms_output.put_line('</html>');
+	dbms_output.put_line('		</tbody>');
+	dbms_output.put_line('	</table>');
+	dbms_output.put_line('</div>');
+
 	end;
 end;
 /

@@ -16,12 +16,17 @@
 		<script src="lib/angular-cookies/angular-cookies.min.js"></script>
 		<script src="lib/alasql.min.js"></script>
 		<script src="lib/xlsx.full.min.js"></script>
-	
 		<script src="uib/dist/ui-bootstrap-tpls.js"></script>
 		<script src="uib/dist/ui-bootstrap.js"></script>
-		
 		<script src="app.module.js"></script>
 		<script src="app.routes.js"></script>
+		<script src="components/menu/menu-directive.js"></script>
+		<script src="components/menu/menu-controller.js"></script>
+		<script src="components/login/login-controller.js"></script>
+		<script src="components/logoff/logoff-controller.js"></script>
+		<script src="components/authentication/authentication-service.js"></script>
+		<script src="components/home/home-controller.js"></script>
+		<script src="components/profile/profile-controller.js"></script>
 		<script src="scripts/datatable-factory.js"></script>
 		<script src="scripts/cenario-service.js"></script>
 		<script src="scripts/environment-service.js"></script>
@@ -29,20 +34,13 @@
 		<script src="services/api-client-service.js"></script>
 		<script src="components/asm-disk/asm-disk-controller.js"></script>
 		<script src="components/asm-disk/asm-disk-service.js"></script>
-		<script src="components/home/home-controller.js"></script>
 		<script src="components/controle-acesso/controle-acesso-controller.js"></script>
 		<script src="components/controle-acesso/controle-acesso-service.js"></script>
-		<script src="scripts/versao-netsms-controller.js"></script>
-		
-		<script src="components/menu/menu-controller.js"></script>
-		<script src="components/profile/profile-controller.js"></script>
-		<script src="components/login/login-controller.js"></script>
-		<script src="components/authentication/authentication-service.js"></script>
-		<script src="components/menu/menu-directive.js"></script>
+		<script src="components/versao-netsms/versao-netsms-controller.js"></script>
+		<script src="components/mapa-planta/mapa-planta-controller.js"></script>
 	</head>
 	<body ng-app="myApp">
 		<menu></menu>
-		
 		<main role="main" style="margin-left: 30px;margin-right: 30px; margin-top: 60px; ">
 			<ng-view>Inicialização do Angular.js</ng-view>
 		</main>

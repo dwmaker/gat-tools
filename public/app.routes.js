@@ -1,41 +1,46 @@
-angular.module('myApp')
+angular.module("myApp")
 .config(function($routeProvider, $locationProvider) 
 {
 	$routeProvider
-	.when('/home', 
+	.when("/login", 
 	{
-		templateUrl: '/components/home/home-view.html',
-		controller: 'home-controller'
+		templateUrl: "/components/login/login-view.html",
+		controller: "login-controller"
 	})
-	.when('/asm-disks', 
+	.when("/logoff", 
 	{
-		templateUrl: '/components/asm-disk/asm-disk-view.html',
-		controller: 'asm-disk-controller'
+		controller: "logoff-controller",
+		template: "/logoff",
 	})
-	.when('/controle-acesso', 
+	.when("/profile", 
 	{
-		templateUrl: '/components/controle-acesso/controle-acesso-list.html',
-		controller: 'controle-acesso-controller'
+		templateUrl: "/components/profile/profile-view.html",
+		controller: "profile-controller"
 	})
-	.when('/versao-netsms', 
+	.when("/home", 
 	{
-		templateUrl: '/views/versao-netsms.html',
-		controller: 'versao-netsms-controller'
+		templateUrl: "/components/home/home-view.html",
+		controller: "home-controller"
 	})
-	.when('/parametro-netsms', 
+	.when("/asm-disks", 
 	{
-		templateUrl: '/components/report-parametro-netsms/report-parametro-netsms-view.html',
-		controller: 'report-parametro-netsms-controller'
+		templateUrl: "/components/asm-disk/asm-disk-view.html",
+		controller: "asm-disk-controller"
 	})
-	.when('/profile', 
+	.when("/controle-acesso", 
 	{
-		templateUrl: '/components/profile/profile-view.html',
-		controller: 'profile-controller'
+		templateUrl: "/components/controle-acesso/controle-acesso-list.html",
+		controller: "controle-acesso-controller"
 	})
-	.when('/login', 
+	.when("/versao-netsms", 
 	{
-		templateUrl: '/components/login/login-view.html',
-		controller: 'login-controller'
+		templateUrl: "/components/versao-netsms/versao-netsms-view.html",
+		controller: "versao-netsms-controller"
 	})
-	.otherwise({redirectTo: '/home'});
+	.when("/mapa-planta", 
+	{
+		templateUrl: "/components/mapa-planta/mapa-planta-list.html",
+		controller: "mapa-planta-controller"
+	})
+	.otherwise({redirectTo: "/home"});
 });
