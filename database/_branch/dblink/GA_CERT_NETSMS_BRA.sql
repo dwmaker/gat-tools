@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  DDL for DB Link GA_CERT_NETSMS_BRA.NET
+--------------------------------------------------------
+
+  CREATE DATABASE LINK "GA_CERT_NETSMS_BRA.NET"
+   CONNECT TO "CORE" IDENTIFIED BY VALUES '0504FED54E70196E53B6A376029D3E8F0337D056856C6EEDBB'
+   USING '(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=hhdb09n1)))';

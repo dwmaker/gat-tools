@@ -1,10 +1,10 @@
 [
-	{"code": "NETSMS", "description": null},
-	{"code": "ATLAS", "description": null},
-	{"code": "SIGMA", "description": null},
-	{"code": "FEPP", "description": null},
-	{"code": "COMBOMULTI", "description": null},
-	{"code": "FIQUELIGADO", "description": null},
-	{"code": "WLI", "description": null},
-	{"code": "WA", "description": null}
+	{"code": "NETSMS",      "name": "NETSMS",       "description": null},
+	{"code": "ATLAS",       "name": "Atlas",        "description": null},
+	{"code": "SIGMA",       "name": "SIGMA",        "description": null},
+	{"code": "FEPP",        "name": "FEPP",         "description": null},
+	{"code": "COMBOMULTI",  "name": "Combo Multi",  "description": null},
+	{"code": "FIQUELIGADO", "name": "Fique Ligado", "description": null},
+	{"code": "WLI",         "name": "WLI",          "description": null},
+	{"code": "WA",          "name": "WA",           "description": null}
 ]

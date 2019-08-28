@@ -1,0 +1,5 @@
+{
+	"user": "core",
+	"password": "welcome1",
+	"connectString": "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)))"
+}

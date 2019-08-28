@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  DDL for DB Link GA_PROD_NETSMS_BH.NET
+--------------------------------------------------------
+
+  CREATE DATABASE LINK "GA_PROD_NETSMS_BH.NET"
+   CONNECT TO "S_T6720353" IDENTIFIED BY VALUES '0511AA4405390E0DE89AB14308F5809014F61CF4D6400FFA19'
+   USING '(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.190)(PORT=1521))(CONNECT_DATA=(SID=bhpr)))';

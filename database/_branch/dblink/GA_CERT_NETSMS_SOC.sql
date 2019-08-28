@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  DDL for DB Link GA_CERT_NETSMS_SOC.NET
+--------------------------------------------------------
+
+  CREATE DATABASE LINK "GA_CERT_NETSMS_SOC.NET"
+   CONNECT TO "CORE" IDENTIFIED BY VALUES '05378AEE6FFC7BD5BBC8E20639699B46FF0A82DFB0C3A4264E'
+   USING '(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=hhsocn1)))';

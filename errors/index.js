@@ -43,7 +43,7 @@ class INVALID_USER_ENTRY extends ResponseError
 {
 	constructor(info)
 	{
-		super("INVALID_USER_ENTRY", "Entrada de dados inválida", 401, info);	
+		super("INVALID_USER_ENTRY", "Entrada de dados inválida", 422, info);	
 	}
 };
 
@@ -51,7 +51,7 @@ class NO_DATA_FOUND extends ResponseError
 {
 	constructor(info)
 	{
-		super("NO_DATA_FOUND", "Dados não encontrados", 401, info);	
+		super("NO_DATA_FOUND", "Dados não encontrados", 400, info);	
 	}
 };
 

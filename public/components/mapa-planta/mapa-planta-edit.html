@@ -1,0 +1,106 @@
+<div class="">
+	<h2>Mapa de Planta #<span ng-bind="id || '(novo)'" /></h2>
+	<form name="form" ng-submit="save()">
+		<div class="btn-group" role="group" aria-label="Basic example">
+			<button type="submit" class="btn btn-light" title="Exportar para Planilha do Excel"> <i class="fas fa-file-excel text-primary"> </i> Salvar</button>
+			<button type="button" class="btn btn-light" ng-click="modalAddMapaServidor()" title="Adicionar Servidor"> <i class="fas fa-file-excel text-primary"> </i> Adicionar Servidor</button>
+		</div>
+		<div class="rounded jumbotron border border-secondary" >
+			<div ng-show="messages" class="alert alert-info" role="alert">
+			  <ul><li ng-repeat="(key, message) in messages">{{ key}}: {{ message}}</li></ul>
+			</div>
+			<div  class="container">
+				<div class="row">
+					<div class="col-sm-2 ">
+					<label>Nome</label>
+					</div>
+					<div class="col-sm-6">
+						<input
+						name="nome"
+						class="form-control-sm form-control"
+						ng-model="data.nome"
+						ng-required="true">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-2 ">
+					<label>Ambiente</label>
+					</div>
+					<div class="col-sm-6">
+						<select
+						name="cd_ambiente"
+						class="form-control-sm form-control"
+						ng-model="data.cd_ambiente"
+						ng-options="ambiente.code as ambiente.code for ambiente in ambientes"
+						ng-required="true">
+						<option ng-value="null"></option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-2 ">
+					<label>Modelo</label>
+					</div>
+					<div class="col-sm-6">
+						<select
+						name="cd_ambiente"
+						class="form-control-sm form-control"
+						ng-change="id_mapa_template_change()"
+						ng-model="data.id_mapa_template"
+						ng-options="template.id as template.nome for template in templates"
+						>
+						<option ng-value="null"></option>
+						</select>
+					</div>
+				</div>
+				<br>
+				<h3>Tecnologias</h3>
+				<div ng-repeat="(cd_tecnologia, tecnologia) in data.tecnologias">
+					<h4 class="font-italic" ng-bind="cd_tecnologia" />
+					<div class="row" ng-repeat="(cd_servidor, oracledb) in tecnologia" >
+						<div class="col-sm-2 " >
+							<label>
+								<span ng-bind="cd_servidor"></span>
+							</label>
+						</div>
+						<fieldset class="col-sm-10">
+							<div class="row">
+								<div class="col-sm-12">
+								<h6>Conexao</h6>
+									<input name="conexao" class="form-control-sm form-control" ng-model="oracledb.conexao" ng-required="true" />
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="col-sm-12">
+									<h6>Usuarios</h6>
+									<table class="table  table-bordered table-sm ">
+										<thead class="thead-dark" >
+										<tr>
+										<th>usuario</th>
+										<th>senha</th>
+										<th>ação</th>
+										</tr>
+										</thead>
+										<tbody>
+										<tr ng-repeat="(username, password) in oracledb.usuarios">
+										<td style="width: 120em; padding: 0px; margin: 0px;"><input type="text"     ng-model="username" style="width: 100%;height: 100%; border: 0; margin:0px; padding: 4px;" readonly></td>
+										<td style="width: 100em; padding: 0px; margin: 0px;"><input type="password" ng-model="password" style="width: 100%;height: 100%; border: 0; margin:0px; padding: 4px;"></td>
+										<td style="width: 60em;  padding: 0px;" >
+											<button class="btn btn-sm text-primary" title="Testar conexão com este usuário"  ><i class="fas fa-plug"></i> Testar</button>
+											<button class="btn btn-sm text-danger"  title="Remover usuário" ng-click="modalDeleteMapaUsuario(cd_tecnologia, cd_servidor, username)"><i class="fas fa-minus-circle"></i> Remover</button>
+										</td>
+										</tr>
+										</tbody>
+									</table>
+									<button class="btn btn-sm text-success" ng-click="modalAddMapaUsuario(cd_tecnologia, cd_servidor)" title="Adicionar usuário"><i class="fas fa-plus-circle"></i> Adicionar</button>
+								</div>
+							</div>
+							<hr>
+						</fieldset>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

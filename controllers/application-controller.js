@@ -13,7 +13,8 @@ controller.listApplications = function(req, res, next)
 	{
 		return res.status(500).send(err);
 	});
-}
+};
+
 controller.listCenarios = function(req, res, next)
 {
 	
@@ -26,7 +27,8 @@ controller.listCenarios = function(req, res, next)
 	{
 		return res.status(500).send(err);
 	});
-}
+};
+
 controller.listEnvironments = function(req, res, next)
 {
 	service.listEnvironments()
@@ -38,6 +40,6 @@ controller.listEnvironments = function(req, res, next)
 	{
 		return res.status(500).send(err);
 	});
-}
+};
 
 module.exports = controller;

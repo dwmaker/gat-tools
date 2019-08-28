@@ -1,21 +1,19 @@
 "use strict";
 const passport = require("passport");
 const BasicStrategy = require('passport-http').BasicStrategy;
-const {UNAUTHORIZED, INVALID_CREDENTIALS, INVALID_USER_ENTRY} = require("./errors");
-const LoginDAO = require("./dao/login-dao.js");
-const UserDAO = require("./dao/user-dao.js");
-let securityschemas = {};
-let loginDAO = new LoginDAO();
-let userDAO = new UserDAO();
-
-securityschemas.basicAuth = {};
+const {UNAUTHORIZED, INVALID_CREDENTIALS, INVALID_USER_ENTRY, NO_DATA_FOUND} = require("../errors");
+const LoginDAO = require("../dao/login-dao.js");
+const UserDAO = require("../dao/user-dao.js");
+let schema = {};
 
 
-securityschemas.basicAuth.strategy = 
+
+schema.strategy = 
 new BasicStrategy(
 	function(username, password, callback) 
 	{
-		
+		let loginDAO = new LoginDAO();
+		let userDAO = new UserDAO();
 		loginDAO.find({ username: username })
 		.then((login)=>
 		{
@@ -55,7 +53,7 @@ new BasicStrategy(
 	}
 );
 
-securityschemas.basicAuth.authenticate = function (req)
+schema.authenticate = function (req)
 {
 	return new Promise((resolve, reject) =>
 	{
@@ -68,4 +66,4 @@ securityschemas.basicAuth.authenticate = function (req)
 	})
 };
 
-module.exports = securityschemas;
+module.exports = schema;

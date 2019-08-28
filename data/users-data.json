@@ -1,7 +1,10 @@
 [
 	{
 		"id": 500,
+		"username": "paulo.ponciano",
 		"displayName": "Paulo Ponciano", 
-		"permissions": ["browse:datasource", "read:datasource", "edit:datasource", "add:datasource", "delete:datasource"]
+		"permissions": [
+		"browse:datasource", "read:datasource", "edit:datasource", "add:datasource", "delete:datasource", 
+		"browse:mapa-planta", "read:mapa-planta", "edit:mapa-planta", "add:mapa-planta", "delete:mapa-planta"]
 	}
 ]

@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  DDL for DB Link GA_CERT_NETSMS_ISP.NET
+--------------------------------------------------------
+
+  CREATE DATABASE LINK "GA_CERT_NETSMS_ISP.NET"
+   CONNECT TO "CORE" IDENTIFIED BY VALUES '05A672F75D6C096C9470E8A409191E8D2EB254EA3DDBF6165C'
+   USING '(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.25)(PORT=1521))(CONNECT_DATA=(SID=hhispn1)))';

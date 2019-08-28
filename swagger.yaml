@@ -10,6 +10,126 @@ servers:
   - url: /api/v1
     description: Desenvolvimento local
 paths:
+  /mapa-planta:
+    get:
+      tags:
+        - MapaPlanta
+      summary: Browse mapa-planta
+      x-swagger-router-controller: mapa-planta-controller
+      operationId: listMapaPlanta
+      parameters: 
+      - name: tp_mapa_in
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      security:
+        - basicAuth:
+            - 'search$mapa-planta'
+      responses:
+        '200':
+          description: A JSON array of mapa-planta
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/mapa-planta-item'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+    post:
+      tags:
+        - MapaPlanta
+      summary: Create a mapa-planta
+      x-swagger-router-controller: mapa-planta-controller
+      operationId: createMapaPlanta
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mapa-planta'
+      security:
+        - basicAuth:
+            - 'add:mapa-planta'
+      responses:
+        '200':
+          description: A JSON MapaPlanta Object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id: 
+                    type: number
+                  object:
+                    $ref: '#/components/schemas/mapa-planta'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  '/mapa-planta/{id}':
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags:
+        - MapaPlanta
+      summary: Read a mapa-planta object
+      x-swagger-router-controller: mapa-planta-controller
+      operationId: getMapaPlanta
+      security:
+        - basicAuth:
+            - 'read$mapa-planta'
+      responses:
+        '200':
+          description: A JSON mapa-planta Object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mapa-planta'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+    put:
+      tags:
+        - MapaPlanta
+      summary: Edit a mapa-planta object
+      x-swagger-router-controller: mapa-planta-controller
+      operationId: updateMapaPlanta
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mapa-planta'
+      security:
+        - basicAuth:
+            - edit.mapa-planta
+      responses:
+        '200':
+          description: A JSON mapa-planta Object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mapa-planta'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+    delete:
+      tags:
+        - MapaPlanta
+      summary: Delete a MapaPlanta
+      x-swagger-router-controller: mapa-planta-controller
+      operationId: deleteMapaPlanta
+      security:
+        - basicAuth:
+            - 'delete$mapa-planta'
+      responses:
+        '200':
+          description: Objeto excluido com sucesso.
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
   /datasources:
     get:
       tags:
@@ -330,6 +450,43 @@ components:
       type: http
       scheme: basic
   schemas:
+    mapa-planta-item:
+      type: object
+      properties:
+        id:
+          type: number
+        nome:
+          type: string
+        descricao:
+          type: string
+        nr_versao:
+          type: string
+        cd_ambiente:
+          type: string
+    mapa-planta:
+      type: object
+      properties:
+        nome:
+          type: string
+        descricao:
+          type: string
+        nr_versao:
+          type: string
+        cd_ambiente:
+          type: string
+        tecnologias:
+          type: object
+          additionalProperties:
+            type: object
+            additionalProperties:
+              type: object
+              properties:
+                conexao:
+                  type: string
+                usuarios:
+                  type: object
+                  additionalProperties:
+                    type: string            
     accesscontrol-metadata:
       type: object
       properties:

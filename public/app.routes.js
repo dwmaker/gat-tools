@@ -40,7 +40,33 @@ angular.module("myApp")
 	.when("/mapa-planta", 
 	{
 		templateUrl: "/components/mapa-planta/mapa-planta-list.html",
-		controller: "mapa-planta-controller"
+		controller: "mapa-planta-controller", 
+		operation: "browse",		
 	})
+	.when("/mapa-planta/:id/view", 
+	{
+		templateUrl: "/components/mapa-planta/mapa-planta-view.html",
+		controller: "mapa-planta-controller", 
+		operation: "view"
+	})
+	.when("/mapa-planta/add", 
+	{
+		templateUrl: "/components/mapa-planta/mapa-planta-edit.html",
+		controller: "mapa-planta-controller", 
+		operation: "add"
+	})
+	.when("/mapa-planta/:id/edit", 
+	{
+		templateUrl: "/components/mapa-planta/mapa-planta-edit.html",
+		controller: "mapa-planta-controller", 
+		operation: "edit"
+	})
+		.when("/mapa-planta/:id/delete", 
+	{
+		templateUrl: "/components/mapa-planta/mapa-planta-delete.html",
+		controller: "mapa-planta-controller", 
+		operation: "delete"
+	})
+
 	.otherwise({redirectTo: "/home"});
 });

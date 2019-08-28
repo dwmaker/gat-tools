@@ -1,0 +1,23 @@
+<form name="formModal" ng-submit="modal.ok()">
+	<div class="modal-header">
+		<h3 class="modal-title" id="modal-title">Excluir Mapa</h3>
+	</div>
+	
+	<div class="modal-body" id="modal-body">
+		Tem certeza que gostaria de excluir?
+		<br>
+		<div >
+			<span>ID:</span>
+			<span ng-bind="modal.row.id">ID</span>
+		
+		</div>
+		<div >
+			<span>Nome:</span>
+			<span ng-bind="modal.row.nome"></span>
+		</div>
+	</div>
+	<div class="modal-footer">
+	<input class="btn btn-primary" type="submit"  value="OK"></input>
+	<button class="btn btn-warning" type="button" ng-click="modal.cancel()">Cancel</button>
+	</div>
+</form>

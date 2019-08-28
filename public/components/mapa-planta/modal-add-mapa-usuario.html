@@ -1,0 +1,19 @@
+<form name="formModal" ng-submit="modal.ok()">
+	<div class="modal-header">
+		<h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+	</div>
+	<div class="modal-body" id="modal-body">
+		<div class="form-group">
+			<label for="exampleInputEmail1">Usuario</label>
+			<input ng-model="modal.username" type="text" class="form-control" placeholder="Username"  required>
+		</div>
+		<div class="form-group">
+			<label for="exampleInputPassword1">Senha</label>
+			<input ng-model="modal.password" type="password" class="form-control" placeholder="Password" required>
+		</div>
+	</div>
+	<div class="modal-footer">
+	<input class="btn btn-primary" type="submit"  value="OK"></input>
+	<button class="btn btn-warning" type="button" ng-click="modal.cancel()">Cancel</button>
+	</div>
+</form>

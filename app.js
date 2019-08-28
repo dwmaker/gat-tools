@@ -32,6 +32,8 @@ app.use('/lib', express.static(`${__dirname}/node_modules/angular-route`));
 app.use('/uib', express.static(`${__dirname}/node_modules/ui-bootstrap4`));
 app.use('/lib/angular-base64', express.static(`${__dirname}/node_modules/angular-base64`));
 app.use('/lib/angular-cookies', express.static(`${__dirname}/node_modules/angular-cookies`));
+app.use('/lib/angular-locale-pt-br', express.static(`${__dirname}/node_modules/angular-locale-pt-br`));
+
 app.use('/api-docs', swaggerUiExpress.serve, swaggerUiExpress.setup(swaggerDoc));
 app.use('/api/v1', apiRouter);
 
