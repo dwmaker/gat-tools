@@ -88,3 +88,11 @@ angular.module('myApp')
 		return false;
 	}
 }])
+.run(["$rootScope", "$location", "authentication-service", function($rootScope, $location, authenticationService) 
+{
+	$rootScope.$on("$routeChangeStart", function(event, next, current) 
+	{
+		if(!next.$$route) return;
+		if(!authenticationService.checkAuths(next.$$route.security)) $location.path("/login");
+	});
+}]);

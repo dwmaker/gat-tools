@@ -9,28 +9,32 @@ CREATE OR REPLACE PACKAGE BODY core.pkg_mapa IS
 	BEGIN
 		stmt := 
 		'SELECT 
-		tb_mapa.id_mapa       "id",
-		tb_mapa.nm_mapa       "nome",
-		tb_mapa.ds_mapa       "descricao",
-		tb_mapa.nr_versao     "nr_versao",
-		tb_mapa.cd_ambiente   "cd_ambiente",
-		tb_mapa.tp_mapa       "tp_mapa",
-		tb_mapa.id_mapa_template       "id_mapa_template",
-		tb_mapa.nm_usuario_criacao   "nmUsuarioCriacao",
-		tb_mapa.dt_criacao   "dtCriacao",
-		tb_mapa.nm_usuario_alteracao   "nmUsuarioAlteracao",
-		tb_mapa.dt_alteracao   "dtAlteracao"
-		FROM tb_mapa ';
+		mapa.id_mapa       "id",
+		mapa.nm_mapa       "nome",
+		mapa.ds_mapa       "descricao",
+		mapa.nr_versao     "nr_versao",
+		mapa.cd_ambiente   "cd_ambiente",
+		mapa.tp_mapa       "tp_mapa",
+		mapa.id_mapa_template       "id_mapa_template",		
+		modelo.nm_mapa       "nomeModelo",
+		mapa.nm_usuario_criacao   "nmUsuarioCriacao",
+		mapa.dt_criacao   "dtCriacao",
+		mapa.nm_usuario_alteracao   "nmUsuarioAlteracao",
+		mapa.dt_alteracao   "dtAlteracao"
+		FROM tb_mapa mapa
+		left join tb_mapa modelo on mapa.id_mapa_template = modelo.id_mapa and modelo.tp_mapa=''T''';
+		
 		if obj_filtro.tp_mapa_in.count > 0 then
-		stmt := stmt || 'where ';
-		stmt := stmt || 'tb_mapa.tp_mapa in (';
-		for i in obj_filtro.tp_mapa_in.first..obj_filtro.tp_mapa_in.last loop
-		stmt := stmt || 
-		case when i > obj_filtro.tp_mapa_in.first then ',' end || 
-		'''' || replace(obj_filtro.tp_mapa_in(i), '''', '''''') || '''';
-		end loop;
-		stmt := stmt || ') ';
+			stmt := stmt || 'where ';
+			stmt := stmt || 'mapa.tp_mapa in (';
+			for i in obj_filtro.tp_mapa_in.first..obj_filtro.tp_mapa_in.last loop
+			stmt := stmt || 
+			case when i > obj_filtro.tp_mapa_in.first then ',' end || 
+			'''' || replace(obj_filtro.tp_mapa_in(i), '''', '''''') || '''';
+			end loop;
+			stmt := stmt || ') ';
 		end if;
+		
         stmt := stmt || ' order by "nome"';
 		dbms_output.put_line(stmt);
 		OPEN my_cursor FOR stmt;

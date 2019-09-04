@@ -67,6 +67,16 @@ function($http)
 			});
 		});
 	};
+	this.new = function()
+	{
+		return {
+			nome: null,
+			cd_ambiente: null,
+			id_mapa_template: null,
+			tecnologias: {},
+			tp_mapa:"M"
+		};
+	}
 	
 	this.add = function add(obj)
 	{
@@ -77,18 +87,8 @@ function($http)
 			"params": {},
 			"data": obj
 		};
-		return new Promise(function(resolve, reject)
-		{
-			$http(opt)
-			.then(function(res)
-			{
-				resolve(res.data.id);
-			})
-			.catch(function(res)
-			{
-				reject(res);
-			});
-		});
+		return $http(opt);
+			
 	};
 	
 	this.delete = function (id)

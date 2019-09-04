@@ -19,6 +19,7 @@
 		<script src="lib/xlsx.full.min.js"></script>
 		<script src="uib/dist/ui-bootstrap-tpls.js"></script>
 		<script src="uib/dist/ui-bootstrap.js"></script>
+		<script src="lib/angularjs-unique-filter/src/unique.js"></script>
 		<script src="app.module.js"></script>
 		<script src="app.routes.js"></script>
 		<script src="components/menu/menu-directive.js"></script>
@@ -38,13 +39,36 @@
 		<script src="components/controle-acesso/controle-acesso-controller.js"></script>
 		<script src="components/controle-acesso/controle-acesso-service.js"></script>
 		<script src="components/versao-netsms/versao-netsms-controller.js"></script>
-		<script src="components/mapa-planta/mapa-planta-controller.js"></script>
+		<script src="components/mapa-planta/mapa-planta-object-ctrl.js"></script>
+		<script src="components/mapa-planta/mapa-planta-list-ctrl.js"></script>
 		<script src="components/mapa-planta/mapa-planta-service.js"></script>
+		<script src="interceptors/loading-interceptor.js"></script>
+		<style>
+		</style>
 	</head>
 	<body ng-app="myApp">
-		<menu></menu>
-		<main role="main" style="margin-left: 30px;margin-right: 30px; margin-top: 60px; ">
-			<ng-view>Inicialização do Angular.js</ng-view>
-		</main>
+		<div ng-if="loading" class=" jumbotron container">
+			
+			<center>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<div class="spinner-border text-info" role="status">
+				
+					<span class="sr-only">Loading...</span>
+				</div>
+				
+			</center>
+		</div>
+		<div ng-if="!loading" >
+			<menu></menu>
+			<main role="main" style="margin-left: 30px;margin-right: 30px; margin-top: 60px; ">
+				
+				<ng-view>Inicialização do Angular.js</ng-view>
+			</main>
+		</div>
 	</body>
 </html>

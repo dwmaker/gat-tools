@@ -1,18 +1,24 @@
 angular.module("myApp")
-.controller("login-controller", ["$scope", "authentication-service", "$location",
-function($scope, authenticationService, $location)
+.controller("login-controller", ["$scope", "authentication-service", "$location", "$q",
+function($scope, authenticationService, $location, $q)
 {
+	
+	$scope.email = "paulo.ponciano@spread.com.br";
+	$scope.password = "teste"
 	$scope.login = function(email, password, rememberMe)
-	{	
-		authenticationService.login(email, password, rememberMe)
-		.then((profile)=>
+	{		
+		$q(function(resolve, reject)
+		{
+			authenticationService.login(email, password, rememberMe)
+			.then(resolve).catch(reject)
+		})
+		.then(function resolve(profile)
 		{
 			$location.path("/home");
-			$scope.$apply();
 		})
-		.catch((err)=>
+		.catch(function(err)
 		{
 			$scope.data = err;
-		});
+		})
 	}
 }]);

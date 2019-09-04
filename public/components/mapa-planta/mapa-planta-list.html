@@ -3,56 +3,77 @@
 	<div class="alert alert-{{message.status}}" ng-repeat="message in messages">
 		<strong ng-bind="message.title"></strong> {{message.text}}
 	</div>
-	<div ng-show="progress" class="animate-show-hide">
-		<div style="opacity:0.7; background-color: #000; width: 100%; height: 100%; position: absolute; display: inline-block;  top: 0px; left: 0px;"></div>
-		<div style="width: 100%; height: 100%; position: absolute; display: inline-block;  top: 0px; left: 0px; padding-top: 200px;">
-			<div style="width: 340px; height: 120px;  background-color: #fff; padding: 20px; border: 3px #ccc solid; margin: auto; 
-			-webkit-border-radius: 8px;
-			-moz-border-radius: 8px;
-			border-radius: 8px;">
-				<center>
-					<div class="text-primary">Carregando {{progress*100| number :0}}%
-					</div>
-				</center>
-				<br>
-				<div class="progress" >
-					<div class="progress-bar progress-bar-striped bg-info text-dark" style="width:{{progress*100| number :0}}%"></div>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 	<div>
 		<div class="btn-group" role="group" aria-label="Basic example">
-			<button ng-if="operation=='browse'" type="button" ng-click="gotoCreate()" class="btn btn-light" title="Exportar para Planilha do Excel"> <i class="fas fa-file-excel text-primary"> </i> Criar</button>
+			<button type="button" ng-click="gotoCreate()" class="btn btn-light" title="Exportar para Planilha do Excel"> <i class="fas fa-file-excel text-primary"> </i> Criar</button>
 			<button type="button" ng-click="export()" class="btn btn-light" title="Exportar para Planilha do Excel"> <i class="fas fa-file-excel text-primary"> </i> Exportar</button>
 		</div>
+		
 		<table class="table table-bordered table-sm">
-			<caption>Exibindo {{ database.length }} de {{ database.length }} registros.</caption>
+			
 			<thead class="thead-dark">
 				<tr>
-					<th >#</th>
-					<th >Nome</th>
-					<th >Ambiente</th>
-					<th >Última Edição</th>
+					<th>
+						<a class="text-white" ng-click="ordenar('id')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'id', 'fas fa-sort-down text-primary': orderBy == 'id' && reverse, 'fas fa-sort-up text-primary': orderBy == 'id' && !reverse}"></i>
+							<span>Id</span>
+						</a>
+					</th>
+					<th>
+						<a class="text-white" ng-click="ordenar('nome')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'nome', 'fas fa-sort-down text-primary': orderBy == 'nome' && reverse, 'fas fa-sort-up text-primary': orderBy == 'nome' && !reverse}"></i>
+							<span>Nome</span>
+						</a>
+					</th>
+					<th>
+						<a class="text-white" ng-click="ordenar('cd_ambiente')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'cd_ambiente', 'fas fa-sort-down text-primary': orderBy == 'cd_ambiente' && reverse, 'fas fa-sort-up text-primary': orderBy == 'cd_ambiente' && !reverse}"></i>
+							<span>Ambiente</span>
+						</a>
+					</th>
+					
+					<th>
+						<a class="text-white" ng-click="ordenar('nomeModelo')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'nomeModelo', 'fas fa-sort-down text-primary': orderBy == 'nomeModelo' && reverse, 'fas fa-sort-up text-primary': orderBy == 'nomeModelo' && !reverse}"></i>
+							<span>Modelo</span>
+						</a>
+					</th>
+					
+					<th>
+						<a class="text-white" ng-click="ordenar('dtAlteracao')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'dtAlteracao', 'fas fa-sort-down text-primary': orderBy == 'dtAlteracao' && reverse, 'fas fa-sort-up text-primary': orderBy == 'dtAlteracao' && !reverse}"></i>
+							<span>Última Edição</span>
+						</a>
+					</th>
 					<th>Ação</th>					
+				</tr>
+					<tr>
+					<th><input ng-model="filtro.id" placeholder="buscar por id" uib-typeahead="item.id for item in list | filter: filtro | unique:'id'"></input></th>
+					<th><input ng-model="filtro.nome" placeholder="buscar por nome" uib-typeahead="item.nome for item in list | filter: filtro | unique:'nome'"></input></th>
+					<th><input ng-model="filtro.cd_ambiente" placeholder="buscar por ambiente" uib-typeahead="item.cd_ambiente for item in list | filter: filtro | unique:'cd_ambiente'"></input></th>
+					<th><input ng-model="filtro.nomeModelo" placeholder="buscar por modelo" uib-typeahead="item.nomeModelo for item in list | filter: filtro | unique:'nomeModelo'"></input></th>
+					<th></th>
+					<th></th>					
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="row in list">
-					
+				<tr ng-repeat="row in filtrado = (list | filter : filtro | orderBy : orderBy: reverse)">
 					<td ng-bind="row.id">CERT</td>
 					<td ng-bind="row.nome">CERT</td>
 					<td ng-bind="row.cd_ambiente">NETSMS</td>
+					<td ng-bind="row.nomeModelo">NETSMS</td>
 					<td>
-					{{ row.nmUsuarioAlteracao?'Alterado':'Criado' }} por {{ row.nmUsuarioAlteracao||row.nmUsuarioCriacao}} em {{ row.dtAlteracao||row.dtCriacao | date: 'medium'}}
+					<span ng-show="row.nmUsuarioAlteracao">{{row.nmUsuarioAlteracao }} em {{ row.dtAlteracao | date: 'yyyy-MM-dd HH:mm'}}</span>
 					</td>
 					<td>
-						<a href="javascript: void(0)" title="Editar" class="text-primary" ng-click="callEditRoute(row.id)"><i class="fas fa-edit"></i></a>
+						<a href="javascript: void(0)" title="Editar" class="text-primary" ng-click="gotoEdit(row.id)"><i class="fas fa-edit"></i></a>
 						&nbsp;
 						<a href="javascript: void(0)" title="Excluir" class="text-danger" ng-click="modalDelete($index)"><i class="fas fa-minus-circle"></i></a>
 					</td>
 				</tr>
 			</tbody>
+			<caption>Exibindo {{ filtrado.length }} de {{ list.length }} registros.</caption>
 		</table>
 	</div>
 </div>

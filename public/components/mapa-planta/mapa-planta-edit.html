@@ -1,5 +1,6 @@
 <div class="">
 	<h2>Mapa de Planta #<span ng-bind="id || '(novo)'" /></h2>
+	{{messages}}
 	<form name="form" ng-submit="save()">
 		<div class="btn-group" role="group" aria-label="Basic example">
 			<button type="submit" class="btn btn-light" title="Exportar para Planilha do Excel"> <i class="fas fa-file-excel text-primary"> </i> Salvar</button>
@@ -45,9 +46,8 @@
 						<select
 						name="cd_ambiente"
 						class="form-control-sm form-control"
-						ng-change="id_mapa_template_change()"
 						ng-model="data.id_mapa_template"
-						ng-options="template.id as template.nome for template in templates"
+						ng-options="modelo.id as modelo.nome for modelo in modelos"
 						>
 						<option ng-value="null"></option>
 						</select>
@@ -57,7 +57,7 @@
 				<h3>Tecnologias</h3>
 				<div ng-repeat="(cd_tecnologia, tecnologia) in data.tecnologias">
 					<h4 class="font-italic" ng-bind="cd_tecnologia" />
-					<div class="row" ng-repeat="(cd_servidor, oracledb) in tecnologia" >
+					<div class="row" ng-repeat="(cd_servidor, servidor) in tecnologia" >
 						<div class="col-sm-2 " >
 							<label>
 								<span ng-bind="cd_servidor"></span>
@@ -67,7 +67,7 @@
 							<div class="row">
 								<div class="col-sm-12">
 								<h6>Conexao</h6>
-									<input name="conexao" class="form-control-sm form-control" ng-model="oracledb.conexao" ng-required="true" />
+									<input name="conexao" class="form-control-sm form-control" ng-model="servidor.conexao" ng-required="true" />
 								</div>
 							</div>
 							<br>
@@ -83,11 +83,11 @@
 										</tr>
 										</thead>
 										<tbody>
-										<tr ng-repeat="(username, password) in oracledb.usuarios">
+										<tr ng-repeat="(username, password) in servidor.usuarios">
 										<td style="width: 120em; padding: 0px; margin: 0px;"><input type="text"     ng-model="username" style="width: 100%;height: 100%; border: 0; margin:0px; padding: 4px;" readonly></td>
 										<td style="width: 100em; padding: 0px; margin: 0px;"><input type="password" ng-model="password" style="width: 100%;height: 100%; border: 0; margin:0px; padding: 4px;"></td>
 										<td style="width: 60em;  padding: 0px;" >
-											<button class="btn btn-sm text-primary" title="Testar conexão com este usuário"  ><i class="fas fa-plug"></i> Testar</button>
+											<!-- <button ng-if="false" class="btn btn-sm text-primary" title="Testar conexão com este usuário"  ><i class="fas fa-plug"></i> Testar</button> -->
 											<button class="btn btn-sm text-danger"  title="Remover usuário" ng-click="modalDeleteMapaUsuario(cd_tecnologia, cd_servidor, username)"><i class="fas fa-minus-circle"></i> Remover</button>
 										</td>
 										</tr>

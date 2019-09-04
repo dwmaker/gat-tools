@@ -5,17 +5,21 @@ angular.module("myApp")
 	.when("/login", 
 	{
 		templateUrl: "/components/login/login-view.html",
-		controller: "login-controller"
+		controller: "login-controller",
 	})
 	.when("/logoff", 
 	{
 		controller: "logoff-controller",
 		template: "/logoff",
 	})
-	.when("/profile", 
+	.when("/perfil", 
 	{
 		templateUrl: "/components/profile/profile-view.html",
-		controller: "profile-controller"
+		controller: "profile-controller",
+		resolve:
+		{
+			profile: ["api-client-service", function(apiClientService){ return apiClientService.Authentication.getCurrentUser()}]
+		}
 	})
 	.when("/home", 
 	{
@@ -40,32 +44,80 @@ angular.module("myApp")
 	.when("/mapa-planta", 
 	{
 		templateUrl: "/components/mapa-planta/mapa-planta-list.html",
-		controller: "mapa-planta-controller", 
-		operation: "browse",		
+		controller: "mapa-planta-list-ctrl", 
+		operation: "browse",
+		security: [{"basicAuth": ["browse:datasource"]}],
+		resolve:
+		{
+			list: ["mapa-planta-service", (mapaPlantaService) => mapaPlantaService.list({tp_mapa_in:['M']})],
+			ambientes: ["ambiente-service", (ambienteService) => ambienteService.list()],
+			modelos: ["mapa-planta-service", (mapaPlantaService) => mapaPlantaService.list({tp_mapa_in:['T']})],
+		},
 	})
 	.when("/mapa-planta/:id/view", 
 	{
 		templateUrl: "/components/mapa-planta/mapa-planta-view.html",
-		controller: "mapa-planta-controller", 
-		operation: "view"
+		controller: "mapa-planta-object-ctrl", 
+		operation: "view",
+		security: [{"basicAuth": ["read:datasource"]}],
+		resolve:
+		{
+			id: ["$route", $route => $route.current.params.id],
+			object: ["$route", "mapa-planta-service", ($route, mapaPlantaService) => 
+			{
+				return mapaPlantaService.get($route.current.params.id)
+			}],
+			ambientes: ["ambiente-service", (ambienteService) => ambienteService.list()],
+			modelos: ["mapa-planta-service", (mapaPlantaService) => mapaPlantaService.list({tp_mapa_in:['T']})],
+		},
 	})
 	.when("/mapa-planta/add", 
 	{
 		templateUrl: "/components/mapa-planta/mapa-planta-edit.html",
-		controller: "mapa-planta-controller", 
-		operation: "add"
+		controller: "mapa-planta-object-ctrl", 
+		operation: "add",
+		security: [{"basicAuth": ["add:datasource"]}],
+		resolve:
+		{
+			id: () => null,
+			object: ["mapa-planta-service", (mapaPlantaService) => mapaPlantaService.new()],
+			ambientes: ["ambiente-service", (ambienteService) => ambienteService.list()],
+			modelos: ["mapa-planta-service", (mapaPlantaService) => mapaPlantaService.list({tp_mapa_in:['T']})],
+		},
 	})
 	.when("/mapa-planta/:id/edit", 
 	{
 		templateUrl: "/components/mapa-planta/mapa-planta-edit.html",
-		controller: "mapa-planta-controller", 
-		operation: "edit"
+		controller: "mapa-planta-object-ctrl", 
+		operation: "edit",
+		security: [{"basicAuth": ["edit:datasource"]}],
+		resolve:
+		{
+			id: ["$route", $route => $route.current.params.id],
+			object: ["$route", "mapa-planta-service", ($route, mapaPlantaService) => 
+			{
+				return mapaPlantaService.get($route.current.params.id)
+			}],
+			ambientes: ["ambiente-service", (ambienteService) => ambienteService.list()],
+			modelos: ["mapa-planta-service", (mapaPlantaService) => mapaPlantaService.list({tp_mapa_in:['T']})],
+		},
 	})
-		.when("/mapa-planta/:id/delete", 
+	.when("/mapa-planta/:id/delete", 
 	{
 		templateUrl: "/components/mapa-planta/mapa-planta-delete.html",
-		controller: "mapa-planta-controller", 
-		operation: "delete"
+		controller: "mapa-planta-object-ctrl", 
+		operation: "delete",
+		security: [{"basicAuth": ["delete:datasource"]}],
+		resolve:
+		{
+			id: ["$route", $route => $route.current.params.id],
+			object: ["$route", "mapa-planta-service", ($route, mapaPlantaService) => 
+			{
+				return mapaPlantaService.get($route.current.params.id)
+			}],
+			ambientes: ["ambiente-service", (ambienteService) => ambienteService.list()],
+			modelos: ["mapa-planta-service", (mapaPlantaService) => mapaPlantaService.list({tp_mapa_in:['T']})],
+		},
 	})
 
 	.otherwise({redirectTo: "/home"});

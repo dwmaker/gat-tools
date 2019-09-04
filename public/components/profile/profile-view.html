@@ -1,2 +1,11 @@
-{{messages}}
-{{profile}}
+<div class="">
+	<h2>Perfil #<span ng-bind="profile.id || '(novo)'" /></h2>
+	<p><b>username:</b> <span>{{profile.username}}</span></p>
+	<p><b>displayName:</b> <span>{{profile.displayName}}</span></p>
+	<p><b>permissions:</b> 
+	<ul>
+	<li  ng-repeat="permission in profile.permissions"> <span >{{permission}}</span>  </li>
+	</ul>
+	</p>
+	
+</div>

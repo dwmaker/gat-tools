@@ -24,7 +24,12 @@ controller.listMapaPlanta =
 		service.listMapaPlanta(filter)
 		.then((data) =>
 		{
-			return res.status(200).send(data);
+			//setTimeout(() => 
+			//{
+				//console.log('timeout beyond time');
+				return res.status(200).send(data);				
+			//}, 1500);
+			
 		})
 		.catch((err) =>
 		{

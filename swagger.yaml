@@ -26,7 +26,7 @@ paths:
             type: string
       security:
         - basicAuth:
-            - 'search$mapa-planta'
+            - 'browse:mapa-planta'
       responses:
         '200':
           description: A JSON array of mapa-planta
@@ -82,7 +82,7 @@ paths:
       operationId: getMapaPlanta
       security:
         - basicAuth:
-            - 'read$mapa-planta'
+            - 'read:mapa-planta'
       responses:
         '200':
           description: A JSON mapa-planta Object
@@ -106,7 +106,7 @@ paths:
               $ref: '#/components/schemas/mapa-planta'
       security:
         - basicAuth:
-            - edit.mapa-planta
+            - 'edit:mapa-planta'
       responses:
         '200':
           description: A JSON mapa-planta Object
@@ -124,7 +124,7 @@ paths:
       operationId: deleteMapaPlanta
       security:
         - basicAuth:
-            - 'delete$mapa-planta'
+            - 'delete:mapa-planta'
       responses:
         '200':
           description: Objeto excluido com sucesso.
@@ -153,7 +153,7 @@ paths:
             type: string
       security:
         - basicAuth:
-            - searchdatasource
+            - 'browse:datasource'
       responses:
         '200':
           description: A JSON array of datasource
@@ -179,7 +179,7 @@ paths:
               $ref: '#/components/schemas/datasource'
       security:
         - basicAuth:
-            - create.datasource
+            - 'add:datasource'
       responses:
         '200':
           description: A JSON Datasource Object
@@ -206,7 +206,7 @@ paths:
       operationId: getDatasource
       security:
         - basicAuth:
-            - read.datasource
+            - 'read:datasource'
       responses:
         '200':
           description: A JSON datasource Object
@@ -230,7 +230,7 @@ paths:
               $ref: '#/components/schemas/datasource'
       security:
         - basicAuth:
-            - edit.datasource
+            - 'edit:datasource'
       responses:
         '200':
           description: A JSON datasource Object
@@ -248,7 +248,7 @@ paths:
       operationId: deleteDatasource
       security:
         - basicAuth:
-            - read.datasource
+            - 'read:datasource'
       responses:
         '200':
           description: A JSON datasource Object
@@ -474,6 +474,11 @@ components:
           type: string
         cd_ambiente:
           type: string
+        tp_mapa:
+          type: string
+          enum:
+            - M
+            - T
         tecnologias:
           type: object
           additionalProperties:

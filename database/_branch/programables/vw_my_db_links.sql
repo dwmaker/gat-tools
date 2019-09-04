@@ -1,8 +1,8 @@
 --------------------------------------------------------
---  DDL for View VW_CONEXAO
+--  DDL for View vw_my_db_links
 --------------------------------------------------------
 
-  CREATE OR REPLACE FORCE VIEW "CORE"."VW_CONEXAO" ("CD_CONEXAO", "CD_AMBIENTE", "CD_SISTEMA", "CD_CENARIO", "DS_CONEXAO") AS 
+  CREATE OR REPLACE VIEW "CORE".vw_my_db_links AS 
   SELECT 
 dbl.db_link cd_conexao,
 substr(dbl.db_link, instr(dbl.db_link, '_')+1, instr(dbl.db_link, '_', instr(dbl.db_link, '_')+1)-instr(dbl.db_link, '_')-1) cd_ambiente,
