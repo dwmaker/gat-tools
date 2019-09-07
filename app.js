@@ -8,12 +8,14 @@ const bodyParser = require('body-parser');
 const apiRouter = require('./api-router.js');
 const passport = require('passport');
 const securityschemas = require("./security-schemas")
+const helmet = require('helmet');
 
 // swaggerRouter configuration
 var spec = fs.readFileSync(`${__dirname}/swagger.yaml`, 'utf8');
 var swaggerDoc = jsyaml.safeLoad(spec);
 
 var app = express();
+app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json({strict: false}));

@@ -55,7 +55,7 @@ CREATE OR REPLACE PACKAGE BODY core.pkg_mapa IS
 			and svr.id_mapa_servidor = usr.id_mapa_servidor
 		);
 		
-        delete tb_mapa_servidor where id_mapa = id;
+		delete tb_mapa_servidor where id_mapa = id;
 		
 		delete tb_mapa where id_mapa = id;
 		
@@ -209,72 +209,71 @@ CREATE OR REPLACE PACKAGE BODY core.pkg_mapa IS
 			vcd_tecnologia := obj_mapa.tecnologias.next(vcd_tecnologia);
 		end loop;
 		end;
-        
-        for usr in (
-        select svr.cd_tecnologia, svr.cd_servidor, usr.nm_usuario, usr.id_mapa_usuario 
+		for usr in (
+		select svr.cd_tecnologia, svr.cd_servidor, usr.nm_usuario, usr.id_mapa_usuario
 		from tb_mapa_servidor svr
-        join tb_mapa_usuario usr on svr.id_mapa_servidor = usr.id_mapa_servidor
-        where id_mapa = id
+		join tb_mapa_usuario usr on svr.id_mapa_servidor = usr.id_mapa_servidor
+		where id_mapa = id
 		)loop
-            if obj_mapa.tecnologias.exists(usr.cd_tecnologia) then
-                if obj_mapa.tecnologias(usr.cd_tecnologia).exists(usr.cd_servidor) then
-                    if obj_mapa.tecnologias(usr.cd_tecnologia)(usr.cd_servidor).usuarios.exists(usr.nm_usuario) then
-                      null;
-                    else
-                        delete tb_mapa_usuario where id_mapa_usuario = usr.id_mapa_usuario;
-                end if;
-                else
-                    delete tb_mapa_usuario where id_mapa_usuario = usr.id_mapa_usuario;
-                end if;
-            else
-                 delete tb_mapa_usuario where id_mapa_usuario = usr.id_mapa_usuario;
-            end if;
-        end loop;
-		
-        for svr in (
-        select svr.cd_tecnologia, svr.cd_servidor, svr.id_mapa_servidor 
+				if obj_mapa.tecnologias.exists(usr.cd_tecnologia) then
+						if obj_mapa.tecnologias(usr.cd_tecnologia).exists(usr.cd_servidor) then
+								if obj_mapa.tecnologias(usr.cd_tecnologia)(usr.cd_servidor).usuarios.exists(usr.nm_usuario) then
+									null;
+								else
+										delete tb_mapa_usuario where id_mapa_usuario = usr.id_mapa_usuario;
+						end if;
+						else
+								delete tb_mapa_usuario where id_mapa_usuario = usr.id_mapa_usuario;
+						end if;
+				else
+						 delete tb_mapa_usuario where id_mapa_usuario = usr.id_mapa_usuario;
+				end if;
+		end loop;
+
+		for svr in (
+		select svr.cd_tecnologia, svr.cd_servidor, svr.id_mapa_servidor
 		from tb_mapa_servidor svr
-        where id_mapa = id
+		where id_mapa = id
 		)loop
-            if obj_mapa.tecnologias.exists(svr.cd_tecnologia) then
-                if obj_mapa.tecnologias(svr.cd_tecnologia).exists(svr.cd_servidor) then
-					null;
-                else
-                    delete tb_mapa_servidor where id_mapa_servidor = svr.id_mapa_servidor;
-                end if;
-            else
-                 delete tb_mapa_servidor where id_mapa_servidor = svr.id_mapa_servidor;
-            end if;
-        end loop;
+				if obj_mapa.tecnologias.exists(svr.cd_tecnologia) then
+						if obj_mapa.tecnologias(svr.cd_tecnologia).exists(svr.cd_servidor) then
+							null;
+						else
+							delete tb_mapa_servidor where id_mapa_servidor = svr.id_mapa_servidor;
+						end if;
+				else
+					delete tb_mapa_servidor where id_mapa_servidor = svr.id_mapa_servidor;
+				end if;
+		end loop;
 	END;
 	
 	function to_json(valor varchar2) return varchar2
 	is
 	begin
-	if valor is null then return 'null' ;end if;
-	return '"' ||
-	replace(
-	replace(
-	replace(
-	valor
-	, '\', '\' || '\')
-	, chr(10), '\r')
-	, chr(13), '\n')
-	|| '"';
+		if valor is null then return 'null' ;end if;
+		return '"' ||
+		replace(
+		replace(
+		replace(
+		valor
+		, '\', '\' || '\')
+		, chr(10), '\r')
+		, chr(13), '\n')
+		|| '"';
 	end;
 	
 	function to_json(valor numeric) return varchar2
 	is
 	begin
-	if valor is null then return 'null' ;end if;
-	return '' || to_number(valor, 'FM9999999999999990D9999999999999999999') || '';
+		if valor is null then return 'null' ;end if;
+		return '' || to_number(valor, 'FM9999999999999990D9999999999999999999') || '';
 	end;
 	
 	function to_json(valor date) return varchar2
 	is
 	begin
-	if valor is null then return 'null' ;end if;
-	return '"' || to_char(valor, 'yyyy-mm-dd')|| 'T' || to_char(valor, 'hh24:mi:ss') || '.000Z' || '"';
+		if valor is null then return 'null' ;end if;
+		return '"' || to_char(valor, 'yyyy-mm-dd')|| 'T' || to_char(valor, 'hh24:mi:ss') || '.000Z' || '"';
 	end;
 	
 	function to_json(usuarios tab_usuario) return varchar2 is
