@@ -36,6 +36,18 @@ angular.module("myApp")
 		templateUrl: "/components/controle-acesso/controle-acesso-list.html",
 		controller: "controle-acesso-controller"
 	})
+	.when("/log-acesso", 
+	{
+		templateUrl: "/components/log-acesso/log-acesso-list.html",
+		controller: "log-acesso-controller",
+		resolve:
+		{
+			"reqbrowse": ["log-acesso-service", function(logAcessoService)
+			{ 
+				return logAcessoService.browse()
+			}]
+		}
+	})
 	.when("/versao-netsms", 
 	{
 		templateUrl: "/components/versao-netsms/versao-netsms-view.html",

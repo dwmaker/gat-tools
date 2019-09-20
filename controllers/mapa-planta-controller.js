@@ -33,6 +33,7 @@ controller.listMapaPlanta =
 		})
 		.catch((err) =>
 		{
+			if(err instanceof ResponseError) return res.status(err.status).json(err);
 			return next(err);
 		});
 	}

@@ -1,4 +1,4 @@
-
+DECLARE
 /*****************************************************
 ***   spool_report_sn_versao.sql
 ***   Autor: Paulo Ponciano - Spread
@@ -7,14 +7,6 @@
 ***     Geração de um relatório consolidado comparando a
 ***     versão das bases NetSms entre ambientes
 *****************************************************/
-
-set serveroutput on;
-set trimspool on;
-set linesize 500;
-set feedback off;
-
-spool "&1.";
-DECLARE
 	c_st_connerror char(1) := 'E';
 	c_st_lowerversion char(1) := 'W';
 	c_st_outdate char(1) := 'O';
@@ -105,9 +97,6 @@ begin
 	-- MATRIZ AMBIENTES
 	v_cod_ambientes(v_cod_ambientes.count ):= 'PROD';
 	v_cod_ambientes(v_cod_ambientes.count ):= 'CERT';
-	v_cod_ambientes(v_cod_ambientes.count ):= 'DEV1';
-	v_cod_ambientes(v_cod_ambientes.count ):= 'DEV3';
-	v_cod_ambientes(v_cod_ambientes.count ):= 'DEV4';
 	v_cod_ambientes(v_cod_ambientes.count ):= 'SIT1';
 	v_cod_ambientes(v_cod_ambientes.count ):= 'SIT2';
 	v_cod_ambientes(v_cod_ambientes.count ):= 'SIT3';
@@ -116,7 +105,7 @@ begin
 	v_cod_ambientes(v_cod_ambientes.count ):= 'SIT6';
 	v_cod_ambientes(v_cod_ambientes.count ):= 'SIT7';
 	v_cod_ambientes(v_cod_ambientes.count ):= 'SIT8';
-	v_cod_ambientes(v_cod_ambientes.count ):= 'UAT';
+	v_cod_ambientes(v_cod_ambientes.count ):= 'STRESS';
 
 	-- Recuperando última versao dos ambientes	
 	FOR iamb IN v_cod_ambientes.FIRST .. v_cod_ambientes.LAST LOOP
@@ -213,7 +202,7 @@ begin
 	v_ambientes('CERT').ds_ambiente := ('Certificação');
 	v_ambientes('SIT4').ds_ambiente := ('Teste Integrado - LE');
 	v_ambientes('SIT5').ds_ambiente := ('Teste Integrado - LD');
-	v_ambientes('SIT6').ds_ambiente := ('Stress Test');
+	v_ambientes('SIT6').ds_ambiente := ('UAT');
 	v_ambientes('SIT7').ds_ambiente := ('Novo Sap BR');
 	
 	-- Renderização
@@ -286,5 +275,3 @@ begin
 	end;
 end;
 /
-spool off;
-exit;

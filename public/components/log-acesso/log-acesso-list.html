@@ -1,0 +1,95 @@
+<div class="">
+	<h2>Log de Acessos</h2>
+	<small ng-show:"browse.refreshDate">Atualizado em {{ browse.refreshDate | date:'yyyy-MM-dd HH:mm:ss': '+0000' }} </small>
+	<div class="alert alert-{{message.status}}" ng-repeat="message in messages">
+		<strong ng-bind="message.title"></strong> {{message.text}}
+	</div>
+	<div>
+		<div class="btn-group" role="group" aria-label="Basic example">
+			<button type="button" ng-click="exportar((browse.records | filter : filtro | orderBy : orderBy: reverse))" class="btn btn-light" title="Exportar para Planilha do Excel"> <i class="fas fa-file-excel text-primary"> </i> Exportar</button>
+		</div>
+		<table class="table table-bordered table-sm">
+			<thead class="thead-dark">
+				<tr>
+					<th>
+						<a class="text-white" ng-click="ordenar('osuser')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'osuser', 'fas fa-sort-up text-primary': orderBy == 'osuser' && reverse, 'fas fa-sort-down text-primary': orderBy == 'osuser' && !reverse}"></i>
+							<span>osuser</span>
+						</a>
+					</th>
+					<th>
+						<a class="text-white" ng-click="ordenar('maquina')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'maquina', 'fas fa-sort-up text-primary': orderBy == 'maquina' && reverse, 'fas fa-sort-down text-primary': orderBy == 'maquina' && !reverse}"></i>
+							<span>maquina</span>
+						</a>
+					</th>
+					<th>
+						<a class="text-white" ng-click="ordenar('database')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'database', 'fas fa-sort-up text-primary': orderBy == 'database' && reverse, 'fas fa-sort-down text-primary': orderBy == 'database' && !reverse}"></i>
+							<span>database</span>
+						</a>
+					</th>
+					<th>
+						<a class="text-white" ng-click="ordenar('qtdAcessos')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'qtdAcessos', 'fas fa-sort-up text-primary': orderBy == 'qtdAcessos' && reverse, 'fas fa-sort-down text-primary': orderBy == 'qtdAcessos' && !reverse}"></i>
+							<span>qtdAcessos</span>
+						</a>
+					</th>
+					<th>
+						<a class="text-white" ng-click="ordenar('aplicacao')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'aplicacao', 'fas fa-sort-up text-primary': orderBy == 'aplicacao' && reverse, 'fas fa-sort-down text-primary': orderBy == 'aplicacao' && !reverse}"></i>
+							<span>aplicacao</span>
+						</a>
+					</th>
+					<th>
+						<a class="text-white" ng-click="ordenar('dtInicio')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'dtInicio', 'fas fa-sort-up text-primary': orderBy == 'dtInicio' && reverse, 'fas fa-sort-down text-primary': orderBy == 'dtInicio' && !reverse}"></i>
+							<span>dtInicio</span>
+						</a>
+					</th>
+					<th>
+						<a class="text-white" ng-click="ordenar('dtFim')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'dtFim', 'fas fa-sort-up text-primary': orderBy == 'dtFim' && reverse, 'fas fa-sort-down text-primary': orderBy == 'dtFim' && !reverse}"></i>
+							<span>dtFim</span>
+						</a>
+					</th>
+				</tr>
+				<tr>
+					<th><input ng-change="currentPage=1" ng-model="filtro.osuser" placeholder="buscar por osuser" uib-typeahead="item.osuser for item in browse.records | filter: filtro | unique:'osuser'"></input></th>
+					<th><input ng-change="currentPage=1" ng-model="filtro.maquina" placeholder="buscar por ambiente" uib-typeahead="item.maquina for item in browse.records | filter: filtro | unique:'maquina'"></input></th>
+					<th><input ng-change="currentPage=1" ng-model="filtro.database" placeholder="buscar por database" uib-typeahead="item.database for item in browse.records | filter: filtro | unique:'database'"></input></th>
+					<th><input ng-change="currentPage=1" ng-model="filtro.qtdAcessos" placeholder="buscar por qtdAcessos" uib-typeahead="item.qtdAcessos for item in browse.records | filter: filtro | unique:'qtdAcessos'"></input></th>
+					<th><input ng-change="currentPage=1" ng-model="filtro.aplicacao" placeholder="buscar por aplicacao" uib-typeahead="item.aplicacao for item in browse.records | filter: filtro | unique:'aplicacao'"></input></th>
+					<th><input ng-change="currentPage=1" ng-model="filtro.dtInicio" disabled placeholder="buscar por dtInicio" uib-typeahead="(item.dtInicio | date:'dd-MM-yyyy') for item in browse.records | filter: filtro | unique:'dtInicio'"></input></th>
+					<th><input ng-change="currentPage=1" ng-model="filtro.dtFim" disabled placeholder="buscar por dtFim" uib-typeahead="(item.dtFim | date:'dd-MM-yyyy') for item in browse.records | filter: filtro | unique:'dtFim'"></input></th>
+				</tr>
+			</thead>
+			<tbody >
+				<tr ng-repeat="row in (browse.records | filter : filtro | orderBy : orderBy: reverse | limitTo : itemsPerPage : (currentPage-1) * itemsPerPage)">
+					<td ng-bind="row.osuser">CERT</td>
+					<td ng-bind="row.maquina">NETSMS</td>
+					<td ng-bind="row.database">NETSMS</td>
+					<td ng-bind="row.qtdAcessos">NETSMS</td>
+					<td ng-bind="row.aplicacao">NETSMS</td>
+					<td ng-bind="(row.dtInicio | date:'dd-MM-yyyy')"></td>
+					<td ng-bind="(row.dtFim | date:'dd-MM-yyyy')"></td>
+				</tr>
+			</tbody>
+		</table>
+		<div>
+
+			<div>
+				<nav aria-label="Page navigation example">
+					<ul uib-pagination 
+					num-pages="numPages"  
+					items-per-page="itemsPerPage" 
+					total-items="Math.ceil((browse.records | filter : filtro).length)" 
+					ng-model="currentPage" 
+					max-size="10" force-ellipses="true" boundary-link-numbers="true"
+					></ul>
+				</nav>
+			</div>
+			<div><small>Página {{currentPage}} / {{numPages}}</small></div>
+		</div>
+	</div>
+</div>

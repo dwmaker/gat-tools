@@ -63,4 +63,13 @@ class INVALID_CREDENTIALS extends ResponseError
 	}
 };
 
-module.exports = {ResponseError, FORBIDDEN, UNAUTHORIZED, NO_DATA_FOUND, INVALID_CREDENTIALS, INVALID_USER_ENTRY}
+
+class INTERNAL_SERVER_ERROR extends ResponseError 
+{
+	constructor(info)
+	{
+		super("INTERNAL_SERVER_ERROR", "Ocorreu um erro interno no servidor", 500, info);	
+	}
+};
+
+module.exports = {ResponseError, FORBIDDEN, UNAUTHORIZED, NO_DATA_FOUND, INVALID_CREDENTIALS, INVALID_USER_ENTRY, INTERNAL_SERVER_ERROR}

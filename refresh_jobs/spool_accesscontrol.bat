@@ -9,7 +9,7 @@
 :makefile
 @echo * %~dpnx1 
 @if exist "%~dp1~%~nx1" del "%~dp1~%~nx1"
-@sqlplus -l "%GATDB_USR%/%GATDB_PWD%@%GATDB_CNX%" "@%~dpn0.sql" "%~dp1~%~nx1"
+@sqlplus -s -l "%GATDB_USR%/%GATDB_PWD%@%GATDB_CNX%" "@%~dpn0.sql" "%~dp1~%~nx1"
 @if exist "%~dp1~%~nx1" @(
 @del "%~dpnx1"
 @ren "%~dp1~%~nx1" "%~nx1"

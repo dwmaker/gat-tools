@@ -449,6 +449,10 @@ components:
     basicAuth:
       type: http
       scheme: basic
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
   schemas:
     mapa-planta-item:
       type: object

@@ -181,21 +181,21 @@ begin
 			null;
 	end;
 	
-	for x in (select db_link from all_db_links where owner = user and DB_LINK like 'GA_%_NETSMS_%.NET' order by db_link desc) loop
+	for x in (select * from vw_conexao where cd_aplicacao = 'NETSMS' order by cd_conexao asc) loop
 		declare
 		v_nr_del integer; 
 		v_nr_hst integer; 
 		v_nr_act integer; 
 		begin
-			pr_scd_parametro_endpoint(p_dblink_name => x.db_link, p_nr_del => v_nr_del, p_nr_hst => v_nr_hst, p_nr_act => v_nr_act);
+			pr_scd_parametro_endpoint(p_dblink_name => x.cd_conexao, p_nr_del => v_nr_del, p_nr_hst => v_nr_hst, p_nr_act => v_nr_act);
 			commit;
 			if  v_nr_del > 0 or v_nr_hst >0 or v_nr_act>0 then
-				dbms_output.put_line('DBLink: ' || x.db_link || '; nrDel: ' || v_nr_del || '; nrUpd: ' || v_nr_hst || '; nrIns:' || (v_nr_act-v_nr_hst));
+				dbms_output.put_line('DBLink: ' || x.cd_conexao || '; nrDel: ' || v_nr_del || '; nrUpd: ' || v_nr_hst || '; nrIns:' || (v_nr_act-v_nr_hst));
 			end if;
 			
 		exception 
 			when others then
-				dbms_output.put_line('!' || x.db_link || ' -> ' || substr(SQLERRM,1,1000) || '');
+				dbms_output.put_line('!' || x.cd_conexao || ' -> ' || substr(SQLERRM,1,1000) || '');
 				rollback;
 		end;
 	end loop;

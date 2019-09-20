@@ -19,6 +19,7 @@ function($rootScope)
 	};
 	function responseError(rejection) {
 		$rootScope.loading = 0;
+		console.error(rejection)
 		return $q.reject(rejection);
 	}	
 	

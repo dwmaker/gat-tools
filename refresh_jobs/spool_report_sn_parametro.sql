@@ -21,8 +21,8 @@ spool "&1.";
 set define off;
 
 declare
-TYPE lst_cod_cenario IS TABLE OF core.gat_dblinks.cd_cenario%type INDEX BY pls_integer;
-TYPE lst_cod_ambiente IS TABLE OF core.gat_dblinks.cd_ambiente%type INDEX BY pls_integer;
+TYPE lst_cod_cenario IS TABLE OF vw_conexao.cd_cenario%type INDEX BY pls_integer;
+TYPE lst_cod_ambiente IS TABLE OF vw_conexao.cd_ambiente%type INDEX BY pls_integer;
 
 type rec_regra_parametro is record
 (
@@ -50,7 +50,7 @@ TYPE rec_cenario IS RECORD (
 	QT_CENARIO_TOT integer
 	);
 
-TYPE dic_cenario IS TABLE OF rec_cenario INDEX BY core.gat_dblinks.cd_cenario%type;
+TYPE dic_cenario IS TABLE OF rec_cenario INDEX BY vw_conexao.cd_cenario%type;
 
 TYPE rec_tipo IS RECORD
 (
@@ -73,7 +73,7 @@ TYPE rec_ambiente IS RECORD
 	parametros dic_parametro
 );
 
-TYPE dic_ambiente IS TABLE OF rec_ambiente INDEX by core.gat_dblinks.cd_ambiente%type;
+TYPE dic_ambiente IS TABLE OF rec_ambiente INDEX by vw_conexao.cd_ambiente%type;
 
 ambientes dic_ambiente;
 begin
@@ -90,9 +90,6 @@ begin
 	-- MATRIZ AMBIENTES
 	v_cod_ambientes(v_cod_ambientes.count) := 'PROD';
 	v_cod_ambientes(v_cod_ambientes.count) := 'CERT';
-	v_cod_ambientes(v_cod_ambientes.count) := 'DEV1';
-	v_cod_ambientes(v_cod_ambientes.count) := 'DEV3';
-	v_cod_ambientes(v_cod_ambientes.count) := 'DEV4';
 	v_cod_ambientes(v_cod_ambientes.count) := 'SIT1';
 	v_cod_ambientes(v_cod_ambientes.count) := 'SIT2';
 	v_cod_ambientes(v_cod_ambientes.count) := 'SIT3';
@@ -101,7 +98,7 @@ begin
 	v_cod_ambientes(v_cod_ambientes.count) := 'SIT6';
 	v_cod_ambientes(v_cod_ambientes.count) := 'SIT7';
 	v_cod_ambientes(v_cod_ambientes.count) := 'SIT8';
-	v_cod_ambientes(v_cod_ambientes.count) := 'UAT';
+	v_cod_ambientes(v_cod_ambientes.count) := 'STRESS';
 
 	-- MATRIZ PARAMETROS
 	for x in
@@ -184,6 +181,20 @@ begin
 		x.cd_cenario
 		FROM
 		core.vw_parametro_netsms x
+		where cd_ambiente in 
+		(
+		 'PROD',
+		 'CERT',
+		 'SIT1',
+		 'SIT2',
+		 'SIT3',
+		 'SIT4',
+		 'SIT5',
+		 'SIT6',
+		 'SIT7',
+		 'SIT8',
+		 'STRESS'
+		 )
 	) loop
 	declare cenario rec_cenario;
 	begin
@@ -213,8 +224,21 @@ begin
 			count(distinct par.tp_protocolo || '://' || par.nm_host || ':' || par.nr_porta) qt_valor
 			from
 			core.sn_parametro_endpoint par
-			join core.gat_dblinks dtb on par.dblink_name = dtb.nm_dblink
+			join vw_conexao dtb on par.dblink_name = dtb.cd_conexao
 			where par.st_parametro='A' and dtb.CD_APLICACAO='NETSMS'
+			and dtb.cd_ambiente in (
+		 'PROD',
+		 'CERT',
+		 'SIT1',
+		 'SIT2',
+		 'SIT3',
+		 'SIT4',
+		 'SIT5',
+		 'SIT6',
+		 'SIT7',
+		 'SIT8',
+		 'STRESS'
+		 )
 			group by
 			par.ds_endereco ,
 			dtb.cd_ambiente,

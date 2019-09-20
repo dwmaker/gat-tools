@@ -81,64 +81,6 @@ declare
 	    obj_asm_disk.disk_path 		 := disk_path 		 ;
 		return obj_asm_disk;
 	end;
-	function to_json(valor varchar2) return varchar2
-	is
-	begin
-	return '"' || 
-	replace(
-	replace(
-	replace(
-	valor 
-	, '\', '\' || '\')
-	, chr(10), '\r')
-	, chr(13), '\n')
-	|| '"';
-	end;
-	function to_json(valor numeric) return varchar2
-	is
-	begin
-	return '' || to_number(valor, 'FM9999999999999990D9999999999999999999') || '';
-	end;
-	function to_json(valor date) return varchar2
-	is
-	begin
-	return '"' || to_char(valor, 'yyyy-mm-dd')|| 'T' || to_char(valor, 'hh24:mi:ss') || '.000Z' || '"';
-	end;
-	function to_json(v rec_asm_disk) return varchar2
-	is
-	begin
-	return 
-	'{' ||
-	'"host_name": '        || to_json(v.host_name)        || ', ' || 
-	'"dg_number": '        || to_json(v.dg_number)        || ', ' || 
-	'"dg_name": '          || to_json(v.dg_name)          || ', ' || 
-	'"instance_name": '    || to_json(v.instance_name)    || ', ' || 
-	'"db_name": '          || to_json(v.db_name)          || ', ' || 
-	'"software_version": ' || to_json(v.software_version) || ', ' || 
-	'"disk_name": '        || to_json(v.disk_name)        || ', ' || 
-	'"disk_path": '        || to_json(v.disk_path)	      || ', ' || 
-	'"cd_conexao": '       || to_json(v.cd_conexao)       || ', ' || 
-	'"cd_ambiente": '      || to_json(v.cd_ambiente)      || ', ' || 
-	'"cd_sistema": '       || to_json(v.cd_sistema)       || ', ' || 
-	'"cd_cenario": '       || to_json(v.cd_cenario)       || ', ' || 
-	'"username": '         || to_json(v.username)         || ', ' || 
-	'"ds_conexao": '       || to_json(v.ds_conexao)       ||
-	'}';
-	end;
-	function to_json(v rec_error) return varchar2
-	is
-	begin
-	return 
-	'{' ||
-	'"cd_conexao": '       || to_json(v.cd_conexao)       || ', ' || 
-	'"cd_ambiente": '      || to_json(v.cd_ambiente)      || ', ' || 
-	'"cd_sistema": '       || to_json(v.cd_sistema)       || ', ' || 
-	'"cd_cenario": '       || to_json(v.cd_cenario)       || ', ' || 
-	'"username": '         || to_json(v.username)         || ', ' || 
-	'"ds_conexao": '       || to_json(v.ds_conexao)       || ', ' || 
-	'"sqlerrm": '          || to_json(v.sqlerrm)          ||
-	'}';
-	end;
 begin
 	begin
 		for cnx in
@@ -222,6 +164,66 @@ begin
 	end;
 	
 	--- RENDERIZAÇÃO ----
+	declare
+	
+	function to_json(valor varchar2) return varchar2
+	is
+	begin
+	return '"' || 
+	replace(
+	replace(
+	replace(
+	valor 
+	, '\', '\' || '\')
+	, chr(10), '\r')
+	, chr(13), '\n')
+	|| '"';
+	end;
+	function to_json(valor numeric) return varchar2
+	is
+	begin
+	return '' || to_number(valor, 'FM9999999999999990D9999999999999999999') || '';
+	end;
+	function to_json(valor date) return varchar2
+	is
+	begin
+	return '"' || to_char(valor, 'yyyy-mm-dd')|| 'T' || to_char(valor, 'hh24:mi:ss') || '.000Z' || '"';
+	end;
+	function to_json(v rec_asm_disk) return varchar2
+	is
+	begin
+	return 
+	'{' ||
+	'"host_name": '        || to_json(v.host_name)        || ', ' || 
+	'"dg_number": '        || to_json(v.dg_number)        || ', ' || 
+	'"dg_name": '          || to_json(v.dg_name)          || ', ' || 
+	'"instance_name": '    || to_json(v.instance_name)    || ', ' || 
+	'"db_name": '          || to_json(v.db_name)          || ', ' || 
+	'"software_version": ' || to_json(v.software_version) || ', ' || 
+	'"disk_name": '        || to_json(v.disk_name)        || ', ' || 
+	'"disk_path": '        || to_json(v.disk_path)	      || ', ' || 
+	'"cd_conexao": '       || to_json(v.cd_conexao)       || ', ' || 
+	'"cd_ambiente": '      || to_json(v.cd_ambiente)      || ', ' || 
+	'"cd_sistema": '       || to_json(v.cd_sistema)       || ', ' || 
+	'"cd_cenario": '       || to_json(v.cd_cenario)       || ', ' || 
+	'"username": '         || to_json(v.username)         || ', ' || 
+	'"ds_conexao": '       || to_json(v.ds_conexao)       ||
+	'}';
+	end;
+	function to_json(v rec_error) return varchar2
+	is
+	begin
+	return 
+	'{' ||
+	'"cd_conexao": '       || to_json(v.cd_conexao)       || ', ' || 
+	'"cd_ambiente": '      || to_json(v.cd_ambiente)      || ', ' || 
+	'"cd_sistema": '       || to_json(v.cd_sistema)       || ', ' || 
+	'"cd_cenario": '       || to_json(v.cd_cenario)       || ', ' || 
+	'"username": '         || to_json(v.username)         || ', ' || 
+	'"ds_conexao": '       || to_json(v.ds_conexao)       || ', ' || 
+	'"sqlerrm": '          || to_json(v.sqlerrm)          ||
+	'}';
+	end;
 	begin
 		dbms_output.put_line('"use strict";');
 		dbms_output.put_line('/// Atenção: Este arquivo é gerado dinamicamente pelos refresh_jobs');
