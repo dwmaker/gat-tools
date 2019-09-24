@@ -1,4 +1,4 @@
-
+declare
 /*****************************************************
 ***	spool_report_sn_parametro.sql
 ***	Autor: Paulo Ponciano - Spread
@@ -8,19 +8,6 @@
 ***
 *****************************************************/
 
-
-
-SET SERVEROUTPUT ON FORMAT TRUNCATED;
-set trimspool on;
-set linesize 10000;
-SET feedback off;
-set termout off;
-
-spool "&1.";
-
-set define off;
-
-declare
 TYPE lst_cod_cenario IS TABLE OF vw_conexao.cd_cenario%type INDEX BY pls_integer;
 TYPE lst_cod_ambiente IS TABLE OF vw_conexao.cd_ambiente%type INDEX BY pls_integer;
 
