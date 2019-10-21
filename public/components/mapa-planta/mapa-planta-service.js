@@ -1,115 +1,36 @@
-angular.module("myApp").service("mapa-planta-service", ['$http',
+"use strict";
+/// Atenção: Este arquivo é gerado dinamicamente pelos refresh_jobs
+angular.module("myApp").service("mapa-planta-service",
+["$http",
 function($http)
 {
-	this.list = function list(params)
+	
+	this.browse = function browse(params)
 	{
+		function appendTransform(transform) 
+		{
+			let transformResponse = $http.defaults.transformResponse;
+			transformResponse = angular.isArray(transformResponse) ? transformResponse : [transformResponse];
+			return transformResponse.concat(transform);
+		};
+		
 		let opt = 
 		{
 			"method": "GET", 
-			"url": "/api/v1/mapa-planta", 
-			"params": params
-		};
-		return new Promise(function(resolve, reject)
-		{
-			$http(opt)
-			.then(function(res)
+			"url": "/api/v1/mapa-planta/mapa-planta-data.json", 
+			"params": params,
+			"transformResponse": appendTransform(function(value) 
 			{
-				resolve(res.data);
+				value.refreshDate = new Date(value.refreshDate);
+				/*value.records.forEach((item)=>
+				{
+					item.dtFim = new Date(item.dtFim);
+					item.dtInicio = new Date(item.dtInicio);
+					item.ultimoAcesso = new Date(item.ultimoAcesso);
+				})*/
+				return value; 
 			})
-			.catch(function(res)
-			{
-				reject(res.data);
-			});
-		});
-	};
-	
-	this.get = function get(id)
-	{
-		let opt = 
-		{
-			"method": "GET", 
-			"url": "/api/v1/mapa-planta/:id".replace(":id", id), 
-			"params": {}
 		};
-		return new Promise(function(resolve, reject)
-		{
-			$http(opt)
-			.then(function(res)
-			{
-				resolve(res.data);
-			})
-			.catch(function(res)
-			{
-				reject(res);
-			});
-		});
-	};
-	
-	this.update = function update(id, obj)
-	{
-		let opt = 
-		{
-			"method": "PUT", 
-			"url": "/api/v1/mapa-planta/:id".replace(":id", id), 
-			"params": {},
-			"data": obj
-		};
-		return new Promise(function(resolve, reject)
-		{
-			$http(opt)
-			.then(function(res)
-			{
-				resolve(res.data);
-			})
-			.catch(function(res)
-			{
-				reject(res);
-			});
-		});
-	};
-	this.new = function()
-	{
-		return {
-			nome: null,
-			cd_ambiente: null,
-			id_mapa_template: null,
-			tecnologias: {},
-			tp_mapa:"M"
-		};
-	}
-	
-	this.add = function add(obj)
-	{
-		let opt = 
-		{
-			"method": "POST", 
-			"url": "/api/v1/mapa-planta/", 
-			"params": {},
-			"data": obj
-		};
-		return $http(opt);
-			
-	};
-	
-	this.delete = function (id)
-	{
-		let opt = 
-		{
-			"method": "DELETE", 
-			"url": "/api/v1/mapa-planta/:id".replace(":id", id), 
-			"params": {}
-		};
-		return new Promise(function(resolve, reject)
-		{
-			$http(opt)
-			.then(function(res)
-			{
-				resolve(res.data);
-			})
-			.catch(function(res)
-			{
-				reject(new Error(res));
-			});
-		});
+		return  $http(opt)
 	};
 }]);

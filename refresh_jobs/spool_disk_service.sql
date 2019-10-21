@@ -1,11 +1,3 @@
-whenever sqlerror exit failure;
-whenever oserror exit failure;
-SET SERVEROUTPUT ON FORMAT TRUNCATED;
-set trimspool on;
-set linesize 10000;
-SET feedback off;
-set termout off;
-spool "&1";
 declare
 	TYPE rec_asm_disk IS RECORD (
 	host_name        VARCHAR2(64),
@@ -18,7 +10,7 @@ declare
 	disk_path 		 VARCHAR2(256),
 	cd_conexao   user_db_links.db_link%type,
 	cd_ambiente  varchar2(10),
-	cd_sistema   varchar2(10),
+	cd_aplicacao   varchar2(10),
 	cd_cenario   varchar2(10),
 	username     user_db_links.username%type,
 	ds_conexao   user_db_links.host%type
@@ -26,7 +18,7 @@ declare
 	TYPE rec_error IS RECORD (
 	cd_conexao   user_db_links.db_link%type,
 	cd_ambiente  varchar2(10),
-	cd_sistema   varchar2(10),
+	cd_aplicacao   varchar2(10),
 	cd_cenario   varchar2(10),
 	username     user_db_links.username%type,
 	ds_conexao   user_db_links.host%type,
@@ -39,7 +31,7 @@ declare
 	function new_rec_error(
 		cd_conexao   user_db_links.db_link%type,
 		cd_ambiente  varchar2,
-		cd_sistema   varchar2,
+		cd_aplicacao   varchar2,
 		cd_cenario   varchar2,
 		username     user_db_links.username%type,
 		ds_conexao   user_db_links.host%type,
@@ -49,13 +41,12 @@ declare
 	obj_error rec_error;
 	begin
 		obj_error.cd_conexao   := cd_conexao   ;
-	    obj_error.cd_ambiente  := cd_ambiente  ;
-	    obj_error.cd_sistema   := cd_sistema   ;
-	    obj_error.cd_cenario   := cd_cenario   ;
-	    obj_error.username     := username     ;
-	    obj_error.ds_conexao   := ds_conexao   ;
-
-	    obj_error.sqlerrm	   := null;--substr(sqlerrm, 1,100)	   ;
+		obj_error.cd_ambiente  := cd_ambiente  ;
+		obj_error.cd_aplicacao   := cd_aplicacao   ;
+		obj_error.cd_cenario   := cd_cenario   ;
+		obj_error.username     := username     ;
+		obj_error.ds_conexao   := ds_conexao   ;
+		obj_error.sqlerrm		 := null;--substr(sqlerrm, 1,100)		 ;
 		return obj_error;
 	end;
 	function new_rec_asm_disk(
@@ -72,32 +63,20 @@ declare
 	obj_asm_disk rec_asm_disk;
 	begin
 		obj_asm_disk.host_name        := host_name        ;
-	    obj_asm_disk.dg_number        := dg_number        ;
-	    obj_asm_disk.dg_name          := dg_name          ;
-	    obj_asm_disk.instance_name    := instance_name    ;
-	    obj_asm_disk.db_name          := db_name          ;
-	    obj_asm_disk.software_version := software_version ;
-	    obj_asm_disk.disk_name        := disk_name        ;
-	    obj_asm_disk.disk_path 		 := disk_path 		 ;
+			obj_asm_disk.dg_number        := dg_number        ;
+			obj_asm_disk.dg_name          := dg_name          ;
+			obj_asm_disk.instance_name    := instance_name    ;
+			obj_asm_disk.db_name          := db_name          ;
+			obj_asm_disk.software_version := software_version ;
+			obj_asm_disk.disk_name        := disk_name        ;
+			obj_asm_disk.disk_path 		 := disk_path 		 ;
 		return obj_asm_disk;
 	end;
 begin
 	begin
 		for cnx in
 		(
-			select * from
-			(
-				SELECT
-				dbl.db_link cd_conexao,
-				substr(dbl.db_link, instr(dbl.db_link, '_')+1, instr(dbl.db_link, '_', instr(dbl.db_link, '_')+1)-instr(dbl.db_link, '_')-1) cd_ambiente,
-				case when instr(dbl.db_link, '_', instr(dbl.db_link, '_', instr(dbl.db_link, '_')+1)+1) > 0 then substr( dbl.db_link , instr(dbl.db_link, '_', instr(dbl.db_link, '_')+1)+1 , instr(dbl.db_link, '_', instr(dbl.db_link, '_', instr(dbl.db_link, '_')+1)+1) - instr(dbl.db_link, '_', instr(dbl.db_link, '_')+1)-1)
-				else substr(dbl.db_link,instr(dbl.db_link, '_', instr(dbl.db_link, '_')+1)+1, instr(dbl.db_link, '.NET', instr(dbl.db_link, '_' )) - instr(dbl.db_link, '_', instr(dbl.db_link, '_')+1)-1) end AS cd_sistema,
-				substr( dbl.db_link ,instr(dbl.db_link, '_', instr(dbl.db_link, '_', instr(dbl.db_link, '_')+1)+1)+1 , instr(dbl.db_link, '.NET', instr(dbl.db_link, '_', instr(dbl.db_link, '_', instr(dbl.db_link, '_')+1)+1)) - instr(dbl.db_link, '_', instr(dbl.db_link, '_', instr(dbl.db_link, '_')+1)+1)-1) AS cd_cenario,
-				dbl.username,
-				HOST ds_conexao
-				FROM   user_db_links dbl
-				where dbl.db_link like 'GA^_%.NET' escape '^'
-			) where cd_ambiente != 'PROD'
+			select * from vw_conexao where cd_ambiente != 'PROD'
 			--and cd_conexao in ('GA_SIT7_NETSMS_SUL.NET', 'GA_SIT7_NETSMS_ABC.NET')
 		) loop
 			declare
@@ -139,7 +118,7 @@ begin
 						EXIT WHEN mycur%NOTFOUND;
 						obj.cd_conexao := cnx.cd_conexao;
 						obj.cd_ambiente := cnx.cd_ambiente;
-						obj.cd_sistema := cnx.cd_sistema;
+						obj.cd_aplicacao := cnx.cd_aplicacao;
 						obj.cd_cenario := cnx.cd_cenario;
 						obj.username := cnx.username;
 						obj.ds_conexao := cnx.ds_conexao;
@@ -152,7 +131,7 @@ begin
 				begin
 					obj.cd_conexao := cnx.cd_conexao;
 					obj.cd_ambiente := cnx.cd_ambiente;
-					obj.cd_sistema := cnx.cd_sistema;
+					obj.cd_aplicacao := cnx.cd_aplicacao;
 					obj.cd_cenario := cnx.cd_cenario;
 					obj.username := cnx.username;
 					obj.ds_conexao := cnx.ds_conexao;
@@ -201,10 +180,10 @@ begin
 	'"db_name": '          || to_json(v.db_name)          || ', ' || 
 	'"software_version": ' || to_json(v.software_version) || ', ' || 
 	'"disk_name": '        || to_json(v.disk_name)        || ', ' || 
-	'"disk_path": '        || to_json(v.disk_path)	      || ', ' || 
+	'"disk_path": '        || to_json(v.disk_path)				|| ', ' || 
 	'"cd_conexao": '       || to_json(v.cd_conexao)       || ', ' || 
 	'"cd_ambiente": '      || to_json(v.cd_ambiente)      || ', ' || 
-	'"cd_sistema": '       || to_json(v.cd_sistema)       || ', ' || 
+	'"cd_aplicacao": '     || to_json(v.cd_aplicacao)       || ', ' || 
 	'"cd_cenario": '       || to_json(v.cd_cenario)       || ', ' || 
 	'"username": '         || to_json(v.username)         || ', ' || 
 	'"ds_conexao": '       || to_json(v.ds_conexao)       ||
@@ -217,7 +196,7 @@ begin
 	'{' ||
 	'"cd_conexao": '       || to_json(v.cd_conexao)       || ', ' || 
 	'"cd_ambiente": '      || to_json(v.cd_ambiente)      || ', ' || 
-	'"cd_sistema": '       || to_json(v.cd_sistema)       || ', ' || 
+	'"cd_aplicacao": '     || to_json(v.cd_aplicacao)       || ', ' || 
 	'"cd_cenario": '       || to_json(v.cd_cenario)       || ', ' || 
 	'"username": '         || to_json(v.username)         || ', ' || 
 	'"ds_conexao": '       || to_json(v.ds_conexao)       || ', ' || 
@@ -254,5 +233,3 @@ begin
 	end;
 end;
 /
-spool off;
-exit;

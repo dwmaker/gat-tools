@@ -1,3 +1,5 @@
+dbconfig.json
+
 # Logs
 logs
 *.log
@@ -62,3 +64,4 @@ typings/
 .next
 
 refresh_jobs/config.bat
+

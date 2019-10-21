@@ -2,7 +2,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const Datasource = require("./controllers/datasource-controller.js");
-const MapaPlanta = require("./controllers/mapa-planta-controller.js");
+//const MapaPlanta = require("./controllers/mapa-planta-controller.js");
 const Application = require("./controllers/application-controller.js");
 const NetsmsVersion = require("./controllers/netsms-version-controller.js");
 const NetsmsParameter = require("./controllers/netsms-parameter-controller.js");
@@ -20,11 +20,11 @@ router.all("*", function(req, res, next) {
 
 router.use(morgan('dev'));
  
-router.get("/mapa-planta", MapaPlanta.listMapaPlanta );
-router.get("/mapa-planta/:id", MapaPlanta.getMapaPlanta ); 
-router.put("/mapa-planta/:id", MapaPlanta.updateMapaPlanta ); 
-router.post("/mapa-planta", MapaPlanta.createMapaPlanta );
-router.delete("/mapa-planta/:id", MapaPlanta.deleteMapaPlanta ); 
+//router.get("/mapa-planta", MapaPlanta.listMapaPlanta );
+//router.get("/mapa-planta/:id", MapaPlanta.getMapaPlanta ); 
+//router.put("/mapa-planta/:id", MapaPlanta.updateMapaPlanta ); 
+//router.post("/mapa-planta", MapaPlanta.createMapaPlanta );
+//router.delete("/mapa-planta/:id", MapaPlanta.deleteMapaPlanta ); 
 
 router.get("/datasources", Datasource.listDatasources );
 router.get("/datasources/:datasourceCode", Datasource.getDatasource ); 

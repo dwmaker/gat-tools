@@ -1,79 +1,139 @@
 <div class="">
-	<h2>Mapa de Planta</h2>
+	<h2>Mapa de Plantas</h2>
+	<small ng-show:"browse.refreshDate">Atualizado em {{ browse.refreshDate | date:'yyyy-MM-dd HH:mm:ss': '+0000' }} </small>
 	<div class="alert alert-{{message.status}}" ng-repeat="message in messages">
 		<strong ng-bind="message.title"></strong> {{message.text}}
 	</div>
-	
 	<div>
 		<div class="btn-group" role="group" aria-label="Basic example">
-			<button type="button" ng-click="gotoCreate()" class="btn btn-light" title="Exportar para Planilha do Excel"> <i class="fas fa-file-excel text-primary"> </i> Criar</button>
-			<button type="button" ng-click="export()" class="btn btn-light" title="Exportar para Planilha do Excel"> <i class="fas fa-file-excel text-primary"> </i> Exportar</button>
+			<button type="button" ng-click="exportar((browse.records | filter : filtro | orderBy : orderBy: reverse))" class="btn btn-light" title="Exportar para Planilha do Excel"> <i class="fas fa-file-excel text-primary"> </i> Exportar</button>
 		</div>
-		
 		<table class="table table-bordered table-sm">
-			
 			<thead class="thead-dark">
 				<tr>
 					<th>
-						<a class="text-white" ng-click="ordenar('id')" href="javascript: void(0)">
-							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'id', 'fas fa-sort-up text-primary': orderBy == 'id' && reverse, 'fas fa-sort-down text-primary': orderBy == 'id' && !reverse}"></i>
-							<span>Id</span>
+						<a class="text-white" ng-click="ordenar('fase')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'fase', 'fas fa-sort-up text-primary': orderBy == 'fase' && reverse, 'fas fa-sort-down text-primary': orderBy == 'fase' && !reverse}"></i>
+							<span>fase</span>
 						</a>
 					</th>
 					<th>
-						<a class="text-white" ng-click="ordenar('nome')" href="javascript: void(0)">
-							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'nome', 'fas fa-sort-up text-primary': orderBy == 'nome' && reverse, 'fas fa-sort-down text-primary': orderBy == 'nome' && !reverse}"></i>
-							<span>Nome</span>
+						<a class="text-white" ng-click="ordenar('planta')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'planta', 'fas fa-sort-up text-primary': orderBy == 'planta' && reverse, 'fas fa-sort-down text-primary': orderBy == 'planta' && !reverse}"></i>
+							<span>planta</span>
 						</a>
 					</th>
 					<th>
-						<a class="text-white" ng-click="ordenar('cd_ambiente')" href="javascript: void(0)">
-							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'cd_ambiente', 'fas fa-sort-up text-primary': orderBy == 'cd_ambiente' && reverse, 'fas fa-sort-down text-primary': orderBy == 'cd_ambiente' && !reverse}"></i>
-							<span>Ambiente</span>
+						<a class="text-white" ng-click="ordenar('componente')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'componente', 'fas fa-sort-up text-primary': orderBy == 'componente' && reverse, 'fas fa-sort-down text-primary': orderBy == 'componente' && !reverse}"></i>
+							<span>componente</span>
+						</a>
+					</th>
+					<th>
+						<a class="text-white" ng-click="ordenar('host')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'host', 'fas fa-sort-up text-primary': orderBy == 'host' && reverse, 'fas fa-sort-down text-primary': orderBy == 'host' && !reverse}"></i>
+							<span>host</span>
+						</a>
+					</th>
+					<th>
+						<a class="text-white" ng-click="ordenar('ip')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'ip', 'fas fa-sort-up text-primary': orderBy == 'ip' && reverse, 'fas fa-sort-down text-primary': orderBy == 'ip' && !reverse}"></i>
+							<span>ip</span>
+						</a>
+					</th>
+					<th>
+						<a class="text-white" ng-click="ordenar('tecnologia')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'tecnologia', 'fas fa-sort-up text-primary': orderBy == 'tecnologia' && reverse, 'fas fa-sort-down text-primary': orderBy == 'tecnologia' && !reverse}"></i>
+							<span>tecnologia</span>
+						</a>
+					</th>
+					<th>
+						<a class="text-white" ng-click="ordenar('sistema')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'sistema', 'fas fa-sort-up text-primary': orderBy == 'sistema' && reverse, 'fas fa-sort-down text-primary': orderBy == 'sistema' && !reverse}"></i>
+							<span>sistema</span>
 						</a>
 					</th>
 					
 					<th>
-						<a class="text-white" ng-click="ordenar('nomeModelo')" href="javascript: void(0)">
-							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'nomeModelo', 'fas fa-sort-up text-primary': orderBy == 'nomeModelo' && reverse, 'fas fa-sort-down text-primary': orderBy == 'nomeModelo' && !reverse}"></i>
-							<span>Modelo</span>
+						<a class="text-white" ng-click="ordenar('link')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'link', 'fas fa-sort-up text-primary': orderBy == 'link' && reverse, 'fas fa-sort-down text-primary': orderBy == 'link' && !reverse}"></i>
+							<span>link</span>
+						</a>
+					</th>
+					<th>
+						<a class="text-white" ng-click="ordenar('usuario')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'usuario', 'fas fa-sort-up text-primary': orderBy == 'usuario' && reverse, 'fas fa-sort-down text-primary': orderBy == 'usuario' && !reverse}"></i>
+							<span>usuario</span>
+						</a>
+					</th>
+					<th>
+						<a class="text-white" ng-click="ordenar('password')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'password', 'fas fa-sort-up text-primary': orderBy == 'password' && reverse, 'fas fa-sort-down text-primary': orderBy == 'password' && !reverse}"></i>
+							<span>password</span>
 						</a>
 					</th>
 					
 					<th>
-						<a class="text-white" ng-click="ordenar('dtAlteracao')" href="javascript: void(0)">
-							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'dtAlteracao', 'fas fa-sort-up text-primary': orderBy == 'dtAlteracao' && reverse, 'fas fa-sort-down text-primary': orderBy == 'dtAlteracao' && !reverse}"></i>
-							<span>Última Edição</span>
+						<a class="text-white" ng-click="ordenar('base')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'base', 'fas fa-sort-up text-primary': orderBy == 'base' && reverse, 'fas fa-sort-down text-primary': orderBy == 'base' && !reverse}"></i>
+							<span>base</span>
 						</a>
 					</th>
-					<th>Ação</th>					
+					<th>
+						<a class="text-white" ng-click="ordenar('sid')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'sid', 'fas fa-sort-up text-primary': orderBy == 'sid' && reverse, 'fas fa-sort-down text-primary': orderBy == 'sid' && !reverse}"></i>
+							<span>sid</span>
+						</a>
+					</th>
+				<tr>
 				</tr>
-					<tr>
-					<th><input ng-model="filtro.id" placeholder="buscar por id" uib-typeahead="item.id for item in list | filter: filtro | unique:'id'"></input></th>
-					<th><input ng-model="filtro.nome" placeholder="buscar por nome" uib-typeahead="item.nome for item in list | filter: filtro | unique:'nome'"></input></th>
-					<th><input ng-model="filtro.cd_ambiente" placeholder="buscar por ambiente" uib-typeahead="item.cd_ambiente for item in list | filter: filtro | unique:'cd_ambiente'"></input></th>
-					<th><input ng-model="filtro.nomeModelo" placeholder="buscar por modelo" uib-typeahead="item.nomeModelo for item in list | filter: filtro | unique:'nomeModelo'"></input></th>
-					<th></th>
-					<th></th>					
+				
+					<th><input ng-change="currentPage=1" ng-model="filtro.fase" placeholder="buscar por fase" uib-typeahead="item.fase for item in browse.records | filter: filtro | unique:'fase'"></input></th>
+					<th><input ng-change="currentPage=1" ng-model="filtro.planta" placeholder="buscar por planta" uib-typeahead="item.planta for item in browse.records | filter: filtro | unique:'planta'"></input></th>
+					<th><input ng-change="currentPage=1" ng-model="filtro.componente" placeholder="buscar por ambiente" uib-typeahead="item.componente for item in browse.records | filter: filtro | unique:'componente'"></input></th>
+					<th><input ng-change="currentPage=1" ng-model="filtro.host" placeholder="buscar por host" uib-typeahead="item.host for item in browse.records | filter: filtro | unique:'host'"></input></th>
+					<th><input ng-change="currentPage=1" ng-model="filtro.ip" placeholder="buscar por ip" uib-typeahead="item.ip for item in browse.records | filter: filtro | unique:'ip'"></input></th>
+					<th><input ng-change="currentPage=1" ng-model="filtro.tecnologia" placeholder="buscar por tecnologia" uib-typeahead="item.tecnologia for item in browse.records | filter: filtro | unique:'tecnologia'"></input></th>
+					<th><input ng-change="currentPage=1" ng-model="filtro.sistema" placeholder="buscar por sistema" uib-typeahead="item.sistema for item in browse.records | filter: filtro | unique:'sistema'"></input></th>
+					<th><input ng-change="currentPage=1" ng-model="filtro.link" placeholder="buscar por link" uib-typeahead="item.link for item in browse.records | filter: filtro | unique:'link'"></input></th>
+					<th><input ng-change="currentPage=1" ng-model="filtro.usuario" placeholder="buscar por usuario" uib-typeahead="item.usuario for item in browse.records | filter: filtro | unique:'usuario'"></input></th>
+					<th><input ng-change="currentPage=1" ng-model="filtro.password" placeholder="buscar por password" uib-typeahead="item.password for item in browse.records | filter: filtro | unique:'password'"></input></th>
+					<th><input ng-change="currentPage=1" ng-model="filtro.base" placeholder="buscar por base" uib-typeahead="item.base for item in browse.records | filter: filtro | unique:'base'"></input></th>
+					<th><input ng-change="currentPage=1" ng-model="filtro.sid" placeholder="buscar por sid" uib-typeahead="item.sid for item in browse.records | filter: filtro | unique:'sid'"></input></th>
 				</tr>
 			</thead>
-			<tbody>
-				<tr ng-repeat="row in filtrado = (list | filter : filtro | orderBy : orderBy: reverse)">
-					<td ng-bind="row.id">CERT</td>
-					<td ng-bind="row.nome">CERT</td>
-					<td ng-bind="row.cd_ambiente">NETSMS</td>
-					<td ng-bind="row.nomeModelo">NETSMS</td>
-					<td>
-					<span ng-show="row.nmUsuarioAlteracao">{{row.nmUsuarioAlteracao }} em {{ row.dtAlteracao | date: 'yyyy-MM-dd HH:mm'}}</span>
-					</td>
-					<td>
-						<a href="javascript: void(0)" title="Editar" class="text-primary" ng-click="gotoEdit(row.id)"><i class="fas fa-edit"></i></a>
-						&nbsp;
-						<a href="javascript: void(0)" title="Excluir" class="text-danger" ng-click="modalDelete($index)"><i class="fas fa-minus-circle"></i></a>
-					</td>
+			<tbody >
+				<tr ng-repeat="row in (browse.records | filter : filtro | orderBy : orderBy: reverse | limitTo : itemsPerPage : (currentPage-1) * itemsPerPage)">
+					<td ng-bind="row.fase">CERT</td>
+					<td ng-bind="row.planta">CERT</td>
+					<td ng-bind="row.componente">NETSMS</td>
+					<td ng-bind="row.host">NETSMS</td>
+					<td ng-bind="row.ip">NETSMS</td>
+					<td ng-bind="row.tecnologia">NETSMS</td>
+					<td ng-bind="row.sistema">NETSMS</td>
+					<td ng-bind="row.link">NETSMS</td>
+					<td ng-bind="row.usuario">NETSMS</td>
+					<td ng-bind="row.password">NETSMS</td>
+					<td ng-bind="row.base">NETSMS</td>
+					<td ng-bind="row.sid">NETSMS</td>
+
 				</tr>
 			</tbody>
-			<caption>Exibindo {{ filtrado.length }} de {{ list.length }} registros.</caption>
 		</table>
+		<div>
+
+			<div>
+				<nav aria-label="Page navigation example">
+					<ul uib-pagination 
+					num-pages="numPages"  
+					items-per-page="itemsPerPage" 
+					total-items="Math.ceil((browse.records | filter : filtro).length)" 
+					ng-model="currentPage" 
+					max-size="10" force-ellipses="true" boundary-link-numbers="true"
+					></ul>
+				</nav>
+			</div>
+			<div><small>Página {{currentPage}} / {{numPages}}</small></div>
+		</div>
 	</div>
 </div>

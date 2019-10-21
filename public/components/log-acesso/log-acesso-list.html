@@ -59,6 +59,12 @@
 							<span>dtFim</span>
 						</a>
 					</th>
+					<th>
+						<a class="text-white" ng-click="ordenar('ultimoAcesso')" href="javascript: void(0)">
+							<i ng-class="{'fas fa-sort text-secondary': orderBy != 'ultimoAcesso', 'fas fa-sort-up text-primary': orderBy == 'ultimoAcesso' && reverse, 'fas fa-sort-down text-primary': orderBy == 'ultimoAcesso' && !reverse}"></i>
+							<span>ultimoAcesso</span>
+						</a>
+					</th>
 				</tr>
 				<tr>
 					<th><input ng-change="currentPage=1" ng-model="filtro.login" placeholder="buscar por login" uib-typeahead="item.login for item in browse.records | filter: filtro | unique:'login'"></input></th>
@@ -69,6 +75,7 @@
 					<th><input ng-change="currentPage=1" ng-model="filtro.aplicacao" placeholder="buscar por aplicacao" uib-typeahead="item.aplicacao for item in browse.records | filter: filtro | unique:'aplicacao'"></input></th>
 					<th><input ng-change="currentPage=1" ng-model="filtro.dtInicio" disabled placeholder="buscar por dtInicio" uib-typeahead="(item.dtInicio | date:'dd-MM-yyyy') for item in browse.records | filter: filtro | unique:'dtInicio'"></input></th>
 					<th><input ng-change="currentPage=1" ng-model="filtro.dtFim" disabled placeholder="buscar por dtFim" uib-typeahead="(item.dtFim | date:'dd-MM-yyyy') for item in browse.records | filter: filtro | unique:'dtFim'"></input></th>
+					<th><input ng-change="currentPage=1" ng-model="filtro.ultimoAcesso" disabled placeholder="buscar por ultimoAcesso" uib-typeahead="(item.ultimoAcesso | date:'dd-MM-yyyy') for item in browse.records | filter: filtro | unique:'ultimoAcesso'"></input></th>
 				</tr>
 			</thead>
 			<tbody >
@@ -81,6 +88,7 @@
 					<td ng-bind="row.aplicacao">NETSMS</td>
 					<td ng-bind="(row.dtInicio | date:'dd-MM-yyyy')"></td>
 					<td ng-bind="(row.dtFim | date:'dd-MM-yyyy')"></td>
+					<td ng-bind="(row.ultimoAcesso | date:'dd-MM-yyyy')"></td>
 				</tr>
 			</tbody>
 		</table>

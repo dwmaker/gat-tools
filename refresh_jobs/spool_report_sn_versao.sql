@@ -231,7 +231,7 @@ begin
 			FOR i IN v_cod_cenarios.FIRST .. v_cod_cenarios.LAST LOOP
 				declare v_cenario rec_cenario := v_ambiente.cenarios(v_cod_cenarios(i));
 				begin
-				dbms_output.put('							<td class="');
+				dbms_output.put('				<td class="');
 				dbms_output.put(
 				case v_cenario.status 
 				when c_st_lowerversion then 'bg-danger text-white' 
@@ -242,17 +242,17 @@ begin
 				end );
 				dbms_output.put(' text-center" ');
 				dbms_output.put('title="');
-				if v_cenario.dblink is not null then dbms_output.put('DBLink: ' || htf.escape_sc(v_cenario.dblink) || chr(38)||'#13;'); end if;
-				if v_cenario.host is not null then dbms_output.put('Host: ' || htf.escape_sc(v_cenario.host) || chr(38)||'#13;'); end if;
-				if v_cenario.port is not null then dbms_output.put('Port: ' || htf.escape_sc(v_cenario.port) || chr(38)||'#13;'); end if;
-				if v_cenario.sid is not null then dbms_output.put('SID: ' || htf.escape_sc(v_cenario.sid) || chr(38)||'#13;'); end if;
-				if v_cenario.service_name is not null then dbms_output.put('Service Name: ' || htf.escape_sc(v_cenario.service_name) || chr(38)||'#13;'); end if;
-				if v_cenario.versao is not null then dbms_output.put('Versao: ' ||  htf.escape_sc(v_cenario.versao) || chr(38)||'#13;'); end if;
-				if v_cenario.dt_atualizacao is not null then dbms_output.put('Implantacao: ' || to_char(v_cenario.dt_atualizacao, 'yyyy-mm-dd') || chr(38)||'#13;'); end if;
-				if v_cenario.proxima_versao is not null then dbms_output.put('Proxima Versao: ' ||  htf.escape_sc(v_cenario.proxima_versao) || chr(38)||'#13;'); end if;
-				if v_cenario.dt_proxima_atualizacao is not null then dbms_output.put('Proxima Implantacao: ' || to_char(v_cenario.dt_proxima_atualizacao, 'yyyy-mm-dd') || chr(38)||'#13;'); end if;
+				if v_cenario.dblink is not null then dbms_output.put('DBLink: ' || htf.escape_sc(v_cenario.dblink) || chr(38)||'#10;'); end if;
+				if v_cenario.host is not null then dbms_output.put('Host: ' || htf.escape_sc(v_cenario.host) || chr(38)||'#10;'); end if;
+				if v_cenario.port is not null then dbms_output.put('Port: ' || htf.escape_sc(v_cenario.port) || chr(38)||'#10;'); end if;
+				if v_cenario.sid is not null then dbms_output.put('SID: ' || htf.escape_sc(v_cenario.sid) || chr(38)||'#10;'); end if;
+				if v_cenario.service_name is not null then dbms_output.put('Service Name: ' || htf.escape_sc(v_cenario.service_name) || chr(38)||'#10;'); end if;
+				if v_cenario.versao is not null then dbms_output.put('Versao: ' ||  htf.escape_sc(v_cenario.versao) || chr(38)||'#10;'); end if;
+				if v_cenario.dt_atualizacao is not null then dbms_output.put('Implantacao: ' || to_char(v_cenario.dt_atualizacao, 'yyyy-mm-dd') || chr(38)||'#10;'); end if;
+				if v_cenario.proxima_versao is not null then dbms_output.put('Proxima Versao: ' ||  htf.escape_sc(v_cenario.proxima_versao) || chr(38)||'#10;'); end if;
+				if v_cenario.dt_proxima_atualizacao is not null then dbms_output.put('Proxima Implantacao: ' || to_char(v_cenario.dt_proxima_atualizacao, 'yyyy-mm-dd') || chr(38)||'#10;'); end if;
 				
-				if v_cenario.message is not null then dbms_output.put('Message: ' || chr(38)||'#13;' || htf.escape_sc(v_cenario.message) || chr(38)||'#13;'); end if;
+				if v_cenario.message is not null then dbms_output.put('Message: ' || chr(38)||'#10;' || replace(htf.escape_sc(v_cenario.message), chr(10), chr(38)||'#10;') || chr(38)||'#10;'); end if;
 				dbms_output.put('">');
 				dbms_output.put(htf.escape_sc(
 				case 

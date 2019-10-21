@@ -5,7 +5,7 @@ const swaggerUiExpress = require('swagger-ui-express');
 const jsyaml = require('js-yaml');
 const http = require('http');
 const bodyParser = require('body-parser');
-const apiRouter = require('./api-router.js');
+const router = require('./router.js');
 const passport = require('passport');
 const securityschemas = require("./security-schemas")
 const helmet = require('helmet');
@@ -39,7 +39,7 @@ app.use('/lib/angular-locale-pt-br', express.static(`${__dirname}/node_modules/a
 
 
 app.use('/api-docs', swaggerUiExpress.serve, swaggerUiExpress.setup(swaggerDoc));
-app.use('/api/v1', apiRouter);
+app.use('/api/v1', router);
 
 
 var server = http.createServer(app);
