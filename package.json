@@ -15,7 +15,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.10.1",
     "alasql": "^0.4.11",
-    "angular": "^1.7.8",
+    "angular": "^1.7.9",
     "angular-base64": "^2.0.5",
     "angular-cookies": "^1.7.8",
     "angular-locale-pt-br": "^1.3.16",
