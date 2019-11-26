@@ -10,6 +10,7 @@ const passport = require('passport');
 const securityschemas = require("./security-schemas")
 const helmet = require('helmet');
 
+
 // swaggerRouter configuration
 var spec = fs.readFileSync(`${__dirname}/swagger.yaml`, 'utf8');
 var swaggerDoc = jsyaml.safeLoad(spec);
