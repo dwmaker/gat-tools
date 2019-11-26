@@ -1,6 +1,7 @@
 declare
 	TYPE rec_asm_disk IS RECORD (
 	host_name        VARCHAR2(64),
+	creation_date    DATE,
 	dg_number        NUMBER,
 	dg_name          VARCHAR2(30),
 	instance_name    VARCHAR2(64),
@@ -28,56 +29,14 @@ declare
 	TYPE tbl_asm_disk IS TABLE of rec_asm_disk INDEX BY pls_integer;
 	lst_asm_disk tbl_asm_disk ;
 	lst_error tbl_error ;
-	function new_rec_error(
-		cd_conexao   user_db_links.db_link%type,
-		cd_ambiente  varchar2,
-		cd_aplicacao   varchar2,
-		cd_cenario   varchar2,
-		username     user_db_links.username%type,
-		ds_conexao   user_db_links.host%type,
-		sqlerrm		 varchar2
-	) return rec_error
-	is
-	obj_error rec_error;
-	begin
-		obj_error.cd_conexao   := cd_conexao   ;
-		obj_error.cd_ambiente  := cd_ambiente  ;
-		obj_error.cd_aplicacao   := cd_aplicacao   ;
-		obj_error.cd_cenario   := cd_cenario   ;
-		obj_error.username     := username     ;
-		obj_error.ds_conexao   := ds_conexao   ;
-		obj_error.sqlerrm		 := null;--substr(sqlerrm, 1,100)		 ;
-		return obj_error;
-	end;
-	function new_rec_asm_disk(
-		host_name        VARCHAR2,
-		dg_number        NUMBER,
-		dg_name          VARCHAR2,
-		instance_name    VARCHAR2,
-		db_name          VARCHAR2,
-		software_version VARCHAR2,
-		disk_name        VARCHAR2,
-		disk_path 		 VARCHAR2
-	) return rec_asm_disk
-	is
-	obj_asm_disk rec_asm_disk;
-	begin
-		obj_asm_disk.host_name        := host_name        ;
-			obj_asm_disk.dg_number        := dg_number        ;
-			obj_asm_disk.dg_name          := dg_name          ;
-			obj_asm_disk.instance_name    := instance_name    ;
-			obj_asm_disk.db_name          := db_name          ;
-			obj_asm_disk.software_version := software_version ;
-			obj_asm_disk.disk_name        := disk_name        ;
-			obj_asm_disk.disk_path 		 := disk_path 		 ;
-		return obj_asm_disk;
-	end;
+	
+
 begin
 	begin
 		for cnx in
 		(
 			select * from vw_conexao where cd_ambiente != 'PROD'
-			--and cd_conexao in ('GA_SIT7_NETSMS_SUL.NET', 'GA_SIT7_NETSMS_ABC.NET')
+			--and cd_conexao in ('GA_SIT7_NETSMS_SUL.NET', 'GA_SIT7_NETSMS_ABC.NET', 'GA_CERT_NETSMS_BH.NET')
 		) loop
 			declare
 			mycur sys_refcursor;
@@ -85,6 +44,7 @@ begin
 				open mycur for '
 				select distinct
 				(select host_name from v$instance@' || cnx.cd_conexao || ') host_name,
+				(select created from v$database@' || cnx.cd_conexao || ') creation_date,
 				dg.group_number dg_number,
 				dg.name dg_name,
 				dg.instance_name instance_name,
@@ -114,7 +74,7 @@ begin
 				LOOP
 					declare obj rec_asm_disk;
 					begin
-						FETCH mycur INTO obj.host_name, obj.dg_number, obj.dg_name, obj.instance_name, obj.db_name, obj.software_version, obj.disk_name, obj.disk_path;
+						FETCH mycur INTO obj.host_name, obj.creation_date, obj.dg_number, obj.dg_name, obj.instance_name, obj.db_name, obj.software_version, obj.disk_name, obj.disk_path;
 						EXIT WHEN mycur%NOTFOUND;
 						obj.cd_conexao := cnx.cd_conexao;
 						obj.cd_ambiente := cnx.cd_ambiente;
@@ -174,6 +134,7 @@ begin
 	return 
 	'{' ||
 	'"host_name": '        || to_json(v.host_name)        || ', ' || 
+	'"creation_date": '        || to_json(v.creation_date)        || ', ' || 
 	'"dg_number": '        || to_json(v.dg_number)        || ', ' || 
 	'"dg_name": '          || to_json(v.dg_name)          || ', ' || 
 	'"instance_name": '    || to_json(v.instance_name)    || ', ' || 

@@ -6,6 +6,7 @@ function($scope, asmDiskService, Datatable, asmDiskService)
 		columns:
 		[
 			{ name: 'cd_conexao'    , width: 139 },	
+			
 			{ name: 'host_name'    , width: 139 },
 			{ name: 'dg_number'    , width: 80 },
 			{ name: 'dg_name'      , width: 218 },
@@ -14,7 +15,7 @@ function($scope, asmDiskService, Datatable, asmDiskService)
 			{ name: 'software_version', width: 120 },
 			{ name: 'disk_name', width: 260 },
 			{ name: 'disk_path', width: 399 },	
-			
+			{ name: 'creation_date' , width: 139 },	
 		]
 	});
 	
