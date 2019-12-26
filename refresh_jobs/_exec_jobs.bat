@@ -41,18 +41,30 @@ exit /b 1
 @call "%~dp0.\spool_log_acesso_data.bat"      
 @IF %ERRORLEVEL% NEQ 0 exit /b 1
 
-@echo [STEP:SPOOL_REPORT_SN_VERSAO.BAT] - %DATE% %TIME%
-@call "%~dp0.\spool_report_sn_versao.bat"     
+@echo [STEP:spool_report_painel_netsms.bat] - %DATE% %TIME%
+@call "%~dp0.\spool_report_painel_netsms.bat"     
 @IF %ERRORLEVEL% NEQ 0 exit /b 1
 
 @echo [STEP:ETL_CORE.BAT] - %DATE% %TIME%
 @call "%~dp0.\etl_core.bat"
 @IF %ERRORLEVEL% NEQ 0 exit /b 1
-@REM -----------------------------------------------------
+
 @echo [STEP:SPOOL_DISK_SERVICE.BAT] - %DATE% %TIME%
 @call "%~dp0.\spool_disk_service.bat"         
 @IF %ERRORLEVEL% NEQ 0 exit /b 1
 
+@REM ---------------------------------------------------
 
+@echo [STEP:spool_json_lista_conexao.bat] - %DATE% %TIME%
+@call "%~dp0.\spool_json_lista_conexao.bat"         
+@IF %ERRORLEVEL% NEQ 0 exit /b 1
+
+@echo [STEP:spool_txt_lista_conexao.bat] - %DATE% %TIME%
+@call "%~dp0.\spool_txt_lista_conexao.bat"         
+@IF %ERRORLEVEL% NEQ 0 exit /b 1
+
+@echo [STEP:spool_report_detalhe_servidor.bat] - %DATE% %TIME%
+@call "%~dp0.\spool_report_detalhe_servidor.bat"         
+@IF %ERRORLEVEL% NEQ 0 exit /b 1
 
 @goto :eof

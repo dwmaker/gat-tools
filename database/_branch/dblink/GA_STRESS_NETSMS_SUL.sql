@@ -1,5 +1,5 @@
 --------------------------------------------------------
---  DDL for DB Link GA_SIT6_NETSMS_SUL.NET
+--  DDL for DB Link GA_STRESS_NETSMS_SUL.NET
 --------------------------------------------------------
 
   CREATE DATABASE LINK "GA_STRESS_NETSMS_SUL.NET"

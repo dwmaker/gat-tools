@@ -48,11 +48,7 @@ angular.module("myApp")
 			}]
 		}
 	})
-	.when("/versao-netsms", 
-	{
-		templateUrl: "/components/versao-netsms/versao-netsms-view.html",
-		controller: "versao-netsms-controller"
-	})
+	.when("/versao-netsms", {redirectTo: "/painel-netsms"})
 	.when("/mapa-planta", 
 	{
 		templateUrl: "/components/mapa-planta/mapa-planta-list.html",
@@ -65,6 +61,35 @@ angular.module("myApp")
 			}]
 		}
 	})
+	.when("/painel-netsms", 
+	{
+		templateUrl: "/components/painel-netsms/painel-netsms-view.html",
+		
+		resolve:
+		{
+		
+		}
+	})
+	.when("/detalhe-servidor/:dblink", 
+	{
+		templateUrl: "/components/detalhe-servidor/detalhe-servidor-view.html",
+		controller: "detalhe-servidor-controller",
+		resolve:
+		{
+			detalhe: ["detalhe-servidor-service", "$route", function(service, $route)
+			{ 
+				return service.get($route.current.params)
+			}],
+			lista: ["detalhe-servidor-service", "$route", function(service, $route)
+			{ 
+				return service.list()
+			}]
+			
+			
+		}
+	})
+	
+	
 	
 
 	.otherwise({redirectTo: "/home"});
