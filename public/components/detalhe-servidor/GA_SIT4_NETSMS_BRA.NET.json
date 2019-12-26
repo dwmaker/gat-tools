@@ -1,0 +1,35 @@
+{
+	"refreshDate": "2019-12-26T18:44:19.000Z"
+	,"source":
+	{
+		"cd_conexao": "GA_SIT4_NETSMS_BRA.NET",
+		"cd_ambiente": "SIT4",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "BRA",
+		"ds_conexao": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TIBRA03F)))"
+	}
+	,"target":
+	{
+		"cd_conexao": "GA_PROD_NETSMS_BRA.NET",
+		"cd_ambiente": "PROD",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "BRA",
+		"ds_conexao": "NETDBA@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.187)(PORT=1521))(CONNECT_DATA=(SID=db09)))"
+	}
+	,"tabelas": [
+		{"owner": "PROD_JD","table_name": "SN_CV60_TIPO_LOCAL_NEGOCIO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_MASTERSAF_PARCEIROS","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_MASTERSAF_PRODUTO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_NTLC_PRD_TIPO_ITEM_EXT_PARC","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_COMBO_SVA_OCORRENCIA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CONTRATO_TERMINAIS","evalution": "logging (NO -> YES), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CONTR_SIT_IRRBKP_DEZ19","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CONTR_TERMBKP_DEZ19","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_MSAF_DADOS_NF_PARCEIRO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_MSAF_ITENS_FINANC","evalution": "TGT only, "}
+	]
+	,"colunas": [
+		{"owner": "PROD_JD","table_name": "SN_REL_AGENDA_EQUIPE","column_name": "ID_EQUIPE","evalution": "data_length (7 -> 6), char_length (7 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "TMP_SN_MASTERSAF","column_name": "CID_CONTRATO","evalution": "data_type (VARCHAR2 -> NUMBER), data_length (6 -> 22), char_length (6 -> 0), "}
+	]
+}

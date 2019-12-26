@@ -1,0 +1,50 @@
+{
+	"refreshDate": "2019-12-26T18:35:45.000Z"
+	,"source":
+	{
+		"cd_conexao": "GA_SIT3_NETSMS_CTV.NET",
+		"cd_ambiente": "SIT3",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "CTV",
+		"ds_conexao": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SID=SCTV1MG)))"
+	}
+	,"target":
+	{
+		"cd_conexao": "GA_PROD_NETSMS_CTV.NET",
+		"cd_ambiente": "PROD",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "CTV",
+		"ds_conexao": "NETDBA@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(host = 5.16.8.133)(PORT = 1528))(CONNECT_DATA = (SID = CTV)))"
+	}
+	,"tabelas": [
+		{"owner": "NETSALES","table_name": "CP_REL_CREDENCIADA_EQP_VENDA","evalution": "row_movement (ENABLED -> DISABLED), "}
+		,{"owner": "NETSALES","table_name": "CP_REL_TP_ASSINANTE_TP_VENDA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "CONTRATOS_108","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "CONTRATOS_ERRADOS","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_AREA_DESPACHO2","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CANAL_VENDA_TP_AGENDA","evalution": "row_movement (ENABLED -> DISABLED), "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARCEIRO_ARQ","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARCEIRO_AUX","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CENTRALIZADOR_NF","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CENTRALIZADOR_NF_LOG","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CIDADE_BASE_BKPGB","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CONTR_PROD_PRC_BKP30NOV","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_FECHAMENTO_MENSAL_BKP_GB","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_PARAMETRO_CIDADE_ENDERECO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REAJUSTE_MENSAL_TMP2","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CANAL_VENDA_TP_AGENDA","evalution": "row_movement (ENABLED -> DISABLED), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_PONTO_PRODUTO_PRECO","evalution": "logging (NO -> YES), "}
+		,{"owner": "PROD_JD","table_name": "SN_VERSAO2","evalution": "TGT only, "}
+	]
+	,"colunas": [
+		{"owner": "PROD_JD","table_name": "GEO_CELULAS","column_name": "CE_PRAZO","evalution": "data_precision (5 -> 3), "}
+		,{"owner": "PROD_JD","table_name": "GEO_POSTES","column_name": "LO_CODLOG","evalution": "data_length (7 -> 5), char_length (7 -> 5), "}
+		,{"owner": "PROD_JD","table_name": "SN_PRIORIDADE_MULTICIDADE","column_name": "ID_PRIORIDADE_MULTICIDADE","evalution": "data_precision (10 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_AGENDA_CREDENCIADA","column_name": "ID_PESSOA","evalution": "data_length (8 -> 7), char_length (8 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "SN_SOLIC_PAGTO_TAREFA","column_name": "XML_TAREFA","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "SN_TAREFA_CARTAO","column_name": "XML_TAREFA","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_BV_COBRAR_VIRTUA","column_name": "ALTERADO_EM","evalution": "data_length (8 -> 9), char_length (8 -> 9), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS_TERMINAL","column_name": "TM_SERIE","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "VSN_TEC_ASSINANTE","column_name": "ID_TECNICO","evalution": "nullable (N -> Y), "}
+	]
+}

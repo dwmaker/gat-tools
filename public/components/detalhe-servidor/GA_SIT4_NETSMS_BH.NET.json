@@ -1,0 +1,58 @@
+{
+	"refreshDate": "2019-12-26T18:42:00.000Z"
+	,"source":
+	{
+		"cd_conexao": "GA_SIT4_NETSMS_BH.NET",
+		"cd_ambiente": "SIT4",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "BH",
+		"ds_conexao": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TIBHPV1)))"
+	}
+	,"target":
+	{
+		"cd_conexao": "GA_PROD_NETSMS_BH.NET",
+		"cd_ambiente": "PROD",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "BH",
+		"ds_conexao": "NETDBA@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.190)(PORT=1521))(CONNECT_DATA=(SID=bhpr)))"
+	}
+	,"tabelas": [
+		{"owner": "NETSALES","table_name": "CP_BLINDAGEM_PENDENCIA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "MASSA_TESTE_DFE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARCEIRO_ARQ","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARCEIRO_AUX","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARCEIRO_BKP","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1803901","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1803902","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1803903","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1803904","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1803905","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1803906","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1803907","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1803908","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1803909","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1803910","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1803911","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1803926","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1803927","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1803928","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1803929","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1803930","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1803931","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1803932","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1803933","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1803934","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CONTRATO_TERMINAIS","evalution": "logging (NO -> YES), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CONTR_SIT_IRRBKP_DEZ19","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CONTR_TERMBKP_DEZ19","evalution": "TGT only, "}
+	]
+	,"colunas": [
+		{"owner": "PROD_JD","table_name": "SN_IN86_TMP_CANCELAMENTO","column_name": "CD_GLCLASS","evalution": "data_length (20 -> 5), char_length (20 -> 5), "}
+		,{"owner": "PROD_JD","table_name": "SN_IN86_TMP_FATURAMENTO","column_name": "CD_GLCLASS","evalution": "data_length (20 -> 5), char_length (20 -> 5), "}
+		,{"owner": "PROD_JD","table_name": "SN_IN86_TMP_RECEBIMENTO","column_name": "CD_GLCLASS","evalution": "data_length (20 -> 5), char_length (20 -> 5), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_AGENDA_CREDENCIADA","column_name": "ID_PESSOA","evalution": "data_length (10 -> 7), char_length (10 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_AGENDA_EQUIPE","column_name": "ID_EQUIPE","evalution": "data_length (10 -> 6), char_length (10 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS_TERMINAL","column_name": "TM_SERIE","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "VSN_TEC_ASSINANTE","column_name": "ID_TECNICO","evalution": "nullable (N -> Y), "}
+	]
+}

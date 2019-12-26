@@ -1,0 +1,53 @@
+{
+	"refreshDate": "2019-12-26T18:28:22.000Z"
+	,"source":
+	{
+		"cd_conexao": "GA_SIT2_NETSMS_ISP.NET",
+		"cd_ambiente": "SIT2",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "ISP",
+		"ds_conexao": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SISPSP)))"
+	}
+	,"target":
+	{
+		"cd_conexao": "GA_PROD_NETSMS_ISP.NET",
+		"cd_ambiente": "PROD",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "ISP",
+		"ds_conexao": "NETBKPADM@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.189)(PORT=1521))(CONNECT_DATA=(SID=isp)))"
+	}
+	,"tabelas": [
+		{"owner": "PROD_JD","table_name": "SN_CONTROLE_COBRANCA_INTERSIC","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_CONTROLE_INTERSIC","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_AGING_PRINC","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_ASSINANTE_IBGE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_VL_COBRANCA_COB","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_VL_COBRANCA_FONE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_VL_COBRANCA_INTERNET","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_VL_MULTA","evalution": "SRC only, "}
+	]
+	,"colunas": [
+		{"owner": "NETSALES","table_name": "CP_LOG_PROPOSTA","column_name": "USERNAME_PROPOSTA","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "EXTENT_MAP","column_name": "BLOCKS","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "EXTENT_MAP","column_name": "BLOCK_ID","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "EXTENT_MAP","column_name": "BYTES","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "EXTENT_MAP","column_name": "EXTENT_ID","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 40), char_length (0 -> 40), "}
+		,{"owner": "PROD_JD","table_name": "EXTENT_MAP","column_name": "FILE_ID","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "EXTENT_MAP","column_name": "OWNER","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 30), char_length (0 -> 30), "}
+		,{"owner": "PROD_JD","table_name": "EXTENT_MAP","column_name": "SEGMENT_NAME","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 81), char_length (0 -> 81), "}
+		,{"owner": "PROD_JD","table_name": "EXTENT_MAP","column_name": "SEGMENT_TYPE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 18), char_length (0 -> 18), "}
+		,{"owner": "PROD_JD","table_name": "EXTENT_MAP","column_name": "TABLESPACE_NAME","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 30), char_length (0 -> 30), "}
+		,{"owner": "PROD_JD","table_name": "GEO_PESO_TIPO_COMPLEM","column_name": "PESO","evalution": "data_precision (4 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "LOG_VIEW","column_name": "ARCHIVED","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 3), char_length (0 -> 3), "}
+		,{"owner": "PROD_JD","table_name": "LOG_VIEW","column_name": "BYTES","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "LOG_VIEW","column_name": "FILE_NAME","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 513), char_length (0 -> 513), "}
+		,{"owner": "PROD_JD","table_name": "LOG_VIEW","column_name": "FILE_STATUS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 7), char_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "LOG_VIEW","column_name": "GROUP#","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "LOG_VIEW","column_name": "GROUP_STATUS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 16), char_length (0 -> 16), "}
+		,{"owner": "PROD_JD","table_name": "LOG_VIEW","column_name": "SEQUENCE#","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "LOG_VIEW","column_name": "THREAD#","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "SN_PRODUTO_PESO_OPER","column_name": "PESO","evalution": "data_precision (4 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_ATRIBUTO_SEGMENTO","column_name": "NR_PESO","evalution": "data_precision (4 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CONTRATO_PRODUTO","column_name": "PESO","evalution": "data_precision (4 -> 8), "}
+	]
+}

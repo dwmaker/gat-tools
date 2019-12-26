@@ -1,0 +1,31 @@
+{
+	"refreshDate": "2019-12-26T18:59:49.000Z"
+	,"source":
+	{
+		"cd_conexao": "GA_CERT_NETSMS_BH.NET",
+		"cd_ambiente": "CERT",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "BH",
+		"ds_conexao": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.64.165)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=hhbhn1)))"
+	}
+	,"target":
+	{
+		"cd_conexao": "GA_PROD_NETSMS_BH.NET",
+		"cd_ambiente": "PROD",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "BH",
+		"ds_conexao": "NETDBA@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.190)(PORT=1521))(CONNECT_DATA=(SID=bhpr)))"
+	}
+	,"tabelas": [
+		{"owner": "PROD_JD","table_name": "SN_REL_CONTR_SIT_IRRBKP_DEZ19","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CONTR_TERMBKP_DEZ19","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TEMP_ERROS_TOA","evalution": "TGT only, "}
+	]
+	,"colunas": [
+		{"owner": "NETSALES","table_name": "CP_LIBERACAO_PENDENCIA_BKO","column_name": "DH_INSERT","evalution": "nullable (N -> Y), "}
+		,{"owner": "NETSALES","table_name": "CP_LIBERACAO_PENDENCIA_BKO","column_name": "NM_HOST_INSERT","evalution": "nullable (N -> Y), "}
+		,{"owner": "NETSALES","table_name": "CP_LIBERACAO_PENDENCIA_BKO","column_name": "NM_OS_USER_INSERT","evalution": "nullable (N -> Y), "}
+		,{"owner": "NETSALES","table_name": "CP_LIBERACAO_PENDENCIA_BKO","column_name": "NM_USER_INSERT","evalution": "nullable (N -> Y), "}
+		,{"owner": "NETSALES","table_name": "CP_LIBERACAO_PENDENCIA_BKO","column_name": "NR_IP_INSERT","evalution": "nullable (N -> Y), "}
+	]
+}

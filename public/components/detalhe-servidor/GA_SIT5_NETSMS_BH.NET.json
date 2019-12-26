@@ -1,0 +1,41 @@
+{
+	"refreshDate": "2019-12-26T18:54:13.000Z"
+	,"source":
+	{
+		"cd_conexao": "GA_SIT5_NETSMS_BH.NET",
+		"cd_ambiente": "SIT5",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "BH",
+		"ds_conexao": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TIBH03F)))"
+	}
+	,"target":
+	{
+		"cd_conexao": "GA_PROD_NETSMS_BH.NET",
+		"cd_ambiente": "PROD",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "BH",
+		"ds_conexao": "NETDBA@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.190)(PORT=1521))(CONNECT_DATA=(SID=bhpr)))"
+	}
+	,"tabelas": [
+		{"owner": "NETSALES","table_name": "CP_TIPO_LOG_PROPOSTA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "PLSQL_PROFILER_DATA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "PLSQL_PROFILER_RUNS","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "PLSQL_PROFILER_UNITS","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CONFIGURACAO_MERCHANTID","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_IMPOSTO_ITEM_EXTRATO_BAK","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_IMP_ITEM_EXT20180427165248","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_VERSAO_EXEC_TESTE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_TIPO_CALCULO_IMPOSTO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_SAFX43_IMPOSTO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_SAFX43_IMPOSTO_DATA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_SAFX43_IMPOSTO_ITEM_NOTA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_SAFX43_PROCESSO","evalution": "TGT only, "}
+	]
+	,"colunas": [
+		{"owner": "PROD_JD","table_name": "SN_REL_AGENDA_CREDENCIADA","column_name": "ID_PESSOA","evalution": "data_length (10 -> 7), char_length (10 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_AGENDA_EQUIPE","column_name": "ID_EQUIPE","evalution": "data_length (10 -> 6), char_length (10 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_IMPOSTO_TIPO_ITEM_EXTR","column_name": "ID_REL_IMPOSTO_TIPO_ITEM_EXTR","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS_TERMINAL","column_name": "TM_SERIE","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "VSN_TEC_ASSINANTE","column_name": "ID_TECNICO","evalution": "nullable (N -> Y), "}
+	]
+}

@@ -1,0 +1,652 @@
+{
+	"refreshDate": "2019-12-26T18:16:33.000Z"
+	,"source":
+	{
+		"cd_conexao": "GA_DEV4_NETSMS_SUL.NET",
+		"cd_ambiente": "DEV4",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "SUL",
+		"ds_conexao": "CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1523)))(CONNECT_DATA=(SERVICE_NAME=DDSUL11F)))"
+	}
+	,"target":
+	{
+		"cd_conexao": "GA_PROD_NETSMS_SUL.NET",
+		"cd_ambiente": "PROD",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "SUL",
+		"ds_conexao": "NETDBA@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.193)(PORT=1521))(CONNECT_DATA=(SID=sul)))"
+	}
+	,"tabelas": [
+		{"owner": "NETSALES","table_name": "CP_EQUIPAMENTO","evalution": "SRC only, "}
+		,{"owner": "NETSALES","table_name": "CP_EQUIPE_VENDA_BASE","evalution": "SRC only, "}
+		,{"owner": "NETSALES","table_name": "CP_EQUIPE_VENDA_DETALHE","evalution": "SRC only, "}
+		,{"owner": "NETSALES","table_name": "CP_LIBERACAO_PENDENCIA_BKO","evalution": "SRC only, "}
+		,{"owner": "NETSALES","table_name": "CP_PONTO_SOLICITACAO_RECARGA","evalution": "SRC only, "}
+		,{"owner": "NETSALES","table_name": "CP_REL_EMPRESA","evalution": "SRC only, "}
+		,{"owner": "NETSALES","table_name": "CP_REL_PROPOSTA_MULTICIDADES","evalution": "SRC only, "}
+		,{"owner": "NETSALES","table_name": "CP_REL_TIPO_ACESSO_EQP_VENDA","evalution": "SRC only, "}
+		,{"owner": "NETSALES","table_name": "CP_SOLICITACAO_RECARGA","evalution": "SRC only, "}
+		,{"owner": "NETSALES","table_name": "CP_TIPO_ACESSO_REGRA_EQP_VENDA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "ABRANGENCIA_NODE_ADR","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "AUD_PROCESS_BKP","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "AUX_OS","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "AUX_SAFX259_BHZ","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "AUX_SAFX259_BRA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "AUX_SAFX259_BRI","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "AUX_SAFX259_ISP","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "AUX_SAFX259_SOC","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "AUX_SAFX259_SPO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "AUX_SAFX259_SUL","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "AUX_SAFX260_BHZ","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "AUX_SAFX260_BRA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "AUX_SAFX260_BRI","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "AUX_SAFX260_ISP","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "AUX_SAFX260_SOC","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "AUX_SAFX260_SPO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "AUX_SAFX260_SUL","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "CLIENTE_T","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "COBRANCA_T","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "CONFIGURACAO_ABRIR_SOLIC","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "DS_TABLE_20180502","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "DS_TABLE_20180601","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "DTC_TESTE_13_1_02_F","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "DTC_TESTE_13_1_02_F2","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "DXCT1","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "EDNA_TESTE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "ENDERECO_COB_ECT","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "ESTADO_EQUIPAMENTO_F","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "ESTOQUE_T","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "EXT_35","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "EXT_35ANT","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "EXT_36","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "FATURA_T","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "FORNECEDOR_T","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "FUNCAO_SALARIO_T","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "FUNCAO_T","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "FUNCIONARIO_T","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "GND_MASSA2VIA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "HISTORICO_EQUIPAMENTO_F","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "ITEM05","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "ITEM05_DUPLIC","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "MIGRACAO_PORTABILIDADE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "MODELO_EQUIPAMENTO_F","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "NODE_1105","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "NODE_1605","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "NODE_BKP","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "PAGAMENTO_T","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "PP_HIST_VOIPHIT_RETORNO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "PRODUTO_SERVICO_T","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "RELACAO_T","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "REL_CIDADE_F","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SMS_SAFX259_BHZ","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SMS_SAFX259_BRA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SMS_SAFX259_BRI","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SMS_SAFX259_ISP","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SMS_SAFX259_SOC","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SMS_SAFX259_SPO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SMS_SAFX259_SUL","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SMS_SAFX260_BHZ","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SMS_SAFX260_BRA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SMS_SAFX260_BRI","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SMS_SAFX260_ISP","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SMS_SAFX260_SOC","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SMS_SAFX260_SPO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SMS_SAFX260_SUL","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_ACAO_ASSINANTE_PRE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_AGENDA_OC_LIMITE_PURPLE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_ARQUIVO_RAJADA_A","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_ARQUIVO_RAJADA_Z","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CADASTRO_OPTANTE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CNRO_EXT_ACAO_COBRANCA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CNRO_EXT_DIVIDA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CNRO_EXT_EXTRATOR","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_COBRANCA_PARCEIRO_LOG_CANC","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CONFIG_ALCADA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CONFIG_CANCELAMENTO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CONFIG_CONTAS_SAP","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CONFIG_EQUIP_PRODUTO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CONTROLE_COBRANCA_INTERSIC","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CONTROLE_ENVIO_CHIP","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_ARQUIVO_CONTABIL","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_BKP_HISTORICO_CONTABIL","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_BKP_HISTORICO_IMPOSTO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_CANCELAMENTO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_CONTAS_ARQUIVO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_CONTAS_CANCELAMENTO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_CONTAS_FATURAMENTO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_CONTAS_RECEBIMENTO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_CONTROLE_ARQUIVO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_DADOS_ARQUIVO_CONTABIL","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_FATURAMENTO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_GRUPO_CONTABILIZACAO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_HISTORICO_CONTABIL","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_HISTORICO_IMPOSTO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_IMPOSTO_NAOACUMULATIVO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_IN86_CADASTRO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_IN86_ENDERECO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_IN86_SAFX04","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_IN86_SAFX05","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_LOCAL_NEGOCIO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_MOVIMENTACAO_BANCARIA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_PAGAMENTOS","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_RECEBIMENTO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_STATUS_ARQUIVO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_DIR_LIST_FTP","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_DOMINIO_EMAIL","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_ESTABELECIMENTO_SITEF","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_EXPURGO_LOG_TEXTFILEHANDLER","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_FORMA_ENVIO_2VIA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_GRUPO_CONTRATO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_HIERARQUIA_PGTO_AVULSO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_HIST_CAD_OPTANTE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_HIST_CNRO_EXT_DIVIDA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_IMPOSTO_ITEM_NOTA_FISCAL","evalution": "logging (NO -> YES), "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_CONTROLE_INTERSIC","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_DETALHE_CONTESTACAO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_EVENTO_ACERTO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_EVENTO_CANC_FATURA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_EVENTO_CONTESTACAO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_EVENTO_CONTRATO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_EVENTO_EQUIPAMENTO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_EVENTO_ERRO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_EVENTO_ITEM_EXTRATO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_EVENTO_MUD_TITULAR","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_EVENTO_POLITICA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_EVENTO_PRECO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_EVENTO_PRODUTO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_EVENTO_PROPOSTA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_EVENTO_USUARIO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_NORMALIZACAO_DCC","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_PSN_SENHAS","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_REG_SERASA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_MASTERSAF_PARCEIROS","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_MASTERSAF_PRODUTO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_MATRIZ_PGTO_AVULSO_TEMP","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_MOTIVACAO_ATENDIMENTO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_MOTIVO_LIMPEZA_AGENDA_OS","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_MSF_COB_NOTA_FISCAL","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_MUNICIPIO_IBGE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_NTLC_PARAMETRO_PARCEIRO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_NTLC_TIPO_ARQUIVO_CONTABIL","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_PGTO_AVULSO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_PLANO_CONTAS_SAP","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CONTRATO_EQUIP_PONTO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CONTR_TP_ASSINANTE_LOG","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_FUNC_FORMA_ENVIO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_FUNC_MOTIVO_MOVIMENTO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_MOTIVO_OCORRENCIA_OS","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_OBJ_AVISO_NOME_PLANO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_OBJ_OPERADORA_CONTABIL","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_OBJ_TECNOLOGIA_MODELO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_PRODUTO_PERFIL","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_SERV_CTR_EQUIP_HISTORICO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_SIT_COB_AV_REL_STATUS_REC","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_SOCIEDADE_PARCEIRA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_SOLICITACAO_ASS_TMP","evalution": "temporary (N -> Y), compression (ENABLED -> DISABLED), "}
+		,{"owner": "PROD_JD","table_name": "SN_STATUS_CAD_OPTANTE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_TIPO_ACAO_ASSINANTE_PRE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_TIPO_ALCADA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_TIPO_CONTA_SAP","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_TIPO_VINCULO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_TMP_BOLETOS_ABERTOS","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_TP_MOTIVACAO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_VINCULO_CONTRATO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SO_MODALIDADE_PLANO_CHIP_CLARO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SO_PLANO_CHIP_CLARO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SO_TIPO_CHIP","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TB_ADM_NIVEL_1","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TB_ALTERA_COD_CIDADE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TB_DEPARA_CIDADE_GPON","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TB_LOG_EXECUCAO_GPON","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TEMP_MIGRA_MR_1","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TEMP_OS_MR_1","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TESTE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TESTEDTC","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TESTEITEM05","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TESTEOS","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TESTEROGER1","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TESTEROGER2","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TESTE_13_1_02","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TESTE_13_1_11","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TESTE_13_1_2_F","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TESTE_5_BLOQ","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TESTE_CID","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TESTE_ERRO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TESTE_SN_ENDER","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMPITEM05_1","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMPITEM05_2","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMPITEM05_3","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMPITEM05_4","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMPITEM05_5","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_A1","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_AGING_PRINC","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_ASSINANTE_IBGE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_DELETE_CASCADE_STMT","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_ECN","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_MSAF_DADOS_NF_PARCEIRO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_MSAF_ITENS_FINANC","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_SAFX43_IMPOSTO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_SAFX43_IMPOSTO_DATA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_SAFX43_IMPOSTO_ITEM_NOTA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_SAFX43_PROCESSO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_VL_COBRANCA_COB","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_VL_COBRANCA_FONE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_VL_COBRANCA_INTERNET","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_VL_MULTA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "T_LOG","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "ZTABELA1","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "ZTABELA2","evalution": "TGT only, "}
+	]
+	,"colunas": [
+		{"owner": "NETSALES","table_name": "CP_LOG_PROPOSTA","column_name": "USERNAME_PROPOSTA","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "GEO_PESO_TIPO_COMPLEM","column_name": "PESO","evalution": "data_precision (4 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "SN_ARQUIVO_CRITICA","column_name": "NR_LINHA","evalution": "data_precision (6 -> 15), "}
+		,{"owner": "PROD_JD","table_name": "SN_ARQUIVO_RETORNO","column_name": "NR_LINHA","evalution": "data_precision (6 -> 15), "}
+		,{"owner": "PROD_JD","table_name": "SN_BOLETOS_RECEBIDOS","column_name": "ID_BOLETO","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "SN_DADOS_FISCAIS_BVC","column_name": "CD_CLASSE_CONSUMO_ASSINANTE","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "SN_DADOS_FISCAIS_BVC","column_name": "CD_NATUREZA_ASSINANTE","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "SN_DADOS_FISCAIS_BVC","column_name": "CIDADE","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "SN_DADOS_FISCAIS_BVC","column_name": "ESTADO","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "SN_FECHAMENTO_MENSAL","column_name": "ID_FECHAMENTO_MENSAL","evalution": "data_precision (6 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "SN_IMPOSTO","column_name": "NR_PRIORIDADE","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "SN_ITEM_EXTRATO_FECH_MENSAL","column_name": "ID_FECHAMENTO_MENSAL","evalution": "data_precision (5 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_FECHAMENTO_MENSAL","column_name": "ID_FECHAMENTO_MENSAL","evalution": "data_precision (5 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "SN_PRODUTO_PESO_OPER","column_name": "PESO","evalution": "data_precision (4 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_ATRIBUTO_SEGMENTO","column_name": "NR_PESO","evalution": "data_precision (4 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CONTRATO_EXCEC_IMPOSTO","column_name": "MSG_ISENCAO","evalution": "data_length (200 -> 240), char_length (200 -> 240), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_IMPOSTO_TIPO_ITEM_EXTR","column_name": "ID_REL_IMPOSTO_TIPO_ITEM_EXTR","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_IMPOSTO_TIPO_ITEM_EXTR","column_name": "UF","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "SN_SOLICITACAO_ASS_TMP","column_name": "CID_CONTRATO","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "SN_SOLICITACAO_ASS_TMP","column_name": "DT_CADASTRO","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "SN_SOLICITACAO_ASS_TMP","column_name": "ID_SOLICITACAO_ASS","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "SN_SOLICITACAO_ASS_TMP","column_name": "ID_TIPO_SOLIC","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "SN_SOLICITACAO_ASS_TMP","column_name": "ID_TIPO_SOLIC_PROD","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "SN_SOLICITACAO_ASS_TMP","column_name": "NUM_CONTRATO","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "TMP_SN_MASTERSAF","column_name": "CID_CONTRATO","evalution": "data_type (VARCHAR2 -> NUMBER), data_length (6 -> 22), char_length (6 -> 0), "}
+		,{"owner": "PROD_JD","table_name": "VPP_CABLE","column_name": "CID_CONTRATO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VPP_CABLE","column_name": "ENDERECO_DIGITAL","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 41), char_length (0 -> 41), "}
+		,{"owner": "PROD_JD","table_name": "VPP_CABLE","column_name": "FLAG_MAPA_CANAIS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 1), char_length (0 -> 1), "}
+		,{"owner": "PROD_JD","table_name": "VPP_CABLE","column_name": "NUM_CONTRATO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VPP_CABLE","column_name": "TL_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), nullable (Y -> N), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_CABLE","column_name": "TL_ID","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_CABLE","column_name": "TMOD_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), nullable (Y -> N), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_CABLE","column_name": "TMOD_ID","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_CABLE","column_name": "TM_ACEITA_CREDITO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 1), char_length (0 -> 1), "}
+		,{"owner": "PROD_JD","table_name": "VPP_CABLE","column_name": "TM_ACEITA_PPV","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 1), char_length (0 -> 1), "}
+		,{"owner": "PROD_JD","table_name": "VPP_CABLE","column_name": "TM_ID","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_CABLE","column_name": "TM_SERIE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_CABLE","column_name": "TM_SERIE1","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), nullable (Y -> N), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_CABLE","column_name": "TP_DECODER","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 4), char_length (0 -> 4), "}
+		,{"owner": "PROD_JD","table_name": "VPP_DOCSIS_DVR","column_name": "CID_CONTRATO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VPP_DOCSIS_DVR","column_name": "ENDERECO_DIGITAL","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 41), char_length (0 -> 41), "}
+		,{"owner": "PROD_JD","table_name": "VPP_DOCSIS_DVR","column_name": "FLAG_MAPA_CANAIS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 1), char_length (0 -> 1), "}
+		,{"owner": "PROD_JD","table_name": "VPP_DOCSIS_DVR","column_name": "ID_PONTO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_DOCSIS_DVR","column_name": "NUM_CONTRATO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VPP_DOCSIS_DVR","column_name": "TL_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), nullable (Y -> N), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_DOCSIS_DVR","column_name": "TL_ID","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_DOCSIS_DVR","column_name": "TMOD_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), nullable (Y -> N), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_DOCSIS_DVR","column_name": "TMOD_ID","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_DOCSIS_DVR","column_name": "TM_ACEITA_CREDITO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 1), char_length (0 -> 1), "}
+		,{"owner": "PROD_JD","table_name": "VPP_DOCSIS_DVR","column_name": "TM_ACEITA_PPV","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 1), char_length (0 -> 1), "}
+		,{"owner": "PROD_JD","table_name": "VPP_DOCSIS_DVR","column_name": "TM_ID_EQUIP","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VPP_DOCSIS_DVR","column_name": "TM_ID_NAGRA","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VPP_DOCSIS_DVR","column_name": "TM_SERIE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_DOCSIS_DVR","column_name": "TM_SERIE1","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), nullable (Y -> N), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_DOCSIS_DVR","column_name": "TP_DECODER","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 4), char_length (0 -> 4), "}
+		,{"owner": "PROD_JD","table_name": "VPP_DOCSIS_DVR","column_name": "TT_ID","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_PONTO","column_name": "CID_CONTRATO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), nullable (Y -> N), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VPP_PONTO","column_name": "DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_PONTO","column_name": "IDENTIFICACAO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_PONTO","column_name": "ID_PONTO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_PONTO","column_name": "NUM_CONTRATO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_PONTO","column_name": "OBS_LOCALIZACAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 40), char_length (0 -> 40), "}
+		,{"owner": "PROD_JD","table_name": "VPP_PONTO","column_name": "STATUS","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_REL_PONTO_TERMINAL","column_name": "CID_CONTRATO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), nullable (Y -> N), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VPP_REL_PONTO_TERMINAL","column_name": "CREDITO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VPP_REL_PONTO_TERMINAL","column_name": "FLAG_ACEITA_PPV","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 1), char_length (0 -> 1), "}
+		,{"owner": "PROD_JD","table_name": "VPP_REL_PONTO_TERMINAL","column_name": "ID_PONTO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_REL_PONTO_TERMINAL","column_name": "LOCALIZACAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 30), char_length (0 -> 30), "}
+		,{"owner": "PROD_JD","table_name": "VPP_REL_PONTO_TERMINAL","column_name": "NUM_CONTRATO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_REL_PONTO_TERMINAL","column_name": "TMOD_ID","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), nullable (Y -> N), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_REL_PONTO_TERMINAL","column_name": "TM_ID","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_REL_PONTO_TERMINAL","column_name": "TM_SERIE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_REL_TERMINAL_PRODUTO","column_name": "CID_CONTRATO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), nullable (Y -> N), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VPP_REL_TERMINAL_PRODUTO","column_name": "COD_OC","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VPP_REL_TERMINAL_PRODUTO","column_name": "DT_FIM","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_REL_TERMINAL_PRODUTO","column_name": "DT_INICIO","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_REL_TERMINAL_PRODUTO","column_name": "ID_PONTO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_REL_TERMINAL_PRODUTO","column_name": "ID_PRODUTO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_REL_TERMINAL_PRODUTO","column_name": "NUM_CONTRATO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_REL_TERMINAL_PRODUTO","column_name": "STATUS","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_REL_TERMINAL_PRODUTO","column_name": "TM_ID","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL","column_name": "CID_CONTRATO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), nullable (Y -> N), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL","column_name": "ENDERECO_DIGITAL","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 41), char_length (0 -> 41), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL","column_name": "FLAG_MAPA_CANAIS","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL","column_name": "NUM_CONTRATO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL","column_name": "TL_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), nullable (Y -> N), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL","column_name": "TL_ID","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL","column_name": "TMOD_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), nullable (Y -> N), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL","column_name": "TMOD_ID","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL","column_name": "TM_ACEITA_CREDITO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 1), char_length (0 -> 1), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL","column_name": "TM_ACEITA_PPV","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 1), char_length (0 -> 1), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL","column_name": "TM_ID","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL","column_name": "TM_SERIE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL","column_name": "TM_SERIE1","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), nullable (Y -> N), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL","column_name": "TP_DECODER","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 4), char_length (0 -> 4), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL2","column_name": "CIDADE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL2","column_name": "CID_CONTRATO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL2","column_name": "ENDERECO_DIGITAL","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 41), char_length (0 -> 41), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL2","column_name": "FLAG_HIT","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 1), nullable (Y -> N), char_length (0 -> 1), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL2","column_name": "ID_HEADEND","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL2","column_name": "ID_OFFICE","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL2","column_name": "ID_STATUS_CONTRATO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL2","column_name": "NOME_TITULAR","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 40), nullable (Y -> N), char_length (0 -> 40), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL2","column_name": "NUM_CONTRATO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL2","column_name": "TMOD_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), nullable (Y -> N), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL2","column_name": "TM_ID","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL2","column_name": "TM_SERIE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL2","column_name": "TP_DECODER","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 4), char_length (0 -> 4), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL_ASS","column_name": "CIDADE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL_ASS","column_name": "CID_CONTRATO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), nullable (Y -> N), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL_ASS","column_name": "ENDERECO_DIGITAL","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 41), char_length (0 -> 41), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL_ASS","column_name": "FLAG_HIT","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 1), nullable (Y -> N), char_length (0 -> 1), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL_ASS","column_name": "ID_CONTROLLER","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL_ASS","column_name": "ID_HEADEND","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL_ASS","column_name": "ID_OFFICE","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL_ASS","column_name": "ID_PONTO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL_ASS","column_name": "ID_STATUS_CONTRATO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL_ASS","column_name": "NOME_TITULAR","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 40), nullable (Y -> N), char_length (0 -> 40), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL_ASS","column_name": "NUM_CONTRATO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL_ASS","column_name": "TMOD_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), nullable (Y -> N), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL_ASS","column_name": "TMOD_ID","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL_ASS","column_name": "TM_ID","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL_ASS","column_name": "TM_SERIE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL_ASS","column_name": "TP_DECODER","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 4), char_length (0 -> 4), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "CADASTROUCAPACIDADE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 1), char_length (0 -> 1), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "CAPACIDADE_DISP","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "CAPACIDADE_TOTAL","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "CAPACIDADE_USADA","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "CID_CODIGO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), nullable (Y -> N), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "CID_CONTRATO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), nullable (Y -> N), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "COD_TIPO_EDIFICACAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 2), nullable (Y -> N), char_length (0 -> 2), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "DATABLOQUEIO","evalution": "data_type (UNDEFINED -> CHAR), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 30), nullable (Y -> N), char_length (0 -> 30), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "DESCR_TIPO_PER","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 30), nullable (Y -> N), char_length (0 -> 30), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "DT","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "DT_BLOQ","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "EMERGENCIA","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "HORAFINAL","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 5), char_length (0 -> 5), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "HORAINICIAL","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 5), char_length (0 -> 5), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "ID_AGENDA_DETALHE","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "ID_AREA_DESPACHO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 10), nullable (Y -> N), char_length (0 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "ID_CLASSE","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "ID_CREDENCIADA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 40), char_length (0 -> 40), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "ID_EMPRESA","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "ID_PERIODO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "ID_PESSOA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 7), nullable (Y -> N), char_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "ID_TIPO_AGENDA","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "ID_TIPO_CLIENTE","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "ID_TIPO_OS","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "ID_TIPO_PERIODO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "MINUTOSDISPONIVEIS","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "NOME_CREDENCIADA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "PRIORIDADE_CLASSE","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "PRIORIDADE_TIPO_PERIODO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CAPACIDADE_DISPONI_CLARO","column_name": "RAZAO_SOCIAL","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 100), nullable (Y -> N), char_length (0 -> 100), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CONTRATO_PRODUTO","column_name": "PESO","evalution": "data_precision (4 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CREDENCIADA","column_name": "ID_CREDENCIADA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 40), char_length (0 -> 40), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CREDENCIADA","column_name": "ID_EMPRESA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 7), char_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CREDENCIADA","column_name": "ID_OPERADORA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 7), char_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CREDENCIADA","column_name": "NOME_CREDENCIADA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CREDENCIADA","column_name": "NOME_OPERADORA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CREDENCIADA","column_name": "NOME_PESSOA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CRE_ASSINANTE","column_name": "CREDENCIADA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CRE_ASSINANTE","column_name": "ID_ASSINANTE","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CRE_ASSINANTE","column_name": "ID_EMPRESA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 40), char_length (0 -> 40), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CRE_ASSINANTE","column_name": "VISITAS","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_EQUIPE_CREDENCIADA","column_name": "CID_CONTRATO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), nullable (Y -> N), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VSN_EQUIPE_CREDENCIADA","column_name": "CID_CONTRATO_TUN","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), nullable (Y -> N), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VSN_EQUIPE_CREDENCIADA","column_name": "DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_EQUIPE_CREDENCIADA","column_name": "ID_EMPRESA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 7), char_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_EQUIPE_CREDENCIADA","column_name": "ID_EQUIPE","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_FUNCIONARIO_CREDENCIADA","column_name": "ID_CREDENCIADA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 7), char_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_FUNCIONARIO_CREDENCIADA","column_name": "ID_FUNCIONARIO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_FUNCIONARIO_CREDENCIADA","column_name": "ID_PESSOA","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_FUNCIONARIO_CREDENCIADA","column_name": "NOME_CREDENCIADA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_FUNCIONARIO_CREDENCIADA","column_name": "NOME_FUNCIONARIO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_FUNCIONARIO_CREDENCIADA","column_name": "NOME_PESSOA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_NUM_DEC_CC","column_name": "CI_CODIGO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VSN_NUM_DEC_CC","column_name": "NUM_CC","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_NUM_DEC_CC","column_name": "NUM_DEC","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_NUM_DEC_CC","column_name": "TM_CONTRATO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "CELULA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 4000), char_length (0 -> 4000), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "CID_CONTRATO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), nullable (Y -> N), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "CI_NOME","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "COD_OS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 10), nullable (Y -> N), char_length (0 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 20), char_length (0 -> 20), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "DESCRICAO_SERVICO_OS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 25), char_length (0 -> 25), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "DESCRICAO_TIPO_FECHAMENTO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 20), char_length (0 -> 20), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "DESCRICAO_TIPO_OS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 60), char_length (0 -> 60), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "DESCRICAO_TIPO_PERIODO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 30), char_length (0 -> 30), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "DT_AGENDAMENTO","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "DT_BAIXA","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "DT_BAIXA_TAREFA","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "DT_DESPACHO","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "DT_PRAZO","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "EMISSAO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "EMP_DESPACHO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "EMP_EXECUCAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "ID_AREA_DESPACHO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 10), char_length (0 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "ID_ASSINANTE","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "ID_EMP_DESPACHO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 7), char_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "ID_ENDER","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "ID_EQUIPE_DESPACHO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 10), char_length (0 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "ID_EQUIPE_EXECUCAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 10), char_length (0 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "ID_EQ_TECNICO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "ID_PERIODO_TUN","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "ID_TAREFA","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "ID_TIPO_FECHAMENTO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "IMEDIATA","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "NOME_ASSINANTE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 40), nullable (Y -> N), char_length (0 -> 40), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "NOME_EQUIPE_DESPACHO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "NOME_EQUIPE_EXECUCAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "NUM_CEP","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "NUM_CONTRATO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "STATUS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 1), nullable (Y -> N), char_length (0 -> 1), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "TEC_DESPACHO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "TEC_EXECUCAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS","column_name": "USR_BAIXA_OS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 30), char_length (0 -> 30), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "CELULA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 4000), char_length (0 -> 4000), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "CID_CONTRATO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), nullable (Y -> N), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "CI_NOME","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "COD_OS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 10), nullable (Y -> N), char_length (0 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 20), char_length (0 -> 20), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "DESCRICAO_SERVICO_OS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 25), char_length (0 -> 25), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "DESCRICAO_TIPO_FECHAMENTO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 20), char_length (0 -> 20), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "DESCRICAO_TIPO_OS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 60), char_length (0 -> 60), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "DESCRICAO_TIPO_PERIODO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 30), char_length (0 -> 30), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "DT_AGENDAMENTO","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "DT_BAIXA","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "DT_BAIXA_TAREFA","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "DT_DESPACHO","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "DT_PRAZO","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "EMISSAO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "EMP_DESPACHO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "EMP_EXECUCAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "ID_AREA_DESPACHO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 10), char_length (0 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "ID_ASSINANTE","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "ID_ENDER","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "ID_EQUIPE_DESPACHO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 10), char_length (0 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "ID_EQUIPE_EXECUCAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 10), char_length (0 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "ID_EQ_TECNICO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "ID_TAREFA","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "ID_TIPO_FECHAMENTO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "IMEDIATA","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "NOME_ASSINANTE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 40), nullable (Y -> N), char_length (0 -> 40), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "NOME_EQUIPE_DESPACHO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "NOME_EQUIPE_EXECUCAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "NUM_CEP","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "NUM_CONTRATO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "STATUS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 1), nullable (Y -> N), char_length (0 -> 1), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "TEC_DESPACHO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "TEC_EXECUCAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_OS_DADOS_GERAIS_CONTR","column_name": "USR_BAIXA_OS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 30), char_length (0 -> 30), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PARAM_DEST_ITEM_CRED_NF","column_name": "UF","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_CREDENCIADA","column_name": "CID_CONTRATO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), nullable (Y -> N), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_CREDENCIADA","column_name": "ID_AREA_DESPACHO","evalution": "data_type (UNDEFINED -> VARCHAR2), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_CREDENCIADA","column_name": "ID_CREDENCIADA","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_CREDENCIADA","column_name": "NOME_CREDENCIADA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "AREA_DESPACHO_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 20), char_length (0 -> 20), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "CID_CONTRATO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), nullable (Y -> N), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "COD_OS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 10), nullable (Y -> N), char_length (0 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "DESCRICAO_CLASSE_OS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 30), char_length (0 -> 30), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "DT","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "DT_AGENDAMENTO","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "DT_ATEND","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "DT_BLOQ","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "DT_DESPACHO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 10), char_length (0 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "DT_PRAZO","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "EMISSAO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "EQUIPE_CREDENCIADA_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "ID_AREA_DESPACHO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 10), char_length (0 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "ID_ASSINANTE","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "ID_CLASSE","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "ID_EDIFICACAO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "ID_EMPRESA_OPERADORA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 7), char_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "ID_EMP_DESPACHO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 7), char_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "ID_ENDER","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "ID_EQUIPE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 10), char_length (0 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "ID_PERIODO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "ID_TIPO_CLIENTE","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "ID_TIPO_OS","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "IMEDIATA","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "NODE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 4000), char_length (0 -> 4000), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "NOME_CREDENCIADA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "NOME_SOLIC","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 40), nullable (Y -> N), char_length (0 -> 40), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "NOME_TITULAR","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 40), nullable (Y -> N), char_length (0 -> 40), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "NUM_CONTRATO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "OBS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 4000), char_length (0 -> 4000), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "STATUS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 1), nullable (Y -> N), char_length (0 -> 1), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "TEL_SOLIC","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 11), char_length (0 -> 11), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "TIPO_OS_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 60), nullable (Y -> N), char_length (0 -> 60), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "TIPO_PERIODO_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 30), char_length (0 -> 30), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_DESPACHO","column_name": "USR_ATEND","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 30), nullable (Y -> N), char_length (0 -> 30), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_EQUIPE_CREDENCIADA","column_name": "CID_CONTRATO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), nullable (Y -> N), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_EQUIPE_CREDENCIADA","column_name": "EQUIPE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 103), char_length (0 -> 103), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_EQUIPE_CREDENCIADA","column_name": "ID_EQUIPE_RI","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "CID_CONTRATO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "COD_OS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 10), nullable (Y -> N), char_length (0 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "CREDENCIADA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "DATA_CONTATO","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "DT_ATEND","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "DT_BAIXA","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "DT_BLOQ","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "DT_DESPACHO","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "DT_PERIODO","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "DURACAO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "EMERGENCIA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 1), nullable (Y -> N), char_length (0 -> 1), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "EMERGENCIA_BLOQUEIO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 1), char_length (0 -> 1), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "EQUIPE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "HORA_MAX_BLOQ","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "IDENTIFICACAO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "ID_AREA_DESPACHO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 10), char_length (0 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "ID_ASSINANTE","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "ID_CLASSE","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "ID_DISP_ACESSO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "ID_EDIFICACAO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "ID_EMP_DESPACHO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 7), char_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "ID_ENDER","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "ID_PERIODO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "ID_SOLICITACAO_ASS","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "ID_TIPO_CLIENTE","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "ID_TIPO_FECHAMENTO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "ID_TIPO_OS","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "ID_TIPO_PERIODO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "IMEDIATA","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "NOME_SOLIC","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 40), nullable (Y -> N), char_length (0 -> 40), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "OBS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 4000), char_length (0 -> 4000), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "PLANO_PGTO_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 15), char_length (0 -> 15), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "TEL_SOLIC","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 11), char_length (0 -> 11), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "TIPO_FECHAMENTO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 20), char_length (0 -> 20), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "TIPO_OS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 60), nullable (Y -> N), char_length (0 -> 60), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "TIPO_PERIODO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 30), char_length (0 -> 30), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "USR_ATEND","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 30), nullable (Y -> N), char_length (0 -> 30), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS","column_name": "USR_BAIXA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 30), char_length (0 -> 30), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS_TERMINAL","column_name": "COD_OS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 10), nullable (Y -> N), char_length (0 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS_TERMINAL","column_name": "TMOD_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS_TERMINAL","column_name": "TM_SERIE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS_TERMINAL","column_name": "TT_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_PONTO_CONTRATO","column_name": "CID_CONTRATO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), nullable (Y -> N), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_PONTO_CONTRATO","column_name": "ENDER_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 5), char_length (0 -> 5), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_PONTO_CONTRATO","column_name": "IDENTIFICACAO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_PONTO_CONTRATO","column_name": "ID_CARACTERISTICA","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_PONTO_CONTRATO","column_name": "ID_LOCALIZACAO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_PONTO_CONTRATO","column_name": "INSTALADO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_PONTO_CONTRATO","column_name": "LOCALIZACAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 30), char_length (0 -> 30), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_PONTO_CONTRATO","column_name": "LOCALIZACAO_OBS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 40), char_length (0 -> 40), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_PONTO_CONTRATO","column_name": "NUM_CONTRATO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_PONTO_CONTRATO","column_name": "PRODUTO_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 40), nullable (Y -> N), char_length (0 -> 40), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_PONTO_CONTRATO","column_name": "SID_PONTO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_PONTO_CONTRATO","column_name": "SID_PRODUTO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_PONTO_CONTRATO","column_name": "TERMINAL_SERIE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_TAREFA","column_name": "COD_OS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 10), nullable (Y -> N), char_length (0 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_TAREFA","column_name": "DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 25), nullable (Y -> N), char_length (0 -> 25), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_TAREFA","column_name": "DT_BAIXA","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_TAREFA","column_name": "DT_EXECUCAO","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_TAREFA","column_name": "EMPRESA_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_TAREFA","column_name": "EQUIPE_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 103), char_length (0 -> 103), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_TAREFA","column_name": "ID_TAREFA","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_TAREFA","column_name": "QTD_DESLOCAMENTO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_TAREFA","column_name": "QTD_DESLOCAMENTO1","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_TAREFA","column_name": "TIPO_FECHAMENTO_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 20), char_length (0 -> 20), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_TERMREV","column_name": "ID_ASSINANTE","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_TERMREV","column_name": "QTD_REVISTAS","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_TERMREV","column_name": "QTD_REVISTAS_COBRAVEIS","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_TERMREV","column_name": "QTD_TERMINAIS","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_TERMREV","column_name": "QTD_TERMINAIS_COBRAVEIS","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "ASSINANTE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 40), nullable (Y -> N), char_length (0 -> 40), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "CELULA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 10), char_length (0 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "CID_CONTRATO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), nullable (Y -> N), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "COD_BAIXA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 3), nullable (Y -> N), char_length (0 -> 3), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "COD_OPERADORA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 3), nullable (Y -> N), char_length (0 -> 3), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "COD_OS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 10), nullable (Y -> N), char_length (0 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "CREDENCIADA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "DDD","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 2), char_length (0 -> 2), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "DT_EXECUCAO","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "DT_PORTABILIDADE","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "ENDERECO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 4000), char_length (0 -> 4000), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "EQUIPE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "FONE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 8), char_length (0 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "FONE_PORTADO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 8), char_length (0 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "ID_CREDENCIADA","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "ID_TIPO_FECHAMENTO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "NUM_CONTRATO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "PACOTE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 40), char_length (0 -> 40), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "QUANTIDADE","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "RAZAO_SOCIAL","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "TIPO_BAIXA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), nullable (Y -> N), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "TIPO_FECHAMENTO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 20), nullable (Y -> N), char_length (0 -> 20), "}
+		,{"owner": "PROD_JD","table_name": "VSN_RELAT_SN763","column_name": "TIPO_OS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 60), nullable (Y -> N), char_length (0 -> 60), "}
+		,{"owner": "PROD_JD","table_name": "VSN_REL_REPORT_BACK_ATIVO","column_name": "CID_CONTRATO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), nullable (Y -> N), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VSN_REL_REPORT_BACK_ATIVO","column_name": "DT_BLOQUEIO","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_REL_REPORT_BACK_ATIVO","column_name": "DT_INI","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_REL_REPORT_BACK_ATIVO","column_name": "DT_PRIMEIRO_REPORT_BACK","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_REL_REPORT_BACK_ATIVO","column_name": "DT_ULTIMO_REPORT_BACK","evalution": "data_type (UNDEFINED -> DATE), data_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_REL_REPORT_BACK_ATIVO","column_name": "ID_PONTO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_REL_REPORT_BACK_ATIVO","column_name": "NUM_CONTRATO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_REL_REPORT_BACK_ATIVO","column_name": "STATUS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 7), char_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_REL_REPORT_BACK_ATIVO","column_name": "TM_SERIE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), nullable (Y -> N), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_TEC_ASSINANTE","column_name": "ID_ASSINANTE","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_TEC_ASSINANTE","column_name": "ID_EMPRESA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 7), char_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "VSN_TEC_ASSINANTE","column_name": "ID_TECNICO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_TEC_ASSINANTE","column_name": "NOME_PESSOA","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_TEC_ASSINANTE","column_name": "RAZAO_SOCIAL","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_TEC_ASSINANTE","column_name": "VISITAS","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_TERMINAIS_CONTRATO","column_name": "CID_CONTRATO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 6), char_length (0 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "VSN_TERMINAIS_CONTRATO","column_name": "NUM_CONTRATO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "VSN_TERMINAIS_CONTRATO","column_name": "NUM_SERIE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), nullable (Y -> N), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_TERMINAIS_CONTRATO","column_name": "TIPO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_TIPO_MODELO","column_name": "ID_PONTO","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_TIPO_MODELO","column_name": "TIPOMODELO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 152), char_length (0 -> 152), "}
+	]
+}

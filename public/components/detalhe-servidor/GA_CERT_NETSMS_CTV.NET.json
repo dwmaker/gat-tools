@@ -1,0 +1,31 @@
+{
+	"refreshDate": "2019-12-26T17:17:29.000Z"
+	,"source":
+	{
+		"cd_conexao": "GA_CERT_NETSMS_CTV.NET",
+		"cd_ambiente": "CERT",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "CTV",
+		"ds_conexao": "CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.162)(PORT=1525)))(CONNECT_DATA=(SERVICE_NAME=HHCTV01)))"
+	}
+	,"target":
+	{
+		"cd_conexao": "GA_PROD_NETSMS_CTV.NET",
+		"cd_ambiente": "PROD",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "CTV",
+		"ds_conexao": "NETDBA@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(host = 5.16.8.133)(PORT = 1528))(CONNECT_DATA = (SID = CTV)))"
+	}
+	,"tabelas": [
+		{"owner": "PROD_JD","table_name": "LOG_DESCARACTERIZACAO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CONTR_SIT_IRRBKP_DEZ19","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CONTR_TERMBKP_DEZ19","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_ALTERACAO_CODIGO_CIDADE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_DEPARA_CIDADE_GPON","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_LOG_EXECUCAO_GPON","evalution": "SRC only, "}
+	]
+	,"colunas": [
+		{"owner": "NETSALES","table_name": "CP_LOG_PROPOSTA","column_name": "CP_LOG_PROPOSTA","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_TEC_ASSINANTE","column_name": "VSN_TEC_ASSINANTE","evalution": "nullable (N -> Y), "}
+	]
+}

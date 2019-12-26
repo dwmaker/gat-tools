@@ -1,0 +1,128 @@
+{
+	"refreshDate": "2019-12-26T18:14:12.000Z"
+	,"source":
+	{
+		"cd_conexao": "GA_DEV4_NETSMS_ISP.NET",
+		"cd_ambiente": "DEV4",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "ISP",
+		"ds_conexao": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=MUCISP01)))"
+	}
+	,"target":
+	{
+		"cd_conexao": "GA_PROD_NETSMS_ISP.NET",
+		"cd_ambiente": "PROD",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "ISP",
+		"ds_conexao": "NETBKPADM@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.189)(PORT=1521))(CONNECT_DATA=(SID=isp)))"
+	}
+	,"tabelas": [
+		{"owner": "NETSALES","table_name": "CP_BLINDAGEM_PENDENCIA","evalution": "TGT only, "}
+		,{"owner": "NETSALES","table_name": "CP_REL_EQUIPE_VENDA_PENDENCIA","evalution": "SRC only, "}
+		,{"owner": "NETSALES","table_name": "CP_REL_PENDENCIA_CIDADE","evalution": "SRC only, "}
+		,{"owner": "NETSALES","table_name": "CP_REL_PENDENCIA_EMPRESA","evalution": "SRC only, "}
+		,{"owner": "NETSALES","table_name": "CP_REL_PENDENCIA_TP_VENDA","evalution": "SRC only, "}
+		,{"owner": "NETSALES","table_name": "CP_REL_PENDENCIA_UF","evalution": "SRC only, "}
+		,{"owner": "NETSALES","table_name": "CP_REL_PENDENCIA_VENDEDOR","evalution": "SRC only, "}
+		,{"owner": "NETSALES","table_name": "CP_REL_TIPO_ACESSO_EQP_VENDA","evalution": "SRC only, "}
+		,{"owner": "NETSALES","table_name": "CP_TIPO_ACESSO_REGRA_EQP_VENDA","evalution": "SRC only, "}
+		,{"owner": "NETSALES","table_name": "CP_TIPO_LOG_PROPOSTA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "BK_SN_CONFIG_ALCADA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "CADEIA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "CARGA_ARQUIVO_LNP_ERRO2","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "CARGA_TELEFONE_LOG2","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "CHK_USER_CAPTCHA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "CLIENTE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "DEPT","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "EMP","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "ITENS_PEDIDO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "ITENS_PEDIDOS","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "LISTA_TELEFONE_PROCON2","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "MAGAZINE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "PEDIDO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "PRODUTO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_ARQUIVO_DOACAO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_ARQUIVO_RAJADA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_ARQUIVO_RAJADA_LINHA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_ARQUIVO_RAJADA_LOTE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARCEIRO_ARQ","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARCEIRO_AUX","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CENTRALIZADOR_NF","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CENTRALIZADOR_NF_LOG","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CNRO_REL_AGENDA_TP_SEGMENTO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CONFIG_ALCADA_BKP","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_TIPO_LOCAL_NEGOCIO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_DADOS_ARQUIVO_DOACAO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_ESTABELECIMENTO_SITEF","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_FORMA_ENVIO_2VIA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_HISTORICO_MULTA_FIDELIDADE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_DETALHE_CONTESTACAO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_EVENTO_ITEM_EXTRATO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_MASTERSAF_PARCEIROS","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_MASTERSAF_PRODUTO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_MENSAGEM_COBR_FORMA_ENVIO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_NTLC_PARCEIRO_LOCAL_NEGOCIO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_NTLC_PRD_TIPO_ITEM_EXT_PARC","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CONTR_TP_ASSINANTE_LOG","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_FUNC_FORMA_ENVIO_2VIA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_FUNC_MOTIVO_MOVIMENTO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_OBJ_TIPO_MOVIMENTO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_STATUS_ARQUIVO_DOACAO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_STATUS_DOACAO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TESTE_TRIGGER","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_AGING_PRINC","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_ASSINANTE_IBGE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_MSAF_DADOS_NF_PARCEIRO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_MSAF_DADOS_PARCEIRO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_MSAF_ITENS_FINANC","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_ORDEM_ATIVACAO","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_VL_COBRANCA_COB","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_VL_COBRANCA_FONE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_VL_COBRANCA_INTERNET","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_VL_MULTA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "T_LOG","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "VENDEDOR","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "Z_BACKUP_SN_DISP_PORT","evalution": "TGT only, "}
+	]
+	,"colunas": [
+		{"owner": "PROD_JD","table_name": "EXTENT_MAP","column_name": "BLOCKS","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "EXTENT_MAP","column_name": "BLOCK_ID","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "EXTENT_MAP","column_name": "BYTES","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "EXTENT_MAP","column_name": "EXTENT_ID","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 40), char_length (0 -> 40), "}
+		,{"owner": "PROD_JD","table_name": "EXTENT_MAP","column_name": "FILE_ID","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "EXTENT_MAP","column_name": "OWNER","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 30), char_length (0 -> 30), "}
+		,{"owner": "PROD_JD","table_name": "EXTENT_MAP","column_name": "SEGMENT_NAME","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 81), char_length (0 -> 81), "}
+		,{"owner": "PROD_JD","table_name": "EXTENT_MAP","column_name": "SEGMENT_TYPE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 18), char_length (0 -> 18), "}
+		,{"owner": "PROD_JD","table_name": "EXTENT_MAP","column_name": "TABLESPACE_NAME","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 30), char_length (0 -> 30), "}
+		,{"owner": "PROD_JD","table_name": "GEO_HEADEND","column_name": "HE_CODIGO","evalution": "data_length (3 -> 8), char_length (3 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "GEO_HUB","column_name": "HE_CODIGO","evalution": "data_length (3 -> 8), char_length (3 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "GEO_HUB","column_name": "HU_COD","evalution": "data_length (1 -> 8), char_length (1 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "GEO_HUB","column_name": "ID_HUB","evalution": "data_length (3 -> 8), char_length (3 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "LOG_VIEW","column_name": "ARCHIVED","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 3), char_length (0 -> 3), "}
+		,{"owner": "PROD_JD","table_name": "LOG_VIEW","column_name": "BYTES","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "LOG_VIEW","column_name": "FILE_NAME","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 513), char_length (0 -> 513), "}
+		,{"owner": "PROD_JD","table_name": "LOG_VIEW","column_name": "FILE_STATUS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 7), char_length (0 -> 7), "}
+		,{"owner": "PROD_JD","table_name": "LOG_VIEW","column_name": "GROUP#","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "LOG_VIEW","column_name": "GROUP_STATUS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 16), char_length (0 -> 16), "}
+		,{"owner": "PROD_JD","table_name": "LOG_VIEW","column_name": "SEQUENCE#","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "LOG_VIEW","column_name": "THREAD#","evalution": "data_type (UNDEFINED -> NUMBER), data_length (0 -> 22), "}
+		,{"owner": "PROD_JD","table_name": "SN_BOLETOS_RECEBIDOS","column_name": "ID_BOLETO","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "SN_PRIORIDADE_MULTICIDADE","column_name": "COD_CIDADE","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "SN_PRIORIDADE_MULTICIDADE","column_name": "ID_TIPO_ACESSO","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_IMPOSTO_TIPO_ITEM_EXTR","column_name": "UF","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_PRODUTO_PERFIL","column_name": "DT_FIM","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_PRODUTO_PERFIL","column_name": "DT_INI","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_PRODUTO_PERFIL","column_name": "ID_PERFIL","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_PRODUTO_PERFIL","column_name": "ID_PRODUTO","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_PROPOSTA_AGENDA","column_name": "CD_BUCKET","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_PROPOSTA_AGENDA","column_name": "DS_TIMESLOT","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "SO_ELEMENTO_REDE","column_name": "HE_CODIGO","evalution": "data_length (3 -> 8), char_length (3 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "SO_ELEMENTO_REDE","column_name": "ID_HUB","evalution": "data_length (3 -> 8), char_length (3 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "TMP_SN_MASTERSAF","column_name": "CID_CONTRATO","evalution": "data_type (VARCHAR2 -> NUMBER), data_length (6 -> 22), char_length (6 -> 0), "}
+		,{"owner": "PROD_JD","table_name": "VPP_TERMINAL","column_name": "TM_SERIE1","evalution": "data_length (30 -> 50), char_length (30 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PARAM_DEST_ITEM_CRED_NF","column_name": "UF","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS_TERMINAL","column_name": "TM_SERIE","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_PONTO_CONTRATO","column_name": "TERMINAL_SERIE","evalution": "data_length (1 -> 50), char_length (1 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_TEC_ASSINANTE","column_name": "ID_TECNICO","evalution": "nullable (N -> Y), "}
+	]
+}

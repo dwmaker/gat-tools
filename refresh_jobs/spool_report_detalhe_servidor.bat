@@ -4,7 +4,7 @@
 
 
 @rem @call :makefile "%~dp0..\public\components\detalhe-servidor\GA_CERT_NETSMS_BRA.NET.json" "GA_CERT_NETSMS_BRA.NET" "GA_PROD_NETSMS_BRA.NET"
-@for /f "tokens=1,2,3,4,5,6* delims=	" %%A in (%~dp0..\public\components\detalhe-servidor\lista_conexao.txt) do @(
+@for /f "tokens=1,2,3,4,5,6* skip=1 delims=	" %%A in (%~dp0..\public\components\detalhe-servidor\lista_conexao.txt) do @(
 @call :makefile "%~dp0..\public\components\detalhe-servidor\%%A.json" "%%A"
 )
 @goto :sucesso

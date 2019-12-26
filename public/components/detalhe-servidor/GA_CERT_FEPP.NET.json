@@ -1,0 +1,11 @@
+{
+	"refreshDate": "2019-12-26T18:58:08.000Z"
+	,"source":
+	{
+		"cd_conexao": "GA_CERT_FEPP.NET",
+		"cd_ambiente": "CERT",
+		"cd_aplicacao": "FEPP",
+		"cd_cenario": null,
+		"ds_conexao": "CONSULTA_DICIONARIO@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.45)(PORT=1522))(CONNECT_DATA=(SID=HSATP01)))"
+	}
+}

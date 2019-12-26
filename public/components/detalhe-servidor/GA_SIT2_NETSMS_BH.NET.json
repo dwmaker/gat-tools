@@ -1,0 +1,32 @@
+{
+	"refreshDate": "2019-12-26T18:26:30.000Z"
+	,"source":
+	{
+		"cd_conexao": "GA_SIT2_NETSMS_BH.NET",
+		"cd_ambiente": "SIT2",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "BH",
+		"ds_conexao": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.25)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SBHSP)))"
+	}
+	,"target":
+	{
+		"cd_conexao": "GA_PROD_NETSMS_BH.NET",
+		"cd_ambiente": "PROD",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "BH",
+		"ds_conexao": "NETDBA@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.190)(PORT=1521))(CONNECT_DATA=(SID=bhpr)))"
+	}
+	,"tabelas": [
+		{"owner": "NETSALES","table_name": "CP_LIBERACAO_PENDENCIA_BKO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CONFIG_ALCADA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CONFIG_EQUIP_PRODUTO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_EVENTO_ITEM_EXTRATO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_MOVIMENTACAO_WO_OS","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_SERV_CTR_EQUIP_HISTORICO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_TIPO_ALCADA","evalution": "SRC only, "}
+	]
+	,"colunas": [
+		{"owner": "PROD_JD","table_name": "SN_REL_PROPOSTA_AGENDA","column_name": "CD_BUCKET","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_PROPOSTA_AGENDA","column_name": "DS_TIMESLOT","evalution": "nullable (N -> Y), "}
+	]
+}

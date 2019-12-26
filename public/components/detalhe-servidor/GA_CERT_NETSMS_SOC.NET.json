@@ -1,0 +1,43 @@
+{
+	"refreshDate": "2019-12-26T17:24:55.000Z"
+	,"source":
+	{
+		"cd_conexao": "GA_CERT_NETSMS_SOC.NET",
+		"cd_ambiente": "CERT",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "SOC",
+		"ds_conexao": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=hhsocn1)))"
+	}
+	,"target":
+	{
+		"cd_conexao": "GA_PROD_NETSMS_SOC.NET",
+		"cd_ambiente": "PROD",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "SOC",
+		"ds_conexao": "NETBKPADM@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.191)(PORT=1521))(CONNECT_DATA=(SID=db09s)))"
+	}
+	,"tabelas": [
+		{"owner": "PROD_JD","table_name": "PLAN_TABLE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CONTROLE_COBRANCA_INTERSIC","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_HIST_CONT_TEMP","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_CONTROLE_INTERSIC","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_PARAMENTRO_BKP_GB","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CONTR_SIT_IRRBKP_DEZ19","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CONTR_TERMBKP_DEZ19","evalution": "TGT only, "}
+	]
+	,"colunas": [
+		{"owner": "NETSALES","table_name": "CP_LIBERACAO_PENDENCIA_BKO","column_name": "CP_LIBERACAO_PENDENCIA_BKO","evalution": "nullable (N -> Y), "}
+		,{"owner": "NETSALES","table_name": "CP_LIBERACAO_PENDENCIA_BKO","column_name": "CP_LIBERACAO_PENDENCIA_BKO","evalution": "nullable (N -> Y), "}
+		,{"owner": "NETSALES","table_name": "CP_LIBERACAO_PENDENCIA_BKO","column_name": "CP_LIBERACAO_PENDENCIA_BKO","evalution": "nullable (N -> Y), "}
+		,{"owner": "NETSALES","table_name": "CP_LIBERACAO_PENDENCIA_BKO","column_name": "CP_LIBERACAO_PENDENCIA_BKO","evalution": "nullable (N -> Y), "}
+		,{"owner": "NETSALES","table_name": "CP_LIBERACAO_PENDENCIA_BKO","column_name": "CP_LIBERACAO_PENDENCIA_BKO","evalution": "nullable (N -> Y), "}
+		,{"owner": "NETSALES","table_name": "CP_LOG_PROPOSTA","column_name": "CP_LOG_PROPOSTA","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "GEO_PESO_TIPO_COMPLEM","column_name": "GEO_PESO_TIPO_COMPLEM","evalution": "data_precision (4 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "SN_PRODUTO_PESO_OPER","column_name": "SN_PRODUTO_PESO_OPER","evalution": "data_precision (4 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_AGENDA_EQUIPE","column_name": "SN_REL_AGENDA_EQUIPE","evalution": "data_length (7 -> 6), char_length (7 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_ATRIBUTO_SEGMENTO","column_name": "SN_REL_ATRIBUTO_SEGMENTO","evalution": "data_precision (4 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CONTRATO_PRODUTO","column_name": "VSN_CONTRATO_PRODUTO","evalution": "data_precision (4 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS_TERMINAL","column_name": "VSN_PR_OS_TERMINAL","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "VSN_TEC_ASSINANTE","column_name": "VSN_TEC_ASSINANTE","evalution": "nullable (N -> Y), "}
+	]
+}

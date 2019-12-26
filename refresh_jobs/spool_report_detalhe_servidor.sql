@@ -214,7 +214,7 @@ begin
 				select
 				nvl(src.owner , tgt.owner) owner ,
 				nvl(src.table_name , tgt.table_name ) table_name ,
-				nvl(src.table_name , tgt.table_name ) column_name ,
+				nvl(src.column_name , tgt.column_name ) column_name ,
 				case when src.owner is null then ''SRC only, '' end ||
 				case when tgt.owner is null then ''TGT only, '' end ||
 				case when not ((src.data_type						is null and tgt.data_type						is null) or (src.data_type					= tgt.data_type						)) then ''data_type ('' || src.data_type || '' -> '' || tgt.data_type || ''), '' end ||

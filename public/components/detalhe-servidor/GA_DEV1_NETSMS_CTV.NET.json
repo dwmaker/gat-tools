@@ -1,0 +1,68 @@
+{
+	"refreshDate": "2019-12-26T17:31:37.000Z"
+	,"source":
+	{
+		"cd_conexao": "GA_DEV1_NETSMS_CTV.NET",
+		"cd_ambiente": "DEV1",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "CTV",
+		"ds_conexao": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DCTV1HP)))"
+	}
+	,"target":
+	{
+		"cd_conexao": "GA_PROD_NETSMS_CTV.NET",
+		"cd_ambiente": "PROD",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "CTV",
+		"ds_conexao": "NETDBA@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(host = 5.16.8.133)(PORT = 1528))(CONNECT_DATA = (SID = CTV)))"
+	}
+	,"tabelas": [
+		{"owner": "NETSALES","table_name": "CP_BLINDAGEM_PENDENCIA","evalution": "TGT only, "}
+		,{"owner": "NETSALES","table_name": "CP_REL_CREDENCIADA_EQP_VENDA","evalution": "row_movement (ENABLED -> DISABLED), "}
+		,{"owner": "NETSALES","table_name": "CP_TIPO_LOG_PROPOSTA","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_ARTIGO_CO_PA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CANAL_VENDA_TP_AGENDA","evalution": "row_movement (ENABLED -> DISABLED), "}
+		,{"owner": "PROD_JD","table_name": "SN_CIDADE_BASE_BKPGB","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CONFIG_ALCADA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CONFIG_EQUIP_PRODUTO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CONTR_PROD_PRC_BKP30NOV","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_DETALHE_CONTESTACAO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_EVENTO_ITEM_EXTRATO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_MOVIMENTACAO_WO_OS","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_ORDEM_INTERNA_CO_PA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REAJUSTE_MENSAL_TMP2","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_ART_CO_PA_ITEM_EXTRATO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CANAL_VENDA_TP_AGENDA","evalution": "row_movement (ENABLED -> DISABLED), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_OBJ_TIPO_MOVIMENTO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_PONTO_PRODUTO_PRECO","evalution": "logging (NO -> YES), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_PRODUTO_PERFIL","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_SERV_CTR_EQUIP_HISTORICO","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_TIPO_ALCADA","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_ALTERACAO_CODIGO_CIDADE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_DEPARA_CIDADE_GPON","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_LOG_EXECUCAO_GPON","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "TMP_MSAF_ITEM_EXTRATO","evalution": "logging (YES -> NO), "}
+		,{"owner": "PROD_JD","table_name": "TMP_MSAF_SEQ_LIN","evalution": "logging (YES -> NO), "}
+		,{"owner": "PROD_JD","table_name": "Z_BACKUP_SN_DISP_PORT","evalution": "TGT only, "}
+	]
+	,"colunas": [
+		{"owner": "NETSALES","table_name": "CP_LIBERACAO_PENDENCIA_BKO","column_name": "CP_LIBERACAO_PENDENCIA_BKO","evalution": "nullable (N -> Y), "}
+		,{"owner": "NETSALES","table_name": "CP_LIBERACAO_PENDENCIA_BKO","column_name": "CP_LIBERACAO_PENDENCIA_BKO","evalution": "nullable (N -> Y), "}
+		,{"owner": "NETSALES","table_name": "CP_LIBERACAO_PENDENCIA_BKO","column_name": "CP_LIBERACAO_PENDENCIA_BKO","evalution": "nullable (N -> Y), "}
+		,{"owner": "NETSALES","table_name": "CP_LIBERACAO_PENDENCIA_BKO","column_name": "CP_LIBERACAO_PENDENCIA_BKO","evalution": "nullable (N -> Y), "}
+		,{"owner": "NETSALES","table_name": "CP_LIBERACAO_PENDENCIA_BKO","column_name": "CP_LIBERACAO_PENDENCIA_BKO","evalution": "nullable (N -> Y), "}
+		,{"owner": "NETSALES","table_name": "CP_LOG_PROPOSTA","column_name": "CP_LOG_PROPOSTA","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "GEO_CELULAS","column_name": "GEO_CELULAS","evalution": "data_precision (5 -> 3), "}
+		,{"owner": "PROD_JD","table_name": "GEO_POSTES","column_name": "GEO_POSTES","evalution": "data_length (7 -> 5), char_length (7 -> 5), "}
+		,{"owner": "PROD_JD","table_name": "SN_PRIORIDADE_MULTICIDADE","column_name": "SN_PRIORIDADE_MULTICIDADE","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "SN_PRIORIDADE_MULTICIDADE","column_name": "SN_PRIORIDADE_MULTICIDADE","evalution": "data_precision (10 -> 6), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_PROPOSTA_AGENDA","column_name": "SN_REL_PROPOSTA_AGENDA","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_PROPOSTA_AGENDA","column_name": "SN_REL_PROPOSTA_AGENDA","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "SN_SOLIC_PAGTO_TAREFA","column_name": "SN_SOLIC_PAGTO_TAREFA","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "SN_TAREFA_CARTAO","column_name": "SN_TAREFA_CARTAO","evalution": "nullable (Y -> N), "}
+		,{"owner": "PROD_JD","table_name": "TMP_ARD_CONTAB_FATURAMENTO_AUX","column_name": "TMP_ARD_CONTAB_FATURAMENTO_AUX","evalution": "data_type (NUMBER -> VARCHAR2), data_length (22 -> 8), char_length (0 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "TMP_ARD_CONTAB_FAT_AUX_N","column_name": "TMP_ARD_CONTAB_FAT_AUX_N","evalution": "data_type (NUMBER -> VARCHAR2), data_length (22 -> 8), char_length (0 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "VSN_BV_COBRAR_VIRTUA","column_name": "VSN_BV_COBRAR_VIRTUA","evalution": "data_length (19 -> 9), char_length (19 -> 9), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS_TERMINAL","column_name": "VSN_PR_OS_TERMINAL","evalution": "nullable (N -> Y), "}
+	]
+}

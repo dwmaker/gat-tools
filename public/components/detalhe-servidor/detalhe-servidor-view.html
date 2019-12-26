@@ -1,0 +1,91 @@
+<div class="">
+	<h2>Detalhe do Servidor</h2>
+	<small ng-show:"detalhe.refreshDate">Atualizado em {{ detalhe.refreshDate | date:'yyyy-MM-dd HH:mm:ss': '+0000' }} </small>
+</div>
+
+<!-- Single button with keyboard nav -->
+
+
+	
+<div class="alert alert-secondary">
+		
+	<div class="row">
+
+		<div class="col-1">
+			<div>Servidor:</div>
+			<div class="btn-group" uib-dropdown keyboard-nav>
+			<a id="comboServidor" type="button"  uib-dropdown-toggle  class="btn btn-light">
+			<i class="fas fa-file-excel text-primary"> </i>
+			<span>{{detalhe.source.cd_conexao }}</span>
+			<span class="caret"></span>
+			</a>
+			<ul uib-dropdown-menu role="menu" aria-labelledby="comboServidor" style="padding:6px;">
+			<li role="menuitem" ng-repeat="conexao in lstAmbiente.data">
+			<small><a ng-href="#!/detalhe-servidor/{{conexao.cd_conexao}}" ng-bind="conexao.cd_conexao"/></small>
+			</li>
+			</ul>
+			</div>
+		</div>
+
+
+	</div>
+	
+	<div class="row">
+
+		<div class="col-12">
+			<small>{{detalhe.source.ds_conexao}}</small>
+		</div>
+
+
+	</div>
+</div>
+<div ng-if="detalhe.tabelas">
+	<h2>Tabelas</h2>
+	<table class="table table-sm">
+		<thead class="thead-dark">
+			<tr>
+			<th>Owner</th>
+			<th>Tabela</th>
+			<th>Criticas</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="tabela in detalhe.tabelas">
+				<td>{{tabela.owner}}</td>
+				<td>{{tabela.table_name}}</td>
+				<td>{{tabela.evalution}}</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th colspan=3>{{detalhe.tabelas.length}} registros</th>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+<div ng-if="detalhe.colunas">
+	<h2>Colunas</h2>
+	<table class="table table-sm" >
+		<thead class="thead-dark">
+			<tr>
+			<th>Owner</th>
+			<th>Tabela</th>
+			<th>Coluna</th>
+			<th>Criticas</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="coluna in detalhe.colunas">
+				<td>{{coluna.owner}}</td>
+				<td>{{coluna.table_name}}</td>
+				<td>{{coluna.column_name}}</td>
+				<td>{{coluna.evalution}}</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th colspan=4>{{detalhe.colunas.length}} registros</th>
+			</tr>
+		</tfoot>
+	</table>
+</div>
