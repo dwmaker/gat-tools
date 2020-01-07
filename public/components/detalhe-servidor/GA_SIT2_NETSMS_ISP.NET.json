@@ -1,5 +1,5 @@
 {
-	"refreshDate": "2019-12-26T18:28:22.000Z"
+	"refreshDate": "2019-12-30T13:58:13.000Z"
 	,"source":
 	{
 		"cd_conexao": "GA_SIT2_NETSMS_ISP.NET",
@@ -19,6 +19,8 @@
 	,"tabelas": [
 		{"owner": "PROD_JD","table_name": "SN_CONTROLE_COBRANCA_INTERSIC","evalution": "SRC only, "}
 		,{"owner": "PROD_JD","table_name": "SN_LOG_CONTROLE_INTERSIC","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CONTR_SIT_IRRBKP_DEZ19","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CONTR_TERMBKP_DEZ19","evalution": "SRC only, "}
 		,{"owner": "PROD_JD","table_name": "TMP_AGING_PRINC","evalution": "SRC only, "}
 		,{"owner": "PROD_JD","table_name": "TMP_ASSINANTE_IBGE","evalution": "SRC only, "}
 		,{"owner": "PROD_JD","table_name": "TMP_VL_COBRANCA_COB","evalution": "SRC only, "}
@@ -49,5 +51,74 @@
 		,{"owner": "PROD_JD","table_name": "SN_PRODUTO_PESO_OPER","column_name": "PESO","evalution": "data_precision (4 -> 8), "}
 		,{"owner": "PROD_JD","table_name": "SN_REL_ATRIBUTO_SEGMENTO","column_name": "NR_PESO","evalution": "data_precision (4 -> 8), "}
 		,{"owner": "PROD_JD","table_name": "VSN_CONTRATO_PRODUTO","column_name": "PESO","evalution": "data_precision (4 -> 8), "}
+	]
+	,"programaveis": [
+		{"owner": "NETSALES","object_name": "ISS_ENVIO_CONTRATO","object_type": "PACKAGE BODY","evalution": "TGT only, "}
+		,{"owner": "NETSALES","object_name": "PKG_VPD_CP_PROSPECT","object_type": "PACKAGE","evalution": "SRC only, "}
+		,{"owner": "NETSALES","object_name": "PKG_VPD_CP_PROSPECT","object_type": "PACKAGE BODY","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","object_name": "GRRE0302B_OCORRENCIAS","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "GRRE0302_OBSERVACAO_OS","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "GRRE0302_OCORRENCIAS","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "GRRE0700_CRIA_OS","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "GRRE0700_CRIA_OS_LOTE","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "ISS_ENVIO_CONTRATO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PACK_AGENDA_CLARO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PCK_CONVENIO60","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PCK_OBSERVACAO_OS","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PCK_PREVIA_FATURA_BASE","object_type": "PACKAGE BODY","evalution": "status (INVALID -> VALID), "}
+		,{"owner": "PROD_JD","object_name": "PGSMS_MATRIZ_EQUIPAMENTO","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PGSMS_MATRIZ_EQUIPAMENTO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PGSMS_MIGRA_CONTRATO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PGSMS_PERSISTE_FATURA_PARCEIRO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PGSN_FATURAMENTO_SEL_CONTRATO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PKG_GARANTIA_RETORNO_CREDENC","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PKG_GARANTIA_RETORNO_CREDENC","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PKG_INSTITUICAO_PARCEIRA","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PKG_OCORRENCIA_CIT","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PKG_PROCESSA_ORDEM_ATIVACAO","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PKG_PROCESSA_ORDEM_ATIVACAO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PKG_PV_MIGRACAO","object_type": "PACKAGE BODY","evalution": "status (VALID -> INVALID), "}
+		,{"owner": "PROD_JD","object_name": "PKG_RETENCAO_REVERSAO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PR_REAJUSTE_MENSAL_MAILING","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_ASSINANTE","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_AUDITA_CONTRATO_TERMINAIS","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_AUDITA_TERMINAIS","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_CONTRATO_TERMINAIS","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_INTERFACE_JDE_CANCELAMENTO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_INTERFACE_JDE_FATURAMENTO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_OCORRENCIA","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_OCORRENCIA","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_SENHAS","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_SENHAS","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_SOLIC_DEPENDENTE","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_SPC","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_SUSPENSAO_FATURAMENTO","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_WWW_SN529W","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "SSNCRIALOGASSINANTE","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "SSNLIBERATELEMARKETING","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "SSNLOGTERMINAIS","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "SSNTEXTOSITIRREGULAR","object_type": "FUNCTION","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "SYS_PLSQL_8043538_12_1","object_type": "TYPE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "SYS_PLSQL_8043538_538_1","object_type": "TYPE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "SYS_PLSQL_8043538_DUMMY_1","object_type": "TYPE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "SYS_PLSQL_8215491_12_1","object_type": "TYPE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","object_name": "SYS_PLSQL_8215491_538_1","object_type": "TYPE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","object_name": "SYS_PLSQL_8215491_DUMMY_1","object_type": "TYPE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","object_name": "TRCP_RPP_AER_UD","object_type": "TRIGGER","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","object_name": "TRDWH_FONE_VOIP_AERIUD_01","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRPP_MSG_PORTABILIDADE","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSMS_COBRPARC_LOGCCL_B_E_U_01","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_A_ER_I_RESOLUCAOOCORREN","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_A_I_VLD_QTDE_MD_GESAC","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_A_ST_I_REL_CTR_TERM","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_A_ST_U_ASSINANTE","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_A_ST_U_ENDER","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_B_ER_IU_MATRIZ_METADADO","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_B_ER_IU_MD_PROD","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_B_ER_I_RCSI","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_B_ER_I_REL_CTR_TERM","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_B_ER_UD_SOLICITACAO_ASS","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_B_ER_U_COBRANCA_CANC","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_B_ER_U_CONTRATO","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
 	]
 }

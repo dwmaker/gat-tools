@@ -1,0 +1,101 @@
+{
+	"refreshDate": "2019-12-27T19:17:27.000Z"
+	,"source":
+	{
+		"cd_conexao": "GA_SIT5_NETSMS_SOC.NET",
+		"cd_ambiente": "SIT5",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "SOC",
+		"ds_conexao": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=BIGT)))"
+	}
+	,"target":
+	{
+		"cd_conexao": "GA_PROD_NETSMS_SOC.NET",
+		"cd_ambiente": "PROD",
+		"cd_aplicacao": "NETSMS",
+		"cd_cenario": "SOC",
+		"ds_conexao": "NETBKPADM@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.191)(PORT=1521))(CONNECT_DATA=(SID=db09s)))"
+	}
+	,"tabelas": [
+		{"owner": "PROD_JD","table_name": "BASE_GERAL_VLR_AUX","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "PLAN_TABLE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CONFIGURACAO_MERCHANTID","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CONTROLE_COBRANCA_INTERSIC","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_CV60_HIST_CONT_TEMP","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_CONTROLE_INTERSIC","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_LOG_OC","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_MONITORA_SEQUENCE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_VERSAO_EXEC_TESTE","evalution": "TGT only, "}
+	]
+	,"colunas": [
+		{"owner": "NETSALES","table_name": "CP_LOG_PROPOSTA","column_name": "USERNAME_PROPOSTA","evalution": "nullable (N -> Y), "}
+		,{"owner": "PROD_JD","table_name": "GEO_PESO_TIPO_COMPLEM","column_name": "PESO","evalution": "data_precision (4 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "SN_PRODUTO_PESO_OPER","column_name": "PESO","evalution": "data_precision (4 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_ATRIBUTO_SEGMENTO","column_name": "NR_PESO","evalution": "data_precision (4 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "VSN_CONTRATO_PRODUTO","column_name": "PESO","evalution": "data_precision (4 -> 8), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS_TERMINAL","column_name": "COD_OS","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 10), nullable (Y -> N), char_length (0 -> 10), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS_TERMINAL","column_name": "TMOD_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS_TERMINAL","column_name": "TM_SERIE","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_PR_OS_TERMINAL","column_name": "TT_DESCRICAO","evalution": "data_type (UNDEFINED -> VARCHAR2), data_length (0 -> 50), char_length (0 -> 50), "}
+		,{"owner": "PROD_JD","table_name": "VSN_TEC_ASSINANTE","column_name": "ID_TECNICO","evalution": "nullable (N -> Y), "}
+	]
+	,"programaveis": [
+		{"owner": "NETSALES","object_name": "PKG_VPD_CP_PROSPECT","object_type": "PACKAGE","evalution": "SRC only, "}
+		,{"owner": "NETSALES","object_name": "PKG_VPD_CP_PROSPECT","object_type": "PACKAGE BODY","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","object_name": "CRON_MUDANCA_DECODER","object_type": "PROCEDURE","evalution": "status (INVALID -> VALID), "}
+		,{"owner": "PROD_JD","object_name": "GRRE0400_GRAVA_OBSERVACAO","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "GRRE0400_OBSERVACAO","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "GRRE0400_OBSERVACAO_FECHAMENTO","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "GRRE0409_NOTIFICACAO","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "ISS_ENVIO_CONTRATO","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PCK_OBSERVACAO_OS","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PGSMS_MANUTENCAO_COLETIVOS","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PGSMS_MANUTENCAO_COLETIVOS","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PGSMS_ROLLOUT_FIELD_SERVICES","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PGSN_FATURAMENTO","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PGSN_FATURAMENTO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PIE_ORDEMSERVICO","object_type": "PACKAGE BODY","evalution": "status (INVALID -> VALID), "}
+		,{"owner": "PROD_JD","object_name": "PIE_PESQ_ENDERECOS","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PIE_PESQ_ENDERECOS","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PIE_WORKFLOW","object_type": "PACKAGE BODY","evalution": "status (INVALID -> VALID), "}
+		,{"owner": "PROD_JD","object_name": "PKG_PRE_PAGO","object_type": "PACKAGE BODY","evalution": "status (INVALID -> VALID), "}
+		,{"owner": "PROD_JD","object_name": "PKG_PV_MIGRACAO","object_type": "PACKAGE BODY","evalution": "status (VALID -> INVALID), "}
+		,{"owner": "PROD_JD","object_name": "PKG_RETENCAO_REVERSAO","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PKG_RETENCAO_REVERSAO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PKG_SEGMENTACAO_VOD","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PKG_SEGMENTACAO_VOD","object_type": "PACKAGE BODY","evalution": "status (INVALID -> VALID), "}
+		,{"owner": "PROD_JD","object_name": "PPPV_VENDAPACOTE","object_type": "PACKAGE BODY","evalution": "status (INVALID -> VALID), "}
+		,{"owner": "PROD_JD","object_name": "PP_PROCESSAR_OC_IND","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PRSN_SOLIC_ASS_MIGRA_ALACARTE","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PR_INSERIR_LOG_OC","object_type": "PROCEDURE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "PSN_BAIXA_OC","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_COMBO_SVA","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_MOBILE","object_type": "PACKAGE BODY","evalution": "status (INVALID -> VALID), "}
+		,{"owner": "PROD_JD","object_name": "PSN_OS","object_type": "PACKAGE BODY","evalution": "status (INVALID -> VALID), "}
+		,{"owner": "PROD_JD","object_name": "PSN_PESQ_ENDER_SIGMA","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_PESQ_ENDER_SIGMA","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_SENHAS","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_WWW_SN775","object_type": "PACKAGE BODY","evalution": "status (INVALID -> VALID), "}
+		,{"owner": "PROD_JD","object_name": "SSNCRONCONSOLIDAPACOTEPRECO","object_type": "PROCEDURE","evalution": "status (VALID -> INVALID), DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "SSNINSERECABLEMODEMPROPRIO","object_type": "PROCEDURE","evalution": "status (INVALID -> VALID), "}
+		,{"owner": "PROD_JD","object_name": "SSNTERMINALSUPERVRI","object_type": "PROCEDURE","evalution": "status (INVALID -> VALID), "}
+		,{"owner": "PROD_JD","object_name": "SSN_ATUALIZA_MOV_TERMINAL","object_type": "PROCEDURE","evalution": "status (INVALID -> VALID), "}
+		,{"owner": "PROD_JD","object_name": "SSN_INSERE_SOLICITACAO","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "SSN_REVERTE_TAREFA","object_type": "PROCEDURE","evalution": "status (INVALID -> VALID), "}
+		,{"owner": "PROD_JD","object_name": "SSN_VERIFICA_MOVIMENTACAO_TERM","object_type": "PROCEDURE","evalution": "status (INVALID -> VALID), "}
+		,{"owner": "PROD_JD","object_name": "SSN_VERIFICA_MOV_TERM2","object_type": "PROCEDURE","evalution": "status (INVALID -> VALID), "}
+		,{"owner": "PROD_JD","object_name": "SYS_PLSQL_7837238_12_1","object_type": "TYPE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "SYS_PLSQL_7837238_538_1","object_type": "TYPE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "SYS_PLSQL_7837238_DUMMY_1","object_type": "TYPE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "SYS_PLSQL_7888847_12_1","object_type": "TYPE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","object_name": "SYS_PLSQL_7888847_538_1","object_type": "TYPE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","object_name": "SYS_PLSQL_7888847_DUMMY_1","object_type": "TYPE","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","object_name": "TRIE_B_ER_U_SO_IQ_TRANSF","object_type": "TRIGGER","evalution": "status (INVALID -> VALID), "}
+		,{"owner": "PROD_JD","object_name": "TRPP_MSG_PORTABILIDADE","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_A_ST_IU_PONTO_HISTORICO","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_A_ST_I_SOLICITACAO_ASS","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_A_ST_UD_OS","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_A_ST_U_RELOSTAREFA","object_type": "TRIGGER","evalution": "status (INVALID -> VALID), "}
+		,{"owner": "PROD_JD","object_name": "TRSN_B_ER_UD_OC","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+	]
+}

@@ -3,14 +3,8 @@
 	<small ng-show:"detalhe.refreshDate">Atualizado em {{ detalhe.refreshDate | date:'yyyy-MM-dd HH:mm:ss': '+0000' }} </small>
 </div>
 
-<!-- Single button with keyboard nav -->
-
-
-	
 <div class="alert alert-secondary">
-		
 	<div class="row">
-
 		<div class="col-1">
 			<div>Servidor:</div>
 			<div class="btn-group" uib-dropdown keyboard-nav>
@@ -19,26 +13,21 @@
 			<span>{{detalhe.source.cd_conexao }}</span>
 			<span class="caret"></span>
 			</a>
-			<ul uib-dropdown-menu role="menu" aria-labelledby="comboServidor" style="padding:6px;">
-			<li role="menuitem" ng-repeat="conexao in lstAmbiente.data">
+			<ul uib-dropdown-menu role="menu" aria-labelledby="comboServidor" style="padding:6px; height: 20em; overflow-y: scroll">
+			<li role="menuitem" ng-repeat="conexao in lstAmbiente.records">
 			<small><a ng-href="#!/detalhe-servidor/{{conexao.cd_conexao}}" ng-bind="conexao.cd_conexao"/></small>
 			</li>
 			</ul>
 			</div>
 		</div>
-
-
 	</div>
-	
 	<div class="row">
-
 		<div class="col-12">
 			<small>{{detalhe.source.ds_conexao}}</small>
 		</div>
-
-
 	</div>
 </div>
+
 <div ng-if="detalhe.tabelas">
 	<h2>Tabelas</h2>
 	<table class="table table-sm">
@@ -63,6 +52,7 @@
 		</tfoot>
 	</table>
 </div>
+
 <div ng-if="detalhe.colunas">
 	<h2>Colunas</h2>
 	<table class="table table-sm" >
@@ -85,6 +75,33 @@
 		<tfoot>
 			<tr>
 				<th colspan=4>{{detalhe.colunas.length}} registros</th>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+
+<div ng-if="detalhe.programaveis">
+	<h2>Programáveis</h2>
+	<table class="table table-sm" >
+		<thead class="thead-dark">
+			<tr>
+			<th>Owner</th>
+			<th>Nome</th>
+			<th>Tipo</th>
+			<th>Criticas</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="coluna in detalhe.programaveis">
+				<td>{{coluna.owner}}</td>
+				<td>{{coluna.object_name}}</td>
+				<td>{{coluna.object_type}}</td>
+				<td>{{coluna.evalution}}</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th colspan=4>{{detalhe.programaveis.length}} registros</th>
 			</tr>
 		</tfoot>
 	</table>

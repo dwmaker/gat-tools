@@ -185,17 +185,20 @@ begin
 				v_lst_owner,
 				v_lst_table_name,
 				v_lst_evalution;
-				dbms_output.put_line('	,"tabelas": [');
-				for x in v_lst_owner.first .. v_lst_owner.last loop
-					dbms_output.put('		' || case when  x > v_lst_owner.first then ',' end);
-					dbms_output.put_line(
-					'{' ||
-					'"owner": ' || to_json(v_lst_owner(x)) || ',' ||
-					'"table_name": ' || to_json(v_lst_table_name(x)) || ',' ||
-					'"evalution": ' || to_json(v_lst_evalution(x)) || '' ||
-					'}');
-				end loop;
-				dbms_output.put_line('	]');
+				
+				if v_lst_owner.count>0 then
+					dbms_output.put_line('	,"tabelas": [');
+					for x in v_lst_owner.first .. v_lst_owner.last loop
+						dbms_output.put('		' || case when  x > v_lst_owner.first then ',' end);
+						dbms_output.put_line(
+						'{' ||
+						'"owner": ' || to_json(v_lst_owner(x)) || ',' ||
+						'"table_name": ' || to_json(v_lst_table_name(x)) || ',' ||
+						'"evalution": ' || to_json(v_lst_evalution(x)) || '' ||
+						'}');
+					end loop;
+					dbms_output.put_line('	]');
+				end if;
 			end;
 		end if;
 
@@ -296,6 +299,114 @@ begin
 						'"owner": ' || to_json(v_lst_owner(x)) || ',' ||
 						'"table_name": ' || to_json(v_lst_table_name(x)) || ',' ||
 						'"column_name": ' || to_json(v_lst_column_name(x)) || ',' ||
+						'"evalution": ' || to_json(v_lst_evalution(x)) || '' ||
+						'}');
+					end loop;
+					dbms_output.put_line('	]');
+				end if;
+			end;
+		end if;
+		
+		----------------------------------------------
+		if v_dblink_tgt is not null then
+			declare
+			TYPE lst_owner IS TABLE OF all_objects.owner%type;
+			TYPE lst_object_name IS TABLE OF all_objects.object_name%type;
+			TYPE lst_object_type IS TABLE OF all_objects.object_type%type;
+			TYPE lst_evalution IS TABLE OF varchar2(4000);
+			v_lst_owner				lst_owner;
+			v_lst_object_name	lst_object_name;
+			v_lst_object_type	lst_object_type;
+			v_lst_evalution		lst_evalution;
+			begin
+				execute immediate 'select 
+				nvl(src_owner, tgt_owner) owner,
+				nvl(src_object_name, tgt_object_name) object_name,
+				nvl(src_object_type, tgt_object_type) object_type,
+				case when src_owner is null then ''SRC only, '' end ||
+				case when tgt_owner is null then ''TGT only, '' end ||
+				case when not ((src_status is null and tgt_status is null) or (src_status = tgt_status )) then ''status ('' || src_status || '' -> '' || tgt_status || ''), '' end ||
+				case when fl_ddl_diferente = ''S'' then ''DDL_DIFF,'' end ||
+				'''' evalution
+				from 
+				(
+					select 
+					src.owner         src_owner, 
+					tgt.owner         tgt_owner,
+					src.object_name   src_object_name, 
+					tgt.object_name   tgt_object_name,
+					src.object_type   src_object_type,
+					tgt.object_type   tgt_object_type,
+					src.status        src_status,
+					tgt.status        tgt_status,
+					case when exists
+					(
+						select 
+						1
+						from 
+						all_source@' || v_dblink_src || ' src1 
+						full outer join all_source@' || v_dblink_tgt || ' tgt1
+						on src1.line = tgt1.line
+						where 
+						src1.owner=src.owner and 
+						src1.name=src.object_name and 
+						src1.type=src.object_type and 
+						tgt1.owner=tgt.owner and 
+						tgt1.name=tgt.object_name and 
+						tgt1.type=tgt.object_type and 
+						not (src1.text = tgt1.text)
+					) then ''S'' else ''N'' end fl_ddl_diferente
+					from
+					(
+						select 
+						owner,
+						object_name,
+						object_type,
+						status
+						from 
+						all_objects@' || v_dblink_src || ' 
+						where 
+						object_type in (''TYPE BODY'', ''PROCEDURE'', ''TYPE'', ''FUNCTION'', ''TRIGGER'', ''PACKAGE BODY'', ''PACKAGE'')
+						and generated = ''N''
+						and owner in (''PROD_JD'', ''NETSALES'')
+					) src full outer join
+					(
+						select 
+						owner,
+						object_name,
+						object_type,
+						status
+						from 
+						all_objects@' || v_dblink_tgt || ' 
+						where 
+						object_type in (''TYPE BODY'', ''PROCEDURE'', ''TYPE'', ''FUNCTION'', ''TRIGGER'', ''PACKAGE BODY'', ''PACKAGE'')
+						and generated = ''N''
+						and owner in (''PROD_JD'', ''NETSALES'')
+					) tgt on src.owner = tgt.owner and src.object_name = tgt.object_name  and src.object_type = tgt.object_type
+				)
+				where
+				src_owner is null
+				or tgt_owner is null
+				or src_status != tgt_status
+				or fl_ddl_diferente = ''S''
+				order by
+				owner,
+				object_name,
+				object_type' 
+				bulk collect into
+				v_lst_owner,
+				v_lst_object_name,
+				v_lst_object_type,
+				v_lst_evalution;
+				
+				if v_lst_owner.count > 0 then
+					dbms_output.put_line('	,"programaveis": [');
+					for x in v_lst_owner.first .. v_lst_owner.last loop
+						dbms_output.put('		' || case when  x > v_lst_owner.first then ',' end);
+						dbms_output.put_line('{' ||
+						'"owner": ' || to_json(v_lst_owner(x)) || ',' ||
+						'"object_name": ' || to_json(v_lst_object_name(x)) || ',' ||
+						'"object_type": ' || to_json(v_lst_object_type(x)) || ',' ||
 						'"evalution": ' || to_json(v_lst_evalution(x)) || '' ||
 						'}');
 					end loop;

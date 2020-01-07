@@ -1,5 +1,5 @@
 {
-	"refreshDate": "2019-12-26T19:02:19.000Z"
+	"refreshDate": "2019-12-30T11:57:03.000Z"
 	,"source":
 	{
 		"cd_conexao": "GA_CERT_NETSMS_BRA.NET",
@@ -16,8 +16,9 @@
 		"cd_cenario": "BRA",
 		"ds_conexao": "NETDBA@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.187)(PORT=1521))(CONNECT_DATA=(SID=db09)))"
 	}
-	,"tabelas": [
-		{"owner": "PROD_JD","table_name": "SN_REL_CONTR_SIT_IRRBKP_DEZ19","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_REL_CONTR_TERMBKP_DEZ19","evalution": "TGT only, "}
+	,"programaveis": [
+		{"owner": "PROD_JD","object_name": "PACK_AGENDA_CLARO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PGSMS_SPED_FISCAL","object_type": "PACKAGE BODY","evalution": "status (INVALID -> VALID), "}
+		,{"owner": "PROD_JD","object_name": "PSN_BAIXA_COBRANCA_AVULSA","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
 	]
 }

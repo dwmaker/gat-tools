@@ -1,5 +1,5 @@
 {
-	"refreshDate": "2019-12-26T18:46:46.000Z"
+	"refreshDate": "2019-12-30T14:39:25.000Z"
 	,"source":
 	{
 		"cd_conexao": "GA_SIT4_NETSMS_ISP.NET",
@@ -26,6 +26,8 @@
 		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARCEIRO_AUX","evalution": "TGT only, "}
 		,{"owner": "PROD_JD","table_name": "SN_COBRAR_CONTRATO_GND","evalution": "TGT only, "}
 		,{"owner": "PROD_JD","table_name": "SN_ITEM_EXTRATO_FATURA_GND","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CONTR_SIT_IRRBKP_DEZ19","evalution": "SRC only, "}
+		,{"owner": "PROD_JD","table_name": "SN_REL_CONTR_TERMBKP_DEZ19","evalution": "SRC only, "}
 		,{"owner": "PROD_JD","table_name": "SN_TMP_BOLETOS_ABERTOS","evalution": "TGT only, "}
 		,{"owner": "PROD_JD","table_name": "TABELA_TESTE","evalution": "TGT only, "}
 		,{"owner": "PROD_JD","table_name": "TAB_REG","evalution": "TGT only, "}
@@ -57,5 +59,68 @@
 		,{"owner": "PROD_JD","table_name": "SN_REL_AGENDA_EQUIPE","column_name": "ID_EQUIPE","evalution": "data_length (8 -> 6), char_length (8 -> 6), "}
 		,{"owner": "PROD_JD","table_name": "VSN_PR_OS_TERMINAL","column_name": "TM_SERIE","evalution": "nullable (N -> Y), "}
 		,{"owner": "PROD_JD","table_name": "VSN_TEC_ASSINANTE","column_name": "ID_TECNICO","evalution": "nullable (N -> Y), "}
+	]
+	,"programaveis": [
+		{"owner": "NETSALES","object_name": "PKG_VPD_CP_PROSPECT","object_type": "PACKAGE","evalution": "SRC only, "}
+		,{"owner": "NETSALES","object_name": "PKG_VPD_CP_PROSPECT","object_type": "PACKAGE BODY","evalution": "SRC only, "}
+		,{"owner": "NETSALES","object_name": "TRCP_REL_PENDENCIA_PROPOSTA","object_type": "TRIGGER","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "FNSMS_LISTAR_EMPRESA_BOLETO","object_type": "FUNCTION","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "ISS_ENVIO_CONTRATO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PGSMS_CICLO_EMISSAO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PGSMS_CV60_CONTROLE_PROCESSO","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PGSMS_CV60_CONTROLE_PROCESSO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PGSN_FATURAMENTO","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PGSN_FATURAMENTO_SEL_CONTRATO","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PGSN_FATURAMENTO_SEL_CONTRATO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PGSN_MAN_STATUS_SERVICOS","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PGSN_MAN_STATUS_SERVICOS","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PIE_FUNCOESAB","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PIE_FUNCOESAB","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PKG_PRE_PAGO","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PKG_PRE_PAGO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PKG_PROCESSA_ORDEM_ATIVACAO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PKG_PV_MIGRACAO","object_type": "PACKAGE BODY","evalution": "status (VALID -> INVALID), "}
+		,{"owner": "PROD_JD","object_name": "PKG_RETENCAO_REVERSAO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PPP_MONTA_COMANDOS_VOIP","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PRSMS_LISTAR_BOLETOS_ABERTOS","object_type": "PROCEDURE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "PRSN_ATUALIZA_CONTRATO_PACOTE","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PR_REAJUSTE_MENSAL_MAILING","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_ASSINANTE","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_AUDITA_CONTRATO_TERMINAIS","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_AUDITA_TERMINAIS","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_CONTRATO_TERMINAIS","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_NOTA_FISCAL","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_NOTA_FISCAL","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_SENHAS","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_SOLICITACAO","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_SOLICITACAO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "PSN_SPC","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "SSNCRIALOGASSINANTE","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "SSNLIBERATELEMARKETING","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "SSNLOGTERMINAIS","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "SSNTEXTOSITIRREGULAR","object_type": "FUNCTION","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TESTE_EXTR_03673_M_C","object_type": "PACKAGE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "TESTE_EXTR_03673_M_C","object_type": "PACKAGE BODY","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "TESTE_EXTR_03678_M_C","object_type": "PACKAGE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "TESTE_EXTR_03678_M_C","object_type": "PACKAGE BODY","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "TESTE_JOB","object_type": "PROCEDURE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "TESTE_RELAT_M","object_type": "PACKAGE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "TESTE_RELAT_M","object_type": "PACKAGE BODY","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "TESTE_REL_M","object_type": "PACKAGE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "TESTE_REL_M","object_type": "PACKAGE BODY","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "TESTE_REL_M2","object_type": "PACKAGE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "TESTE_REL_M2","object_type": "PACKAGE BODY","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "TESTE_REL_M3","object_type": "PACKAGE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "TESTE_REL_M3","object_type": "PACKAGE BODY","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "TESTE_REL_S","object_type": "PACKAGE","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "TESTE_REL_S","object_type": "PACKAGE BODY","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "TRDWH_DISP_PORT_AERIUD_01","object_type": "TRIGGER","evalution": "TGT only, "}
+		,{"owner": "PROD_JD","object_name": "TRPP_MSG_PORTABILIDADE","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_A_ST_I_REL_CTR_TERM","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_A_ST_U_ASSINANTE","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_A_ST_U_ENDER","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_B_ER_I_RCSI","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_B_ER_I_REL_CTR_TERM","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+		,{"owner": "PROD_JD","object_name": "TRSN_B_ER_UD_OS","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
 	]
 }

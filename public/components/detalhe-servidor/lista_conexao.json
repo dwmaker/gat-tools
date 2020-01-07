@@ -1,6 +1,6 @@
 {
-	"refreshdate": "2019-12-26T13:50:30.000Z"
-	,"data": [
+	"refreshDate": "2019-12-30T11:43:50.000Z"
+	,"records": [
 		{"cd_conexao": "GA_CERT_ATLAS.NET", "cd_ambiente": "CERT", "cd_aplicacao": "ATLAS", "cd_cenario": null, "username": "CORE", "ds_conexao": "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=HHATL01)))"},
 		{"cd_conexao": "GA_CERT_CBM.NET", "cd_ambiente": "CERT", "cd_aplicacao": "CBM", "cd_cenario": null, "username": "CONSULTA_DICIONARIO", "ds_conexao": "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.28.74)(PORT=1521))(CONNECT_DATA=(SID=BCMCER01)))"},
 		{"cd_conexao": "GA_CERT_CPI.NET", "cd_ambiente": "CERT", "cd_aplicacao": "CPI", "cd_cenario": null, "username": "CONSULTA_DICIONARIO", "ds_conexao": "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1522))(CONNECT_DATA=(SID=HHCPI01)))"},

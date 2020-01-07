@@ -4,6 +4,12 @@
 
 
 @rem @call :makefile "%~dp0..\public\components\detalhe-servidor\GA_CERT_NETSMS_BRA.NET.json" "GA_CERT_NETSMS_BRA.NET" "GA_PROD_NETSMS_BRA.NET"
+@REM @for /f "tokens=1,2,3,4,5,6* skip=1 delims=	" %%A in (%~dp0..\public\components\detalhe-servidor\lista_conexao.txt) do @(
+@REM   @if not exist "%~dp0..\public\components\detalhe-servidor\%%A.json" (
+@REM     @call :makefile "%~dp0..\public\components\detalhe-servidor\%%A.json" "%%A"
+@REM 	)
+@REM )
+
 @for /f "tokens=1,2,3,4,5,6* skip=1 delims=	" %%A in (%~dp0..\public\components\detalhe-servidor\lista_conexao.txt) do @(
 @call :makefile "%~dp0..\public\components\detalhe-servidor\%%A.json" "%%A"
 )
@@ -26,10 +32,13 @@
 @echo spool off;
 @echo exit;
 ) | @sqlplus -s -l "%GATDB_USR%/%GATDB_PWD%@%GATDB_CNX%" 
-@if exist "%~dp1~%~nx1" @(
-@if exist "%~dpnx1" @(del "%~dpnx1")
-@ren "%~dp1~%~nx1" "%~nx1"
+@IF %ERRORLEVEL% EQU 0 ( 
+  @if exist "%~dpnx1" @(del "%~dpnx1")
+	@ren "%~dp1~%~nx1" "%~nx1"
+) ELSE ( 
+  type "%~dp1~%~nx1"
 )
+
 @goto :eof
 
 :sucesso
