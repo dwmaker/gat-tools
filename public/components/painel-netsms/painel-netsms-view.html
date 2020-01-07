@@ -1,291 +1,59 @@
-<div class="">
+<div class="" ng-init="imea=0">
 	<h2>Painel NETSMS</h2>
-	<small><i>Atualizado em 2019-12-20 17:32</i></small>
+	<small ng-show:"reqdata.refreshDate">Atualizado em {{ reqdata.refreshDate | date:'yyyy-MM-dd HH:mm:ss': '+0000' }} </small>
 	</br>
-	<h3>Versão do Sistema</h3>
-	<table class="table table-bordered table-sm">
-		<thead  class="thead-dark">
-			<tr>
-				<th style="width: 8%;" rowspan=2>Ambiente \ Aplicação</th>
-				<th class="align-middle" style="text-align: center; width: 11.50%;" colspan="8" rowspan="1">NETSMS <br></th>
-			</tr>
-			<tr>
-				<th class="align-middle" style="width: 11.50%;" colspan="1" rowspan="1">BRA</th>
-				<th class="align-middle" style="width: 11.50%;" colspan="1" rowspan="1">SUL</th>
-				<th class="align-middle" style="width: 11.50%;" colspan="1" rowspan="1">ISP</th>
-				<th class="align-middle" style="width: 11.50%;" colspan="1" rowspan="1">BH</th>
-				<th class="align-middle" style="width: 11.50%;" colspan="1" rowspan="1">SOC</th>
-				<th class="align-middle" style="width: 11.50%;" colspan="1" rowspan="1">SAO</th>
-				<th class="align-middle" style="width: 11.50%;" colspan="1" rowspan="1">ABC</th>
-				<th class="align-middle" style="width: 11.50%;" colspan="1" rowspan="1">CTV</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th title="Produção">PROD</th>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_PROD_NETSMS_BRA.NET&#10;Conexão: NETDBA@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.187)(PORT=1521))(CONNECT_DATA=(SID=db09)))&#10;Analise: &#10;Ambiente produtivo não é criticado&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_PROD_NETSMS_SUL.NET&#10;Conexão: NETDBA@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.193)(PORT=1521))(CONNECT_DATA=(SID=sul)))&#10;Analise: &#10;Ambiente produtivo não é criticado&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_PROD_NETSMS_ISP.NET&#10;Conexão: NETBKPADM@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.189)(PORT=1521))(CONNECT_DATA=(SID=isp)))&#10;Analise: &#10;Ambiente produtivo não é criticado&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_PROD_NETSMS_BH.NET&#10;Conexão: NETDBA@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.190)(PORT=1521))(CONNECT_DATA=(SID=bhpr)))&#10;Analise: &#10;Ambiente produtivo não é criticado&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_PROD_NETSMS_SOC.NET&#10;Conexão: NETBKPADM@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.191)(PORT=1521))(CONNECT_DATA=(SID=db09s)))&#10;Analise: &#10;Ambiente produtivo não é criticado&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_PROD_NETSMS_SAO.NET&#10;Conexão: NETBKPADM@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.84)(PORT=1521))(CONNECT_DATA=(SID=spo)))&#10;Analise: &#10;Ambiente produtivo não é criticado&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_PROD_NETSMS_ABC.NET&#10;Conexão: NETDBA@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.195)(PORT=1521)))(CONNECT_DATA=(SID=abc)))&#10;Analise: &#10;Ambiente produtivo não é criticado&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_PROD_NETSMS_CTV.NET&#10;Conexão: NETDBA@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(host = 5.16.8.133)(PORT = 1528))(CONNECT_DATA = (SID = CTV)))&#10;Analise: &#10;Ambiente produtivo não é criticado&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-			</tr>
-			<tr>
-				<th title="Certificação">CERT</th>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_CERT_NETSMS_BRA.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=hhdb09n1)))&#10;Analise: &#10;Versão superior a de produção&#10;"><div class="bg-info text-white text-center" style="padding: 6px">9.4.9</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_CERT_NETSMS_SUL.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=hhsuln1)))&#10;Analise: &#10;Versão superior a de produção&#10;"><div class="bg-info text-white text-center" style="padding: 6px">9.4.9</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_CERT_NETSMS_ISP.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.25)(PORT=1521))(CONNECT_DATA=(SID=hhispn1)))&#10;Analise: &#10;Versão superior a de produção&#10;"><div class="bg-info text-white text-center" style="padding: 6px">9.4.9</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_CERT_NETSMS_BH.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.64.165)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=hhbhn1)))&#10;Analise: &#10;Versão superior a de produção&#10;"><div class="bg-info text-white text-center" style="padding: 6px">9.4.9</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_CERT_NETSMS_SOC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=hhsocn1)))&#10;Analise: &#10;Versão superior a de produção&#10;"><div class="bg-info text-white text-center" style="padding: 6px">9.4.9</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_CERT_NETSMS_SAO.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=hhspon1)))&#10;Analise: &#10;Versão superior a de produção&#10;"><div class="bg-info text-white text-center" style="padding: 6px">9.4.9</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_CERT_NETSMS_ABC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=hhbrin1)))&#10;Analise: &#10;Versão superior a de produção&#10;"><div class="bg-info text-white text-center" style="padding: 6px">9.4.9</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_CERT_NETSMS_CTV.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.162)(PORT=1525)))(CONNECT_DATA=(SERVICE_NAME=HHCTV01)))&#10;Analise: &#10;Versão superior a de produção&#10;"><div class="bg-info text-white text-center" style="padding: 6px">9.4.9</div></td>
-			</tr>
-			<tr>
-				<th title="">SIT1</th>
-				<td style="padding: 0px;" class=" bg-secondary text-warning" title="DBLink: GA_SIT1_NETSMS_BRA.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1521))(CONNECT_DATA=(SID=SIT01)))&#10;Message: &#10;ORA-12528: TNS:listener: all appropriate instances are blocking new connections&#10;Analise: &#10;ORA-12528: TNS:listener: all appropriate instances are blocking new connections&#10;"><div style="padding: 6px" class="bg-secondary text-warning text-center font-weight-bold" title="cd_conexao: GA_SIT1_NETSMS_BRA.NET&#10;ds_conexao: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1521))(CONNECT_DATA=(SID=SIT01)))&#10;Message: &#10;ORA-12528: TNS:listener: all appropriate instances are blocking new connections&#10;">!</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT1_NETSMS_ISP.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.28)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=SISPHP)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT1_NETSMS_BH.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.25)(PORT=1521))(CONNECT_DATA=(SID=SBHHP)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT1_NETSMS_ABC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.28)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SBRIHP)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-			</tr>
-			<tr>
-				<th title="">SIT2</th>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT2_NETSMS_BRA.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1521))(CONNECT_DATA=(SID=SIT02)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT2_NETSMS_ISP.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SISPSP)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT2_NETSMS_BH.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.25)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SBHSP)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT2_NETSMS_ABC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SBRISP)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-			</tr>
-			<tr>
-				<th title="">SIT3</th>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT3_NETSMS_BRA.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1521))(CONNECT_DATA=(SID=SIT03)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT3_NETSMS_ISP.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SISP3SP)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT3_NETSMS_BH.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.25)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SBH3SP)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT3_NETSMS_ABC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SBRI3SP)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT3_NETSMS_CTV.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SID=SCTV1MG)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-			</tr>
-			<tr>
-				<th title="Teste Integrado - LE">SIT4</th>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT4_NETSMS_BRA.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TIBRA03F)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT4_NETSMS_SUL.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TISUL66F)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT4_NETSMS_ISP.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TIISP02F)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT4_NETSMS_BH.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TIBHPV1)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT4_NETSMS_CTV.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=TICTVLE2)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-			</tr>
-			<tr>
-				<th title="Teste Integrado - LD">SIT5</th>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT5_NETSMS_BRA.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.27)(PORT=1521))(CONNECT_DATA=(SID=SIT05)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT5_NETSMS_SUL.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TISULPV1)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT5_NETSMS_BH.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TIBH03F)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT5_NETSMS_SOC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=BIGT)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT5_NETSMS_SAO.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TISP03F)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT5_NETSMS_ABC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TIABC02F)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT5_NETSMS_CTV.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=TICTVLD1)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-			</tr>
-			<tr>
-				<th title="UAT">SIT6</th>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT6_NETSMS_BRA.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.27)(PORT=1521))(CONNECT_DATA=(SID=SIT06)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT6_NETSMS_ISP.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=UATVISP)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT6_NETSMS_BH.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.25)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=UATVBH)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT6_NETSMS_ABC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=UATVBRI)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT6_NETSMS_CTV.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=UATCTV)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-			</tr>
-			<tr>
-				<th title="Novo Sap BR">SIT7</th>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT7_NETSMS_BRA.NET&#10;Conexão: CORE@(DESCRIPTION = (ADDRESS_LIST =(ADDRESS =(PROTOCOL = TCP)(HOST = 5.17.8.14)(PORT = 1523))) (CONNECT_DATA = (SERVICE_NAME = BRASAMX1)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT7_NETSMS_SUL.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.25)(PORT=1523))(CONNECT_DATA=(SID=SULTOA)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT7_NETSMS_ISP.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.25)(PORT=1523))(CONNECT_DATA=(SID=ISPSAMX)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT7_NETSMS_BH.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.25)(PORT=1523))(CONNECT_DATA=(SID=BHSAMX)))&#10;Analise: &#10;Obsoleto ha 639 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">9.1.2</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT7_NETSMS_SOC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=RACNET-CLTFT01.dcing.corp)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=SOCSAMX1)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT7_NETSMS_SAO.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.25)(PORT=1523))(CONNECT_DATA=(SID=SPOSAMX)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT7_NETSMS_ABC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.25)(PORT=1523))(CONNECT_DATA=(SID=BRISAMX)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT7_NETSMS_CTV.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=RACNET-CLTFT01.dcing.corp)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=dbri1ctv)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-			</tr>
-			<tr>
-				<th title="">SIT8</th>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT8_NETSMS_BRA.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.64.166)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DBRASP1)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT8_NETSMS_ISP.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DISPSP)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT8_NETSMS_BH.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.25)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DBHSP)))&#10;Analise: &#10;Versão sincronizada com produção&#10;"><div class=" text-center" style="padding: 6px">9.4.8</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-secondary text-warning" title="DBLink: GA_SIT8_NETSMS_ABC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DBRISP)))&#10;Message: &#10;ORA-12537: TNS:connection closed&#10;Analise: &#10;ORA-12537: TNS:connection closed&#10;"><div style="padding: 6px" class="bg-secondary text-warning text-center font-weight-bold" title="cd_conexao: GA_SIT8_NETSMS_ABC.NET&#10;ds_conexao: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DBRISP)))&#10;Message: &#10;ORA-12537: TNS:connection closed&#10;">!</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-			</tr>
-			<tr>
-				<th title="">STRESS</th>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_STRESS_NETSMS_BRA.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1521))(CONNECT_DATA=(SID=DB09ST)))&#10;Analise: &#10;Obsoleto ha 37 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">9.4.5</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_STRESS_NETSMS_SUL.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.31)(PORT=1521))(CONNECT_DATA=(SID=SULST)))&#10;Analise: &#10;Obsoleto ha 171 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">9.4.0</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-			</tr>
-		</tbody>
-	</table>
-	<br>
-	<h3>Data de Clonagem</h3>
-	<table class="table table-bordered table-sm">
-		<thead  class="thead-dark">
-			<tr>
-				<th style="width: 8%;" rowspan=2>Ambiente \ Aplicação</th>
-				<th class="align-middle" style="text-align: center; width: 11.50%;" colspan="8" rowspan="1">NETSMS <br></th>
-			</tr>
-			<tr>
-				<th class="align-middle" style="width: 11.50%;" colspan="1" rowspan="1">BRA</th>
-				<th class="align-middle" style="width: 11.50%;" colspan="1" rowspan="1">SUL</th>
-				<th class="align-middle" style="width: 11.50%;" colspan="1" rowspan="1">ISP</th>
-				<th class="align-middle" style="width: 11.50%;" colspan="1" rowspan="1">BH</th>
-				<th class="align-middle" style="width: 11.50%;" colspan="1" rowspan="1">SOC</th>
-				<th class="align-middle" style="width: 11.50%;" colspan="1" rowspan="1">SAO</th>
-				<th class="align-middle" style="width: 11.50%;" colspan="1" rowspan="1">ABC</th>
-				<th class="align-middle" style="width: 11.50%;" colspan="1" rowspan="1">CTV</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th title="Produção">PROD</th>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_PROD_NETSMS_BRA.NET&#10;Conexão: NETDBA@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.187)(PORT=1521))(CONNECT_DATA=(SID=db09)))&#10;Analise: &#10;Não se aplica&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">n/a</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_PROD_NETSMS_SUL.NET&#10;Conexão: NETDBA@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.193)(PORT=1521))(CONNECT_DATA=(SID=sul)))&#10;Analise: &#10;Não se aplica&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">n/a</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_PROD_NETSMS_ISP.NET&#10;Conexão: NETBKPADM@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.189)(PORT=1521))(CONNECT_DATA=(SID=isp)))&#10;Analise: &#10;Não se aplica&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">n/a</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_PROD_NETSMS_BH.NET&#10;Conexão: NETDBA@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.190)(PORT=1521))(CONNECT_DATA=(SID=bhpr)))&#10;Analise: &#10;Não se aplica&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">n/a</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_PROD_NETSMS_SOC.NET&#10;Conexão: NETBKPADM@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.191)(PORT=1521))(CONNECT_DATA=(SID=db09s)))&#10;Analise: &#10;Não se aplica&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">n/a</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_PROD_NETSMS_SAO.NET&#10;Conexão: NETBKPADM@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.84)(PORT=1521))(CONNECT_DATA=(SID=spo)))&#10;Analise: &#10;Não se aplica&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">n/a</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_PROD_NETSMS_ABC.NET&#10;Conexão: NETDBA@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.195)(PORT=1521)))(CONNECT_DATA=(SID=abc)))&#10;Analise: &#10;Não se aplica&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">n/a</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_PROD_NETSMS_CTV.NET&#10;Conexão: NETDBA@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(host = 5.16.8.133)(PORT = 1528))(CONNECT_DATA = (SID = CTV)))&#10;Analise: &#10;Não se aplica&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">n/a</div></td>
-			</tr>
-			<tr>
-				<th title="Certificação">CERT</th>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_CERT_NETSMS_BRA.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=hhdb09n1)))&#10;Analise: &#10;Ambiente clonado ha menos de 360 dias&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">Set/2019</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_CERT_NETSMS_SUL.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=hhsuln1)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Nov/2017</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_CERT_NETSMS_ISP.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.25)(PORT=1521))(CONNECT_DATA=(SID=hhispn1)))&#10;Analise: &#10;Ambiente clonado entre 360 e 720 dias&#10;"><div class="bg-warning text-dark text-center" style="padding: 6px">Dez/2018</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_CERT_NETSMS_BH.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.64.165)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=hhbhn1)))&#10;Analise: &#10;Ambiente clonado ha menos de 360 dias&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">Jan/2019</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_CERT_NETSMS_SOC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=hhsocn1)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Set/2017</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_CERT_NETSMS_SAO.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=hhspon1)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Jul/2017</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_CERT_NETSMS_ABC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=hhbrin1)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Out/2016</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_CERT_NETSMS_CTV.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.162)(PORT=1525)))(CONNECT_DATA=(SERVICE_NAME=HHCTV01)))&#10;Analise: &#10;Ambiente clonado ha menos de 360 dias&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">Jun/2019</div></td>
-			</tr>
-			<tr>
-				<th title="">SIT1</th>
-				<td style="padding: 0px;" class=" bg-secondary text-warning" title="DBLink: GA_SIT1_NETSMS_BRA.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1521))(CONNECT_DATA=(SID=SIT01)))&#10;Message: &#10;ORA-12528: TNS:listener: all appropriate instances are blocking new connections&#10;"><div style="padding: 6px" class="bg-secondary text-warning text-center font-weight-bold" title="cd_conexao: GA_SIT1_NETSMS_BRA.NET&#10;ds_conexao: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1521))(CONNECT_DATA=(SID=SIT01)))&#10;Message: &#10;ORA-12528: TNS:listener: all appropriate instances are blocking new connections&#10;">!</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT1_NETSMS_ISP.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.28)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=SISPHP)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Mar/2017</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT1_NETSMS_BH.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.25)(PORT=1521))(CONNECT_DATA=(SID=SBHHP)))&#10;Analise: &#10;Ambiente clonado ha menos de 360 dias&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">Jan/2019</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT1_NETSMS_ABC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.28)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SBRIHP)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Abr/2017</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-			</tr>
-			<tr>
-				<th title="">SIT2</th>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT2_NETSMS_BRA.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1521))(CONNECT_DATA=(SID=SIT02)))&#10;Analise: &#10;Ambiente clonado ha menos de 360 dias&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">Ago/2019</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT2_NETSMS_ISP.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SISPSP)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Abr/2017</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT2_NETSMS_BH.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.25)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SBHSP)))&#10;Analise: &#10;Ambiente clonado ha menos de 360 dias&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">Jan/2019</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT2_NETSMS_ABC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SBRISP)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Mar/2017</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-			</tr>
-			<tr>
-				<th title="">SIT3</th>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT3_NETSMS_BRA.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1521))(CONNECT_DATA=(SID=SIT03)))&#10;Analise: &#10;Ambiente clonado ha menos de 360 dias&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">Ago/2019</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT3_NETSMS_ISP.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SISP3SP)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Abr/2017</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT3_NETSMS_BH.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.25)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SBH3SP)))&#10;Analise: &#10;Ambiente clonado ha menos de 360 dias&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">Jan/2019</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT3_NETSMS_ABC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SBRI3SP)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Abr/2017</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT3_NETSMS_CTV.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SID=SCTV1MG)))&#10;Analise: &#10;Ambiente clonado entre 360 e 720 dias&#10;"><div class="bg-warning text-dark text-center" style="padding: 6px">Mar/2018</div></td>
-			</tr>
-			<tr>
-				<th title="Teste Integrado - LE">SIT4</th>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT4_NETSMS_BRA.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TIBRA03F)))&#10;Analise: &#10;Ambiente clonado ha menos de 360 dias&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">Set/2019</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT4_NETSMS_SUL.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TISUL66F)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Nov/2017</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT4_NETSMS_ISP.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TIISP02F)))&#10;Analise: &#10;Ambiente clonado entre 360 e 720 dias&#10;"><div class="bg-warning text-dark text-center" style="padding: 6px">Ago/2018</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT4_NETSMS_BH.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TIBHPV1)))&#10;Analise: &#10;Ambiente clonado entre 360 e 720 dias&#10;"><div class="bg-warning text-dark text-center" style="padding: 6px">Fev/2018</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT4_NETSMS_CTV.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=TICTVLE2)))&#10;Analise: &#10;Ambiente clonado entre 360 e 720 dias&#10;"><div class="bg-warning text-dark text-center" style="padding: 6px">Jul/2018</div></td>
-			</tr>
-			<tr>
-				<th title="Teste Integrado - LD">SIT5</th>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT5_NETSMS_BRA.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.27)(PORT=1521))(CONNECT_DATA=(SID=SIT05)))&#10;Analise: &#10;Ambiente clonado ha menos de 360 dias&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">Ago/2019</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT5_NETSMS_SUL.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TISULPV1)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Nov/2017</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT5_NETSMS_BH.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TIBH03F)))&#10;Analise: &#10;Ambiente clonado entre 360 e 720 dias&#10;"><div class="bg-warning text-dark text-center" style="padding: 6px">Fev/2018</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT5_NETSMS_SOC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=BIGT)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Set/2017</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT5_NETSMS_SAO.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TISP03F)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Jul/2017</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT5_NETSMS_ABC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TIABC02F)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Out/2016</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT5_NETSMS_CTV.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=TICTVLD1)))&#10;Analise: &#10;Ambiente clonado entre 360 e 720 dias&#10;"><div class="bg-warning text-dark text-center" style="padding: 6px">Jul/2018</div></td>
-			</tr>
-			<tr>
-				<th title="UAT">SIT6</th>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT6_NETSMS_BRA.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.27)(PORT=1521))(CONNECT_DATA=(SID=SIT06)))&#10;Analise: &#10;Ambiente clonado ha menos de 360 dias&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">Ago/2019</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT6_NETSMS_ISP.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=UATVISP)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Mar/2017</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT6_NETSMS_BH.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.25)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=UATVBH)))&#10;Analise: &#10;Ambiente clonado ha menos de 360 dias&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">Jan/2019</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT6_NETSMS_ABC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=UATVBRI)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Mar/2017</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT6_NETSMS_CTV.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=UATCTV)))&#10;Analise: &#10;Ambiente clonado entre 360 e 720 dias&#10;"><div class="bg-warning text-dark text-center" style="padding: 6px">Abr/2018</div></td>
-			</tr>
-			<tr>
-				<th title="Novo Sap BR">SIT7</th>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT7_NETSMS_BRA.NET&#10;Conexão: CORE@(DESCRIPTION = (ADDRESS_LIST =(ADDRESS =(PROTOCOL = TCP)(HOST = 5.17.8.14)(PORT = 1523))) (CONNECT_DATA = (SERVICE_NAME = BRASAMX1)))&#10;Analise: &#10;Ambiente clonado ha menos de 360 dias&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">Ago/2019</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT7_NETSMS_SUL.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.25)(PORT=1523))(CONNECT_DATA=(SID=SULTOA)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Nov/2017</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT7_NETSMS_ISP.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.25)(PORT=1523))(CONNECT_DATA=(SID=ISPSAMX)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Mar/2017</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT7_NETSMS_BH.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.25)(PORT=1523))(CONNECT_DATA=(SID=BHSAMX)))&#10;Analise: &#10;Ambiente clonado entre 360 e 720 dias&#10;"><div class="bg-warning text-dark text-center" style="padding: 6px">Fev/2018</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT7_NETSMS_SOC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=RACNET-CLTFT01.dcing.corp)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=SOCSAMX1)))&#10;Analise: &#10;Ambiente clonado entre 360 e 720 dias&#10;"><div class="bg-warning text-dark text-center" style="padding: 6px">Abr/2018</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT7_NETSMS_SAO.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.25)(PORT=1523))(CONNECT_DATA=(SID=SPOSAMX)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Jul/2017</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT7_NETSMS_ABC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.25)(PORT=1523))(CONNECT_DATA=(SID=BRISAMX)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Mar/2017</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT7_NETSMS_CTV.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=RACNET-CLTFT01.dcing.corp)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=dbri1ctv)))&#10;Analise: &#10;Ambiente clonado entre 360 e 720 dias&#10;"><div class="bg-warning text-dark text-center" style="padding: 6px">Mar/2018</div></td>
-			</tr>
-			<tr>
-				<th title="">SIT8</th>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT8_NETSMS_BRA.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.64.166)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DBRASP1)))&#10;Analise: &#10;Ambiente clonado entre 360 e 720 dias&#10;"><div class="bg-warning text-dark text-center" style="padding: 6px">Abr/2018</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT8_NETSMS_ISP.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DISPSP)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Mar/2017</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_SIT8_NETSMS_BH.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.25)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DBHSP)))&#10;Analise: &#10;Ambiente clonado ha menos de 360 dias&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">Jan/2019</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-secondary text-warning" title="DBLink: GA_SIT8_NETSMS_ABC.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DBRISP)))&#10;Message: &#10;ORA-12537: TNS:connection closed&#10;"><div style="padding: 6px" class="bg-secondary text-warning text-center font-weight-bold" title="cd_conexao: GA_SIT8_NETSMS_ABC.NET&#10;ds_conexao: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DBRISP)))&#10;Message: &#10;ORA-12537: TNS:connection closed&#10;">!</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-			</tr>
-			<tr>
-				<th title="">STRESS</th>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_STRESS_NETSMS_BRA.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1521))(CONNECT_DATA=(SID=DB09ST)))&#10;Analise: &#10;Ambiente clonado ha menos de 360 dias&#10;"><div class="bg-light text-dark text-center" style="padding: 6px">Set/2019</div></td>
-				<td style="padding: 0px;" class=" " title="DBLink: GA_STRESS_NETSMS_SUL.NET&#10;Conexão: CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.31)(PORT=1521))(CONNECT_DATA=(SID=SULST)))&#10;Analise: &#10;Ambiente clonado ha mais de 720 dias&#10;"><div class="bg-danger text-white text-center" style="padding: 6px">Nov/2017</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-				<td style="padding: 0px;" class=" bg-light text-dark" title="Message: &#10;DBLink nao configurado.&#10;"><div style="padding: 6px" class="bg-light text-secondary text-center font-weight-bold" title="Message: &#10;DBLink nao configurado.&#10;">-</div></td>
-			</tr>
-		</tbody>
-	</table>
-	<br>
+	<p>
+	<b><i> Metrica: </i></b> 	<br>
+	<select 
+	ng-model="imea"
+	ng-options="reqdata.v_axe_metrica.indexOf(selectedItem) as selectedItem.name for selectedItem in reqdata.v_axe_metrica" />
+	</p>
+	<div >
+		<!-- <h3>{{reqdata.v_axe_metrica[imea].name}}</h3>-->
+		<table class="table table-bordered table-sm">
+			<thead  class="thead-dark">
+				<tr>
+					<th style="width: 8%;" rowspan=2>Ambiente \ Aplicação</th>
+					<th ng-repeat="(icen, cen) in reqdata.v_axe_cenarios " ng-if="cen.levels[0].colspan > 0 && cen.levels[0].rowspan > 0"  class="align-middle" style="text-align: center; width: {{((100 - 8) / reqdata.v_axe_cenarios.length)}}%;" colspan="{{cen.levels[0].colspan}}" rowspan="{{cen.levels[0].rowspan}}">{{cen.levels[0].code}}</th>
+				</tr>
+				<tr>
+					<th ng-repeat="(icen, cen) in reqdata.v_axe_cenarios " ng-if="cen.levels[1].colspan > 0 && cen.levels[1].rowspan > 0"  class="align-middle" style="text-align: center; width: {{((100 - 8) / reqdata.v_axe_cenarios.length)}}%;" colspan="{{cen.levels[1].colspan}}" rowspan="{{cen.levels[1].rowspan}}">{{cen.levels[1].code}}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="(iamb, amb) in reqdata.v_axe_ambientes ">
+					<th title="{{amb.levels[0].description}}">{{amb.levels[0].code}}</th>
+					<td title="status({{reqdata.v_ambientes[iamb][icen].status}})" ng-repeat="(icen, cen) in reqdata.v_axe_cenarios " style="padding: 0px;" class=" ">
+						
+						<div 
+						ng-show="reqdata.v_ambientes[iamb][icen].status=='D'" 
+						class=" text-center bg-light text-dark" style="padding: 6px"
+						title="{{reqdata.v_ambientes[iamb][icen].message}}"
+						>-</div>
+						
+						<div 
+						ng-show="reqdata.v_ambientes[iamb][icen].status=='E'" 
+						class=" text-center bg-secondary text-warning font-weight-bold" style="padding: 6px"
+						title="DBLink: {{reqdata.v_ambientes[iamb][icen].code}}&#10;Conexão: {{reqdata.v_ambientes[iamb][icen].description}}&#10;Erro: &#10;{{reqdata.v_ambientes[iamb][icen].message}}&#10;"
+						>!</div>
+						
+						<div 
+						ng-show="reqdata.v_ambientes[iamb][icen].status=='L'" 
+						class=" text-center " 
+						ng-class="
+						{
+							'bg-danger text-white': reqdata.v_ambientes[iamb][icen].metricas[imea].status=='W',
+							'bg-warning text-dark': reqdata.v_ambientes[iamb][icen].metricas[imea].status=='O'
+						}"
+						style="padding: 6px"
+						title="DBLink: {{reqdata.v_ambientes[iamb][icen].code}}&#10;Conexão: {{reqdata.v_ambientes[iamb][icen].description}}&#10;Analise: &#10;{{reqdata.v_ambientes[iamb][icen].metricas[imea].message}}&#10;"
+						
+						><a style="color: inherit;" href="#!/detalhe-servidor/{{reqdata.v_ambientes[iamb][icen].code}}">{{reqdata.v_ambientes[iamb][icen].metricas[imea].fmt_value}}</a></div>
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+	</div>
 </div>

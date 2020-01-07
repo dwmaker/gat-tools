@@ -64,10 +64,10 @@ angular.module("myApp")
 	.when("/painel-netsms", 
 	{
 		templateUrl: "/components/painel-netsms/painel-netsms-view.html",
-		
+		controller: "painel-netsms-controller",
 		resolve:
 		{
-		
+			"reqdata": ["painel-netsms-service", function(service){return service.get()}]
 		}
 	})
 	.when("/detalhe-servidor/:dblink", 

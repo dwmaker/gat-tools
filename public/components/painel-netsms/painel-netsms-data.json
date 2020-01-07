@@ -1,0 +1,1483 @@
+{
+	"refreshDate": "2020-01-07T18:13:36.000Z",
+	"v_axe_metrica":
+	[
+		{"name": "Versão do Sistema"},
+		{"name": "Data de Clonagem"}
+	],
+	"v_axe_cenarios":
+	[
+		{
+			"levels":
+			[
+				{"code": "NETSMS", "colspan": 8, "rowspan": 1}, 
+				{"code": "BRA", "colspan": 1, "rowspan": 1}
+			]
+		},
+		{
+			"levels":
+			[
+				{"code": "NETSMS", "colspan": 0, "rowspan": 1}, 
+				{"code": "SUL", "colspan": 1, "rowspan": 1}
+			]
+		},
+		{
+			"levels":
+			[
+				{"code": "NETSMS", "colspan": 0, "rowspan": 1}, 
+				{"code": "ISP", "colspan": 1, "rowspan": 1}
+			]
+		},
+		{
+			"levels":
+			[
+				{"code": "NETSMS", "colspan": 0, "rowspan": 1}, 
+				{"code": "BH", "colspan": 1, "rowspan": 1}
+			]
+		},
+		{
+			"levels":
+			[
+				{"code": "NETSMS", "colspan": 0, "rowspan": 1}, 
+				{"code": "SOC", "colspan": 1, "rowspan": 1}
+			]
+		},
+		{
+			"levels":
+			[
+				{"code": "NETSMS", "colspan": 0, "rowspan": 1}, 
+				{"code": "SAO", "colspan": 1, "rowspan": 1}
+			]
+		},
+		{
+			"levels":
+			[
+				{"code": "NETSMS", "colspan": 0, "rowspan": 1}, 
+				{"code": "ABC", "colspan": 1, "rowspan": 1}
+			]
+		},
+		{
+			"levels":
+			[
+				{"code": "NETSMS", "colspan": 0, "rowspan": 1}, 
+				{"code": "CTV", "colspan": 1, "rowspan": 1}
+			]
+		}
+	],
+	"v_axe_ambientes": 
+	[
+		{"levels": [{"code": "PROD", "description": "Produção"}]},
+		{"levels": [{"code": "CERT", "description": "Certificação"}]},
+		{"levels": [{"code": "SIT1", "description": null}]},
+		{"levels": [{"code": "SIT2", "description": null}]},
+		{"levels": [{"code": "SIT3", "description": null}]},
+		{"levels": [{"code": "SIT4", "description": "Teste Integrado - LE"}]},
+		{"levels": [{"code": "SIT5", "description": "Teste Integrado - LD"}]},
+		{"levels": [{"code": "SIT6", "description": "UAT"}]},
+		{"levels": [{"code": "SIT7", "description": "Novo Sap BR"}]},
+		{"levels": [{"code": "SIT8", "description": null}]},
+		{"levels": [{"code": "STRESS", "description": null}]}
+	],
+	"v_ambientes":
+	[
+		[
+			{
+				"code": "GA_PROD_NETSMS_BRA.NET",
+				"description": "NETDBA@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.187)(PORT=1521))(CONNECT_DATA=(SID=db09)))",
+				"metricas": 
+				[
+					{
+						"status": null,
+						"message": "Ambiente produtivo não é criticado",
+						"fmt_value": "9.4.9"
+					},
+					{
+						"status": "I",
+						"message": "Não se aplica",
+						"fmt_value": "n/a"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_PROD_NETSMS_SUL.NET",
+				"description": "NETDBA@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.193)(PORT=1521))(CONNECT_DATA=(SID=sul)))",
+				"metricas": 
+				[
+					{
+						"status": null,
+						"message": "Ambiente produtivo não é criticado",
+						"fmt_value": "9.4.9"
+					},
+					{
+						"status": "I",
+						"message": "Não se aplica",
+						"fmt_value": "n/a"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_PROD_NETSMS_ISP.NET",
+				"description": "NETBKPADM@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.189)(PORT=1521))(CONNECT_DATA=(SID=isp)))",
+				"metricas": 
+				[
+					{
+						"status": null,
+						"message": "Ambiente produtivo não é criticado",
+						"fmt_value": "9.4.9"
+					},
+					{
+						"status": "I",
+						"message": "Não se aplica",
+						"fmt_value": "n/a"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_PROD_NETSMS_BH.NET",
+				"description": "NETDBA@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.190)(PORT=1521))(CONNECT_DATA=(SID=bhpr)))",
+				"metricas": 
+				[
+					{
+						"status": null,
+						"message": "Ambiente produtivo não é criticado",
+						"fmt_value": "9.4.9"
+					},
+					{
+						"status": "I",
+						"message": "Não se aplica",
+						"fmt_value": "n/a"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_PROD_NETSMS_SOC.NET",
+				"description": "NETBKPADM@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.191)(PORT=1521))(CONNECT_DATA=(SID=db09s)))",
+				"metricas": 
+				[
+					{
+						"status": null,
+						"message": "Ambiente produtivo não é criticado",
+						"fmt_value": "9.4.9"
+					},
+					{
+						"status": "I",
+						"message": "Não se aplica",
+						"fmt_value": "n/a"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_PROD_NETSMS_SAO.NET",
+				"description": "NETBKPADM@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.84)(PORT=1521))(CONNECT_DATA=(SID=spo)))",
+				"metricas": 
+				[
+					{
+						"status": null,
+						"message": "Ambiente produtivo não é criticado",
+						"fmt_value": "9.4.9"
+					},
+					{
+						"status": "I",
+						"message": "Não se aplica",
+						"fmt_value": "n/a"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_PROD_NETSMS_ABC.NET",
+				"description": "NETDBA@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.195)(PORT=1521)))(CONNECT_DATA=(SID=abc)))",
+				"metricas": 
+				[
+					{
+						"status": null,
+						"message": "Ambiente produtivo não é criticado",
+						"fmt_value": "9.4.9"
+					},
+					{
+						"status": "I",
+						"message": "Não se aplica",
+						"fmt_value": "n/a"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_PROD_NETSMS_CTV.NET",
+				"description": "NETDBA@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(host = 5.16.8.133)(PORT = 1528))(CONNECT_DATA = (SID = CTV)))",
+				"metricas": 
+				[
+					{
+						"status": null,
+						"message": "Ambiente produtivo não é criticado",
+						"fmt_value": "9.4.9"
+					},
+					{
+						"status": "I",
+						"message": "Não se aplica",
+						"fmt_value": "n/a"
+					}
+				],
+				"status": "L",
+				"message": null
+			}
+		],
+		[
+			{
+				"code": "GA_CERT_NETSMS_BRA.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=hhdb09n1)))",
+				"metricas": 
+				[
+					{
+						"status": null,
+						"message": "Versão sincronizada com produção",
+						"fmt_value": "9.4.9"
+					},
+					{
+						"status": "I",
+						"message": "Ambiente clonado ha menos de 360 dias",
+						"fmt_value": "Set/2019"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_CERT_NETSMS_SUL.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=hhsuln1)))",
+				"metricas": 
+				[
+					{
+						"status": null,
+						"message": "Versão sincronizada com produção",
+						"fmt_value": "9.4.9"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Nov/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_CERT_NETSMS_ISP.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.25)(PORT=1521))(CONNECT_DATA=(SID=hhispn1)))",
+				"metricas": 
+				[
+					{
+						"status": null,
+						"message": "Versão sincronizada com produção",
+						"fmt_value": "9.4.9"
+					},
+					{
+						"status": "O",
+						"message": "Ambiente clonado entre 360 e 720 dias",
+						"fmt_value": "Dez/2018"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_CERT_NETSMS_BH.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.64.165)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=hhbhn1)))",
+				"metricas": 
+				[
+					{
+						"status": null,
+						"message": "Versão sincronizada com produção",
+						"fmt_value": "9.4.9"
+					},
+					{
+						"status": "I",
+						"message": "Ambiente clonado ha menos de 360 dias",
+						"fmt_value": "Jan/2019"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_CERT_NETSMS_SOC.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=hhsocn1)))",
+				"metricas": 
+				[
+					{
+						"status": null,
+						"message": "Versão sincronizada com produção",
+						"fmt_value": "9.4.9"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Set/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_CERT_NETSMS_SAO.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=hhspon1)))",
+				"metricas": 
+				[
+					{
+						"status": null,
+						"message": "Versão sincronizada com produção",
+						"fmt_value": "9.4.9"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Jul/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_CERT_NETSMS_ABC.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=hhbrin1)))",
+				"metricas": 
+				[
+					{
+						"status": null,
+						"message": "Versão sincronizada com produção",
+						"fmt_value": "9.4.9"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Out/2016"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_CERT_NETSMS_CTV.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.162)(PORT=1525)))(CONNECT_DATA=(SERVICE_NAME=HHCTV01)))",
+				"metricas": 
+				[
+					{
+						"status": null,
+						"message": "Versão sincronizada com produção",
+						"fmt_value": "9.4.9"
+					},
+					{
+						"status": "I",
+						"message": "Ambiente clonado ha menos de 360 dias",
+						"fmt_value": "Jun/2019"
+					}
+				],
+				"status": "L",
+				"message": null
+			}
+		],
+		[
+			{
+				"code": "GA_SIT1_NETSMS_BRA.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1521))(CONNECT_DATA=(SID=SIT01)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "I",
+						"message": "Ambiente clonado ha menos de 360 dias",
+						"fmt_value": "Ago/2019"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": "GA_SIT1_NETSMS_ISP.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.28)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=SISPHP)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Mar/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT1_NETSMS_BH.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.25)(PORT=1521))(CONNECT_DATA=(SID=SBHHP)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "I",
+						"message": "Ambiente clonado ha menos de 360 dias",
+						"fmt_value": "Jan/2019"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": "GA_SIT1_NETSMS_ABC.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.28)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SBRIHP)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Abr/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			}
+		],
+		[
+			{
+				"code": "GA_SIT2_NETSMS_BRA.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1521))(CONNECT_DATA=(SID=SIT02)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "I",
+						"message": "Ambiente clonado ha menos de 360 dias",
+						"fmt_value": "Ago/2019"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": "GA_SIT2_NETSMS_ISP.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SISPSP)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Abr/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT2_NETSMS_BH.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.25)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SBHSP)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "I",
+						"message": "Ambiente clonado ha menos de 360 dias",
+						"fmt_value": "Jan/2019"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": "GA_SIT2_NETSMS_ABC.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SBRISP)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Mar/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			}
+		],
+		[
+			{
+				"code": "GA_SIT3_NETSMS_BRA.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1521))(CONNECT_DATA=(SID=SIT03)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "I",
+						"message": "Ambiente clonado ha menos de 360 dias",
+						"fmt_value": "Ago/2019"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": "GA_SIT3_NETSMS_ISP.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SISP3SP)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Abr/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT3_NETSMS_BH.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.25)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SBH3SP)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "I",
+						"message": "Ambiente clonado ha menos de 360 dias",
+						"fmt_value": "Jan/2019"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": "GA_SIT3_NETSMS_ABC.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SBRI3SP)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Abr/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT3_NETSMS_CTV.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SID=SCTV1MG)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "O",
+						"message": "Ambiente clonado entre 360 e 720 dias",
+						"fmt_value": "Mar/2018"
+					}
+				],
+				"status": "L",
+				"message": null
+			}
+		],
+		[
+			{
+				"code": "GA_SIT4_NETSMS_BRA.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TIBRA03F)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "I",
+						"message": "Ambiente clonado ha menos de 360 dias",
+						"fmt_value": "Set/2019"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT4_NETSMS_SUL.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TISUL66F)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Nov/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT4_NETSMS_ISP.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TIISP02F)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "O",
+						"message": "Ambiente clonado entre 360 e 720 dias",
+						"fmt_value": "Ago/2018"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT4_NETSMS_BH.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TIBHPV1)))",
+				"metricas": 
+				[
+					{
+						"status": null,
+						"message": "Versão sincronizada com produção",
+						"fmt_value": "9.4.9"
+					},
+					{
+						"status": "O",
+						"message": "Ambiente clonado entre 360 e 720 dias",
+						"fmt_value": "Fev/2018"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": "GA_SIT4_NETSMS_CTV.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=TICTVLE2)))",
+				"metricas": 
+				[
+					{
+						"status": "E",
+						"message": "ORA-12514: TNS:listener does not currently know of service requested in connect descriptor",
+						"fmt_value": null
+					}
+				],
+				"status": "E",
+				"message": "ORA-12514: TNS:listener does not currently know of service requested in connect descriptor"
+			}
+		],
+		[
+			{
+				"code": "GA_SIT5_NETSMS_BRA.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.27)(PORT=1521))(CONNECT_DATA=(SID=SIT05)))",
+				"metricas": 
+				[
+					{
+						"status": "E",
+						"message": "ORA-12519: TNS:no appropriate service handler found",
+						"fmt_value": null
+					}
+				],
+				"status": "E",
+				"message": "ORA-12519: TNS:no appropriate service handler found"
+			},
+			{
+				"code": "GA_SIT5_NETSMS_SUL.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TISULPV1)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Nov/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": "GA_SIT5_NETSMS_BH.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TIBH03F)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "O",
+						"message": "Ambiente clonado entre 360 e 720 dias",
+						"fmt_value": "Fev/2018"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT5_NETSMS_SOC.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=BIGT)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Set/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT5_NETSMS_SAO.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TISP03F)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Jul/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT5_NETSMS_ABC.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TIABC02F)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Out/2016"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT5_NETSMS_CTV.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=TICTVLD1)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "O",
+						"message": "Ambiente clonado entre 360 e 720 dias",
+						"fmt_value": "Jul/2018"
+					}
+				],
+				"status": "L",
+				"message": null
+			}
+		],
+		[
+			{
+				"code": "GA_SIT6_NETSMS_BRA.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.27)(PORT=1521))(CONNECT_DATA=(SID=SIT06)))",
+				"metricas": 
+				[
+					{
+						"status": "E",
+						"message": "ORA-12519: TNS:no appropriate service handler found",
+						"fmt_value": null
+					}
+				],
+				"status": "E",
+				"message": "ORA-12519: TNS:no appropriate service handler found"
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": "GA_SIT6_NETSMS_ISP.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=UATVISP)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Mar/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT6_NETSMS_BH.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.25)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=UATVBH)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "I",
+						"message": "Ambiente clonado ha menos de 360 dias",
+						"fmt_value": "Jan/2019"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": "GA_SIT6_NETSMS_ABC.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=UATVBRI)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Mar/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT6_NETSMS_CTV.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=UATCTV)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "O",
+						"message": "Ambiente clonado entre 360 e 720 dias",
+						"fmt_value": "Abr/2018"
+					}
+				],
+				"status": "L",
+				"message": null
+			}
+		],
+		[
+			{
+				"code": "GA_SIT7_NETSMS_BRA.NET",
+				"description": "CORE@(DESCRIPTION = (ADDRESS_LIST =(ADDRESS =(PROTOCOL = TCP)(HOST = 5.17.8.14)(PORT = 1523))) (CONNECT_DATA = (SERVICE_NAME = BRASAMX1)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "I",
+						"message": "Ambiente clonado ha menos de 360 dias",
+						"fmt_value": "Ago/2019"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT7_NETSMS_SUL.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.25)(PORT=1523))(CONNECT_DATA=(SID=SULTOA)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Nov/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT7_NETSMS_ISP.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.25)(PORT=1523))(CONNECT_DATA=(SID=ISPSAMX)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Mar/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT7_NETSMS_BH.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.25)(PORT=1523))(CONNECT_DATA=(SID=BHSAMX)))",
+				"metricas": 
+				[
+					{
+						"status": "W",
+						"message": "Obsoleto ha 657 dias",
+						"fmt_value": "9.1.2"
+					},
+					{
+						"status": "O",
+						"message": "Ambiente clonado entre 360 e 720 dias",
+						"fmt_value": "Fev/2018"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT7_NETSMS_SOC.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=RACNET-CLTFT01.dcing.corp)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=SOCSAMX1)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "O",
+						"message": "Ambiente clonado entre 360 e 720 dias",
+						"fmt_value": "Abr/2018"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT7_NETSMS_SAO.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.25)(PORT=1523))(CONNECT_DATA=(SID=SPOSAMX)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Jul/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT7_NETSMS_ABC.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.25)(PORT=1523))(CONNECT_DATA=(SID=BRISAMX)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Mar/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT7_NETSMS_CTV.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=RACNET-CLTFT01.dcing.corp)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=dbri1ctv)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "O",
+						"message": "Ambiente clonado entre 360 e 720 dias",
+						"fmt_value": "Mar/2018"
+					}
+				],
+				"status": "L",
+				"message": null
+			}
+		],
+		[
+			{
+				"code": "GA_SIT8_NETSMS_BRA.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.64.166)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DBRASP1)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "O",
+						"message": "Ambiente clonado entre 360 e 720 dias",
+						"fmt_value": "Abr/2018"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": "GA_SIT8_NETSMS_ISP.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DISPSP)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Mar/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_SIT8_NETSMS_BH.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.25)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DBHSP)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "I",
+						"message": "Ambiente clonado ha menos de 360 dias",
+						"fmt_value": "Jan/2019"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": "GA_SIT8_NETSMS_ABC.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DBRISP)))",
+				"metricas": 
+				[
+					{
+						"status": "O",
+						"message": "Faltam 0 dias para Obsoleto",
+						"fmt_value": "9.4.8"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Mar/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			}
+		],
+		[
+			{
+				"code": "GA_STRESS_NETSMS_BRA.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1521))(CONNECT_DATA=(SID=DB09ST)))",
+				"metricas": 
+				[
+					{
+						"status": "W",
+						"message": "Obsoleto ha 55 dias",
+						"fmt_value": "9.4.5"
+					},
+					{
+						"status": "I",
+						"message": "Ambiente clonado ha menos de 360 dias",
+						"fmt_value": "Set/2019"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_STRESS_NETSMS_SUL.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.31)(PORT=1521))(CONNECT_DATA=(SID=SULST)))",
+				"metricas": 
+				[
+					{
+						"status": "W",
+						"message": "Obsoleto ha 189 dias",
+						"fmt_value": "9.4.0"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Nov/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			}
+		]
+	]
+}
