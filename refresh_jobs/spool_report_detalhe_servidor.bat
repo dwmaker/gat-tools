@@ -2,17 +2,23 @@
 @CHCP 1252>nul
 @call "%~dp0.\config.bat"
 
+@REM GERANDO ARQUIVOS VIRGENS
+@call :makefile "%~dp0..\public\components\detalhe-servidor\GA_CERT_NETSMS_BRA.NET.json" "GA_CERT_NETSMS_BRA.NET" "GA_PROD_NETSMS_BRA.NET"
+@for /f "tokens=1,2,3,4,5,6* skip=1 delims=	" %%A in (%~dp0..\public\components\detalhe-servidor\lista_conexao.txt) do @(
+  @if not exist "%~dp0..\public\components\detalhe-servidor\%%A.json" (
+    @call :makefile "%~dp0..\public\components\detalhe-servidor\%%A.json" "%%A"
+	)
+)
 
-@rem @call :makefile "%~dp0..\public\components\detalhe-servidor\GA_CERT_NETSMS_BRA.NET.json" "GA_CERT_NETSMS_BRA.NET" "GA_PROD_NETSMS_BRA.NET"
+@REM GERANDO TUDO
 @REM @for /f "tokens=1,2,3,4,5,6* skip=1 delims=	" %%A in (%~dp0..\public\components\detalhe-servidor\lista_conexao.txt) do @(
-@REM   @if not exist "%~dp0..\public\components\detalhe-servidor\%%A.json" (
-@REM     @call :makefile "%~dp0..\public\components\detalhe-servidor\%%A.json" "%%A"
-@REM 	)
+@REM @call :makefile "%~dp0..\public\components\detalhe-servidor\%%A.json" "%%A"
 @REM )
 
-@for /f "tokens=1,2,3,4,5,6* skip=1 delims=	" %%A in (%~dp0..\public\components\detalhe-servidor\lista_conexao.txt) do @(
-@call :makefile "%~dp0..\public\components\detalhe-servidor\%%A.json" "%%A"
-)
+@REM GERANDO PARAMETRO
+@rem @call :makefile "%~dp0..\public\components\detalhe-servidor\%~1.json" "%~1"
+
+
 @goto :sucesso
 
 :makefile

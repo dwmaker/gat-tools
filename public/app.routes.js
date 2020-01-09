@@ -79,18 +79,8 @@ angular.module("myApp")
 			detalhe: ["detalhe-servidor-service", "$route", function(service, $route)
 			{ 
 				return service.get($route.current.params)
-			}],
-			lista: ["detalhe-servidor-service", "$route", function(service, $route)
-			{ 
-				return service.list()
-			}]
-			
-			
+			}]			
 		}
 	})
-	
-	
-	
-
 	.otherwise({redirectTo: "/home"});
 });

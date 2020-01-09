@@ -30,6 +30,7 @@ begin
 
 	-- Renderização
 	declare
+	
 		function to_json(valor varchar2) return varchar2
 		is
 		begin
@@ -43,7 +44,8 @@ begin
 		, chr(10), '\r')
 		, chr(13), '\n')
 		 || '"';
-		end;
+		end to_json;
+		
 		function to_json(valor numeric) return varchar2
 		is
 		begin

@@ -20,9 +20,11 @@
 @echo spool off;
 @echo exit;
 ) | @sqlplus -s -l "%GATDB_USR%/%GATDB_PWD%@%GATDB_CNX%" 
-@if exist "%~dp1~%~nx1" @(
-@if exist "%~dpnx1" @(del "%~dpnx1")
-@ren "%~dp1~%~nx1" "%~nx1"
+@IF %ERRORLEVEL% EQU 0 ( 
+  @if exist "%~dpnx1" @(del "%~dpnx1")
+	@ren "%~dp1~%~nx1" "%~nx1"
+) ELSE ( 
+  type "%~dp1~%~nx1"
 )
 @goto :eof
 
@@ -31,3 +33,4 @@
 
 :falha
 @exit /b 1
+

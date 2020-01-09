@@ -1,31 +1,59 @@
 <div class="">
-	<h2>Detalhe do Servidor</h2>
+	<h2>Detalhe do Servidor - {{detalhe.source.cd_conexao }}</h2>
 	<small ng-show:"detalhe.refreshDate">Atualizado em {{ detalhe.refreshDate | date:'yyyy-MM-dd HH:mm:ss': '+0000' }} </small>
 </div>
 
+<a href="javascript:history.back()">Go Back</a>
+<br>
 <div class="alert alert-secondary">
+	
+	
 	<div class="row">
-		<div class="col-1">
-			<div>Servidor:</div>
-			<div class="btn-group" uib-dropdown keyboard-nav>
-			<a id="comboServidor" type="button"  uib-dropdown-toggle  class="btn btn-light">
-			<i class="fas fa-file-excel text-primary"> </i>
-			<span>{{detalhe.source.cd_conexao }}</span>
-			<span class="caret"></span>
-			</a>
-			<ul uib-dropdown-menu role="menu" aria-labelledby="comboServidor" style="padding:6px; height: 20em; overflow-y: scroll">
-			<li role="menuitem" ng-repeat="conexao in lstAmbiente.records">
-			<small><a ng-href="#!/detalhe-servidor/{{conexao.cd_conexao}}" ng-bind="conexao.cd_conexao"/></small>
-			</li>
-			</ul>
-			</div>
+		<div class="col-2">
+			<small>Servidor</small>
+		</div>
+		<div class="col-10">
+			<small>{{detalhe.source.cd_conexao}}</small>
 		</div>
 	</div>
+	
 	<div class="row">
-		<div class="col-12">
+		<div class="col-2">
+			<small>Conexão</small>
+		</div>
+		<div class="col-10">
 			<small>{{detalhe.source.ds_conexao}}</small>
 		</div>
 	</div>
+	
+	<div class="row">
+		<div class="col-2">
+			<small>Ambiente</small>
+		</div>
+		<div class="col-10">
+			<small>{{detalhe.source.cd_ambiente}}</small>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-2">
+			<small>Aplicação</small>
+		</div>
+		<div class="col-10">
+			<small>{{detalhe.source.cd_aplicacao}}</small>
+			<small ng-if="detalhe.source.cd_cenario"> / {{detalhe.source.cd_cenario}}</small>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-2">
+			<small>Servidor Referência</small>
+		</div>
+		<div class="col-10">
+			<small>{{detalhe.target.cd_conexao}}</small>
+		</div>
+	</div>
+
 </div>
 
 <div ng-if="detalhe.tabelas">

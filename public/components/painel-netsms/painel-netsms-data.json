@@ -1,12 +1,88 @@
 {
-	"refreshDate": "2020-01-07T18:13:36.000Z",
+	"refreshDate": "2020-01-09T15:49:07.000Z",
 	"v_axe_metrica":
 	[
-		{"name": "Versão do Sistema"},
-		{"name": "Data de Clonagem"}
+		{
+			"name": "Versão do Sistema"
+			,"legends":
+			[
+				{
+					"status": "F",
+					"description": "Versão superior a de produção"
+				},
+				{
+					"status": "O",
+					"description": "Desatualizado ha menos de 10 dias"
+				},
+				{
+					"status": "W",
+					"description": "Desatualizado ha mais de 10 dias"
+				}
+			]
+		},
+		{
+			"name": "Data de Clonagem"
+			,"legends":
+			[
+				{
+					"status": "W",
+					"description": "Ambiente clonado ha mais de 720 dias"
+				},
+				{
+					"status": "O",
+					"description": "Ambiente clonado entre 360 e 720 dias"
+				},
+				{
+					"status": "I",
+					"description": "Ambiente clonado ha menos de 360 dias"
+				}
+			]
+		}
 	],
 	"v_axe_cenarios":
 	[
+		{
+			"levels":
+			[
+				{"code": "ATLAS", "colspan": 1, "rowspan": 2}, 
+				{"code": null, "colspan": 1, "rowspan": 0}
+			]
+		},
+		{
+			"levels":
+			[
+				{"code": "CBM", "colspan": 1, "rowspan": 2}, 
+				{"code": null, "colspan": 1, "rowspan": 0}
+			]
+		},
+		{
+			"levels":
+			[
+				{"code": "CPI", "colspan": 1, "rowspan": 2}, 
+				{"code": null, "colspan": 1, "rowspan": 0}
+			]
+		},
+		{
+			"levels":
+			[
+				{"code": "FEPP", "colspan": 1, "rowspan": 2}, 
+				{"code": null, "colspan": 1, "rowspan": 0}
+			]
+		},
+		{
+			"levels":
+			[
+				{"code": "SMP", "colspan": 1, "rowspan": 2}, 
+				{"code": null, "colspan": 1, "rowspan": 0}
+			]
+		},
+		{
+			"levels":
+			[
+				{"code": "WA", "colspan": 1, "rowspan": 2}, 
+				{"code": null, "colspan": 1, "rowspan": 0}
+			]
+		},
 		{
 			"levels":
 			[
@@ -68,6 +144,8 @@
 	[
 		{"levels": [{"code": "PROD", "description": "Produção"}]},
 		{"levels": [{"code": "CERT", "description": "Certificação"}]},
+		{"levels": [{"code": "DEV1", "description": null}]},
+		{"levels": [{"code": "DEV4", "description": null}]},
 		{"levels": [{"code": "SIT1", "description": null}]},
 		{"levels": [{"code": "SIT2", "description": null}]},
 		{"levels": [{"code": "SIT3", "description": null}]},
@@ -81,6 +159,60 @@
 	"v_ambientes":
 	[
 		[
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
 			{
 				"code": "GA_PROD_NETSMS_BRA.NET",
 				"description": "NETDBA@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.187)(PORT=1521))(CONNECT_DATA=(SID=db09)))",
@@ -236,6 +368,110 @@
 		],
 		[
 			{
+				"code": "GA_CERT_ATLAS.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=HHATL01)))",
+				"metricas": 
+				[
+					{
+						"status": "I",
+						"message": "Esta aplicação não retém o versionamento",
+						"fmt_value": "n/a"
+					},
+					{
+						"status": "O",
+						"message": "Ambiente clonado entre 360 e 720 dias",
+						"fmt_value": "Dez/2018"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_CERT_CBM.NET",
+				"description": "CONSULTA_DICIONARIO@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.28.74)(PORT=1521))(CONNECT_DATA=(SID=BCMCER01)))",
+				"metricas": 
+				[
+					{
+						"status": "I",
+						"message": "Esta aplicação não retém o versionamento",
+						"fmt_value": "n/a"
+					}
+				],
+				"status": "E",
+				"message": "ORA-28001: the password has expired\rORA-02063: preceding line from GA_CERT_CBM"
+			},
+			{
+				"code": "GA_CERT_CPI.NET",
+				"description": "CONSULTA_DICIONARIO@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1522))(CONNECT_DATA=(SID=HHCPI01)))",
+				"metricas": 
+				[
+					{
+						"status": "I",
+						"message": "Esta aplicação não retém o versionamento",
+						"fmt_value": "n/a"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Fev/2012"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_CERT_FEPP.NET",
+				"description": "CONSULTA_DICIONARIO@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.45)(PORT=1522))(CONNECT_DATA=(SID=HSATP01)))",
+				"metricas": 
+				[
+					{
+						"status": "I",
+						"message": "Esta aplicação não retém o versionamento",
+						"fmt_value": "n/a"
+					}
+				],
+				"status": "E",
+				"message": "ORA-12505: TNS:listener does not currently know of SID given in connect descriptor"
+			},
+			{
+				"code": "GA_CERT_SMP.NET",
+				"description": "CONSULTA_DICIONARIO@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=SMPALPHA)))",
+				"metricas": 
+				[
+					{
+						"status": "I",
+						"message": "Esta aplicação não retém o versionamento",
+						"fmt_value": "n/a"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Ago/2012"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_CERT_WA.NET",
+				"description": "CONSULTA_DICIONARIO@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=WAFAB)))",
+				"metricas": 
+				[
+					{
+						"status": "I",
+						"message": "Esta aplicação não retém o versionamento",
+						"fmt_value": "n/a"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Ago/2012"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
 				"code": "GA_CERT_NETSMS_BRA.NET",
 				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=hhdb09n1)))",
 				"metricas": 
@@ -390,13 +626,398 @@
 		],
 		[
 			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": "GA_DEV1_NETSMS_BRA.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.64.157)(PORT=1521))(CONNECT_DATA=(service_name=dev01)))",
+				"metricas": 
+				[
+					{
+						"status": "E",
+						"message": "ORA-12514: TNS:listener does not currently know of service requested in connect descriptor",
+						"fmt_value": null
+					}
+				],
+				"status": "E",
+				"message": "ORA-12514: TNS:listener does not currently know of service requested in connect descriptor"
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": "GA_DEV1_NETSMS_ISP.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DISPHP)))",
+				"metricas": 
+				[
+					{
+						"status": "W",
+						"message": "Obsoleto ha 176 dias",
+						"fmt_value": "9.4.1"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Mar/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_DEV1_NETSMS_BH.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DBHHP)))",
+				"metricas": 
+				[
+					{
+						"status": "E",
+						"message": "ORA-12545: Connect failed because target host or object does not exist",
+						"fmt_value": null
+					}
+				],
+				"status": "E",
+				"message": "ORA-12545: Connect failed because target host or object does not exist"
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": "GA_DEV1_NETSMS_ABC.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DBRIHP)))",
+				"metricas": 
+				[
+					{
+						"status": "W",
+						"message": "Obsoleto ha 176 dias",
+						"fmt_value": "9.4.1"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Out/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_DEV1_NETSMS_CTV.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.78)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DCTV1HP)))",
+				"metricas": 
+				[
+					{
+						"status": "W",
+						"message": "Obsoleto ha 176 dias",
+						"fmt_value": "9.4.1"
+					},
+					{
+						"status": "O",
+						"message": "Ambiente clonado entre 360 e 720 dias",
+						"fmt_value": "Abr/2018"
+					}
+				],
+				"status": "L",
+				"message": null
+			}
+		],
+		[
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": "GA_DEV4_NETSMS_SUL.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1523)))(CONNECT_DATA=(SERVICE_NAME=DDSUL11F)))",
+				"metricas": 
+				[
+					{
+						"status": "W",
+						"message": "Obsoleto ha 148 dias",
+						"fmt_value": "9.4.2"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Nov/2017"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_DEV4_NETSMS_ISP.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=MUCISP01)))",
+				"metricas": 
+				[
+					{
+						"status": "W",
+						"message": "Obsoleto ha 134 dias",
+						"fmt_value": "9.4.3"
+					},
+					{
+						"status": "O",
+						"message": "Ambiente clonado entre 360 e 720 dias",
+						"fmt_value": "Ago/2018"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": "GA_DEV4_NETSMS_BH.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1523)))(CONNECT_DATA=(SID=DDBH13F)))",
+				"metricas": 
+				[
+					{
+						"status": "E",
+						"message": "ORA-12505: TNS:listener does not currently know of SID given in connect descriptor",
+						"fmt_value": null
+					}
+				],
+				"status": "E",
+				"message": "ORA-12505: TNS:listener does not currently know of SID given in connect descriptor"
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": "GA_DEV4_NETSMS_ABC.NET",
+				"description": "CORE@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1523)))(CONNECT_DATA=(SID=DDABC13F)(SERVER=DEDICATED)))",
+				"metricas": 
+				[
+					{
+						"status": "W",
+						"message": "Obsoleto ha 148 dias",
+						"fmt_value": "9.4.2"
+					},
+					{
+						"status": "W",
+						"message": "Ambiente clonado ha mais de 720 dias",
+						"fmt_value": "Out/2016"
+					}
+				],
+				"status": "L",
+				"message": null
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			}
+		],
+		[
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
 				"code": "GA_SIT1_NETSMS_BRA.NET",
 				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1521))(CONNECT_DATA=(SID=SIT01)))",
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -423,8 +1044,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -442,8 +1063,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -479,8 +1100,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -504,13 +1125,67 @@
 		],
 		[
 			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
 				"code": "GA_SIT2_NETSMS_BRA.NET",
 				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1521))(CONNECT_DATA=(SID=SIT02)))",
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -537,8 +1212,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -556,8 +1231,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -593,8 +1268,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -618,13 +1293,67 @@
 		],
 		[
 			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
 				"code": "GA_SIT3_NETSMS_BRA.NET",
 				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1521))(CONNECT_DATA=(SID=SIT03)))",
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -651,8 +1380,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -670,8 +1399,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -707,8 +1436,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -726,8 +1455,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -742,13 +1471,67 @@
 		],
 		[
 			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
 				"code": "GA_SIT4_NETSMS_BRA.NET",
 				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=TIBRA03F)))",
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -766,8 +1549,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -785,8 +1568,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -861,6 +1644,60 @@
 		],
 		[
 			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
 				"code": "GA_SIT5_NETSMS_BRA.NET",
 				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.27)(PORT=1521))(CONNECT_DATA=(SID=SIT05)))",
 				"metricas": 
@@ -880,8 +1717,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -908,8 +1745,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -927,8 +1764,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -946,8 +1783,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -965,8 +1802,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -984,8 +1821,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -999,6 +1836,60 @@
 			}
 		],
 		[
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
 			{
 				"code": "GA_SIT6_NETSMS_BRA.NET",
 				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.20.27)(PORT=1521))(CONNECT_DATA=(SID=SIT06)))",
@@ -1028,8 +1919,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -1047,8 +1938,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -1084,8 +1975,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -1103,8 +1994,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -1119,13 +2010,67 @@
 		],
 		[
 			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
 				"code": "GA_SIT7_NETSMS_BRA.NET",
 				"description": "CORE@(DESCRIPTION = (ADDRESS_LIST =(ADDRESS =(PROTOCOL = TCP)(HOST = 5.17.8.14)(PORT = 1523))) (CONNECT_DATA = (SERVICE_NAME = BRASAMX1)))",
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -1143,8 +2088,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -1162,8 +2107,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -1182,7 +2127,7 @@
 				[
 					{
 						"status": "W",
-						"message": "Obsoleto ha 657 dias",
+						"message": "Obsoleto ha 659 dias",
 						"fmt_value": "9.1.2"
 					},
 					{
@@ -1200,8 +2145,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -1219,8 +2164,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -1238,8 +2183,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -1257,8 +2202,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -1273,13 +2218,67 @@
 		],
 		[
 			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
 				"code": "GA_SIT8_NETSMS_BRA.NET",
 				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.64.166)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=DBRASP1)))",
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -1306,8 +2305,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -1325,8 +2324,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -1362,8 +2361,8 @@
 				"metricas": 
 				[
 					{
-						"status": "O",
-						"message": "Faltam 0 dias para Obsoleto",
+						"status": "W",
+						"message": "Obsoleto ha 2 dias",
 						"fmt_value": "9.4.8"
 					},
 					{
@@ -1387,13 +2386,67 @@
 		],
 		[
 			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
+				"code": null,
+				"description": null,
+				"metricas": 
+				[
+				],
+				"status": "D",
+				"message": "DBLink nao configurado."
+			},
+			{
 				"code": "GA_STRESS_NETSMS_BRA.NET",
 				"description": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.14)(PORT=1521))(CONNECT_DATA=(SID=DB09ST)))",
 				"metricas": 
 				[
 					{
 						"status": "W",
-						"message": "Obsoleto ha 55 dias",
+						"message": "Obsoleto ha 57 dias",
 						"fmt_value": "9.4.5"
 					},
 					{
@@ -1412,7 +2465,7 @@
 				[
 					{
 						"status": "W",
-						"message": "Obsoleto ha 189 dias",
+						"message": "Obsoleto ha 191 dias",
 						"fmt_value": "9.4.0"
 					},
 					{

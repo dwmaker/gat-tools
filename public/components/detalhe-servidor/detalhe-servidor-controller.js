@@ -1,7 +1,6 @@
-angular.module('myApp').controller('detalhe-servidor-controller', ['$scope', 'detalhe', 'lista',
-function($scope, detalhe, lista)
+angular.module('myApp').controller('detalhe-servidor-controller', ['$scope', 'detalhe',
+function($scope, detalhe)
 {
 	$scope.detalhe = detalhe.data;
-	$scope.lstAmbiente = lista.data;
 }]);
 

@@ -3,7 +3,7 @@ angular.module('myApp').controller('log-acesso-controller', ['$scope','$http', "
 function($scope, $http, reqbrowse)
 {
 	$scope.browse = reqbrowse.data;
-	$scope.orderBy = 'osuser';
+	$scope.orderBy = 'ultimoAcesso';
 	$scope.reverse = false;
 	$scope.itemsPerPage = 20;
 	

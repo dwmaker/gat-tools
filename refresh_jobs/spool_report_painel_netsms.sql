@@ -36,8 +36,16 @@ DECLARE
 		level0_description VARCHAR2(100)
 	);
 
+	type rec_legend is record (
+		status char(1),
+		description VARCHAR2(1000)
+	);
+	
+	type lst_legend IS TABLE OF rec_legend INDEX BY pls_integer;
+	
 	type rec_axe_metrica is record (
-		level0_name varchar2(100)
+		name varchar2(100),
+		legends lst_legend
 	);
 
 	TYPE lst_axe_metrica IS TABLE OF rec_axe_metrica INDEX BY pls_integer;
@@ -89,7 +97,7 @@ begin
 		cd_aplicacao,
 		cd_cenario
 		from vw_conexao
-		where cd_aplicacao = 'NETSMS'
+		--where cd_aplicacao = 'NETSMS'
 		group by cd_aplicacao, cd_cenario
 		order by 
 		decode(cd_aplicacao,'NETSMS','ZZZZZZZZZZZZZZ','A'),
@@ -135,7 +143,7 @@ begin
 			when 'SIT7' then 'Novo Sap BR'
 			end level0_description
 			from vw_conexao
-			where cd_ambiente not in ('DEV1', 'DEV4')
+			--where cd_ambiente not in ('DEV1', 'DEV4')
 			group by cd_ambiente 
 			order by 
 			decode(cd_ambiente,'PROD','AAAAAAAAAAAAAAAA') nulls last,
@@ -151,8 +159,22 @@ begin
 	end;
 
 	--- v_axe_metrica
-	v_axe_metrica(0).level0_name := 'Versão do Sistema';
-	v_axe_metrica(1).level0_name := 'Data de Clonagem';
+	v_axe_metrica(0).name := 'Versão do Sistema';
+	v_axe_metrica(0).legends(0).status := c_st_info;
+	v_axe_metrica(0).legends(0).description := 'Versão superior a de produção';
+	v_axe_metrica(0).legends(1).status := c_st_warning;
+	v_axe_metrica(0).legends(1).description := 'Desatualizado ha menos de '||c_nr_dias_versao_danger||' dias';
+	v_axe_metrica(0).legends(2).status := c_st_danger;
+	v_axe_metrica(0).legends(2).description := 'Desatualizado ha mais de '||c_nr_dias_versao_danger||' dias';
+
+	
+	v_axe_metrica(1).name := 'Data de Clonagem';
+	v_axe_metrica(1).legends(0).status := c_st_danger;
+	v_axe_metrica(1).legends(0).description := 'Ambiente clonado ha mais de ' || c_nr_dias_clone_danger || ' dias';
+	v_axe_metrica(1).legends(1).status := c_st_warning;
+	v_axe_metrica(1).legends(1).description := 'Ambiente clonado entre '||c_nr_dias_clone_warning||' e ' || c_nr_dias_clone_danger || ' dias';
+	v_axe_metrica(1).legends(2).status := c_st_light;
+	v_axe_metrica(1).legends(2).description := 'Ambiente clonado ha menos de '||c_nr_dias_clone_warning||' dias';
 
 	-- Recuperando última versao dos ambientes
 	FOR icen IN v_axe_cenarios.FIRST .. v_axe_cenarios.LAST LOOP
@@ -328,11 +350,7 @@ begin
 		'					}';
 		end;
 
-		function to_json(valor rec_axe_metrica) return clob is 
-		begin 
-		return 
-		'{"name": '||to_json(valor.level0_name) || '}'; 
-		end;
+		
 
 		function to_json(valor lst_axe_ambiente) return clob is
 		saida clob;
@@ -379,8 +397,26 @@ begin
 		dbms_output.put_line('	[');
 		if v_axe_metrica.count > 0 then
 		for imet in v_axe_metrica.first .. v_axe_metrica.last loop
-		dbms_output.put('		' || to_json(v_axe_metrica(imet)));
-		dbms_output.put_line(case imet when v_axe_metrica.last then '' else ',' end);
+		dbms_output.put_line('		{');
+		dbms_output.put_line('			"name": '||to_json(v_axe_metrica(imet).name) || '' );
+		
+	
+		if v_axe_metrica(imet).legends.count > 0 then
+		dbms_output.put_line('			,"legends": ');
+		dbms_output.put_line('			[');
+		for ileg in v_axe_metrica(imet).legends.first .. v_axe_metrica(imet).legends.last loop
+		dbms_output.put_line('				{');
+		dbms_output.put_line('					"status": '||to_json(v_axe_metrica(imet).legends(ileg).status) || ',' );
+		dbms_output.put_line('					"description": '||to_json(v_axe_metrica(imet).legends(ileg).description) || '' );
+		dbms_output.put_line('				}' || case ileg when v_axe_metrica(imet).legends.last then '' else ',' end);
+		end loop;
+		dbms_output.put_line('			]');
+		end if;
+	
+		
+		
+		
+		dbms_output.put_line('		}' || case imet when v_axe_metrica.last then '' else ',' end);
 		end loop;
 		end if;
 		dbms_output.put_line('	],');
