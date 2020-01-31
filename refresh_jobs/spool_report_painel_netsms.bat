@@ -1,5 +1,5 @@
-@set nls_lang=american_america.we8mswin1252
 @CHCP 1252>nul
+@set nls_lang=american_america.we8mswin1252
 @call "%~dp0.\config.bat"
 @call :makefile "%~dp0..\public\components\painel-netsms\painel-netsms-data.json"
 @goto :sucesso

@@ -1,11 +1,11 @@
 {
-	"refreshDate": "2019-12-30T11:45:16.000Z"
+	"refreshDate": "2020-01-16T16:37:18.000Z"
 	,"source":
 	{
 		"cd_conexao": "GA_CERT_CBM.NET",
 		"cd_ambiente": "CERT",
 		"cd_aplicacao": "CBM",
 		"cd_cenario": null,
-		"ds_conexao": "CONSULTA_DICIONARIO@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.28.74)(PORT=1521))(CONNECT_DATA=(SID=BCMCER01)))"
+		"ds_conexao": "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.28.28.74)(PORT=1521))(CONNECT_DATA=(SID=BCMCER01)))"
 	}
 }

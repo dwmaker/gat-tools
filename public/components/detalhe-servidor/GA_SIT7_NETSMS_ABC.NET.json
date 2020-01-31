@@ -1,12 +1,12 @@
 {
-	"refreshDate": "2019-12-30T15:38:42.000Z"
+	"refreshDate": "2020-01-16T12:11:36.000Z"
 	,"source":
 	{
 		"cd_conexao": "GA_SIT7_NETSMS_ABC.NET",
 		"cd_ambiente": "SIT7",
 		"cd_aplicacao": "NETSMS",
 		"cd_cenario": "ABC",
-		"ds_conexao": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.25)(PORT=1523))(CONNECT_DATA=(SID=BRISAMX)))"
+		"ds_conexao": "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.25)(PORT=1523))(CONNECT_DATA=(SID=BRISAMX)))"
 	}
 	,"target":
 	{
@@ -14,133 +14,1101 @@
 		"cd_ambiente": "PROD",
 		"cd_aplicacao": "NETSMS",
 		"cd_cenario": "ABC",
-		"ds_conexao": "NETDBA@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.195)(PORT=1521)))(CONNECT_DATA=(SID=abc)))"
+		"ds_conexao": "(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=5.16.8.195)(PORT=1521)))(CONNECT_DATA=(SID=abc)))"
 	}
-	,"tabelas": [
-		{"owner": "PROD_JD","table_name": "MASSA_TESTE_DFE","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARCEIRO_ARQ","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARCEIRO_AUX","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARCEIRO_BKP","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709901","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709902","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709903","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709904","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709905","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709906","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709907","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709908","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709909","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709910","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709950","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709951","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709952","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709953","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709954","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709955","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709956","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709957","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709958","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709959","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709960","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709961","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709962","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709963","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709964","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709965","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709966","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709967","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709968","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CARGA_EMISSAO_PARC_L1709969","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CONTROLE_COBRANCA_INTERSIC","evalution": "SRC only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CV60_BKP_HISTORICO_CONTABIL","evalution": "SRC only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CV60_BKP_HISTORICO_IMPOSTO","evalution": "SRC only, "}
-		,{"owner": "PROD_JD","table_name": "SN_CV60_HIST_CONT_TEMP","evalution": "SRC only, "}
-		,{"owner": "PROD_JD","table_name": "SN_LOG_CONTROLE_INTERSIC","evalution": "SRC only, "}
-		,{"owner": "PROD_JD","table_name": "SN_LOG_DETALHE_CONTESTACAO","evalution": "SRC only, "}
-		,{"owner": "PROD_JD","table_name": "SN_REL_CONTR_SIT_IRRBKP_DEZ19","evalution": "SRC only, "}
-		,{"owner": "PROD_JD","table_name": "SN_REL_CONTR_TERMBKP_DEZ19","evalution": "SRC only, "}
-		,{"owner": "PROD_JD","table_name": "TESTE_DFE","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "TESTE_DFE_SERVICO","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "TEST_CV60_FAT_TIPO_MENSAL_BKP","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "TEST_CV60_FAT_TOTAL_BKP","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "TMP_CONTRATO_SVA","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","table_name": "TMP_CONTRATO_SVA_MARCO","evalution": "TGT only, "}
-	]
-	,"colunas": [
-		{"owner": "NETSALES","table_name": "CP_LOG_PROPOSTA","column_name": "USERNAME_PROPOSTA","evalution": "nullable (N -> Y), "}
-		,{"owner": "PROD_JD","table_name": "GEO_PESO_TIPO_COMPLEM","column_name": "PESO","evalution": "data_precision (4 -> 8), "}
-		,{"owner": "PROD_JD","table_name": "SN_IN86_TMP_CANCELAMENTO","column_name": "CD_GLCLASS","evalution": "data_length (20 -> 5), char_length (20 -> 5), "}
-		,{"owner": "PROD_JD","table_name": "SN_IN86_TMP_FATURAMENTO","column_name": "CD_GLCLASS","evalution": "data_length (20 -> 5), char_length (20 -> 5), "}
-		,{"owner": "PROD_JD","table_name": "SN_IN86_TMP_RECEBIMENTO","column_name": "CD_GLCLASS","evalution": "data_length (20 -> 5), char_length (20 -> 5), "}
-		,{"owner": "PROD_JD","table_name": "SN_PRODUTO_PESO_OPER","column_name": "PESO","evalution": "data_precision (4 -> 8), "}
-		,{"owner": "PROD_JD","table_name": "SN_REL_ATRIBUTO_SEGMENTO","column_name": "NR_PESO","evalution": "data_precision (4 -> 8), "}
-		,{"owner": "PROD_JD","table_name": "SN_REL_OBJ_CLASSE_OS","column_name": "CID_CONTRATO","evalution": "nullable (N -> Y), "}
-		,{"owner": "PROD_JD","table_name": "SN_REL_OBJ_CLASSE_OS","column_name": "ID_CLASSE","evalution": "nullable (N -> Y), "}
-		,{"owner": "PROD_JD","table_name": "SN_REL_OBJ_CLASSE_OS","column_name": "ID_OBJETO","evalution": "nullable (N -> Y), "}
-		,{"owner": "PROD_JD","table_name": "VSN_CONTRATO_PRODUTO","column_name": "PESO","evalution": "data_precision (4 -> 8), "}
-	]
-	,"programaveis": [
-		{"owner": "PROD_JD","object_name": "FSN_RETORNA_COD_CONTA","object_type": "FUNCTION","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","object_name": "ISS_ENVIO_CONTRATO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PCK_CONVENIO60","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PCK_OBSERVACAO_OS","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PCK_PREVIA_FATURA_BASE","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PGSMS_CV60_ARQUIVO_CONTABIL","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PGSMS_CV60_CONSOLIDACAO","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PGSMS_CV60_CONSOLIDACAO","object_type": "PACKAGE BODY","evalution": "status (INVALID -> VALID), "}
-		,{"owner": "PROD_JD","object_name": "PGSMS_CV60_CONTROLE_PROCESSO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PGSMS_CV60_IN86","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PGSMS_CV60_RECEBIMENTO","object_type": "PACKAGE BODY","evalution": "status (INVALID -> VALID), "}
-		,{"owner": "PROD_JD","object_name": "PGSMS_CV60_RELATORIOS","object_type": "PACKAGE BODY","evalution": "status (INVALID -> VALID), DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PGSMS_IN86_CANCELAMENTO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PGSMS_IN86_FATURAMENTO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PGSMS_IN86_RECEBIMENTO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PGSMS_IN86_TRANSFERENCIA","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PGSMS_LOG_CONTESTACAO","object_type": "PACKAGE","evalution": "SRC only, "}
-		,{"owner": "PROD_JD","object_name": "PGSMS_LOG_CONTESTACAO","object_type": "PACKAGE BODY","evalution": "SRC only, "}
-		,{"owner": "PROD_JD","object_name": "PGSMS_NTLC_ARQUIVO_CONTABIL","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PGSMS_NTLC_ARQUIVO_FISCAL","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PGSMS_NTLC_CADASTRO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PGSMS_PERSISTE_FATURA_PARCEIRO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PGSN_FATURAMENTO_SEL_CONTRATO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PKG_INSTITUICAO_PARCEIRA","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PKG_OCORRENCIA_CIT","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PKG_PROCESSA_ORDEM_ATIVACAO","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PKG_PV_MIGRACAO","object_type": "PACKAGE BODY","evalution": "status (VALID -> INVALID), "}
-		,{"owner": "PROD_JD","object_name": "PKG_RETENCAO_REVERSAO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PR_REAJUSTE_MENSAL_MAILING","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PSN_ASSINANTE","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PSN_AUDITA_CONTRATO_TERMINAIS","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PSN_AUDITA_TERMINAIS","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PSN_CONTRATO_TERMINAIS","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PSN_INTERFACE_JDE_CANCELAMENTO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PSN_INTERFACE_JDE_FATURAMENTO","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PSN_NOTA_FISCAL","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PSN_SENHAS","object_type": "PACKAGE","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PSN_SENHAS","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PSN_SPC","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "PSN_WWW_SN529W","object_type": "PACKAGE BODY","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "SSNCRIALOGASSINANTE","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "SSNLIBERATELEMARKETING","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "SSNLOGTERMINAIS","object_type": "PROCEDURE","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "SSNTEXTOSITIRREGULAR","object_type": "FUNCTION","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "SYS_PLSQL_14365937_12_1","object_type": "TYPE","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","object_name": "SYS_PLSQL_14365937_538_1","object_type": "TYPE","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","object_name": "SYS_PLSQL_14365937_DUMMY_1","object_type": "TYPE","evalution": "TGT only, "}
-		,{"owner": "PROD_JD","object_name": "SYS_PLSQL_14539443_12_1","object_type": "TYPE","evalution": "SRC only, "}
-		,{"owner": "PROD_JD","object_name": "SYS_PLSQL_14539443_538_1","object_type": "TYPE","evalution": "SRC only, "}
-		,{"owner": "PROD_JD","object_name": "SYS_PLSQL_14539443_DUMMY_1","object_type": "TYPE","evalution": "SRC only, "}
-		,{"owner": "PROD_JD","object_name": "TRPP_MSG_PORTABILIDADE","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "TRSMS_LOG_DET_CONT_A_E_IU_01","object_type": "TRIGGER","evalution": "SRC only, "}
-		,{"owner": "PROD_JD","object_name": "TRSN_A_ER_I_RESOLUCAOOCORREN","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "TRSN_A_I_VLD_QTDE_MD_GESAC","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "TRSN_A_ST_I_REL_CTR_TERM","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "TRSN_A_ST_U_ASSINANTE","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "TRSN_A_ST_U_ENDER","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "TRSN_B_ER_IU_MATRIZ_METADADO","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "TRSN_B_ER_IU_MD_PROD","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "TRSN_B_ER_I_RCSI","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "TRSN_B_ER_I_REL_CTR_TERM","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
-		,{"owner": "PROD_JD","object_name": "TRSN_B_ER_UD_SOLICITACAO_ASS","object_type": "TRIGGER","evalution": "DDL_DIFF,"}
+	,"compare":
+	[
+		{
+			"owner": "PROD_JD"
+			,"object_name": "MASSA_TESTE_DFE"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARCEIRO_ARQ"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARCEIRO_AUX"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARCEIRO_BKP"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709901"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709902"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709903"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709904"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709905"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709906"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709907"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709908"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709909"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709910"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709950"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709951"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709952"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709953"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709954"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709955"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709956"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709957"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709958"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709959"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709960"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709961"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709962"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709963"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709964"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709965"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709966"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709967"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709968"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CARGA_EMISSAO_PARC_L1709969"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CONTROLE_COBRANCA_INTERSIC"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "S"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CV60_BKP_HISTORICO_CONTABIL"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "S"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CV60_BKP_HISTORICO_IMPOSTO"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "S"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_CV60_HIST_CONT_TEMP"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "S"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_LOG_CONTROLE_INTERSIC"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "S"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_LOG_DETALHE_CONTESTACAO"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "S"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_REL_CONTR_SIT_IRRBKP_DEZ19"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "S"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_REL_CONTR_TERMBKP_DEZ19"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "S"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "TESTE_DFE"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "TESTE_DFE_SERVICO"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "TEST_CV60_FAT_TIPO_MENSAL_BKP"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "TEST_CV60_FAT_TOTAL_BKP"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "TMP_CONTRATO_SVA"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "TMP_CONTRATO_SVA_MARCO"
+			,"subobject_name": null
+			,"object_type": "TABLE"
+			,"status": "T"
+		},
+		{
+			"owner": "NETSALES"
+			,"object_name": "CP_LOG_PROPOSTA"
+			,"subobject_name": "USERNAME_PROPOSTA"
+			,"object_type": "COLUMN"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "nullable", "src": "N", "tgt": "Y"}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "GEO_PESO_TIPO_COMPLEM"
+			,"subobject_name": "PESO"
+			,"object_type": "COLUMN"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "data_precision", "src": "4", "tgt": "8"}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_IN86_TMP_CANCELAMENTO"
+			,"subobject_name": "CD_GLCLASS"
+			,"object_type": "COLUMN"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "data_length", "src": "20", "tgt": "5"},
+				{"att": "char_length", "src": "20", "tgt": "5"}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_IN86_TMP_FATURAMENTO"
+			,"subobject_name": "CD_GLCLASS"
+			,"object_type": "COLUMN"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "data_length", "src": "20", "tgt": "5"},
+				{"att": "char_length", "src": "20", "tgt": "5"}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_IN86_TMP_RECEBIMENTO"
+			,"subobject_name": "CD_GLCLASS"
+			,"object_type": "COLUMN"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "data_length", "src": "20", "tgt": "5"},
+				{"att": "char_length", "src": "20", "tgt": "5"}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_PRODUTO_PESO_OPER"
+			,"subobject_name": "PESO"
+			,"object_type": "COLUMN"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "data_precision", "src": "4", "tgt": "8"}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_REL_ATRIBUTO_SEGMENTO"
+			,"subobject_name": "NR_PESO"
+			,"object_type": "COLUMN"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "data_precision", "src": "4", "tgt": "8"}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_REL_OBJ_CLASSE_OS"
+			,"subobject_name": "CID_CONTRATO"
+			,"object_type": "COLUMN"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "nullable", "src": "N", "tgt": "Y"}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_REL_OBJ_CLASSE_OS"
+			,"subobject_name": "ID_CLASSE"
+			,"object_type": "COLUMN"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "nullable", "src": "N", "tgt": "Y"}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SN_REL_OBJ_CLASSE_OS"
+			,"subobject_name": "ID_OBJETO"
+			,"object_type": "COLUMN"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "nullable", "src": "N", "tgt": "Y"}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "VSN_CONTRATO_PRODUTO"
+			,"subobject_name": "PESO"
+			,"object_type": "COLUMN"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "data_precision", "src": "4", "tgt": "8"}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "FSN_RETORNA_COD_CONTA"
+			,"subobject_name": null
+			,"object_type": "FUNCTION"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "ISS_ENVIO_CONTRATO"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PCK_CONVENIO60"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PCK_OBSERVACAO_OS"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PCK_PREVIA_FATURA_BASE"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PGSMS_CV60_ARQUIVO_CONTABIL"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PGSMS_CV60_CONSOLIDACAO"
+			,"subobject_name": null
+			,"object_type": "PACKAGE"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PGSMS_CV60_CONSOLIDACAO"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "status", "src": "INVALID", "tgt": "VALID"}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PGSMS_CV60_CONTROLE_PROCESSO"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PGSMS_CV60_IN86"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PGSMS_CV60_RECEBIMENTO"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "status", "src": "INVALID", "tgt": "VALID"}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PGSMS_CV60_RELATORIOS"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "status", "src": "INVALID", "tgt": "VALID"},
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PGSMS_IN86_CANCELAMENTO"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PGSMS_IN86_FATURAMENTO"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PGSMS_IN86_RECEBIMENTO"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PGSMS_IN86_TRANSFERENCIA"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PGSMS_LOG_CONTESTACAO"
+			,"subobject_name": null
+			,"object_type": "PACKAGE"
+			,"status": "S"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PGSMS_LOG_CONTESTACAO"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "S"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PGSMS_NTLC_ARQUIVO_CONTABIL"
+			,"subobject_name": null
+			,"object_type": "PACKAGE"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PGSMS_NTLC_ARQUIVO_FISCAL"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PGSMS_NTLC_CADASTRO"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PGSMS_PERSISTE_FATURA_PARCEIRO"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PGSN_FATURAMENTO_SEL_CONTRATO"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PKG_INSTITUICAO_PARCEIRA"
+			,"subobject_name": null
+			,"object_type": "PACKAGE"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PKG_OCORRENCIA_CIT"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PKG_PROCESSA_ORDEM_ATIVACAO"
+			,"subobject_name": null
+			,"object_type": "PACKAGE"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PKG_PV_MIGRACAO"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "status", "src": "VALID", "tgt": "INVALID"}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PKG_RETENCAO_REVERSAO"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PR_REAJUSTE_MENSAL_MAILING"
+			,"subobject_name": null
+			,"object_type": "PROCEDURE"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PSN_ASSINANTE"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PSN_AUDITA_CONTRATO_TERMINAIS"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PSN_AUDITA_TERMINAIS"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PSN_CONTRATO_TERMINAIS"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PSN_INTERFACE_JDE_CANCELAMENTO"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PSN_INTERFACE_JDE_FATURAMENTO"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PSN_SENHAS"
+			,"subobject_name": null
+			,"object_type": "PACKAGE"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PSN_SENHAS"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PSN_SPC"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "PSN_WWW_SN529W"
+			,"subobject_name": null
+			,"object_type": "PACKAGE BODY"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SSNCRIALOGASSINANTE"
+			,"subobject_name": null
+			,"object_type": "PROCEDURE"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SSNLIBERATELEMARKETING"
+			,"subobject_name": null
+			,"object_type": "PROCEDURE"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SSNLOGTERMINAIS"
+			,"subobject_name": null
+			,"object_type": "PROCEDURE"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SSNTEXTOSITIRREGULAR"
+			,"subobject_name": null
+			,"object_type": "FUNCTION"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SYS_PLSQL_14365937_12_1"
+			,"subobject_name": null
+			,"object_type": "TYPE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SYS_PLSQL_14365937_538_1"
+			,"subobject_name": null
+			,"object_type": "TYPE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SYS_PLSQL_14365937_DUMMY_1"
+			,"subobject_name": null
+			,"object_type": "TYPE"
+			,"status": "T"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SYS_PLSQL_14539443_12_1"
+			,"subobject_name": null
+			,"object_type": "TYPE"
+			,"status": "S"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SYS_PLSQL_14539443_538_1"
+			,"subobject_name": null
+			,"object_type": "TYPE"
+			,"status": "S"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "SYS_PLSQL_14539443_DUMMY_1"
+			,"subobject_name": null
+			,"object_type": "TYPE"
+			,"status": "S"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "TRPP_MSG_PORTABILIDADE"
+			,"subobject_name": null
+			,"object_type": "TRIGGER"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "TRSMS_LOG_DET_CONT_A_E_IU_01"
+			,"subobject_name": null
+			,"object_type": "TRIGGER"
+			,"status": "S"
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "TRSN_A_ER_I_RESOLUCAOOCORREN"
+			,"subobject_name": null
+			,"object_type": "TRIGGER"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "TRSN_A_I_VLD_QTDE_MD_GESAC"
+			,"subobject_name": null
+			,"object_type": "TRIGGER"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "TRSN_A_ST_I_REL_CTR_TERM"
+			,"subobject_name": null
+			,"object_type": "TRIGGER"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "TRSN_A_ST_U_ASSINANTE"
+			,"subobject_name": null
+			,"object_type": "TRIGGER"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "TRSN_A_ST_U_ENDER"
+			,"subobject_name": null
+			,"object_type": "TRIGGER"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "TRSN_B_ER_IU_MATRIZ_METADADO"
+			,"subobject_name": null
+			,"object_type": "TRIGGER"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "TRSN_B_ER_IU_MD_PROD"
+			,"subobject_name": null
+			,"object_type": "TRIGGER"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "TRSN_B_ER_I_RCSI"
+			,"subobject_name": null
+			,"object_type": "TRIGGER"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "TRSN_B_ER_I_REL_CTR_TERM"
+			,"subobject_name": null
+			,"object_type": "TRIGGER"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		},
+		{
+			"owner": "PROD_JD"
+			,"object_name": "TRSN_B_ER_UD_SOLICITACAO_ASS"
+			,"subobject_name": null
+			,"object_type": "TRIGGER"
+			,"status": "D"
+			,"difs":
+			[
+				{"att": "DDL", "src": ".", "tgt": "."}
+			]
+		}
 	]
 }

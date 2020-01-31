@@ -63,8 +63,4 @@ exit /b 1
 @call "%~dp0.\spool_txt_lista_conexao.bat"         
 @IF %ERRORLEVEL% NEQ 0 exit /b 1
 
-@echo [STEP:spool_report_detalhe_servidor.bat] - %DATE% %TIME%
-@call "%~dp0.\spool_report_detalhe_servidor.bat"         
-@IF %ERRORLEVEL% NEQ 0 exit /b 1
-
 @goto :eof

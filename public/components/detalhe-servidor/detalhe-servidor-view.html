@@ -56,81 +56,38 @@
 
 </div>
 
-<div ng-if="detalhe.tabelas">
-	<h2>Tabelas</h2>
+<div ng-if="detalhe.compare">
+	<h2>Comparação {{detalhe.source.cd_conexao}} ->  {{detalhe.target.cd_conexao}}</h2>
 	<table class="table table-sm">
 		<thead class="thead-dark">
 			<tr>
-			<th>Owner</th>
-			<th>Tabela</th>
-			<th>Criticas</th>
+			<th>object_type</th>
+			<th>owner</th>
+			<th>object_name</th>
+			<th>subobject_name</th>
+			<th>status</th>
+			<th>difs</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="tabela in detalhe.tabelas">
-				<td>{{tabela.owner}}</td>
-				<td>{{tabela.table_name}}</td>
-				<td>{{tabela.evalution}}</td>
+			<tr ng-repeat="item in detalhe.compare">
+				<td>{{item.object_type}}</td>
+				<td>{{item.owner}}</td>
+				<td>{{item.object_name}}</td>
+				<td>{{item.subobject_name}}</td>
+				<td>
+					<span ng-if="item.status=='S'">Criar</span>
+					<span ng-if="item.status=='T'">Excluir</span>
+					<span ng-if="item.status=='D'">Diferente</span>
+				</td>
+				<td>{{item.difs}}</td>
 			</tr>
 		</tbody>
 		<tfoot>
 			<tr>
-				<th colspan=3>{{detalhe.tabelas.length}} registros</th>
+				<th colspan=5>{{detalhe.compare.length}} registros</th>
 			</tr>
 		</tfoot>
 	</table>
 </div>
 
-<div ng-if="detalhe.colunas">
-	<h2>Colunas</h2>
-	<table class="table table-sm" >
-		<thead class="thead-dark">
-			<tr>
-			<th>Owner</th>
-			<th>Tabela</th>
-			<th>Coluna</th>
-			<th>Criticas</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="coluna in detalhe.colunas">
-				<td>{{coluna.owner}}</td>
-				<td>{{coluna.table_name}}</td>
-				<td>{{coluna.column_name}}</td>
-				<td>{{coluna.evalution}}</td>
-			</tr>
-		</tbody>
-		<tfoot>
-			<tr>
-				<th colspan=4>{{detalhe.colunas.length}} registros</th>
-			</tr>
-		</tfoot>
-	</table>
-</div>
-
-<div ng-if="detalhe.programaveis">
-	<h2>Programáveis</h2>
-	<table class="table table-sm" >
-		<thead class="thead-dark">
-			<tr>
-			<th>Owner</th>
-			<th>Nome</th>
-			<th>Tipo</th>
-			<th>Criticas</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="coluna in detalhe.programaveis">
-				<td>{{coluna.owner}}</td>
-				<td>{{coluna.object_name}}</td>
-				<td>{{coluna.object_type}}</td>
-				<td>{{coluna.evalution}}</td>
-			</tr>
-		</tbody>
-		<tfoot>
-			<tr>
-				<th colspan=4>{{detalhe.programaveis.length}} registros</th>
-			</tr>
-		</tfoot>
-	</table>
-</div>

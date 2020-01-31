@@ -1,11 +1,11 @@
 {
-	"refreshDate": "2019-12-30T11:45:15.000Z"
+	"refreshDate": "2020-01-16T16:37:17.000Z"
 	,"source":
 	{
 		"cd_conexao": "GA_CERT_ATLAS.NET",
 		"cd_ambiente": "CERT",
 		"cd_aplicacao": "ATLAS",
 		"cd_cenario": null,
-		"ds_conexao": "CORE@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=HHATL01)))"
+		"ds_conexao": "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1523))(CONNECT_DATA=(SID=HHATL01)))"
 	}
 }

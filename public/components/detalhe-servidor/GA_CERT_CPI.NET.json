@@ -1,11 +1,11 @@
 {
-	"refreshDate": "2019-12-30T11:45:17.000Z"
+	"refreshDate": "2020-01-16T16:37:19.000Z"
 	,"source":
 	{
 		"cd_conexao": "GA_CERT_CPI.NET",
 		"cd_ambiente": "CERT",
 		"cd_aplicacao": "CPI",
 		"cd_cenario": null,
-		"ds_conexao": "CONSULTA_DICIONARIO@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1522))(CONNECT_DATA=(SID=HHCPI01)))"
+		"ds_conexao": "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=5.17.8.208)(PORT=1522))(CONNECT_DATA=(SID=HHCPI01)))"
 	}
 }
